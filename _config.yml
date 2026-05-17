@@ -1,0 +1,23 @@
+﻿# Podstawowe informacje
+title: Adwokat Kamila Sadłowicz
+description: Profesjonalna obsługa prawna w Warszawie. Prawo gospodarcze, cywilne, rodzinne i windykacja należności.
+author: Kamila Sadłowicz
+email: kamila.sadlowicz@gmail.com
+repository: kamila-sadlowicz/kancelaria
+
+# GitHub Pages
+theme: jekyll-theme-midnight
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

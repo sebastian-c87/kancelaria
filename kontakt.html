@@ -1,0 +1,609 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skontaktuj się z adwokatem Kamilą Sadłowicz. Formularz kontaktowy, AI asystent i dane kontaktowe kancelarii prawnej w Warszawie.">
+    <title>Kontakt - Adwokat Kamila Sadłowicz | Warszawa</title>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span>📞 <a href="tel:+48790013287">+48 790 013 287</a></span>
+                <span>✉️ <a href="mailto:kamila.sadlowicz@gmail.com">kamila.sadlowicz@gmail.com</a></span>
+                <span>📍 Warszawa</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <h1>Kamila Sadłowicz</h1>
+                    <p>Adwokat | Kancelaria Prawna</p>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Start</a></li>
+                <li><a href="oferta.html">Oferta i Cennik</a></li>
+                <li><a href="specjalizacje.html">Specjalizacje</a></li>
+                <li><a href="o-mnie.html">O mnie</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="kontakt.html" class="active btn-contact">Kontakt</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Start</a> / <span>Kontakt</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-subtitle">Skontaktuj się ze mną</span>
+            <h1 class="hero-title">Jak mogę Ci pomóc?</h1>
+            <p class="hero-description">
+                Wypełnij formularz kontaktowy lub porozmawiaj z AI asystentem, który odpowie na podstawowe pytania. <br>
+                Odpowiem w ciągu 24 godzin w dni robocze.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Split Section -->
+    <section class="contact-split has-background">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- LEFT: CONTACT FORM -->
+                <div class="contact-form-wrapper">
+                    <div class="form-header">
+                        <h2>📋 Formularz Kontaktowy</h2>
+                        <p>Opisz swoją sprawę, a skontaktuję się z Tobą najszybciej jak to możliwe</p>
+                    </div>
+
+                    <!-- 🔑 FORMSPREE FORM - WSTAW SWÓJ KLUCZ PONIŻEJ -->
+                    <form action="https://formspree.io/f/xqapaebv" method="POST" class="contact-form" id="contactForm">
+                        
+                        <!-- Imię i Nazwisko -->
+                        <div class="form-group">
+                            <label for="name">Imię i Nazwisko *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="np. Jan Kowalski" 
+                                required
+                            >
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Adres Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="jan.kowalski@example.com" 
+                                required
+                            >
+                        </div>
+
+                        <!-- Telefon -->
+                        <div class="form-group">
+                            <label for="phone">Telefon kontaktowy</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="+48 123 456 789"
+                            >
+                        </div>
+
+                        <!-- Kategoria Sprawy -->
+                        <div class="form-group">
+                            <label for="category">Kategoria Sprawy *</label>
+                            <select id="category" name="category" required>
+                                <option value="">-- Wybierz kategorię --</option>
+                                <option value="prawo-rodzinne">Prawo rodzinne (rozwód, alimenty, kontakty z dziećmi)</option>
+                                <option value="prawo-spadkowe">Prawo spadkowe (spadki, testamenty, zachowek)</option>
+                                <option value="prawo-cywilne">Prawo cywilne (umowy, odszkodowania, spory sąsiedzie)</option>
+                                <option value="windykacja">Windykacja należności (długi, egzekucja komornicza)</option>
+                                <option value="prawo-pracy">Prawo pracy (wypowiedzenia, mobbing, wynagrodzenia)</option>
+                                <option value="prawo-karne">Prawo karne (reprezentacja w sprawie karnej)</option>
+                                <option value="inne">Inna sprawa</option>
+                            </select>
+                        </div>
+
+                        <!-- Pilność Sprawy -->
+                        <div class="form-group">
+                            <label for="urgency">Pilność Sprawy</label>
+                            <select id="urgency" name="urgency">
+                                <option value="standard">Standardowa (odpowiedź w ciągu 24-48h)</option>
+                                <option value="urgent">Pilna (potrzebuję pomocy w ciągu kilku dni)</option>
+                                <option value="very-urgent">Bardzo pilna (sprawa na termin)</option>
+                            </select>
+                        </div>
+
+                        <!-- Opis Sprawy -->
+                        <div class="form-group">
+                            <label for="message">Opis Sprawy *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="6" 
+                                placeholder="Opisz pokrótce swoją sytuację prawną. Im więcej szczegółów, tym lepiej będę mogła ocenić Twoją sprawę..."
+                                required
+                            ></textarea>
+                            <small class="form-hint">💡 Wskazówka: Podaj daty, kwoty, strony zaangażowane w sprawę</small>
+                        </div>
+
+                        <!-- Załączniki (opcjonalnie - Formspree Pro) -->
+                        <div class="form-group">
+                            <label for="attachments">Załączniki (opcjonalnie)</label>
+                            <input 
+                                type="file" 
+                                id="attachments" 
+                                name="attachments" 
+                                multiple 
+                                accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                            >
+                            <small class="form-hint">📎 Możesz załączyć dokumenty (PDF, Word, zdjęcia) - max 10 MB</small>
+                        </div>
+
+                        <!-- Zgoda RODO -->
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="rodo" required>
+                                <span>Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href="#" target="_blank">Polityką Prywatności</a> (RODO) *</span>
+                            </label>
+                        </div>
+
+                        <!-- Zgoda Marketing (opcjonalna) -->
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="marketing">
+                                <span>Chcę otrzymywać newsletter z aktualnościami prawnymi</span>
+                            </label>
+                        </div>
+
+                        <!-- Hidden field for bot detection -->
+                        <input type="text" name="_gotcha" style="display:none">
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span class="btn-text">Wyślij zapytanie</span>
+                            <span class="btn-loading" style="display:none;">Wysyłanie...</span>
+                        </button>
+
+                        <!-- Success/Error Messages -->
+                        <div class="form-message form-success" id="formSuccess" style="display:none;">
+                            ✅ Dziękuję! Twoja wiadomość została wysłana. Skontaktuję się z Tobą w ciągu 24 godzin.
+                        </div>
+                        <div class="form-message form-error" id="formError" style="display:none;">
+                            ❌ Wystąpił błąd. Spróbuj ponownie lub napisz bezpośrednio na: <a href="mailto:kamila.sadlowicz@gmail.com">kamila.sadlowicz@gmail.com</a>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- RIGHT: AI CHATBOT -->
+                <div class="chatbot-wrapper">
+                    <div class="chatbot-header">
+                        <div class="chatbot-avatar">
+                            <span>🤖</span>
+                        </div>
+                        <div class="chatbot-title">
+                            <h3>AI Asystent</h3>
+                            <p class="chatbot-status">
+                                <span class="status-dot"></span> Online
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="chatbot-messages" id="chatbotMessages">
+                        <!-- Initial bot message -->
+                        <div class="message bot-message">
+                            <div class="message-avatar">🤖</div>
+                            <div class="message-content">
+                                <p>Cześć! Jestem AI asystentem kancelarii Kamili Sadłowicz.</p>
+                                <p>Mogę odpowiedzieć na podstawowe pytania dotyczące:</p>
+                                <ul>
+                                    <li>Specjalizacji kancelarii</li>
+                                    <li>Orientacyjnych kosztów usług</li>
+                                    <li>Czasu trwania postępowań</li>
+                                    <li>Sposobu umawiania konsultacji</li>
+                                </ul>
+                                <p><strong>Jak mogę Ci pomóc?</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Quick reply buttons -->
+                        <div class="quick-replies" id="quickReplies">
+                            <button class="quick-reply-btn" data-question="Ile kosztuje rozwód?">💰 Ile kosztuje rozwód?</button>
+                            <button class="quick-reply-btn" data-question="Jak długo trwa sprawa sądowa?">⏱️ Jak długo trwa sprawa?</button>
+                            <button class="quick-reply-btn" data-question="Jakie dokumenty potrzebuję?">📄 Jakie dokumenty?</button>
+                            <button class="quick-reply-btn" data-question="Jak umówić konsultację?">📅 Umówić konsultację</button>
+                        </div>
+                    </div>
+
+                    <div class="chatbot-input">
+                        <input 
+                            type="text" 
+                            id="chatInput" 
+                            placeholder="Wpisz swoje pytanie..." 
+                            autocomplete="off"
+                        >
+                        <button id="chatSendBtn" class="chat-send-btn">
+                            <span>Wyślij</span>
+                        </button>
+                    </div>
+
+                    <div class="chatbot-footer">
+                        <small>💡 To AI asystent. Dla szczegółowej porady skorzystaj z formularza lub umów konsultację.</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <h2>Inne sposoby kontaktu</h2>
+            <div class="contact-info-grid">
+                
+                <!-- Email -->
+                <div class="contact-info-card">
+                    <div class="info-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:kamila.sadlowicz@gmail.com">kamila.sadlowicz@gmail.com</a></p>
+                    <small>Odpowiedź w ciągu 24h (dni robocze)</small>
+                </div>
+
+                <!-- Phone -->
+                <div class="contact-info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>Telefon</h3>
+                    <p><a href="tel:+48790013287">+48 790 013 287</a></p>
+                    <small>Pon-Pt: 9:00 - 17:00</small>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="contact-info-card">
+                    <div class="info-icon">🔗</div>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/kamila-s-b20a8012a/" target="_blank">Profil LinkedIn</a></p>
+                    <small>Profesjonalna sieć kontaktów</small>
+                </div>
+
+                <!-- Location -->
+                <div class="contact-info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>Lokalizacja</h3>
+                    <p>Warszawa</p>
+                    <small>Spotkania online lub w Warszawie (po umówieniu)</small>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Quick Section -->
+    <section class="contact-faq">
+        <div class="container">
+            <h2>Często zadawane pytania</h2>
+            <div class="faq-grid">
+                
+                <div class="faq-item">
+                    <h4>❓ Jak szybko otrzymam odpowiedź?</h4>
+                    <p>Odpowiadam w ciągu 24 godzin w dni robocze. W pilnych sprawach proszę o zaznaczenie w formularzu.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>💰 Czy konsultacja jest płatna?</h4>
+                    <p>Pierwsza konsultacja telefoniczna (do 15 min) jest bezpłatna. Szczegółowe porady są odpłatne zgodnie z <a href="oferta.html">cennikiem</a>.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>📄 Jakie dokumenty przygotować?</h4>
+                    <p>Zależy od sprawy. AI asystent podpowie co przyda się do pierwszej konsultacji. Zazwyczaj: umowy, korespondencja, orzeczenia sądowe.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>🔒 Czy moje dane są bezpieczne?</h4>
+                    <p>Tak! Wszystkie dane są chronione zgodnie z RODO. Obowiązuje mnie tajemnica adwokacka.</p>
+                </div>
+
+            </div>
+            <div class="faq-cta">
+                <p>Więcej odpowiedzi znajdziesz w <a href="faq.html">pełnym FAQ</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Nie zwlekaj - skontaktuj się już dziś</h2>
+            <p>Im szybciej zaczniesz działać, tym lepsze efekty</p>
+            <div class="cta-buttons">
+                <a href="#contactForm" class="btn btn-primary">Wypełnij formularz</a>
+                <a href="tel:+48790013287" class="btn btn-secondary">📞 Zadzwoń teraz</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Kamila Sadłowicz</h4>
+                    <p>Adwokat</p>
+                    <p>Okręgowa Rada Adwokacka w Warszawie</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <p>Tel: <a href="tel:+48790013287">+48 790 013 287</a></p>
+                    <p>Email: <a href="mailto:kamila.sadlowicz@gmail.com">kamila.sadlowicz@gmail.com</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/kamila-s-b20a8012a/" target="_blank">Profil</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Start</a></li>
+                        <li><a href="oferta.html">Oferta i Cennik</a></li>
+                        <li><a href="specjalizacje.html">Specjalizacje</a></li>
+                        <li><a href="o-mnie.html">O mnie</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Kamila Sadłowicz. Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Przewiń do góry">↑</button>
+
+    <!-- JavaScript -->
+    <script>
+        // ===== MOBILE MENU TOGGLE =====
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // ===== SCROLL TO TOP BUTTON =====
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 500) {
+                    scrollToTopBtn.classList.add('visible');
+                } else {
+                    scrollToTopBtn.classList.remove('visible');
+                }
+            });
+
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // ===== FORM SUBMISSION (Formspree) =====
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+        const formError = document.getElementById('formError');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnLoading = submitBtn.querySelector('.btn-loading');
+                
+                // Show loading state
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline';
+                submitBtn.disabled = true;
+                
+                // Hide previous messages
+                formSuccess.style.display = 'none';
+                formError.style.display = 'none';
+                
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: new FormData(contactForm),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        formSuccess.style.display = 'block';
+                        contactForm.reset();
+                        
+                        // Scroll to success message
+                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    formError.style.display = 'block';
+                    formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } finally {
+                    // Reset button state
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+
+        // ===== AI CHATBOT (SIMULATED - NO OPENAI YET) =====
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSendBtn = document.getElementById('chatSendBtn');
+        const quickReplies = document.getElementById('quickReplies');
+
+        // Predefined responses (FAQ-based)
+        const botResponses = {
+            'ile kosztuje rozwód': 'Koszt rozwodu zależy od tego, czy jest to rozwód za porozumieniem stron czy z orzekaniem o winie. **Rozwód za porozumieniem**: od 2500 zł netto. **Rozwód z orzekaniem o winie**: od 3500 zł netto. Dokładny cennik znajdziesz [tutaj](oferta.html). Czy chcesz umówić bezpłatną konsultację?',
+            
+            'jak długo trwa sprawa sądowa': 'Czas trwania sprawy sądowej zależy od jej rodzaju:\n\n• **Rozwód bez dzieci**: 6-10 miesięcy\n• **Rozwód ze sporami**: 18-30 miesięcy\n• **Sprawy cywilne**: 12-18 miesięcy\n• **Windykacja (nakaz zapłaty)**: 2-4 miesiące\n\nWięcej informacji w moim [artykule na blogu](blog.html#article-3). Chcesz zapytać o konkretną sprawę?',
+            
+            'jakie dokumenty potrzebuję': 'Dokumenty zależą od rodzaju sprawy:\n\n**Rozwód**: akt małżeństwa, akty urodzenia dzieci, dokumenty majątkowe\n**Windykacja**: umowy, faktury, korespondencja mailowa\n**Spadki**: akt zgonu, testament (jeśli jest)\n\nWypełnij formularz kontaktowy, a podpowiem dokładnie co przyda się w Twojej sprawie!',
+            
+            'jak umówić konsultację': 'Możesz umówić konsultację na 3 sposoby:\n\n1. **Wypełnij formularz** po lewej stronie\n2. **Zadzwoń**: +48 790 013 287 (Pon-Pt 9-17)\n3. **Napisz email**: kamila.sadlowicz@gmail.com\n\n**Pierwsza konsultacja telefoniczna (do 15 min) jest bezpłatna!** 😊',
+            
+            'default': 'Dziękuję za pytanie! To wykracza poza moją bazę wiedzy jako AI asystenta. **Wypełnij formularz kontaktowy**, a Kamila szczegółowo odpowie na Twoje pytanie w ciągu 24 godzin. Możesz również znaleźć odpowiedzi w [FAQ](faq.html) lub na [blogu](blog.html).'
+        };
+
+        // Add message to chat
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = isUser ? 'message user-message' : 'message bot-message';
+            
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            
+            if (!isUser) {
+                const avatar = document.createElement('div');
+                avatar.className = 'message-avatar';
+                avatar.textContent = '🤖';
+                messageDiv.appendChild(avatar);
+            }
+            
+            // Convert markdown-like syntax to HTML
+            const formattedText = text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>')
+                .replace(/\n/g, '<br>');
+            
+            content.innerHTML = formattedText;
+            messageDiv.appendChild(content);
+            
+            chatbotMessages.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        // Get bot response
+        function getBotResponse(userMessage) {
+            const lowercaseMessage = userMessage.toLowerCase();
+            
+            // Check for keyword matches
+            for (const [keyword, response] of Object.entries(botResponses)) {
+                if (keyword !== 'default' && lowercaseMessage.includes(keyword)) {
+                    return response;
+                }
+            }
+            
+            return botResponses.default;
+        }
+
+        // Typing indicator
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot-message typing-indicator';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = '<div class="message-avatar">🤖</div><div class="message-content"><div class="typing-dots"><span></span><span></span><span></span></div></div>';
+            chatbotMessages.appendChild(typingDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) indicator.remove();
+        }
+
+        // Send message
+        function sendMessage() {
+            const userMessage = chatInput.value.trim();
+            if (!userMessage) return;
+            
+            // Add user message
+            addMessage(userMessage, true);
+            chatInput.value = '';
+            
+            // Hide quick replies after first interaction
+            if (quickReplies) {
+                quickReplies.style.display = 'none';
+            }
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            // Simulate bot thinking (1-2 seconds)
+            setTimeout(() => {
+                hideTypingIndicator();
+                const botResponse = getBotResponse(userMessage);
+                addMessage(botResponse, false);
+            }, 1500);
+        }
+
+        // Event listeners
+        if (chatSendBtn) {
+            chatSendBtn.addEventListener('click', sendMessage);
+        }
+
+        if (chatInput) {
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        }
+
+        // Quick reply buttons
+        document.querySelectorAll('.quick-reply-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const question = this.getAttribute('data-question');
+                chatInput.value = question;
+                sendMessage();
+            });
+        });
+    </script>
+</body>
+</html>
