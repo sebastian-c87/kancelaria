@@ -3,68 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog prawny - aktualne zmiany w polskim systemie prawnym, analizy i komentarze. Adwokat Kamila Sadłowicz - Warszawa.">
-    <title>Blog Prawny - Aktualne zmiany w systemie prawnym | Adwokat Kamila Sadłowicz</title>
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <meta name="description" content="Blog prawny – aktualne zmiany w polskim systemie prawnym, analizy i komentarze. Adwokat Kamila Sadłowicz – Warszawa.">
+    <title>Blog Prawny – Aktualne zmiany w systemie prawnym | Adwokat Kamila Sadłowicz</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/redesign.css">
+    <link rel="stylesheet" href="assets/css/subpages.css">
 </head>
 <body>
-    <!-- Top Contact Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="contact-info">
-                <span>📞 <a href="tel:+48790013287">+48 790 013 287</a></span>
-                <span>✉️ <a href="mailto:kamila.sadlowicz@gmail.com">kamila.sadlowicz@gmail.com</a></span>
-                <span>📍 Warszawa</span>
-            </div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+    <div class="inner">
+        <a href="tel:+48790013287">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            +48 790 013 287
+        </a>
+        <div class="sep"></div>
+        <a href="mailto:kamila.sadlowicz@gmail.com">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            kamila.sadlowicz@gmail.com
+        </a>
+        <div class="sep"></div>
+        <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Warszawa
+        </span>
+    </div>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="navbar" id="navbar">
+    <div class="inner">
+        <div class="nav-brand">
+            <a href="index.html">
+                <strong>Kamila Sadłowicz</strong>
+                <span>Adwokat · Kancelaria Adwokacka</span>
+            </a>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Start</a></li>
+            <li><a href="oferta.html">Oferta i Cennik</a></li>
+            <li><a href="specjalizacje.html">Specjalizacje</a></li>
+            <li><a href="o-mnie.html">O mnie</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
         </div>
     </div>
+</nav>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="index.html">
-                    <h1>Kamila Sadłowicz</h1>
-                    <p>Adwokat | Kancelaria Prawna</p>
-                </a>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">Start</a></li>
-                <li><a href="oferta.html">Oferta i Cennik</a></li>
-                <li><a href="specjalizacje.html">Specjalizacje</a></li>
-                <li><a href="o-mnie.html">O mnie</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="kontakt.html" class="btn-contact">Kontakt</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+    <div class="page-hero-diagonal"></div>
+    <div class="container">
+        <div class="page-hero-eyebrow">
+            <div class="page-hero-eyebrow-line"></div>
+            <span class="page-hero-eyebrow-text">Blog Prawny · Warszawa</span>
         </div>
-    </nav>
-
-    <!-- Breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <a href="index.html">Start</a> / <span>Blog Prawny</span>
+        <h1 class="page-hero-title">Aktualne zmiany<br>w polskim <em>prawie</em></h1>
+        <p class="page-hero-desc">Analizy, komentarze i wyjaśnienia najważniejszych zmian w systemie prawnym. Bez politycznych ocen – tylko fakty.</p>
+        <div class="page-hero-actions">
+            <a href="kontakt.html" class="btn-gold">
+                Umów konsultację
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="oferta.html" class="btn-ghost">Oferta i cennik</a>
         </div>
     </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <span class="hero-subtitle">Blog Prawny</span>
-            <h1 class="hero-title">Aktualne zmiany w polskim prawie</h1>
-            <p class="hero-description">
-                Analizy, komentarze i wyjaśnienia najważniejszych zmian w systemie prawnym. <br>
-                Śledź bieżące wydarzenia i dowiedz się, jak mogą wpłynąć na Twoją sprawę.
-            </p>
-        </div>
-    </section>
+</section>
 
     <!-- Blog Intro -->
     <section class="blog-intro">
@@ -841,89 +854,97 @@
         </div>
     </section>
 
-    <!-- Newsletter Subscription -->
-    <section class="blog-newsletter">
-        <div class="container">
-            <div class="newsletter-box">
-                <h2>📬 Zapisz się do newslettera</h2>
-                <p>Otrzymuj powiadomienia o nowych artykułach i zmianach w prawie</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Funkcja newslettera będzie dostępna po wdrożeniu backendu.');">
-                    <input type="email" placeholder="Twój adres email" required>
-                    <button type="submit" class="btn btn-primary">Zapisz się</button>
-                </form>
-                <p class="newsletter-note">🔒 Twoje dane są bezpieczne. Możesz wypisać się w każdej chwili.</p>
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-inner reveal">
+            <div class="cta-text">
+                <h2>Potrzebujesz pomocy<br><em>prawnej?</em></h2>
+                <p>Skontaktuj się ze mną już dziś – wspólnie rozwiążemy Twój problem.</p>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start; flex-shrink:0;">
+                <a href="kontakt.html" class="btn-gold" style="white-space:nowrap;">
+                    Umów konsultację
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="tel:+48790013287" class="btn-ghost" style="white-space:nowrap;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+                    +48 790 013 287
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Potrzebujesz pomocy prawnej?</h2>
-            <p>Skontaktuj się ze mną już dziś – wspólnie rozwiążemy Twój problem</p>
-            <div class="cta-buttons">
-                <a href="kontakt.html" class="btn btn-primary">Umów konsultację</a>
-                <a href="tel:+48790013287" class="btn btn-secondary">📞 Zadzwoń: +48 790 013 287</a>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <strong>Kamila Sadłowicz</strong>
+                <span class="tagline">Adwokat · Warszawa</span>
+                <p>Profesjonalna obsługa prawna dla firm i klientów indywidualnych. Okręgowa Rada Adwokacka w Warszawie.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="oferta.html">Oferta i Cennik</a></li>
+                    <li><a href="specjalizacje.html">Specjalizacje</a></li>
+                    <li><a href="o-mnie.html">O mnie</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p>Tel: <a href="tel:+48790013287">+48 790 013 287</a></p>
+                <p>E-mail: <a href="mailto:kamila.sadlowicz@gmail.com">kamila.sadlowicz@gmail.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/kamila-s-b20a8012a/" target="_blank">Profil LinkedIn</a></p>
+                <p style="margin-top:16px;">Warszawa</p>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Kamila Sadłowicz</h4>
-                    <p>Adwokat</p>
-                    <p>Okręgowa Rada Adwokacka w Warszawie</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Kontakt</h4>
-                    <p>Tel: <a href="tel:+48790013287">+48 790 013 287</a></p>
-                    <p>Email: <a href="mailto:kamila.sadlowicz@gmail.com">kamila.sadlowicz@gmail.com</a></p>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/kamila-s-b20a8012a/" target="_blank">Profil</a></p>
-                </div>
-                <div class="footer-col">
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="index.html">Start</a></li>
-                        <li><a href="oferta.html">Oferta i Cennik</a></li>
-                        <li><a href="specjalizacje.html">Specjalizacje</a></li>
-                        <li><a href="o-mnie.html">O mnie</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="kontakt.html">Kontakt</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Kamila Sadłowicz. Wszelkie prawa zastrzeżone.</p>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kamila Sadłowicz. Wszelkie prawa zastrzeżone.</p>
+            <a href="#">Polityka Prywatności</a>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top" aria-label="Przewiń do góry">↑</button>
+<button class="scroll-to-top" aria-label="Przewiń do góry">↑</button>
 
     <!-- JavaScript -->
     <script>
-        // ===== MOBILE MENU TOGGLE =====
+        // ===== NAVBAR + HAMBURGER =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
 
         if (hamburger) {
             hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
+                hamburger.classList.toggle('open');
+                navMenu.classList.toggle('open');
             });
         }
 
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
+                hamburger.classList.remove('open');
+                navMenu.classList.remove('open');
             });
         });
+
+        // ===== REVEAL ANIMATIONS =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
         // ===== ARTICLE TOGGLE (EXPAND/COLLAPSE) =====
         document.querySelectorAll('.article-toggle').forEach(button => {
@@ -967,22 +988,15 @@
         });
 
         // ===== SCROLL TO TOP BUTTON =====
-        const scrollToTopBtn = document.getElementById('scrollToTop');
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
 
         if (scrollToTopBtn) {
             window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 500) {
-                    scrollToTopBtn.classList.add('visible');
-                } else {
-                    scrollToTopBtn.classList.remove('visible');
-                }
-            });
+                scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 400);
+            }, { passive: true });
 
             scrollToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
 
