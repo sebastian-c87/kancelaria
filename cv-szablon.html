@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Adwokat [Imię Nazwisko]</title>
+    <!--
+        SZABLON CV — ADWOKAT / RYNEK WARSZAWSKI
+        =========================================
+        ATS-friendly: struktura jednokolumnowa, semantyczny HTML,
+        brak tabel i textboxów, czytelna hierarchia nagłówków.
+        Do eksportu jako PDF: Ctrl+P → Zapisz jako PDF (marginesy: brak).
+    -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+        :root {
+            --navy:      #0d2438;
+            --navy-mid:  #1a3a52;
+            --gold:      #c8a56a;
+            --gold-light:#dfc08e;
+            --ivory:     #f7f3ed;
+            --cream:     #ede8df;
+            --text:      #1e1e1e;
+            --muted:     #5a5a5a;
+            --rule:      #d4c9b8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Jost', 'Segoe UI', Arial, sans-serif;
+            font-size: 10pt;
+            line-height: 1.55;
+            color: var(--text);
+            background: var(--cream);
+        }
+
+        /* ── STRONA A4 ── */
+        .page {
+            width: 21cm;
+            min-height: 29.7cm;
+            margin: 1.5cm auto;
+            background: #ffffff;
+            padding: 1.8cm 2.2cm 2cm;
+            box-shadow: 0 4px 32px rgba(13,36,56,.15);
+        }
+
+        /* ── NAGŁÓWEK ── */
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 1.1em;
+            border-bottom: 2.5px solid var(--navy);
+            margin-bottom: 1.5em;
+        }
+
+        .header-left {}
+
+        .header-name {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 28pt;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: .01em;
+            line-height: 1;
+        }
+
+        .header-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 12pt;
+            font-weight: 400;
+            font-style: italic;
+            color: var(--gold);
+            letter-spacing: .06em;
+            margin-top: .25em;
+        }
+
+        .header-wpis {
+            font-family: 'Jost', sans-serif;
+            font-size: 8pt;
+            color: var(--muted);
+            margin-top: .3em;
+            letter-spacing: .04em;
+        }
+
+        /* kontakt po prawej — ATS czyta od lewej do prawej,
+           więc dane kontaktowe przed imieniem są złe. Tutaj
+           są PO imieniu w DOM, więc kolejność czytania jest OK. */
+        .header-contact {
+            text-align: right;
+            font-size: 8.5pt;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .header-contact a {
+            color: var(--navy-mid);
+            text-decoration: none;
+        }
+
+        .contact-icon {
+            display: inline-block;
+            width: 1em;
+            margin-right: .2em;
+            color: var(--gold);
+            font-style: normal;
+        }
+
+        /* ── SEKCJE ── */
+        .section {
+            margin-bottom: 1.3em;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            padding-bottom: .2em;
+            border-bottom: 1.5px solid var(--gold);
+            margin-bottom: .75em;
+        }
+
+        /* ── PROFIL ── */
+        .profile-text {
+            font-size: 9.5pt;
+            color: #333;
+            line-height: 1.65;
+        }
+
+        /* ── WPIS (doświadczenie / wykształcenie) ── */
+        .entry {
+            margin-bottom: .9em;
+        }
+
+        .entry-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .entry-title {
+            font-weight: 600;
+            font-size: 10pt;
+            color: var(--navy);
+        }
+
+        .entry-date {
+            font-size: 8.5pt;
+            color: var(--muted);
+            white-space: nowrap;
+            margin-left: 1.2em;
+            font-weight: 400;
+        }
+
+        .entry-org {
+            font-size: 9pt;
+            font-style: italic;
+            color: var(--muted);
+            margin-top: .1em;
+        }
+
+        .entry-details {
+            margin-top: .35em;
+            padding-left: 1.1em;
+            list-style: none;
+        }
+
+        .entry-details li {
+            font-size: 9pt;
+            color: #333;
+            padding-left: .9em;
+            position: relative;
+            margin-bottom: .15em;
+        }
+
+        .entry-details li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* ── OBSZARY PRAKTYKI ── */
+        .areas-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .45em;
+        }
+
+        .area-tag {
+            font-size: 8.5pt;
+            font-weight: 500;
+            color: var(--navy);
+            background: var(--ivory);
+            border: 1px solid var(--gold);
+            padding: .2em .65em;
+            border-radius: 2px;
+            letter-spacing: .02em;
+        }
+
+        /* ── DWIE KOLUMNY (języki + narzędzia) ── */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+        }
+
+        .skill-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9pt;
+            padding: .18em 0;
+            border-bottom: 1px dotted var(--rule);
+        }
+
+        .skill-name { font-weight: 500; color: var(--navy); }
+        .skill-level { color: var(--muted); }
+
+        /* ── SZKOLENIA ── */
+        .training-entry {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9pt;
+            padding: .2em 0;
+            border-bottom: 1px dotted var(--rule);
+        }
+        .training-name { color: var(--text); font-weight: 500; }
+        .training-meta { color: var(--muted); text-align: right; font-size: 8.5pt; }
+
+        /* ── PRZYNALEŻNOŚĆ ── */
+        .membership-entry {
+            margin-bottom: .5em;
+        }
+        .membership-title { font-weight: 600; font-size: 9.5pt; color: var(--navy); }
+        .membership-sub { font-size: 8.5pt; color: var(--muted); font-style: italic; }
+
+        /* ── KLAUZULA RODO ── */
+        .rodo {
+            margin-top: 1.8em;
+            padding-top: .7em;
+            border-top: 1px solid var(--rule);
+            font-size: 7pt;
+            color: #999;
+            line-height: 1.4;
+        }
+
+        /* ── DRUK ── */
+        @media print {
+            body { background: white; }
+            .page {
+                margin: 0;
+                padding: 1.4cm 1.8cm 1.8cm;
+                box-shadow: none;
+                width: 100%;
+                min-height: unset;
+            }
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            .area-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+
+        /* ── SEPARATOR ── */
+        .divider {
+            border: none;
+            border-top: 1px solid var(--rule);
+            margin: .4em 0 .9em;
+        }
+    </style>
+</head>
+<body>
+<main class="page" role="main">
+
+    <!-- ═══════════════════════════════════════════
+         NAGŁÓWEK — DANE IDENTYFIKACYJNE
+    ═══════════════════════════════════════════ -->
+    <header class="cv-header">
+        <div class="header-left">
+            <div class="header-name">[IMIĘ] [NAZWISKO]</div>
+            <div class="header-title">Adwokat</div>
+            <div class="header-wpis">Nr wpisu na listę adwokatów ORA w Warszawie: [NR WPISU]/[ROK]</div>
+        </div>
+        <address class="header-contact" style="font-style:normal;">
+            <div><i class="contact-icon">✦</i>[NR TELEFONU]</div>
+            <div><i class="contact-icon">✦</i><a href="mailto:[EMAIL]">[EMAIL]</a></div>
+            <div><i class="contact-icon">✦</i>Warszawa</div>
+            <div><i class="contact-icon">✦</i><a href="https://linkedin.com/in/[PROFIL]">linkedin.com/in/[PROFIL]</a></div>
+        </address>
+    </header>
+
+
+    <!-- ═══════════════════════════════════════════
+         1. PROFIL ZAWODOWY
+         ─────────────────────────────────────────
+         Cel: 4–5 zdań z kluczowymi słowami.
+         ATS skanuje tutaj pod: tytuł zawodowy,
+         lata doświadczenia, specjalizacje, typy klientów.
+    ═══════════════════════════════════════════ -->
+    <section class="section" aria-label="Profil zawodowy">
+        <h2 class="section-title">Profil zawodowy</h2>
+        <p class="profile-text">
+            Adwokat wpisana/wpisany na listę adwokatów Okręgowej Rady Adwokackiej w Warszawie,
+            z [X]-letnim doświadczeniem w obsłudze prawnej podmiotów gospodarczych oraz klientów
+            indywidualnych. Specjalizacja obejmuje prawo gospodarcze i handlowe, prawo cywilne,
+            prawo rodzinne i opiekuńcze oraz windykację należności. Doświadczenie w prowadzeniu
+            spraw sądowych przed sądami powszechnymi wszystkich instancji oraz w postępowaniach
+            egzekucyjnych i mediacyjnych. [Opcjonalnie: znajomość rynku korporacyjnego / doświadczenie
+            w pracy z klientami zagranicznymi / znajomość języka angielskiego na poziomie prawniczym.]
+        </p>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         2. DOŚWIADCZENIE ZAWODOWE
+         ─────────────────────────────────────────
+         Porządek odwrotnie chronologiczny.
+         Każdy wpis: tytuł → firma → daty → lista osiągnięć.
+         Osiągnięcia kwantyfikować gdzie możliwe.
+    ═══════════════════════════════════════════ -->
+    <section class="section" aria-label="Doświadczenie zawodowe">
+        <h2 class="section-title">Doświadczenie zawodowe</h2>
+
+        <!-- WPIS 1 — AKTUALNE -->
+        <div class="entry">
+            <div class="entry-row">
+                <div class="entry-title">Adwokat / [Stanowisko — np. Partner, Associate, Counsel]</div>
+                <div class="entry-date">[MM.RRRR] – obecnie</div>
+            </div>
+            <div class="entry-org">[Nazwa Kancelarii / Spółki], Warszawa</div>
+            <ul class="entry-details">
+                <li>Kompleksowa obsługa prawna klientów korporacyjnych i indywidualnych w zakresie
+                    prawa handlowego, cywilnego i rodzinnego.</li>
+                <li>Reprezentacja klientów przed Sądem Rejonowym, Sądem Okręgowym,
+                    Sądem Apelacyjnym oraz Sądem Najwyższym.</li>
+                <li>Sporządzanie umów handlowych, statutów spółek, regulaminów oraz opinii prawnych.</li>
+                <li>Prowadzenie postępowań windykacyjnych — tryb upominawczy (EPU), nakazowy
+                    i egzekucyjny.</li>
+                <li>Negocjowanie ugód i reprezentacja w mediacjach gospodarczych.</li>
+                <li>[Kwantyfikowane osiągnięcie — np.: Skuteczne odzyskanie wierzytelności
+                    na łączną kwotę ponad X mln zł w ciągu roku.]</li>
+            </ul>
+        </div>
+
+        <hr class="divider">
+
+        <!-- WPIS 2 -->
+        <div class="entry">
+            <div class="entry-row">
+                <div class="entry-title">[Stanowisko]</div>
+                <div class="entry-date">[MM.RRRR] – [MM.RRRR]</div>
+            </div>
+            <div class="entry-org">[Nazwa Kancelarii / Firmy], Warszawa</div>
+            <ul class="entry-details">
+                <li>[Opis zadań i osiągnięć — co robiłaś/robiłeś i jaki był efekt]</li>
+                <li>[Opis zadań]</li>
+                <li>[Opis osiągnięcia — mierzalne, jeśli możliwe]</li>
+            </ul>
+        </div>
+
+        <hr class="divider">
+
+        <!-- WPIS 3 — APLIKACJA -->
+        <div class="entry">
+            <div class="entry-row">
+                <div class="entry-title">Aplikant adwokacki</div>
+                <div class="entry-date">[MM.RRRR] – [MM.RRRR]</div>
+            </div>
+            <div class="entry-org">[Nazwa Kancelarii Patrona], Warszawa &nbsp;·&nbsp;
+                Aplikacja przy ORA w Warszawie</div>
+            <ul class="entry-details">
+                <li>Asystowanie adwokatom w prowadzeniu spraw sądowych z zakresu prawa cywilnego,
+                    rodzinnego i gospodarczego.</li>
+                <li>Przygotowywanie pism procesowych, pozwów, wniosków i apelacji.</li>
+                <li>Samodzielne zastępstwo procesowe w sprawach cywilnych i karnych
+                    (sądy rejonowe).</li>
+                <li>Udział w szkoleniach aplikacyjnych (cykl 3-letni, Okręgowa Rada Adwokacka
+                    w Warszawie).</li>
+            </ul>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         3. WYKSZTAŁCENIE
+         ─────────────────────────────────────────
+         Kolejność: najnowsze na górze.
+         Aplikacja adwokacka = kluczowe uprawnienie,
+         idzie jako PIERWSZA pozycja.
+    ═══════════════════════════════════════════ -->
+    <section class="section" aria-label="Wykształcenie">
+        <h2 class="section-title">Wykształcenie</h2>
+
+        <div class="entry">
+            <div class="entry-row">
+                <div class="entry-title">Aplikacja adwokacka — egzamin adwokacki</div>
+                <div class="entry-date">[RRRR] – [RRRR]</div>
+            </div>
+            <div class="entry-org">Okręgowa Rada Adwokacka w Warszawie</div>
+            <ul class="entry-details">
+                <li>Egzamin adwokacki złożony z wynikiem bardzo dobrym / dobrym — [MIESIĄC RRRR].</li>
+            </ul>
+        </div>
+
+        <hr class="divider">
+
+        <div class="entry">
+            <div class="entry-row">
+                <div class="entry-title">Magister prawa (mgr)</div>
+                <div class="entry-date">[RRRR] – [RRRR]</div>
+            </div>
+            <div class="entry-org">[Nazwa Uczelni] — Wydział Prawa i Administracji, Warszawa</div>
+            <ul class="entry-details">
+                <li>Specjalizacja: [np. Prawo gospodarcze i handlowe / Prawo cywilne procesowe]</li>
+                <li>Praca magisterska: <em>„[Tytuł pracy]"</em> — promotor: [Imię Nazwisko],
+                    ocena: [X]</li>
+            </ul>
+        </div>
+
+        <!-- OPCJONALNIE: studia podyplomowe, LLM, MBA -->
+        <hr class="divider">
+
+        <div class="entry">
+            <div class="entry-row">
+                <div class="entry-title">[Opcjonalnie: Studia podyplomowe / LLM / Kurs kwalifikacyjny]</div>
+                <div class="entry-date">[RRRR] – [RRRR]</div>
+            </div>
+            <div class="entry-org">[Nazwa Uczelni / Instytucji], [Miasto]</div>
+            <ul class="entry-details">
+                <li>[Zakres / tytuł projektu końcowego — wypełnić lub usunąć tę pozycję]</li>
+            </ul>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         4. OBSZARY PRAKTYKI
+         ─────────────────────────────────────────
+         Sekcja kluczowych słów — ATS skanuje pod
+         zgodność z wymaganiami ogłoszenia.
+         Edytować zgodnie z konkretną ofertą pracy.
+    ═══════════════════════════════════════════ -->
+    <section class="section" aria-label="Obszary praktyki">
+        <h2 class="section-title">Obszary praktyki</h2>
+        <div class="areas-wrap">
+            <span class="area-tag">Prawo gospodarcze i handlowe</span>
+            <span class="area-tag">Prawo spółek</span>
+            <span class="area-tag">Prawo cywilne</span>
+            <span class="area-tag">Prawo zobowiązań</span>
+            <span class="area-tag">Prawo rodzinne i opiekuńcze</span>
+            <span class="area-tag">Windykacja należności</span>
+            <span class="area-tag">Postępowanie egzekucyjne</span>
+            <span class="area-tag">Prawo nieruchomości</span>
+            <span class="area-tag">Prawo umów</span>
+            <span class="area-tag">Mediacje i negocjacje</span>
+            <span class="area-tag">Postępowanie sądowe</span>
+            <span class="area-tag">Due diligence</span>
+            <span class="area-tag">[Dodaj lub usuń wg specjalizacji]</span>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         5. JĘZYKI  +  NARZĘDZIA (dwie kolumny)
+         ─────────────────────────────────────────
+         ATS czyta grid lewej kolumny, potem prawej —
+         kolejność w DOM: języki → narzędzia. OK.
+    ═══════════════════════════════════════════ -->
+    <div class="two-col">
+
+        <section class="section" aria-label="Języki">
+            <h2 class="section-title">Języki</h2>
+            <div class="skill-row">
+                <span class="skill-name">Polski</span>
+                <span class="skill-level">ojczysty</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Angielski</span>
+                <span class="skill-level">[C1 / biegły / prawniczy]</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">[Język trzeci]</span>
+                <span class="skill-level">[poziom — lub usuń]</span>
+            </div>
+        </section>
+
+        <section class="section" aria-label="Narzędzia i bazy prawne">
+            <h2 class="section-title">Narzędzia i bazy prawne</h2>
+            <div class="skill-row">
+                <span class="skill-name">LEX (Wolters Kluwer)</span>
+                <span class="skill-level">zaawansowany</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Legalis (C.H. Beck)</span>
+                <span class="skill-level">zaawansowany</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">Portal Informacyjny Sądów</span>
+                <span class="skill-level">zaawansowany</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">e-Sąd / EPU</span>
+                <span class="skill-level">zaawansowany</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-name">MS Office / pakiet biurowy</span>
+                <span class="skill-level">biegły</span>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════════
+         6. SZKOLENIA I CERTYFIKATY
+         ─────────────────────────────────────────
+         Tylko szkolenia istotne zawodowo.
+         Szkolenia ORA / NRA mają dużą wagę.
+    ═══════════════════════════════════════════ -->
+    <section class="section" aria-label="Szkolenia i certyfikaty">
+        <h2 class="section-title">Szkolenia i certyfikaty</h2>
+
+        <div class="training-entry">
+            <span class="training-name">[Nazwa szkolenia / certyfikatu]</span>
+            <span class="training-meta">[Organizator] &nbsp;·&nbsp; [RRRR]</span>
+        </div>
+        <div class="training-entry">
+            <span class="training-name">[Szkolenie z zakresu prawa — np. mediacje, prawo restrukturyzacyjne]</span>
+            <span class="training-meta">[ORA w Warszawie / NRA] &nbsp;·&nbsp; [RRRR]</span>
+        </div>
+        <div class="training-entry">
+            <span class="training-name">[Szkolenie językowe — np. Legal English Certificate]</span>
+            <span class="training-meta">[Instytucja] &nbsp;·&nbsp; [RRRR]</span>
+        </div>
+        <div class="training-entry">
+            <span class="training-name">[Kurs / szkolenie opcjonalne — lub usuń wiersz]</span>
+            <span class="training-meta">[Instytucja] &nbsp;·&nbsp; [RRRR]</span>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         7. PRZYNALEŻNOŚĆ ZAWODOWA I DZIAŁALNOŚĆ
+         ─────────────────────────────────────────
+         ORA to obowiązkowy punkt dla adwokata.
+         Dodatkowa działalność (stowarzyszenia,
+         pisarstwo prawnicze) = wyróżnik.
+    ═══════════════════════════════════════════ -->
+    <section class="section" aria-label="Przynależność zawodowa i działalność">
+        <h2 class="section-title">Przynależność zawodowa i działalność</h2>
+
+        <div class="membership-entry">
+            <div class="membership-title">Okręgowa Rada Adwokacka w Warszawie</div>
+            <div class="membership-sub">
+                Wpis na listę adwokatów, nr [NUMER] — od [ROK]
+            </div>
+        </div>
+        <div class="membership-entry">
+            <div class="membership-title">
+                [Opcjonalnie: Stowarzyszenie / organizacja / izba / fundacja]
+            </div>
+            <div class="membership-sub">
+                [Rola / funkcja — np. członek zarządu, prelegent, autor artykułów] — [RRRR]–[RRRR/obecnie]
+            </div>
+        </div>
+        <div class="membership-entry">
+            <div class="membership-title">
+                [Opcjonalnie: Działalność pro bono / akademicka / publicystyczna]
+            </div>
+            <div class="membership-sub">
+                [Opis — np. Porady prawne pro bono w ramach [Instytucji]]
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         KLAUZULA RODO — obowiązkowa przy rekrutacji
+    ═══════════════════════════════════════════ -->
+    <p class="rodo">
+        Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do
+        realizacji procesu rekrutacji zgodnie z Rozporządzeniem Parlamentu Europejskiego
+        i Rady (UE) 2016/679 (RODO) oraz ustawą z dnia 10 maja 2018 r. o ochronie danych
+        osobowych (Dz.U. 2018 poz. 1000 ze zm.).
+        <!-- Jeśli wysyłasz CV do więcej niż jednej firmy, dodaj: -->
+        <!-- Wyrażam również zgodę na przetwarzanie danych w przyszłych rekrutacjach przez
+             okres 12 miesięcy od daty złożenia dokumentów. -->
+    </p>
+
+</main>
+</body>
+</html>
