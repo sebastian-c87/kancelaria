@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adwokatsadlowicz.pl/sitemap.xml
+Sitemap: https://kancelaria-sadlowicz.pl/sitemap.xml
