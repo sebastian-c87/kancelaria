@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O mnie | Adwokat Kamila Sadłowicz | Kancelaria Warszawa</title>
+    <meta name="description" content="Adwokat Kamila Sadłowicz — poznaj mnie bliżej. Wykształcenie, doświadczenie i podejście do klienta. Kancelaria adwokacka w Warszawie.">
+    <link rel="canonical" href="https://kancelaria-sadlowicz.pl/o-mnie.html">
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="Adwokat Kamila Sadłowicz">
+    <meta property="og:title" content="O mnie | Adwokat Kamila Sadłowicz Warszawa">
+    <meta property="og:description" content="Poznaj adwokat Kamilę Sadłowicz — wykształcenie, doświadczenie i podejście do klienta. Kancelaria adwokacka w Warszawie.">
+    <meta property="og:url" content="https://kancelaria-sadlowicz.pl/o-mnie.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="O mnie | Adwokat Kamila Sadłowicz Warszawa">
+    <meta name="twitter:description" content="Poznaj adwokat Kamilę Sadłowicz — wykształcenie, doświadczenie, kancelaria w Warszawie.">
+    <meta name="robots" content="index, follow">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Attorney",
+      "name": "Kamila Sadłowicz",
+      "jobTitle": "Adwokat",
+      "url": "https://kancelaria-sadlowicz.pl/o-mnie.html",
+      "telephone": "+48790013287",
+      "email": "kamila.sadlowicz@kancelaria-sadlowicz.pl",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Warszawa",
+        "addressCountry": "PL"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "[Tu wstaw uczelnię]"
+      },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Okręgowa Rada Adwokacka w Warszawie"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/redesign.css">
+    <link rel="stylesheet" href="assets/css/subpages.css">
+    <style>
+    /* ===== O MNIE — style specyficzne dla tej strony ===== */
+    .about-intro {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 64px;
+        align-items: start;
+    }
+    .about-photo-block {
+        position: sticky;
+        top: 100px;
+    }
+    .about-photo-frame {
+        position: relative;
+        border-radius: 2px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        background: var(--cream);
+    }
+    .about-photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .about-photo-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        font-family: var(--ff-body);
+        font-size: 14px;
+        gap: 12px;
+        background: var(--cream);
+    }
+    .about-photo-placeholder svg { opacity: .4; }
+    .about-photo-accent {
+        position: absolute;
+        bottom: -12px;
+        right: -12px;
+        width: 80px;
+        height: 80px;
+        background: var(--gold);
+        z-index: -1;
+    }
+    .about-badge {
+        margin-top: 20px;
+        padding: 16px 20px;
+        background: var(--navy);
+        color: var(--ivory);
+        font-family: var(--ff-body);
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .about-badge strong {
+        font-size: 15px;
+        color: var(--gold-light);
+        font-weight: 500;
+    }
+
+    .about-text .lead-paragraph {
+        font-family: var(--ff-display);
+        font-size: clamp(1.15rem, 2vw, 1.35rem);
+        font-weight: 300;
+        line-height: 1.7;
+        color: var(--charcoal);
+        margin-bottom: 24px;
+    }
+    .about-text p {
+        font-family: var(--ff-body);
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--text);
+        margin-bottom: 18px;
+    }
+    .about-text .signature {
+        margin-top: 36px;
+        padding-top: 28px;
+        border-top: 1px solid var(--cream);
+        font-family: var(--ff-display);
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--navy);
+    }
+
+    /* Wartości */
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 48px;
+    }
+    .value-card {
+        padding: 36px 28px;
+        border-top: 3px solid var(--gold);
+        background: #fff;
+    }
+    .value-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 20px;
+        color: var(--gold);
+    }
+    .value-card h3 {
+        font-family: var(--ff-display);
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 12px;
+    }
+    .value-card p {
+        font-family: var(--ff-body);
+        font-size: .9rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+    }
+
+    /* Timeline wykształcenie */
+    .timeline {
+        position: relative;
+        padding-left: 32px;
+        margin-top: 40px;
+    }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: var(--gold-pale);
+    }
+    .timeline-item {
+        position: relative;
+        padding-bottom: 40px;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -38px;
+        top: 7px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--gold);
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px var(--gold);
+    }
+    .timeline-year {
+        display: inline-block;
+        font-family: var(--ff-body);
+        font-size: .78rem;
+        font-weight: 600;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 6px;
+    }
+    .timeline-item h4 {
+        font-family: var(--ff-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 6px;
+    }
+    .timeline-item p {
+        font-family: var(--ff-body);
+        font-size: .9rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+    }
+
+    /* Stats bar */
+    .about-stats {
+        background: var(--navy);
+        padding: 64px 0;
+    }
+    .about-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        text-align: center;
+    }
+    .about-stat {
+        border-right: 1px solid rgba(200,165,106,.2);
+    }
+    .about-stat:last-child { border-right: none; }
+    .about-stat-number {
+        display: block;
+        font-family: var(--ff-display);
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-weight: 300;
+        color: var(--gold-light);
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+    .about-stat-label {
+        font-family: var(--ff-body);
+        font-size: .8rem;
+        font-weight: 500;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: rgba(247,243,237,.5);
+    }
+
+    /* Placeholder */
+    .placeholder-text {
+        color: var(--text-muted);
+        font-style: italic;
+        background: var(--cream);
+        border-left: 3px solid var(--gold-pale);
+        padding: 12px 16px;
+        font-size: .9rem;
+        border-radius: 1px;
+    }
+
+    @media (max-width: 900px) {
+        .about-intro { grid-template-columns: 1fr; }
+        .about-photo-block { position: static; }
+        .values-grid { grid-template-columns: 1fr; }
+        .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+        .about-stat { border-right: none; border-bottom: 1px solid rgba(200,165,106,.2); padding-bottom: 28px; }
+        .about-stat:last-child { border-bottom: none; }
+    }
+    </style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="top-bar">
+    <div class="inner">
+        <a href="tel:+48790013287">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            +48 790 013 287
+        </a>
+        <div class="sep"></div>
+        <a href="mailto:kamila.sadlowicz@kancelaria-sadlowicz.pl">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            kamila.sadlowicz@kancelaria-sadlowicz.pl
+        </a>
+        <div class="sep"></div>
+        <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Warszawa
+        </span>
+    </div>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="navbar" id="navbar">
+    <div class="inner">
+        <div class="nav-brand">
+            <a href="index.html">
+                <strong>Kamila Sadłowicz</strong>
+                <span>Adwokat · Kancelaria Adwokacka</span>
+            </a>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Start</a></li>
+            <li><a href="oferta.html">Oferta i Cennik</a></li>
+            <li><a href="specjalizacje.html">Specjalizacje</a></li>
+            <li><a href="o-mnie.html" class="active">O mnie</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+    <div class="page-hero-diagonal"></div>
+    <div class="container">
+        <div class="page-hero-eyebrow">
+            <div class="page-hero-eyebrow-line"></div>
+            <span class="page-hero-eyebrow-text">Adwokat · Kancelaria Adwokacka · Warszawa</span>
+        </div>
+        <h1 class="page-hero-title">O <em>mnie</em></h1>
+        <p class="page-hero-desc">Adwokat z pasją do prawa i zaangażowaniem w każdą sprawę. Poznaj mnie bliżej — moje doświadczenie, wartości i podejście do klienta.</p>
+        <div class="page-hero-actions">
+            <a href="kontakt.html" class="btn-gold">
+                Umów konsultację
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="specjalizacje.html" class="btn-ghost">Moje specjalizacje</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== INTRO: ZDJĘCIE + BIO ===== -->
+<section class="content-section">
+    <div class="container">
+        <div class="about-intro">
+
+            <!-- TEKST BIO -->
+            <div class="about-text reveal">
+                <p class="lead-paragraph">
+                    <!-- [TU WSTAW TEKST WPROWADZAJĄCY — 2-3 zdania, osobisty ton] -->
+                    Prawo to nie tylko zawód — to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.
+                </p>
+
+                <p class="placeholder-text">
+                    [TU WSTAW: Akapit o sobie — skąd pochodzi Pani pasja do prawa, co motywuje w pracy, jaki jest Pani styl pracy z klientem]
+                </p>
+
+                <p class="placeholder-text" style="margin-top: 16px;">
+                    [TU WSTAW: Akapit o doświadczeniu — rodzaje spraw, typ klientów, czym się wyróżnia Pani kancelaria]
+                </p>
+
+                <p class="placeholder-text" style="margin-top: 16px;">
+                    [TU WSTAW: Akapit osobisty — zainteresowania, co robi poza pracą, co sprawia że jest Pani bliżej klientów]
+                </p>
+
+                <div class="signature">
+                    Kamila Sadłowicz, adwokat
+                </div>
+            </div>
+
+            <!-- ZDJĘCIE -->
+            <div class="about-photo-block reveal">
+                <div class="about-photo-frame">
+                    <!-- Gdy będziesz mieć zdjęcie, zamień poniższy blok na:
+                         <img src="assets/images/kamila-sadlowicz.jpg" alt="Adwokat Kamila Sadłowicz"> -->
+                    <div class="about-photo-placeholder">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Tu wstaw zdjęcie<br><small>assets/images/kamila-sadlowicz.jpg</small></span>
+                    </div>
+                    <div class="about-photo-accent"></div>
+                </div>
+                <div class="about-badge">
+                    <strong>adw. Kamila Sadłowicz</strong>
+                    <span>Okręgowa Rada Adwokacka w Warszawie</span>
+                    <span style="margin-top:4px; color: rgba(247,243,237,.5); font-size:12px;">[Tu wstaw nr wpisu na listę adwokatów]</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== STATYSTYKI ===== -->
+<section class="about-stats reveal">
+    <div class="container">
+        <div class="about-stats-grid">
+            <div class="about-stat">
+                <span class="about-stat-number">[X]+</span>
+                <span class="about-stat-label">lat doświadczenia</span>
+            </div>
+            <div class="about-stat">
+                <span class="about-stat-number">[X]+</span>
+                <span class="about-stat-label">prowadzonych spraw</span>
+            </div>
+            <div class="about-stat">
+                <span class="about-stat-number">[X]%</span>
+                <span class="about-stat-label">spraw zakończonych sukcesem</span>
+            </div>
+            <div class="about-stat">
+                <span class="about-stat-number">[X]+</span>
+                <span class="about-stat-label">zadowolonych klientów</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MOJE WARTOŚCI ===== -->
+<section class="content-section" style="background: var(--ivory);">
+    <div class="container">
+        <div class="page-hero-eyebrow" style="margin-bottom: 8px;">
+            <div class="page-hero-eyebrow-line"></div>
+            <span class="page-hero-eyebrow-text">Moje podejście</span>
+        </div>
+        <h2 style="font-family: var(--ff-display); font-size: clamp(1.8rem,3vw,2.4rem); color: var(--navy); font-weight: 400; margin-bottom: 0;">
+            Na czym mi <em>zależy</em>
+        </h2>
+
+        <div class="values-grid">
+            <div class="value-card reveal">
+                <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <h3>Rzetelność</h3>
+                <p>
+                    <!-- [TU WSTAW: Krótki opis jak rzetelność przejawia się w Pani pracy — kilka zdań] -->
+                    Każda sprawa wymaga pełnego zaangażowania i dokładnej analizy. Daję Ci rzetelną ocenę sytuacji — nawet jeśli nie jest to to, co chciałbyś usłyszeć.
+                </p>
+            </div>
+            <div class="value-card reveal">
+                <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                <h3>Dostępność</h3>
+                <p>
+                    <!-- [TU WSTAW: Opis jak zapewniasz dostępność dla klientów] -->
+                    Odpowiadam na maile w ciągu 24 godzin roboczych. Wiem, że w sprawach prawnych czas często ma kluczowe znaczenie — dlatego nie zostawiam klientów bez odpowiedzi.
+                </p>
+            </div>
+            <div class="value-card reveal">
+                <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+                <h3>Indywidualne podejście</h3>
+                <p>
+                    <!-- [TU WSTAW: Opis indywidualnego podejścia do klienta] -->
+                    Każdy klient i każda sprawa jest inna. Nie stosuję szablonowych rozwiązań — słucham, analizuję i dobieram strategię dopasowaną do Twojej konkretnej sytuacji.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WYKSZTAŁCENIE I DOŚWIADCZENIE ===== -->
+<section class="content-section">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+
+            <!-- WYKSZTAŁCENIE -->
+            <div class="reveal">
+                <div class="page-hero-eyebrow" style="margin-bottom: 8px;">
+                    <div class="page-hero-eyebrow-line"></div>
+                    <span class="page-hero-eyebrow-text">Edukacja</span>
+                </div>
+                <h2 style="font-family: var(--ff-display); font-size: clamp(1.5rem,2.5vw,2rem); color: var(--navy); font-weight: 400; margin-bottom: 0;">
+                    Wykształcenie
+                </h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">[ROK] – [ROK]</span>
+                        <h4>[Nazwa uczelni]</h4>
+                        <p class="placeholder-text">[Tu wstaw: kierunek, tytuł, specjalizację]</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">[ROK] – [ROK]</span>
+                        <h4>Aplikacja adwokacka</h4>
+                        <p class="placeholder-text">[Tu wstaw: gdzie odbywała się aplikacja, Okręgowa Rada Adwokacka]</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">[ROK]</span>
+                        <h4>Wpis na listę adwokatów</h4>
+                        <p>Okręgowa Rada Adwokacka w Warszawie</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">[ROK] – dziś</span>
+                        <h4>[Opcjonalnie: studia podyplomowe, kursy, certyfikaty]</h4>
+                        <p class="placeholder-text">[Tu wstaw lub usuń tę pozycję]</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DOŚWIADCZENIE -->
+            <div class="reveal">
+                <div class="page-hero-eyebrow" style="margin-bottom: 8px;">
+                    <div class="page-hero-eyebrow-line"></div>
+                    <span class="page-hero-eyebrow-text">Kariera</span>
+                </div>
+                <h2 style="font-family: var(--ff-display); font-size: clamp(1.5rem,2.5vw,2rem); color: var(--navy); font-weight: 400; margin-bottom: 0;">
+                    Doświadczenie
+                </h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">[ROK] – dziś</span>
+                        <h4>Kancelaria Adwokacka Kamila Sadłowicz</h4>
+                        <p class="placeholder-text">[Tu wstaw: opis działalności kancelarii, zakres spraw]</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">[ROK] – [ROK]</span>
+                        <h4>[Poprzednie miejsce pracy / kancelaria]</h4>
+                        <p class="placeholder-text">[Tu wstaw lub usuń tę pozycję]</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">[ROK] – [ROK]</span>
+                        <h4>[Opcjonalnie: inne doświadczenie zawodowe]</h4>
+                        <p class="placeholder-text">[Tu wstaw lub usuń tę pozycję]</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== CZŁONKOSTWA I CERTYFIKATY ===== -->
+<section class="content-section" style="background: var(--ivory); padding-top: 56px; padding-bottom: 56px;">
+    <div class="container">
+        <div class="page-hero-eyebrow" style="margin-bottom: 8px;">
+            <div class="page-hero-eyebrow-line"></div>
+            <span class="page-hero-eyebrow-text">Przynależność zawodowa</span>
+        </div>
+        <h2 style="font-family: var(--ff-display); font-size: clamp(1.5rem,2.5vw,2rem); color: var(--navy); font-weight: 400; margin-bottom: 32px;">
+            Członkostwa i <em>uprawnienia</em>
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <div class="info-box" style="margin: 0;">
+                <h4>Okręgowa Rada Adwokacka</h4>
+                <p>Adwokat wpisany na listę adwokatów Okręgowej Rady Adwokackiej w Warszawie</p>
+                <p class="placeholder-text" style="margin-top: 8px;">[Opcjonalnie: nr wpisu]</p>
+            </div>
+            <div class="info-box" style="margin: 0;">
+                <h4>[Opcjonalne członkostwo]</h4>
+                <p class="placeholder-text">[Tu wstaw: np. stowarzyszenia prawnicze, organizacje branżowe lub usuń tę kartę]</p>
+            </div>
+            <div class="info-box" style="margin: 0;">
+                <h4>[Opcjonalne certyfikaty]</h4>
+                <p class="placeholder-text">[Tu wstaw: kursy specjalistyczne, certyfikaty mediacji itp. lub usuń tę kartę]</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-inner reveal">
+            <div class="cta-text">
+                <h2>Porozmawiajmy<br>o Twojej <em>sprawie</em></h2>
+                <p>Pierwsza konsultacja pozwoli nam ocenić sytuację i ustalić najlepszą strategię działania.</p>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start;">
+                <a href="kontakt.html" class="btn-gold">
+                    Umów konsultację
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="tel:+48790013287" class="btn-ghost">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+                    +48 790 013 287
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <strong>Kamila Sadłowicz</strong>
+                <span class="tagline">Adwokat · Warszawa</span>
+                <p>Profesjonalna obsługa prawna dla firm i klientów indywidualnych. Okręgowa Rada Adwokacka w Warszawie.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="oferta.html">Oferta i Cennik</a></li>
+                    <li><a href="specjalizacje.html">Specjalizacje</a></li>
+                    <li><a href="o-mnie.html">O mnie</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <p>Tel: <a href="tel:+48790013287">+48 790 013 287</a></p>
+                <p>E-mail: <a href="mailto:kamila.sadlowicz@kancelaria-sadlowicz.pl">kamila.sadlowicz@kancelaria-sadlowicz.pl</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/kamila-s-b20a8012a/" target="_blank">Profil LinkedIn</a></p>
+                <p style="margin-top:16px;">Warszawa</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kamila Sadłowicz. Wszelkie prawa zastrzeżone.</p>
+            <a href="#">Polityka Prywatności</a>
+        </div>
+    </div>
+</footer>
+
+<button class="scroll-to-top" aria-label="Przewiń do góry">↑</button>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+const hamburger = document.getElementById('hamburger');
+const navMenu   = document.getElementById('navMenu');
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navMenu.classList.toggle('open');
+});
+navMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+    });
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+});
+
+const scrollBtn = document.querySelector('.scroll-to-top');
+if (scrollBtn) {
+    window.addEventListener('scroll', () => {
+        scrollBtn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+</script>
+</body>
+</html>
