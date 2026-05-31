@@ -48,7 +48,90 @@
 
     <link rel="stylesheet" href="assets/css/redesign.css">
     <link rel="stylesheet" href="assets/css/subpages.css">
-</head>
+    <style>
+    /* ===== MODAL ===== */
+    .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(13, 36, 56, 0.75);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    .modal-overlay.visible {
+        opacity: 1;
+        pointer-events: all;
+    }
+    .modal-box {
+        background: var(--ivory, #f7f3ed);
+        max-width: 480px;
+        width: 90%;
+        padding: 48px 40px;
+        border-top: 4px solid var(--gold, #c8a56a);
+        text-align: center;
+        transform: translateY(24px);
+        transition: transform 0.35s ease;
+    }
+    .modal-overlay.visible .modal-box {
+        transform: translateY(0);
+    }
+    .modal-icon {
+        width: 64px;
+        height: 64px;
+        background: var(--navy, #0d2438);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+    }
+    .modal-icon svg { color: var(--gold, #c8a56a); }
+    .modal-box h2 {
+        font-family: var(--ff-display, 'Cormorant Garamond', serif);
+        font-size: 2rem;
+        color: var(--navy, #0d2438);
+        margin-bottom: 12px;
+    }
+    .modal-box p {
+        color: var(--text-muted, #6b7280);
+        margin-bottom: 32px;
+        line-height: 1.65;
+    }
+    .modal-progress {
+        height: 3px;
+        background: var(--gold-pale, #e8d5b0);
+        margin-top: 24px;
+        overflow: hidden;
+    }
+    .modal-progress-bar {
+        height: 100%;
+        background: var(--gold, #c8a56a);
+        width: 100%;
+        transform-origin: left;
+        animation: modalCountdown 7s linear forwards;
+    }
+    @keyframes modalCountdown {
+        from { transform: scaleX(1); }
+        to   { transform: scaleX(0); }
+    }
+
+    /* ===== HONEYPOT ===== */
+    .form-hp {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    </style>
 <body>
 
 <!-- ===== TOP BAR ===== -->
@@ -130,8 +213,7 @@
                         <p>Opisz swoją sprawę, a skontaktuję się z Tobą najszybciej jak to możliwe</p>
                     </div>
 
-                    <!-- 🔑 FORMSPREE FORM - WSTAW SWÓJ KLUCZ PONIŻEJ -->
-                    <form action="https://formspree.io/f/xqapaebv" method="POST" class="contact-form" id="contactForm">
+                    <form action="wyslij.php" method="POST" class="contact-form" id="contactForm">
                         
                         <!-- Imię i Nazwisko -->
                         <div class="form-group">
@@ -206,19 +288,6 @@
                             <small class="form-hint">💡 Wskazówka: Podaj daty, kwoty, strony zaangażowane w sprawę</small>
                         </div>
 
-                        <!-- Załączniki (opcjonalnie - Formspree Pro) -->
-                        <div class="form-group">
-                            <label for="attachments">Załączniki (opcjonalnie)</label>
-                            <input 
-                                type="file" 
-                                id="attachments" 
-                                name="attachments" 
-                                multiple 
-                                accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                            >
-                            <small class="form-hint">📎 Możesz załączyć dokumenty (PDF, Word, zdjęcia) - max 10 MB</small>
-                        </div>
-
                         <!-- Zgoda RODO -->
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
@@ -235,8 +304,11 @@
                             </label>
                         </div>
 
-                        <!-- Hidden field for bot detection -->
-                        <input type="text" name="_gotcha" style="display:none">
+                        <!-- Honeypot — schowane przed ludźmi, widoczne dla botów -->
+                        <div class="form-hp" aria-hidden="true">
+                            <label for="website">Adres strony www</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
 
                         <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary btn-large">
@@ -244,12 +316,8 @@
                             <span class="btn-loading" style="display:none;">Wysyłanie...</span>
                         </button>
 
-                        <!-- Success/Error Messages -->
-                        <div class="form-message form-success" id="formSuccess" style="display:none;">
-                            ✅ Dziękuję! Twoja wiadomość została wysłana. Skontaktuję się z Tobą w ciągu 24 godzin.
-                        </div>
                         <div class="form-message form-error" id="formError" style="display:none;">
-                            ❌ Wystąpił błąd. Spróbuj ponownie lub napisz bezpośrednio na: <a href="mailto:kamila.sadlowicz@kancelaria-sadlowicz.pl">kamila.sadlowicz@kancelaria-sadlowicz.pl</a>
+                            Wystąpił błąd. Spróbuj ponownie lub napisz bezpośrednio na: <a href="mailto:kamila.sadlowicz@kancelaria-sadlowicz.pl">kamila.sadlowicz@kancelaria-sadlowicz.pl</a>
                         </div>
 
                     </form>
@@ -391,6 +459,19 @@
         </div>
     </section>
 
+<!-- ===== SUCCESS MODAL ===== -->
+<div class="modal-overlay" id="successModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+        <div class="modal-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h2 id="modalTitle">Wiadomość wysłana!</h2>
+        <p>Dziękuję za kontakt. Odpiszę w ciągu 24 godzin w&nbsp;dni robocze.<br>Jeśli sprawa jest pilna — zadzwoń na <a href="tel:+48790013287">+48 790 013 287</a>.</p>
+        <button class="btn-gold" id="modalClose">Zamknij</button>
+        <div class="modal-progress"><div class="modal-progress-bar"></div></div>
+    </div>
+</div>
+
 <!-- ===== CTA ===== -->
 <section class="cta-section">
     <div class="container">
@@ -505,54 +586,66 @@
             });
         });
 
-        // ===== FORM SUBMISSION (Formspree) =====
+        // ===== SUCCESS MODAL =====
+        const successModal = document.getElementById('successModal');
+        const modalClose   = document.getElementById('modalClose');
+        let modalTimer;
+
+        function openModal() {
+            successModal.classList.add('visible');
+            successModal.removeAttribute('aria-hidden');
+            document.body.style.overflow = 'hidden';
+            clearTimeout(modalTimer);
+            modalTimer = setTimeout(closeModal, 7000);
+        }
+        function closeModal() {
+            clearTimeout(modalTimer);
+            successModal.classList.remove('visible');
+            successModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+        if (modalClose) modalClose.addEventListener('click', closeModal);
+        successModal?.addEventListener('click', e => { if (e.target === successModal) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // ===== FORM SUBMISSION =====
         const contactForm = document.getElementById('contactForm');
-        const formSuccess = document.getElementById('formSuccess');
-        const formError = document.getElementById('formError');
+        const formError   = document.getElementById('formError');
 
         if (contactForm) {
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const btnText = submitBtn.querySelector('.btn-text');
+
+                const submitBtn  = contactForm.querySelector('button[type="submit"]');
+                const btnText    = submitBtn.querySelector('.btn-text');
                 const btnLoading = submitBtn.querySelector('.btn-loading');
-                
-                // Show loading state
-                btnText.style.display = 'none';
+
+                btnText.style.display    = 'none';
                 btnLoading.style.display = 'inline';
-                submitBtn.disabled = true;
-                
-                // Hide previous messages
-                formSuccess.style.display = 'none';
-                formError.style.display = 'none';
-                
+                submitBtn.disabled       = true;
+                formError.style.display  = 'none';
+
                 try {
-                    const response = await fetch(contactForm.action, {
+                    const response = await fetch('wyslij.php', {
                         method: 'POST',
-                        body: new FormData(contactForm),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                        body: new FormData(contactForm)
                     });
-                    
-                    if (response.ok) {
-                        formSuccess.style.display = 'block';
+                    const data = await response.json();
+
+                    if (data.ok) {
                         contactForm.reset();
-                        
-                        // Scroll to success message
-                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        openModal();
                     } else {
-                        throw new Error('Form submission failed');
+                        formError.style.display = 'block';
+                        formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
-                } catch (error) {
+                } catch {
                     formError.style.display = 'block';
                     formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } finally {
-                    // Reset button state
-                    btnText.style.display = 'inline';
+                    btnText.style.display    = 'inline';
                     btnLoading.style.display = 'none';
-                    submitBtn.disabled = false;
+                    submitBtn.disabled       = false;
                 }
             });
         }
