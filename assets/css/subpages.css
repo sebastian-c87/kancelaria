@@ -943,6 +943,13 @@
     outline: none;
     appearance: none;
 }
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
+    appearance: auto;
+    width: auto;
+    height: auto;
+    padding: 0;
+}
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
