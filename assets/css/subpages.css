@@ -9,7 +9,8 @@
     background: var(--navy);
     position: relative;
     overflow: hidden;
-    padding: 80px 0 90px;
+    min-height: 440px;
+    padding: 36px 0;
     display: flex;
     align-items: center;
 }
@@ -85,7 +86,7 @@
     font-family: var(--ff-body);
     font-size: 15px;
     font-weight: 300;
-    color: rgba(255,255,255,.55);
+    color: rgba(255,255,255,.75);
     line-height: 1.85;
     max-width: 560px;
     margin-bottom: 36px;
@@ -312,8 +313,8 @@
 .comparison-table td,
 .mini-table td {
     padding: 13px 18px;
-    color: var(--text-muted);
-    font-weight: 300;
+    color: var(--text);
+    font-weight: 400;
     vertical-align: top;
     line-height: 1.65;
 }
@@ -1689,7 +1690,7 @@
     .contact-info-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-    .page-hero        { padding: 60px 0 70px; }
+    .page-hero        { min-height: 360px; padding: 56px 0; }
     .content-section  { padding: 56px 0; }
     .faq-category     { padding: 48px 0; }
     .spec-detail,
