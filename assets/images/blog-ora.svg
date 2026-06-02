@@ -1,0 +1,244 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2438;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#091c2c;stop-opacity:1" />
+    </linearGradient>
+    <!-- Podium glow -->
+    <radialGradient id="podiumGlow" cx="50%" cy="65%" r="40%">
+      <stop offset="0%" style="stop-color:#c8a56a;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#0d2438;stop-opacity:0" />
+    </radialGradient>
+    <!-- Gold fade horizontal -->
+    <linearGradient id="goldFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c8a56a;stop-opacity:0" />
+      <stop offset="20%" style="stop-color:#c8a56a;stop-opacity:0.7" />
+      <stop offset="80%" style="stop-color:#c8a56a;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#c8a56a;stop-opacity:0" />
+    </linearGradient>
+    <!-- Raised hand gradient -->
+    <linearGradient id="handGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8a56a;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#c8a56a;stop-opacity:0.4" />
+    </linearGradient>
+    <!-- Assembly member gradient -->
+    <linearGradient id="memberGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8d5b0;stop-opacity:0.55" />
+      <stop offset="100%" style="stop-color:#c8a56a;stop-opacity:0.2" />
+    </linearGradient>
+    <!-- Raised member gradient -->
+    <linearGradient id="raisedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8a56a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8a56a;stop-opacity:0.45" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad2)"/>
+  <!-- Glow overlay -->
+  <rect width="800" height="450" fill="url(#podiumGlow)"/>
+
+  <!-- Border rules -->
+  <line x1="60" y1="38" x2="740" y2="38" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.3"/>
+  <line x1="60" y1="412" x2="740" y2="412" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.3"/>
+  <!-- Corner ornaments -->
+  <g stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.5" fill="none">
+    <polyline points="60,52 60,38 76,38"/>
+    <polyline points="724,38 740,38 740,52"/>
+    <polyline points="60,398 60,412 76,412"/>
+    <polyline points="724,412 740,412 740,398"/>
+  </g>
+
+  <!-- === ASSEMBLY HALL: Tiered seating arc === -->
+  <!-- Arc rows suggesting a semicircular assembly hall -->
+  <!-- Row outlines — three arcs, back to front -->
+  <path d="M 100,310 Q 400,170 700,310" fill="none" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.2" stroke-dasharray="3,6"/>
+  <path d="M 120,330 Q 400,200 680,330" fill="none" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.15" stroke-dasharray="3,6"/>
+  <path d="M 150,350 Q 400,230 650,350" fill="none" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.12" stroke-dasharray="3,6"/>
+
+  <!-- === ASSEMBLY MEMBERS (silhouettes in rows) === -->
+  <!-- Each silhouette: small circle (head) + trapezoid (torso) -->
+  <!-- We'll use a simple shape: circle + rect -->
+
+  <!-- Helper macro: member at position. Three rows.
+       Row 1 (back, small, faint): y_head ~248, row 2: ~268, row 3 (front): ~288 -->
+
+  <!-- ROW 1 (back) — 14 members, smaller, more faint -->
+  <g fill="url(#memberGrad)" opacity="0.38">
+    <!-- member 1 -->  <circle cx="162" cy="248" r="5"/><rect x="158" y="253" width="10" height="18" rx="2"/>
+    <!-- member 2 -->  <circle cx="194" cy="244" r="5"/><rect x="190" y="249" width="10" height="18" rx="2"/>
+    <!-- member 3 -->  <circle cx="226" cy="240" r="5"/><rect x="222" y="245" width="10" height="18" rx="2"/>
+    <!-- member 4 -->  <circle cx="258" cy="237" r="5"/><rect x="254" y="242" width="10" height="18" rx="2"/>
+    <!-- member 5 -->  <circle cx="290" cy="235" r="5"/><rect x="286" y="240" width="10" height="18" rx="2"/>
+    <!-- member 6 -->  <circle cx="322" cy="233" r="5"/><rect x="318" y="238" width="10" height="18" rx="2"/>
+    <!-- member 7 -->  <circle cx="355" cy="232" r="5"/><rect x="351" y="237" width="10" height="18" rx="2"/>
+    <!-- member 8 -->  <circle cx="388" cy="232" r="5"/><rect x="384" y="237" width="10" height="18" rx="2"/>
+    <!-- member 9 -->  <circle cx="421" cy="233" r="5"/><rect x="417" y="238" width="10" height="18" rx="2"/>
+    <!-- member 10 --> <circle cx="454" cy="235" r="5"/><rect x="450" y="240" width="10" height="18" rx="2"/>
+    <!-- member 11 --> <circle cx="487" cy="237" r="5"/><rect x="483" y="242" width="10" height="18" rx="2"/>
+    <!-- member 12 --> <circle cx="519" cy="240" r="5"/><rect x="515" y="245" width="10" height="18" rx="2"/>
+    <!-- member 13 --> <circle cx="551" cy="244" r="5"/><rect x="547" y="249" width="10" height="18" rx="2"/>
+    <!-- member 14 --> <circle cx="583" cy="248" r="5"/><rect x="579" y="253" width="10" height="18" rx="2"/>
+  </g>
+
+  <!-- ROW 2 (middle) — 12 members, medium -->
+  <g fill="url(#memberGrad)" opacity="0.55">
+    <circle cx="180" cy="272" r="6"/><rect x="175" y="278" width="12" height="22" rx="2"/>
+    <circle cx="216" cy="267" r="6"/><rect x="211" y="273" width="12" height="22" rx="2"/>
+    <circle cx="252" cy="263" r="6"/><rect x="247" y="269" width="12" height="22" rx="2"/>
+    <circle cx="288" cy="260" r="6"/><rect x="283" y="266" width="12" height="22" rx="2"/>
+    <circle cx="324" cy="258" r="6"/><rect x="319" y="264" width="12" height="22" rx="2"/>
+    <circle cx="361" cy="257" r="6"/><rect x="356" y="263" width="12" height="22" rx="2"/>
+    <!-- center gap for main raised hand -->
+    <circle cx="439" cy="257" r="6"/><rect x="434" y="263" width="12" height="22" rx="2"/>
+    <circle cx="476" cy="258" r="6"/><rect x="471" y="264" width="12" height="22" rx="2"/>
+    <circle cx="512" cy="260" r="6"/><rect x="507" y="266" width="12" height="22" rx="2"/>
+    <circle cx="548" cy="263" r="6"/><rect x="543" y="269" width="12" height="22" rx="2"/>
+    <circle cx="584" cy="267" r="6"/><rect x="579" y="273" width="12" height="22" rx="2"/>
+    <circle cx="620" cy="272" r="6"/><rect x="615" y="278" width="12" height="22" rx="2"/>
+  </g>
+
+  <!-- ROW 3 (front) — 10 members, larger, brighter -->
+  <g fill="url(#memberGrad)" opacity="0.7">
+    <circle cx="205" cy="300" r="7"/><rect x="199" y="307" width="14" height="25" rx="2"/>
+    <circle cx="247" cy="294" r="7"/><rect x="241" y="301" width="14" height="25" rx="2"/>
+    <circle cx="289" cy="290" r="7"/><rect x="283" y="297" width="14" height="25" rx="2"/>
+    <circle cx="331" cy="288" r="7"/><rect x="325" y="295" width="14" height="25" rx="2"/>
+    <!-- gap center for podium -->
+    <circle cx="469" cy="288" r="7"/><rect x="463" y="295" width="14" height="25" rx="2"/>
+    <circle cx="511" cy="290" r="7"/><rect x="505" y="297" width="14" height="25" rx="2"/>
+    <circle cx="553" cy="294" r="7"/><rect x="547" y="301" width="14" height="25" rx="2"/>
+    <circle cx="595" cy="300" r="7"/><rect x="589" y="307" width="14" height="25" rx="2"/>
+  </g>
+
+  <!-- === RAISED HANDS (voting) — gold, prominent === -->
+  <!-- Several raised hands scattered across rows -->
+  <!-- Raised hand = member body + raised arm line -->
+
+  <!-- Raised hand row 1 (members 3, 7, 11) -->
+  <g fill="url(#raisedGrad)" opacity="0.85">
+    <!-- row 1 member 3 raised -->
+    <circle cx="226" cy="240" r="5"/>
+    <rect x="222" y="245" width="10" height="18" rx="2"/>
+    <line x1="231" y1="246" x2="237" y2="225" stroke="#c8a56a" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.9"/>
+    <circle cx="237" cy="222" r="3.5" fill="#c8a56a"/>
+
+    <!-- row 1 member 9 raised -->
+    <circle cx="421" cy="233" r="5"/>
+    <rect x="417" y="238" width="10" height="18" rx="2"/>
+    <line x1="426" y1="239" x2="432" y2="218" stroke="#c8a56a" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.9"/>
+    <circle cx="432" cy="215" r="3.5" fill="#c8a56a"/>
+
+    <!-- row 1 member 12 raised -->
+    <circle cx="519" cy="240" r="5"/>
+    <rect x="515" y="245" width="10" height="18" rx="2"/>
+    <line x1="524" y1="246" x2="530" y2="225" stroke="#c8a56a" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.9"/>
+    <circle cx="530" cy="222" r="3.5" fill="#c8a56a"/>
+
+    <!-- row 2 member raised (leftish) -->
+    <circle cx="288" cy="260" r="6"/>
+    <rect x="283" y="266" width="12" height="22" rx="2"/>
+    <line x1="295" y1="267" x2="302" y2="244" stroke="#c8a56a" stroke-width="2.8" stroke-linecap="round" stroke-opacity="0.95"/>
+    <circle cx="302" cy="241" r="4" fill="#c8a56a"/>
+
+    <!-- row 2 member raised (rightish) -->
+    <circle cx="548" cy="263" r="6"/>
+    <rect x="543" y="269" width="12" height="22" rx="2"/>
+    <line x1="555" y1="270" x2="562" y2="247" stroke="#c8a56a" stroke-width="2.8" stroke-linecap="round" stroke-opacity="0.95"/>
+    <circle cx="562" cy="244" r="4" fill="#c8a56a"/>
+
+    <!-- row 3 member raised (left) -->
+    <circle cx="289" cy="290" r="7"/>
+    <rect x="283" y="297" width="14" height="25" rx="2"/>
+    <line x1="297" y1="298" x2="305" y2="273" stroke="#c8a56a" stroke-width="3" stroke-linecap="round" stroke-opacity="1"/>
+    <circle cx="305" cy="269" r="4.5" fill="#c8a56a"/>
+
+    <!-- row 3 member raised (right) -->
+    <circle cx="511" cy="290" r="7"/>
+    <rect x="505" y="297" width="14" height="25" rx="2"/>
+    <line x1="519" y1="298" x2="527" y2="273" stroke="#c8a56a" stroke-width="3" stroke-linecap="round" stroke-opacity="1"/>
+    <circle cx="527" cy="269" r="4.5" fill="#c8a56a"/>
+  </g>
+
+  <!-- === PODIUM / SPEAKER'S DESK === -->
+  <!-- Podium base -->
+  <rect x="370" y="310" width="60" height="42" rx="3" fill="#0f2a3e" stroke="#c8a56a" stroke-width="1" stroke-opacity="0.7"/>
+  <!-- Podium top surface -->
+  <rect x="362" y="307" width="76" height="8" rx="2" fill="#122d42" stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.7"/>
+  <!-- Podium detail: emblem circle -->
+  <circle cx="400" cy="331" r="10" fill="none" stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.5"/>
+  <circle cx="400" cy="331" r="5" fill="#c8a56a" fill-opacity="0.3"/>
+  <!-- Speaker behind podium -->
+  <circle cx="400" cy="285" r="8" fill="#e8d5b0" fill-opacity="0.7"/>
+  <rect x="393" y="293" width="14" height="20" rx="2" fill="#e8d5b0" fill-opacity="0.55"/>
+
+  <!-- === FLOOR LINE === -->
+  <line x1="120" y1="352" x2="680" y2="352" stroke="url(#goldFade)" stroke-width="1"/>
+
+  <!-- Floor reflection subtle -->
+  <rect x="120" y="352" width="560" height="20" fill="#c8a56a" fill-opacity="0.03"/>
+
+  <!-- === "NO" VOTE INDICATOR — subtle cross/checkmark === -->
+  <!-- A subtle "✗ PRZECIW" mark to hint at the vote outcome -->
+  <!-- Small rejected motion symbol on podium area: a subtle X inside circle -->
+  <!-- Actually let's do a minimalist "GŁOSOWANIE" hint -->
+
+  <!-- === CEILING / HALL DETAIL === -->
+  <!-- Chandelier / ceiling medallion -->
+  <circle cx="400" cy="95" r="28" fill="none" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.3"/>
+  <circle cx="400" cy="95" r="18" fill="none" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.25"/>
+  <circle cx="400" cy="95" r="5" fill="#c8a56a" fill-opacity="0.25"/>
+  <!-- Chandelier spokes -->
+  <g stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.25">
+    <line x1="400" y1="67" x2="400" y2="77"/>
+    <line x1="400" y1="113" x2="400" y2="123"/>
+    <line x1="372" y1="95" x2="382" y2="95"/>
+    <line x1="418" y1="95" x2="428" y2="95"/>
+    <line x1="380" y1="75" x2="386" y2="81"/>
+    <line x1="414" y1="109" x2="420" y2="115"/>
+    <line x1="420" y1="75" x2="414" y2="81"/>
+    <line x1="386" y1="109" x2="380" y2="115"/>
+  </g>
+  <!-- Pendant drop -->
+  <line x1="400" y1="55" x2="400" y2="67" stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.4"/>
+
+  <!-- Ceiling rail lines (perspective) -->
+  <line x1="100" y1="145" x2="400" y2="95" stroke="#c8a56a" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="700" y1="145" x2="400" y2="95" stroke="#c8a56a" stroke-width="0.4" stroke-opacity="0.12"/>
+  <line x1="100" y1="145" x2="700" y2="145" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.18"/>
+
+  <!-- Hall side panels -->
+  <line x1="100" y1="145" x2="100" y2="352" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.18"/>
+  <line x1="700" y1="145" x2="700" y2="352" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.18"/>
+  <!-- Panel detail left -->
+  <rect x="104" y="175" width="30" height="80" rx="1" fill="none" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.2"/>
+  <rect x="104" y="275" width="30" height="60" rx="1" fill="none" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.2"/>
+  <!-- Panel detail right -->
+  <rect x="666" y="175" width="30" height="80" rx="1" fill="none" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.2"/>
+  <rect x="666" y="275" width="30" height="60" rx="1" fill="none" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.2"/>
+
+  <!-- === TEXT LABELS === -->
+  <line x1="270" y1="378" x2="530" y2="378" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.4"/>
+  <text x="400" y="392" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="13" font-weight="normal" letter-spacing="6"
+        fill="#c8a56a" fill-opacity="0.9">ORA WARSZAWA</text>
+  <text x="400" y="408" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="8.5" font-weight="normal" letter-spacing="4"
+        fill="#e8d5b0" fill-opacity="0.42">IZBA ADWOKACKA · WALNE ZGROMADZENIE</text>
+
+  <!-- Left decorative motif -->
+  <g stroke="#c8a56a" stroke-opacity="0.22" fill="none">
+    <line x1="80" y1="225" x2="90" y2="225" stroke-width="0.8"/>
+    <line x1="80" y1="215" x2="80" y2="235" stroke-width="0.8"/>
+    <circle cx="80" cy="225" r="16" stroke-width="0.5"/>
+  </g>
+  <!-- Right decorative motif -->
+  <g stroke="#c8a56a" stroke-opacity="0.22" fill="none">
+    <line x1="710" y1="225" x2="720" y2="225" stroke-width="0.8"/>
+    <line x1="720" y1="215" x2="720" y2="235" stroke-width="0.8"/>
+    <circle cx="720" cy="225" r="16" stroke-width="0.5"/>
+  </g>
+</svg>
