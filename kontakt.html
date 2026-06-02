@@ -148,6 +148,26 @@
         overflow: hidden;
         pointer-events: none;
     }
+
+    /* ===== FIELD VALIDATION ERRORS ===== */
+    .field-error {
+        display: block;
+        color: #b91c1c;
+        font-size: 12px;
+        font-family: var(--ff-body, 'Jost', sans-serif);
+        font-weight: 400;
+        margin-top: 5px;
+        line-height: 1.4;
+    }
+    .form-group input.has-error,
+    .form-group textarea.has-error,
+    .form-group select.has-error {
+        border-color: #b91c1c !important;
+        box-shadow: 0 0 0 3px rgba(185,28,28,.1) !important;
+    }
+    .checkbox-group.has-error .checkbox-label {
+        color: #b91c1c;
+    }
     </style>
 <body>
 
@@ -230,7 +250,7 @@
                         <p>Opisz swoją sprawę, a skontaktuję się z Tobą najszybciej jak to możliwe</p>
                     </div>
 
-                    <form action="wyslij.php" method="POST" class="contact-form" id="contactForm">
+                    <form action="wyslij.php" method="POST" class="contact-form" id="contactForm" novalidate>
                         
                         <!-- Imię i Nazwisko -->
                         <div class="form-group">
@@ -625,6 +645,70 @@
         successModal?.addEventListener('click', e => { if (e.target === successModal) closeModal(); });
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
+        // ===== FORM VALIDATION =====
+        function clearFieldErrors(form) {
+            form.querySelectorAll('.field-error').forEach(el => el.remove());
+            form.querySelectorAll('.has-error').forEach(el => el.classList.remove('has-error'));
+        }
+
+        function showFieldError(field, message) {
+            field.classList.add('has-error');
+            const err = document.createElement('span');
+            err.className = 'field-error';
+            err.textContent = message;
+            field.closest('.form-group').appendChild(err);
+        }
+
+        function validateContactForm(form) {
+            clearFieldErrors(form);
+            let firstInvalid = null;
+
+            const name     = form.querySelector('#name');
+            const email    = form.querySelector('#email');
+            const category = form.querySelector('#category');
+            const message  = form.querySelector('#message');
+            const rodo     = form.querySelector('input[name="rodo"]');
+
+            if (!name.value.trim()) {
+                showFieldError(name, 'Proszę podać imię i nazwisko.');
+                firstInvalid = firstInvalid || name;
+            }
+
+            const emailVal = email.value.trim();
+            if (!emailVal) {
+                showFieldError(email, 'Proszę podać adres email.');
+                firstInvalid = firstInvalid || email;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+                showFieldError(email, 'Podaj prawidłowy adres email, np. jan@example.com.');
+                firstInvalid = firstInvalid || email;
+            }
+
+            if (!category.value) {
+                showFieldError(category, 'Proszę wybrać kategorię sprawy.');
+                firstInvalid = firstInvalid || category;
+            }
+
+            if (!message.value.trim()) {
+                showFieldError(message, 'Proszę opisać swoją sprawę.');
+                firstInvalid = firstInvalid || message;
+            }
+
+            if (!rodo.checked) {
+                rodo.closest('.form-group').classList.add('has-error');
+                const err = document.createElement('span');
+                err.className = 'field-error';
+                err.textContent = 'Zgoda na przetwarzanie danych osobowych jest wymagana.';
+                rodo.closest('.form-group').appendChild(err);
+                firstInvalid = firstInvalid || rodo;
+            }
+
+            if (firstInvalid) {
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return false;
+            }
+            return true;
+        }
+
         // ===== FORM SUBMISSION =====
         const contactForm = document.getElementById('contactForm');
         const formError   = document.getElementById('formError');
@@ -632,6 +716,8 @@
         if (contactForm) {
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
+
+                if (!validateContactForm(contactForm)) return;
 
                 const submitBtn  = contactForm.querySelector('button[type="submit"]');
                 const btnText    = submitBtn.querySelector('.btn-text');
@@ -651,12 +737,16 @@
 
                     if (data.ok) {
                         contactForm.reset();
+                        clearFieldErrors(contactForm);
                         openModal();
                     } else {
+                        const msg = data.error || 'Wystąpił błąd. Spróbuj ponownie lub napisz bezpośrednio na adres email.';
+                        formError.textContent = msg;
                         formError.style.display = 'block';
                         formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                 } catch {
+                    formError.innerHTML = 'Nie udało się wysłać wiadomości. Napisz bezpośrednio na: <a href="mailto:kamila.sadlowicz@kancelaria-sadlowicz.pl">kamila.sadlowicz@kancelaria-sadlowicz.pl</a>';
                     formError.style.display = 'block';
                     formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } finally {
@@ -664,6 +754,20 @@
                     btnLoading.style.display = 'none';
                     submitBtn.disabled       = false;
                 }
+            });
+
+            // Clear per-field error on input change
+            contactForm.querySelectorAll('input, textarea, select').forEach(field => {
+                field.addEventListener('input', () => {
+                    field.classList.remove('has-error');
+                    const err = field.closest('.form-group')?.querySelector('.field-error');
+                    if (err) err.remove();
+                });
+                field.addEventListener('change', () => {
+                    field.classList.remove('has-error');
+                    const err = field.closest('.form-group')?.querySelector('.field-error');
+                    if (err) err.remove();
+                });
             });
         }
 
