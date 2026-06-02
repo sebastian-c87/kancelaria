@@ -759,11 +759,11 @@
 }
 
 .spec-detail {
-    padding: 72px 0;
+    padding: 96px 0;
     border-bottom: 1px solid rgba(13,36,56,.07);
 }
 .spec-detail-alt {
-    padding: 72px 0;
+    padding: 96px 0;
     background: var(--ivory);
     border-bottom: 1px solid rgba(13,36,56,.07);
 }
@@ -773,13 +773,14 @@
     border-bottom: none;
 }
 .spec-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    gap: 80px;
+    align-items: start;
 }
-.spec-layout.reverse { /* no-op – order handled by flex order */ }
-.spec-layout.reverse .spec-content { order: 1; }
-.spec-layout.reverse .spec-image   { order: -1; }
+.spec-detail-alt .spec-layout {
+    grid-template-columns: 440px 1fr;
+}
 .spec-icon-large {
     width: 56px;
     height: 56px;
@@ -793,7 +794,18 @@
     font-weight: 400;
     color: var(--navy);
     line-height: 1.15;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 22px;
+    position: relative;
+}
+.spec-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
 }
 .spec-detail-bg .spec-content h2 { color: var(--white); }
 .spec-lead {
@@ -849,6 +861,9 @@
     border-left: 3px solid var(--gold);
     padding: 20px 24px;
 }
+.spec-detail-alt .spec-examples {
+    background: var(--white);
+}
 .spec-detail-bg .spec-examples {
     background: rgba(255,255,255,.05);
     border-color: var(--gold);
@@ -878,28 +893,32 @@
     margin-top: 28px;
 }
 .spec-image {
-    order: -1;
-    width: 100%;
-    height: 300px;
+    position: sticky;
+    top: 130px;
+    height: calc(100vh - 200px);
+    max-height: 580px;
+    min-height: 400px;
     overflow: hidden;
-    margin-bottom: 44px;
-    position: relative;
-    flex-shrink: 0;
+    border-radius: 2px;
+    box-shadow: 0 20px 60px rgba(13,36,56,.16), 0 4px 16px rgba(13,36,56,.08);
 }
 .spec-image::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 50%, rgba(13,36,56,.18) 100%);
+    background: linear-gradient(170deg, transparent 55%, rgba(13,36,56,.22) 100%);
     pointer-events: none;
 }
 .spec-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 25%;
     display: block;
-    filter: none;
+    transition: transform 6s ease;
+}
+.spec-image:hover img {
+    transform: scale(1.04);
 }
 
 /* ============= CONTACT FORM ============= */
@@ -1654,10 +1673,18 @@
 /* ============= RESPONSIVE SUBPAGES ============= */
 @media (max-width: 1024px) {
     .intro-with-image { grid-template-columns: 1fr; }
-    .spec-layout      { grid-template-columns: 1fr; }
-    .spec-layout.reverse { grid-template-columns: 1fr; }
-    .spec-layout.reverse .spec-content { order: 1; }
-    .spec-layout.reverse .spec-image   { order: 2; }
+    .spec-layout,
+    .spec-detail-alt .spec-layout { grid-template-columns: 1fr; gap: 0; }
+    .spec-image {
+        position: relative;
+        top: auto;
+        height: 300px;
+        max-height: 300px;
+        min-height: 220px;
+        box-shadow: 0 8px 28px rgba(13,36,56,.1);
+        order: -1;
+        margin-bottom: 40px;
+    }
     .contact-grid     { grid-template-columns: 1fr; }
     .contact-info-grid { grid-template-columns: repeat(2, 1fr); }
 }
