@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>FAQ — Najczęstsze Pytania do Adwokata | Kamila Sadłowicz Warszawa</title>
     <meta name="description" content="Odpowiedzi na najczęstsze pytania: ile kosztuje adwokat, jak wygląda pierwsza konsultacja, jakie dokumenty przygotować, czy można spotkać się online. Adwokat Kamila Sadłowicz, Warszawa.">
     <link rel="canonical" href="https://kancelaria-sadlowicz.pl/faq.html">
@@ -121,6 +122,7 @@
             </a>
         </div>
         <ul class="nav-menu" id="navMenu">
+            <li class="nav-close-item"><button class="nav-close" id="navClose" aria-label="Zamknij menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></li>
             <li><a href="index.html">Start</a></li>
             <li><a href="oferta.html">Oferta i Cennik</a></li>
             <li><a href="specjalizacje.html">Specjalizacje</a></li>
@@ -1376,23 +1378,7 @@
             navbar.classList.toggle('scrolled', window.scrollY > 40);
         }, { passive: true });
 
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-
-        if (hamburger) {
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('open');
-                navMenu.classList.toggle('open');
-            });
-        }
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                navMenu.classList.remove('open');
-            });
-        });
+        // hamburger handled by custom.js
 
         // ===== REVEAL ANIMATIONS =====
         const observer = new IntersectionObserver((entries) => {

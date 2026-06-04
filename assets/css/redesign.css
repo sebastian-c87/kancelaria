@@ -1131,6 +1131,10 @@ ul { list-style: none; }
     .nav-menu li a:hover, .nav-menu li a.active { color: var(--gold); }
     .nav-menu li a::after { background: var(--gold); }
     .nav-cta { background: var(--gold) !important; color: var(--navy) !important; margin-top: 16px !important; }
+    /* Close (X) button inside mobile menu */
+    .nav-close-item { position: absolute; top: 20px; right: 20px; list-style: none; padding: 0 !important; }
+    .nav-close { background: none; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; width: 36px; height: 36px; cursor: pointer; color: rgba(255,255,255,.7); display: flex; align-items: center; justify-content: center; transition: color .2s, border-color .2s; }
+    .nav-close:hover { color: var(--gold); border-color: var(--gold); }
     .hamburger { display: flex; z-index: 1000; }
     .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
     .hamburger.open span:nth-child(2) { opacity: 0; }

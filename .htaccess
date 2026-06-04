@@ -1,0 +1,42 @@
+# ============================================================
+# Kancelaria Adwokacka Kamila Sadłowicz — .htaccess
+# ============================================================
+
+# Force HTTPS (301 permanent redirect)
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Disable directory listing (nikt nie zobaczy listy plików w folderach)
+Options -Indexes
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Browser caching (szybsze ładowanie przy ponownych wizytach)
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg          "access plus 1 year"
+    ExpiresByType image/png           "access plus 1 year"
+    ExpiresByType image/svg+xml       "access plus 1 year"
+    ExpiresByType image/x-icon        "access plus 1 year"
+    ExpiresByType text/css            "access plus 3 months"
+    ExpiresByType application/javascript "access plus 3 months"
+    ExpiresByType text/html           "access plus 0 seconds"
+</IfModule>
+
+# Gzip compression (mniejsze pliki = szybsze ładowanie)
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript text/xml application/xml
+</IfModule>
+
+# Protect sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

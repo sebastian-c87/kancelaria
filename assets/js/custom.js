@@ -6,21 +6,34 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // --- MOBILE MENU TOGGLE ---
     const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    
+    const navMenu   = document.getElementById('navMenu');
+    const navClose  = document.getElementById('navClose');
+
+    function closeMenu() {
+        navMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+    }
+
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('open');
+            hamburger.classList.toggle('open');
         });
 
+        if (navClose) {
+            navClose.addEventListener('click', closeMenu);
+        }
+
         // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                closeMenu();
+            }
         });
     }
 
