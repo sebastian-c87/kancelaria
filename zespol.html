@@ -510,6 +510,32 @@
         font-size: .9rem;
     }
 
+    /* ---- HORIZONTAL MEMBER CARD (solo — dopóki jedna osoba) ---- */
+    .member-card--horizontal {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        max-width: 760px;
+        margin-top: 56px;
+        border-top: 3px solid var(--gold);
+        box-shadow: 0 4px 28px rgba(13,36,56,.08);
+        overflow: hidden;
+        background: var(--white);
+        transition: box-shadow .25s, transform .25s;
+    }
+    .member-card--horizontal:hover {
+        box-shadow: 0 12px 40px rgba(13,36,56,.14);
+        transform: translateY(-2px);
+    }
+    .member-card--horizontal .member-card-photo {
+        overflow: hidden;
+        position: relative;
+    }
+    .member-card--horizontal .member-photo-placeholder {
+        aspect-ratio: unset;
+        height: 100%;
+        min-height: 340px;
+    }
+
     /* ---- RESPONSIVE ---- */
     @media (max-width: 960px) {
         .team-featured-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -529,6 +555,13 @@
         .collab-areas { grid-template-columns: 1fr; }
         .team-contact-row { gap: 16px; }
         .team-featured-inner { margin-top: 32px; }
+        .member-card--horizontal {
+            grid-template-columns: 1fr;
+            max-width: 420px;
+        }
+        .member-card--horizontal .member-photo-placeholder {
+            min-height: 240px;
+        }
     }
     </style>
 </head>
@@ -636,11 +669,15 @@
                     Prawo to nie tylko zawód — to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.
                 </p>
 
-                <p class="placeholder-text">[TU WSTAW: Akapit o sobie — skąd pochodzi Pani pasja do prawa, co motywuje w pracy, jaki jest Pani styl pracy z klientem]</p>
-
-                <p class="placeholder-text" style="margin-top: 12px;">[TU WSTAW: Akapit o doświadczeniu — rodzaje spraw, typ klientów, czym wyróżnia się Pani kancelaria]</p>
-
-                <p class="placeholder-text" style="margin-top: 12px;">[TU WSTAW: Akapit osobisty — zainteresowania, wartości zawodowe, co sprawia że jest Pani blisko klientów]</p>
+                <p>
+                    Wybór prawa był dla mnie decyzją przemyślaną — ale dopiero socjologia, którą studiowałam równolegle na SGGW, nauczyła mnie naprawdę słuchać. Rozumieć nie tylko przepis, ale człowieka stojącego za sprawą. Interdyscyplinarne wykształcenie (Prawo na Uniwersytecie SWPS i Socjologia na SGGW) pozwala mi łączyć precyzję prawniczą z komunikacją, która daje klientowi poczucie, że jest rozumiany — nie tylko reprezentowany.
+                </p>
+                <p>
+                    Przez ponad 12 lat pracy na styku prawa i biznesu — od asystenta prawnego, przez aplikację adwokacką w kancelarii Jerschina-Fus, Radtke-Cichocka w Warszawie, po własną praktykę — zbudowałam doświadczenie, którego nie zastąpi żaden kurs. Prowadzę aktywny referat 150–200 spraw rocznie, reprezentując spółki, przedsiębiorców i klientów indywidualnych przed sądami wszystkich instancji. W windykacji należności osiągam ok. 80% skuteczności.
+                </p>
+                <p>
+                    Cenię przejrzystość. Klient powinien rozumieć swoją sytuację prawną — nie tylko jej skutki, ale też strategię działania i realne szanse. Dlatego zamiast prawniczego żargonu daję konkretne opcje i uczciwą ocenę ryzyka. To podejście wypracowałam przez lata doradztwa Zarządom spółek, gdzie nie ma miejsca na niedomówienia.
+                </p>
 
                 <div class="team-spec-tags">
                     <span class="team-spec-tag">Prawo Gospodarcze</span>
@@ -686,7 +723,7 @@
                 <div class="team-badge">
                     <strong>adw. Kamila Sadłowicz</strong>
                     <span>Okręgowa Rada Adwokacka w Warszawie</span>
-                    <span class="team-badge-note">[Nr wpisu na listę adwokatów]</span>
+                    <span class="team-badge-note">Nr wpisu: WAW/ADW/9453</span>
                 </div>
             </div>
 
@@ -699,20 +736,20 @@
     <div class="container">
         <div class="team-stats-grid">
             <div class="team-stat">
-                <span class="team-stat-number">[X]+</span>
+                <span class="team-stat-number">12+</span>
                 <span class="team-stat-label">lat doświadczenia</span>
             </div>
             <div class="team-stat">
-                <span class="team-stat-number">[X]+</span>
-                <span class="team-stat-label">prowadzonych spraw</span>
+                <span class="team-stat-number">200</span>
+                <span class="team-stat-label">spraw rocznie</span>
             </div>
             <div class="team-stat">
-                <span class="team-stat-number">[X]%</span>
-                <span class="team-stat-label">spraw zakończonych sukcesem</span>
+                <span class="team-stat-number">~80%</span>
+                <span class="team-stat-label">skuteczności w windykacji</span>
             </div>
             <div class="team-stat">
-                <span class="team-stat-number">[X]+</span>
-                <span class="team-stat-label">zadowolonych klientów</span>
+                <span class="team-stat-number">500+</span>
+                <span class="team-stat-label">klientów obsłużonych</span>
             </div>
         </div>
     </div>
@@ -772,42 +809,39 @@
             Kancelaria współpracuje z adwokatami o uzupełniających się specjalizacjach. Każdy z nich wnosi do kancelarii własne doświadczenie i ekspertyzę, dzięki czemu możemy zapewnić klientom wsparcie prawne na najwyższym poziomie.
         </p>
 
-        <div class="team-cards-grid">
-
-            <!-- ── MARCIN — OF COUNSEL ── -->
-            <div class="member-card reveal">
-                <div class="member-card-photo">
-                    <div class="member-photo-placeholder">
-                        <span class="member-initials">M</span>
-                        <span class="member-photo-note">Zdjęcie zostanie dodane</span>
-                    </div>
-                </div>
-                <div class="member-card-body">
-                    <span class="member-of-counsel-tag">Of Counsel</span>
-                    <h3 class="member-card-name">adw. Marcin <span style="color: var(--text-muted); font-size: 1rem; font-weight: 300;">[Nazwisko]</span></h3>
-                    <p class="member-card-title">Adwokat · Of Counsel</p>
-                    <p class="member-card-bio placeholder-text">[TU WSTAW: Krótki opis Marcina — doświadczenie, podejście do pracy, specjalizacja. 2–3 zdania.]</p>
-                    <ul class="member-card-specs">
-                        <li class="placeholder-text">[Specjalizacja 1 — np. Prawo cywilne]</li>
-                        <li class="placeholder-text">[Specjalizacja 2 — np. Prawo nieruchomości]</li>
-                        <li class="placeholder-text">[Specjalizacja 3 — np. Prawo gospodarcze]</li>
-                    </ul>
-                    <div class="member-card-footer">
-                        <a href="mailto:[email]@kancelaria-sadlowicz.pl" class="member-card-email">
-                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            [email]@kancelaria-sadlowicz.pl
-                        </a>
-                    </div>
+        <!-- Pozioma karta (solo). Gdy dojdą kolejne osoby: usuń .member-card--horizontal,
+             opakuj wszystkie karty w <div class="team-cards-grid"> i użyj .member-card -->
+        <div class="member-card--horizontal reveal">
+            <div class="member-card-photo">
+                <div class="member-photo-placeholder">
+                    <span class="member-initials">M</span>
+                    <span class="member-photo-note">Zdjęcie zostanie dodane</span>
                 </div>
             </div>
-
-            <!-- ── MOŻLIWOŚĆ DODANIA KOLEJNYCH OSÓB ──
-                 Aby dodać nowego adwokata, skopiuj blok .member-card powyżej
-                 i wstaw odpowiednie dane. Siatka (.team-cards-grid) automatycznie
-                 dostosuje liczbę kolumn dzięki auto-fill + minmax(300px, 380px).
-            -->
-
+            <div class="member-card-body">
+                <span class="member-of-counsel-tag">Of Counsel</span>
+                <h3 class="member-card-name">adw. Marcin <span style="color: var(--text-muted); font-size: 1rem; font-weight: 300;">[Nazwisko]</span></h3>
+                <p class="member-card-title">Adwokat · Of Counsel</p>
+                <p class="member-card-bio placeholder-text">[TU WSTAW: Krótki opis Marcina — doświadczenie, podejście do pracy, specjalizacja. 2–3 zdania.]</p>
+                <ul class="member-card-specs">
+                    <li class="placeholder-text">[Specjalizacja 1 — np. Prawo cywilne]</li>
+                    <li class="placeholder-text">[Specjalizacja 2 — np. Prawo nieruchomości]</li>
+                    <li class="placeholder-text">[Specjalizacja 3 — np. Prawo gospodarcze]</li>
+                </ul>
+                <div class="member-card-footer">
+                    <a href="mailto:[email]@kancelaria-sadlowicz.pl" class="member-card-email">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        [email]@kancelaria-sadlowicz.pl
+                    </a>
+                </div>
+            </div>
         </div>
+
+        <!-- ── MOŻLIWOŚĆ DODANIA KOLEJNYCH OSÓB ──
+             Aby dodać nowego adwokata: usuń .member-card--horizontal powyżej,
+             opakuj wszystkie karty w <div class="team-cards-grid"> i użyj .member-card.
+             Siatka automatycznie dostosuje liczbę kolumn dzięki auto-fill + minmax(300px, 380px).
+        -->
     </div>
 </section>
 
