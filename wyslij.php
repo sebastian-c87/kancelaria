@@ -6,19 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit(json_encode(['ok' => false]));
 }
 
-// --- Diagnostyka: log każdego żądania na samym wejściu (usuń po naprawie) ---
-$hp = $_POST['website'] ?? '';
-$dbg = date('Y-m-d H:i:s')
-     . ' | pola: ' . implode(',', array_keys($_POST))
-     . ' | honeypot="' . $hp . '"'
-     . "\n";
-@file_put_contents(__DIR__ . '/mail_log.txt', $dbg, FILE_APPEND | LOCK_EX);
-
 // --- Honeypot ---
-// Uwaga: pole "website" bywa wypełniane przez autouzupełnianie przeglądarki,
-// dlatego za bota uznajemy tylko wartość wyglądającą jak URL bota.
+// Odrzucamy tylko wartości wyglądające jak URL (autofill przeglądarki wpisuje tu adres strony)
 if (!empty($_POST['website']) && preg_match('~https?://|www\.~i', $_POST['website'])) {
-    @file_put_contents(__DIR__ . '/mail_log.txt', "  -> ODRZUCONO jako bot (honeypot)\n", FILE_APPEND | LOCK_EX);
     exit(json_encode(['ok' => true]));
 }
 
@@ -196,10 +186,6 @@ $result = smtp_send(
     $subject,
     $body
 );
-
-// Zapis logu do pliku (usuń po potwierdzeniu działania)
-$log_line = date('Y-m-d H:i:s') . ' | ' . ($result['ok'] ? 'OK' : 'FAIL') . ' | ' . ($result['error'] ?? '') . ' | od: ' . $email . "\n";
-file_put_contents(__DIR__ . '/mail_log.txt', $log_line, FILE_APPEND | LOCK_EX);
 
 if ($result['ok']) {
     exit(json_encode(['ok' => true]));

@@ -36,7 +36,7 @@ Options -Indexes
 </IfModule>
 
 # Protect sensitive files
-<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql)$">
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|txt)$">
     Order Allow,Deny
     Deny from all
 </FilesMatch>
