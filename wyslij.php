@@ -6,8 +6,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit(json_encode(['ok' => false]));
 }
 
+// --- Diagnostyka: log każdego żądania na samym wejściu (usuń po naprawie) ---
+$hp = $_POST['website'] ?? '';
+$dbg = date('Y-m-d H:i:s')
+     . ' | pola: ' . implode(',', array_keys($_POST))
+     . ' | honeypot="' . $hp . '"'
+     . "\n";
+@file_put_contents(__DIR__ . '/mail_log.txt', $dbg, FILE_APPEND | LOCK_EX);
+
 // --- Honeypot ---
-if (!empty($_POST['website'])) {
+// Uwaga: pole "website" bywa wypełniane przez autouzupełnianie przeglądarki,
+// dlatego za bota uznajemy tylko wartość wyglądającą jak URL bota.
+if (!empty($_POST['website']) && preg_match('~https?://|www\.~i', $_POST['website'])) {
+    @file_put_contents(__DIR__ . '/mail_log.txt', "  -> ODRZUCONO jako bot (honeypot)\n", FILE_APPEND | LOCK_EX);
     exit(json_encode(['ok' => true]));
 }
 
