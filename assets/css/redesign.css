@@ -403,6 +403,30 @@ ul { list-style: none; }
     cursor: pointer;
 }
 .btn-navy:hover { background: var(--navy); color: var(--white); }
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-family: var(--ff-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .25s, color .25s, border-color .25s, transform .15s;
+    border: 1.5px solid transparent;
+}
+.btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--navy);
+}
+.btn-outline:hover {
+    background: var(--navy);
+    color: var(--white);
+    transform: translateY(-1px);
+}
 
 /* ============= SECTION COMMON ============= */
 .section {
