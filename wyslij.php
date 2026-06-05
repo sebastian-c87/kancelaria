@@ -79,7 +79,7 @@ $body .= "Data: " . date('d.m.Y H:i') . "  |  IP: " . ($_SERVER['REMOTE_ADDR'] ?
 // --- Nagłówki —
 // From:     adres kancelarii (serwer wysyła ze swojej domeny → SPF OK)
 // Reply-To: email klienta    (kliknięcie "Odpowiedz" w kliencie pocztowym trafi do klienta)
-$headers  = "From: \"Kancelaria Sadlowicz\" <kamila.sadlowicz@kancelaria-sadlowicz.pl>\r\n";
+$headers  = "From: \"Kancelaria Sadlowicz\" <kontakt@kancelaria-sadlowicz.pl>\r\n";
 $headers .= "Reply-To: {$email}\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
