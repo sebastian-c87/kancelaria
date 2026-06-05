@@ -90,6 +90,26 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
+    // --- POLISH ORPHAN PREVENTION (sieroty) ---
+    // Adds non-breaking space after single-letter Polish prepositions/conjunctions
+    // so they never stay alone at the end of a line.
+    (function() {
+        var SKIP = new Set(['SCRIPT','STYLE','PRE','CODE','TEXTAREA','INPUT','SELECT','BUTTON']);
+        var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode: function(n) {
+                return SKIP.has(n.parentElement && n.parentElement.tagName)
+                    ? NodeFilter.FILTER_REJECT
+                    : NodeFilter.FILTER_ACCEPT;
+            }
+        });
+        var nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(function(n) {
+            var fixed = n.nodeValue.replace(/(^|[\s,;:!?([])([wziaoueWZIAOUE]) /g, '$1$2 ');
+            if (fixed !== n.nodeValue) n.nodeValue = fixed;
+        });
+    })();
+
     // --- FORM VALIDATION (for future contact form) ---
     const contactForm = document.querySelector('#contactForm');
     if (contactForm) {

@@ -11,7 +11,7 @@
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="Adwokat Kamila Sadłowicz">
     <meta property="og:title" content="Specjalizacje | Prawo Rodzinne, Karne, Gospodarcze | Adwokat Warszawa">
-    <meta property="og:description" content="Kancelaria adwokacka Warszawa — prawo rodzinne, karne, cywilne, gospodarcze, windykacja, prawo pracy. Adwokat Kamila Sadłowicz.">
+    <meta property="og:description" content="Kancelaria adwokacka Warszawa – prawo rodzinne, karne, cywilne, gospodarcze, windykacja, prawo pracy. Adwokat Kamila Sadłowicz.">
     <meta property="og:url" content="https://kancelaria-sadlowicz.pl/specjalizacje.html">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Specjalizacje | Adwokat Kamila Sadłowicz Warszawa">
@@ -54,7 +54,7 @@
     }
     </script>
 
-    <!-- Google Analytics 4 — zastąp G-XXXXXXXXXX swoim Measurement ID z analytics.google.com -->
+    <!-- Google Analytics 4 – zastąp G-XXXXXXXXXX swoim Measurement ID z analytics.google.com -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -744,5 +744,21 @@ if (scrollBtn) {
 }
 </script>
 <button class="scroll-to-top" aria-label="Przewiń do góry">↑</button>
+<script>
+(function(){
+    var S=new Set(['SCRIPT','STYLE','PRE','CODE','TEXTAREA','INPUT','SELECT','BUTTON']);
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+        acceptNode:function(n){
+            return S.has(n.parentElement&&n.parentElement.tagName)
+                ?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;
+        }
+    });
+    var ns=[];while(w.nextNode())ns.push(w.currentNode);
+    ns.forEach(function(n){
+        var f=n.nodeValue.replace(/(^|[\s,;:!?([])([wziaoueWZIAOUE]) /g,'$1$2 ');
+        if(f!==n.nodeValue)n.nodeValue=f;
+    });
+})();
+</script>
 </body>
 </html>

@@ -21,7 +21,7 @@
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Kontakt — Adwokat Kamila Sadłowicz",
+      "name": "Kontakt – Adwokat Kamila Sadłowicz",
       "url": "https://kancelaria-sadlowicz.pl/kontakt.html",
       "mainEntity": {
         "@type": "Attorney",
@@ -51,7 +51,7 @@
     }
     </script>
 
-    <!-- Google Analytics 4 — zastąp G-XXXXXXXXXX swoim Measurement ID z analytics.google.com -->
+    <!-- Google Analytics 4 – zastąp G-XXXXXXXXXX swoim Measurement ID z analytics.google.com -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -342,7 +342,7 @@
                             </label>
                         </div>
 
-                        <!-- Honeypot — schowane przed ludźmi, widoczne dla botów -->
+                        <!-- Honeypot – schowane przed ludźmi, widoczne dla botów -->
                         <div class="form-hp" aria-hidden="true">
                             <label for="website">Adres strony www</label>
                             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -504,7 +504,7 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         <h2 id="modalTitle">Wiadomość wysłana!</h2>
-        <p>Dziękuję za kontakt. Odpiszę w ciągu 24 godzin w&nbsp;dni robocze.<br>Jeśli sprawa jest pilna — zadzwoń na <a href="tel:+48790013287">+48 790 013 287</a>.</p>
+        <p>Dziękuję za kontakt. Odpiszę w ciągu 24 godzin w&nbsp;dni robocze.<br>Jeśli sprawa jest pilna – zadzwoń na <a href="tel:+48790013287">+48 790 013 287</a>.</p>
         <button class="btn-gold" id="modalClose">Zamknij</button>
         <div class="modal-progress"><div class="modal-progress-bar"></div></div>
     </div>
@@ -902,5 +902,21 @@
             });
         });
     </script>
+<script>
+(function(){
+    var S=new Set(['SCRIPT','STYLE','PRE','CODE','TEXTAREA','INPUT','SELECT','BUTTON']);
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+        acceptNode:function(n){
+            return S.has(n.parentElement&&n.parentElement.tagName)
+                ?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;
+        }
+    });
+    var ns=[];while(w.nextNode())ns.push(w.currentNode);
+    ns.forEach(function(n){
+        var f=n.nodeValue.replace(/(^|[\s,;:!?([])([wziaoueWZIAOUE]) /g,'$1$2 ');
+        if(f!==n.nodeValue)n.nodeValue=f;
+    });
+})();
+</script>
 </body>
 </html>
