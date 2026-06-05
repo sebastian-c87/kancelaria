@@ -328,7 +328,6 @@
             </a>
         </div>
         <ul class="nav-menu" id="navMenu">
-            <li class="nav-close-item"><button class="nav-close" id="navClose" aria-label="Zamknij menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></li>
             <li><a href="index.html">Start</a></li>
             <li><a href="oferta.html">Oferta i Cennik</a></li>
             <li><a href="specjalizacje.html">Specjalizacje</a></li>
@@ -644,7 +643,28 @@ window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// hamburger handled by custom.js
+// ===== MOBILE MENU =====
+const hamburger = document.getElementById('hamburger');
+const navMenu   = document.getElementById('navMenu');
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hamburger.classList.toggle('open');
+        navMenu.classList.toggle('open');
+    });
+    navMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            navMenu.classList.remove('open');
+        });
+    });
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            hamburger.classList.remove('open');
+            navMenu.classList.remove('open');
+        }
+    });
+}
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {

@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- MOBILE MENU TOGGLE ---
     const hamburger = document.getElementById('hamburger');
     const navMenu   = document.getElementById('navMenu');
-    const navClose  = document.getElementById('navClose');
 
     function closeMenu() {
         navMenu.classList.remove('open');
@@ -15,14 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
             navMenu.classList.toggle('open');
             hamburger.classList.toggle('open');
         });
-
-        if (navClose) {
-            navClose.addEventListener('click', closeMenu);
-        }
 
         // Close menu when clicking on a link
         navMenu.querySelectorAll('a').forEach(link => {
@@ -31,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
                 closeMenu();
             }
         });
