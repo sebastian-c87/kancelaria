@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#c8a56a"/>
-  <text x="16" y="23" text-anchor="middle"
+  <rect width="32" height="32" rx="4" fill="#0d2438"/>
+  <text x="16" y="16.5" text-anchor="middle" dominant-baseline="central"
         font-family="Georgia, 'Times New Roman', serif"
         font-size="14"
         font-weight="700"
-        fill="#0d2438"
+        fill="#c8a56a"
         letter-spacing="0.5">KS</text>
 </svg>
