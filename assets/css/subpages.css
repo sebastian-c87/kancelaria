@@ -1575,10 +1575,16 @@
 }
 .btn-outline {
     background: transparent;
-    color: var(--white);
-    border: 1px solid rgba(255,255,255,.3);
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+    font-weight: 600;
 }
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn-outline:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+    transform: translateY(-1px);
+}
 .btn-loading {
     opacity: .6;
     pointer-events: none;
