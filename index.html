@@ -26,7 +26,7 @@
       "url": "https://kancelaria-sadlowicz.pl",
       "telephone": "+48790013287",
       "email": "kamila.sadlowicz@kancelaria-sadlowicz.pl",
-      "description": "Kancelaria adwokacka w Warszawie świadcząca profesjonalną pomoc prawną w zakresie prawa rodzinnego, karnego, cywilnego, gospodarczego oraz windykacji należności.",
+      "description": "Kancelaria adwokacka w Warszawie — profesjonalna pomoc prawna w sprawach rodzinnych, karnych, cywilnych, gospodarczych oraz windykacji. Obsługa online i mobilna, szybki kontakt 24/7, konsultacje przez telefon i wideokonferencję.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "ul. Arbuzowa 12",
@@ -40,16 +40,49 @@
         "latitude": 52.1503,
         "longitude": 21.0628
       },
-      "areaServed": {
-        "@type": "City",
-        "name": "Warszawa"
-      },
+      "areaServed": [
+        {"@type": "City", "name": "Warszawa"},
+        {"@type": "Country", "name": "Polska"}
+      ],
       "priceRange": "$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "09:00",
-        "closes": "17:00"
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "09:00",
+          "closes": "15:00"
+        }
+      ],
+      "availableChannel": [
+        {
+          "@type": "ServiceChannel",
+          "serviceType": "Konsultacja telefoniczna",
+          "availableLanguage": "pl",
+          "servicePhone": {"@type": "ContactPoint", "telephone": "+48790013287", "contactType": "customer service", "availableLanguage": "Polish", "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}}
+        },
+        {
+          "@type": "ServiceChannel",
+          "serviceType": "Obsługa online",
+          "availableLanguage": "pl",
+          "serviceUrl": "https://kancelaria-sadlowicz.pl/kontakt.html"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Usługi prawne online i stacjonarnie",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Konsultacja prawna online", "description": "Konsultacja przez telefon lub wideokonferencję — bez wychodzenia z domu"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Obsługa prawna firm", "description": "Stała obsługa prawna przedsiębiorców i spółek"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Windykacja należności", "description": "Skuteczna windykacja długów — ok. 80% skuteczności"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Prawo rodzinne", "description": "Rozwody, alimenty, podział majątku, władza rodzicielska"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Prawo karne", "description": "Obrona w postępowaniu karnym i karno-skarbowym"}}
+        ]
       }
     }
     </script>
