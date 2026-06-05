@@ -186,6 +186,10 @@ $result = smtp_send(
     $body
 );
 
+// Zapis logu do pliku (usuń po potwierdzeniu działania)
+$log_line = date('Y-m-d H:i:s') . ' | ' . ($result['ok'] ? 'OK' : 'FAIL') . ' | ' . ($result['error'] ?? '') . ' | od: ' . $email . "\n";
+file_put_contents(__DIR__ . '/mail_log.txt', $log_line, FILE_APPEND | LOCK_EX);
+
 if ($result['ok']) {
     exit(json_encode(['ok' => true]));
 } else {
