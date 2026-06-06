@@ -1724,3 +1724,17 @@
     .reaction-btn     { padding: 6px 10px; font-size: 11px; }
     .faq-stats        { gap: 20px; }
 }
+
+/* ============= H4 ICON LABELS ============= */
+.h4-icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    opacity: .85;
+    line-height: 1;
+}
+h4:has(.h4-icon) {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
