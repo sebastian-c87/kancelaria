@@ -25,7 +25,7 @@
 
     <main>
         <!-- Intro -->
-        <section class="content-section">
+        <section class="content-section" style="padding-bottom: 0;">
             <div class="container">
                 <div class="intro-box">
                     <p class="lead-text">
@@ -42,7 +42,7 @@
         </section>
 
         <!-- 1. Konsultacje -->
-        <section class="content-section">
+        <section class="content-section" style="padding-top: 40px;">
             <div class="container">
                 <h2>Konsultacje Prawne</h2>
                 

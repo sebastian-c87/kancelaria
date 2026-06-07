@@ -786,7 +786,18 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    padding-bottom: 20px;
     margin-bottom: 24px;
+    position: relative;
+}
+.spec-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 76px; /* 56px icon + 20px gap = start of text column */
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
 }
 .spec-icon-large {
     width: 56px;
@@ -797,6 +808,10 @@
 }
 .spec-heading h2 {
     margin-bottom: 0;
+    padding-bottom: 0;
+}
+.spec-heading h2::after {
+    display: none; /* gold line moved to .spec-heading::after */
 }
 .spec-detail-bg .spec-icon-large { color: var(--gold); }
 .spec-content h2 {
