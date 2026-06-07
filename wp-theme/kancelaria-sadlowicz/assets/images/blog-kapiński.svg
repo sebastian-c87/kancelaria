@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1e30;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d2438;stop-opacity:1" />
+    </linearGradient>
+    <!-- Gold radial glow behind gavel -->
+    <radialGradient id="glowGrad" cx="50%" cy="45%" r="35%">
+      <stop offset="0%" style="stop-color:#c8a56a;stop-opacity:0.18" />
+      <stop offset="100%" style="stop-color:#0d2438;stop-opacity:0" />
+    </radialGradient>
+    <!-- Column gradient -->
+    <linearGradient id="colGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a3a52;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#c8a56a;stop-opacity:0.35" />
+      <stop offset="100%" style="stop-color:#1a3a52;stop-opacity:1" />
+    </linearGradient>
+    <!-- Scales beam gradient -->
+    <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c8a56a;stop-opacity:0" />
+      <stop offset="30%" style="stop-color:#c8a56a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#c8a56a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8a56a;stop-opacity:0" />
+    </linearGradient>
+    <!-- Subtle noise texture filter -->
+    <filter id="subtleNoise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+      <feBlend in="SourceGraphic" in2="grayNoise" mode="overlay" result="blended"/>
+      <feComposite in="blended" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+
+  <!-- Subtle texture overlay -->
+  <rect width="800" height="450" fill="url(#glowGrad)"/>
+
+  <!-- Decorative horizontal rule top -->
+  <line x1="60" y1="38" x2="740" y2="38" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Decorative horizontal rule bottom -->
+  <line x1="60" y1="412" x2="740" y2="412" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Corner ornaments -->
+  <g stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.5" fill="none">
+    <polyline points="60,52 60,38 76,38"/>
+    <polyline points="724,38 740,38 740,52"/>
+    <polyline points="60,398 60,412 76,412"/>
+    <polyline points="724,412 740,412 740,398"/>
+  </g>
+
+  <!-- === ARCHITECTURE: Pediment / Frieze === -->
+  <!-- Pediment triangle -->
+  <polygon points="220,130 400,60 580,130" fill="none" stroke="#c8a56a" stroke-width="1.2" stroke-opacity="0.6"/>
+  <!-- Frieze bar -->
+  <rect x="205" y="130" width="390" height="22" fill="#0f2a3e" stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.5"/>
+  <!-- Frieze detail lines -->
+  <line x1="205" y1="136" x2="595" y2="136" stroke="#c8a56a" stroke-width="0.4" stroke-opacity="0.35"/>
+  <line x1="205" y1="147" x2="595" y2="147" stroke="#c8a56a" stroke-width="0.4" stroke-opacity="0.35"/>
+  <!-- Stylobate (base platform) -->
+  <rect x="195" y="330" width="410" height="10" fill="#0f2a3e" stroke="#c8a56a" stroke-width="0.7" stroke-opacity="0.5"/>
+  <rect x="185" y="340" width="430" height="12" fill="#0f2a3e" stroke="#c8a56a" stroke-width="0.7" stroke-opacity="0.45"/>
+  <rect x="175" y="352" width="450" height="10" fill="#122d42" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.4"/>
+
+  <!-- === COLUMNS (7 columns) === -->
+  <!-- Column x positions: 220, 263, 306, 349(center), 392, 435, 478 -->
+  <g fill="url(#colGrad)" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.4">
+    <!-- col 1 -->
+    <rect x="218" y="152" width="18" height="178"/>
+    <!-- Capital top -->
+    <rect x="213" y="149" width="28" height="6" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+    <!-- Base bottom -->
+    <rect x="213" y="330" width="28" height="5" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+
+    <!-- col 2 -->
+    <rect x="261" y="152" width="18" height="178"/>
+    <rect x="256" y="149" width="28" height="6" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+    <rect x="256" y="330" width="28" height="5" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+
+    <!-- col 3 -->
+    <rect x="304" y="152" width="18" height="178"/>
+    <rect x="299" y="149" width="28" height="6" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+    <rect x="299" y="330" width="28" height="5" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+
+    <!-- col 4 (center) -->
+    <rect x="391" y="152" width="18" height="178"/>
+    <rect x="386" y="149" width="28" height="6" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+    <rect x="386" y="330" width="28" height="5" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+
+    <!-- col 5 -->
+    <rect x="434" y="152" width="18" height="178"/>
+    <rect x="429" y="149" width="28" height="6" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+    <rect x="429" y="330" width="28" height="5" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+
+    <!-- col 6 -->
+    <rect x="477" y="152" width="18" height="178"/>
+    <rect x="472" y="149" width="28" height="6" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+    <rect x="472" y="330" width="28" height="5" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+
+    <!-- col 7 -->
+    <rect x="520" y="152" width="18" height="178"/>
+    <rect x="515" y="149" width="28" height="6" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+    <rect x="515" y="330" width="28" height="5" fill="#112b40" stroke="#c8a56a" stroke-width="0.6" stroke-opacity="0.55"/>
+  </g>
+
+  <!-- === SCALES OF JUSTICE (centered, overlaid) === -->
+  <!-- Central post -->
+  <line x1="400" y1="175" x2="400" y2="305" stroke="#c8a56a" stroke-width="2" stroke-opacity="0.9"/>
+  <!-- Top finial knob -->
+  <circle cx="400" cy="174" r="5" fill="#c8a56a" fill-opacity="0.9"/>
+  <!-- Fulcrum diamond -->
+  <polygon points="400,220 406,228 400,236 394,228" fill="#c8a56a" fill-opacity="0.85"/>
+  <!-- Base block -->
+  <rect x="391" y="300" width="18" height="8" rx="1" fill="#c8a56a" fill-opacity="0.75"/>
+
+  <!-- Balance beam -->
+  <line x1="320" y1="228" x2="480" y2="228" stroke="url(#goldLine)" stroke-width="1.8"/>
+
+  <!-- Left pan suspension -->
+  <line x1="320" y1="228" x2="310" y2="258" stroke="#c8a56a" stroke-width="1" stroke-opacity="0.75"/>
+  <line x1="310" y1="258" x2="298" y2="258" stroke="#c8a56a" stroke-width="1" stroke-opacity="0.75"/>
+  <line x1="322" y1="258" x2="298" y2="258" stroke="#c8a56a" stroke-width="1" stroke-opacity="0.75"/>
+  <!-- Left pan slight tilt up -->
+  <ellipse cx="310" cy="257" rx="22" ry="4" fill="none" stroke="#c8a56a" stroke-width="1.2" stroke-opacity="0.8"/>
+  <line x1="320" y1="228" x2="298" y2="255" stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.6"/>
+  <line x1="320" y1="228" x2="322" y2="255" stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.6"/>
+
+  <!-- Right pan suspension (slightly lower — unbalanced) -->
+  <line x1="480" y1="228" x2="492" y2="262" stroke="#c8a56a" stroke-width="1" stroke-opacity="0.75"/>
+  <line x1="492" y1="262" x2="478" y2="262" stroke="#c8a56a" stroke-width="1" stroke-opacity="0.75"/>
+  <line x1="502" y1="262" x2="478" y2="262" stroke="#c8a56a" stroke-width="1" stroke-opacity="0.75"/>
+  <ellipse cx="490" cy="261" rx="22" ry="4" fill="none" stroke="#c8a56a" stroke-width="1.2" stroke-opacity="0.8"/>
+  <line x1="480" y1="228" x2="478" y2="259" stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.6"/>
+  <line x1="480" y1="228" x2="502" y2="259" stroke="#c8a56a" stroke-width="0.8" stroke-opacity="0.6"/>
+
+  <!-- === STAR in pediment === -->
+  <polygon points="400,78 404,91 418,91 407,99 411,112 400,104 389,112 393,99 382,91 396,91"
+           fill="#c8a56a" fill-opacity="0.55" stroke="#c8a56a" stroke-width="0.5"/>
+
+  <!-- === TEXT LABELS === -->
+  <!-- Main label -->
+  <text x="400" y="388" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="13" font-weight="normal" letter-spacing="6"
+        fill="#c8a56a" fill-opacity="0.9">SĄD NAJWYŻSZY</text>
+
+  <!-- Sub label -->
+  <text x="400" y="406" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="8.5" font-weight="normal" letter-spacing="4"
+        fill="#e8d5b0" fill-opacity="0.45">I PREZES SĄDU NAJWYŻSZEGO</text>
+
+  <!-- Thin decorative line above label -->
+  <line x1="300" y1="378" x2="500" y2="378" stroke="#c8a56a" stroke-width="0.5" stroke-opacity="0.4"/>
+
+  <!-- Left decorative element -->
+  <g stroke="#c8a56a" stroke-opacity="0.25" fill="none">
+    <line x1="80" y1="225" x2="160" y2="225" stroke-width="0.6"/>
+    <line x1="80" y1="220" x2="80" y2="230" stroke-width="0.8"/>
+    <line x1="160" y1="220" x2="160" y2="230" stroke-width="0.8"/>
+    <circle cx="120" cy="225" r="12" stroke-width="0.5"/>
+    <line x1="110" y1="215" x2="130" y2="235" stroke-width="0.4"/>
+    <line x1="130" y1="215" x2="110" y2="235" stroke-width="0.4"/>
+  </g>
+
+  <!-- Right decorative element (mirror) -->
+  <g stroke="#c8a56a" stroke-opacity="0.25" fill="none">
+    <line x1="640" y1="225" x2="720" y2="225" stroke-width="0.6"/>
+    <line x1="640" y1="220" x2="640" y2="230" stroke-width="0.8"/>
+    <line x1="720" y1="220" x2="720" y2="230" stroke-width="0.8"/>
+    <circle cx="680" cy="225" r="12" stroke-width="0.5"/>
+    <line x1="670" y1="215" x2="690" y2="235" stroke-width="0.4"/>
+    <line x1="690" y1="215" x2="670" y2="235" stroke-width="0.4"/>
+  </g>
+</svg>

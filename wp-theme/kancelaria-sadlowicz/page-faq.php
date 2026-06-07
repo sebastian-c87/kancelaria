@@ -1,0 +1,1189 @@
+<?php get_header(); ?>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+    <div class="page-hero-diagonal"></div>
+    <div class="container">
+        <div class="page-hero-eyebrow">
+            <div class="page-hero-eyebrow-line"></div>
+            <span class="page-hero-eyebrow-text">Odpowiedzi na Twoje pytania</span>
+        </div>
+        <h1 class="page-hero-title">Najczęściej zadawane <em>pytania</em></h1>
+        <p class="page-hero-desc">Przejrzyste informacje o współpracy, kosztach i przebiegu postępowań. Brak ukrytych opłat.</p>
+        <div class="page-hero-actions">
+            <a href="<?php echo home_url('/kontakt/'); ?>" class="btn-gold">
+                Umów konsultację
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="<?php echo home_url('/oferta/'); ?>" class="btn-ghost">Zobacz cennik</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Intro Section with Image -->
+    <section class="faq-intro">
+        <div class="container">
+            <div class="intro-with-image">
+                <div class="intro-text">
+                    <h2>Odpowiadam na Twoje wątpliwości</h2>
+                    <p class="lead-paragraph">
+                        Zebrałam najczęstsze pytania, które zadają moi klienci przed rozpoczęciem współpracy. 
+                        Znajdziesz tu szczegółowe informacje o tym, jak wygląda współpraca z adwokatem, 
+                        jakie są koszty, jak przebiega proces prawny i co możesz ode mnie oczekiwać.
+                    </p>
+                    <p>
+                        Jeśli nie znajdziesz odpowiedzi na swoje pytanie – skontaktuj się bezpośrednio. 
+                        Chętnie wyjaśnię wszystkie wątpliwości podczas bezpłatnej konsultacji wstępnej.
+                    </p>
+                    <div class="faq-stats">
+                        <div class="faq-stat-item">
+                            <span class="faq-stat-number">31</span>
+                            <span class="faq-stat-label">Pytań FAQ</span>
+                        </div>
+                        <div class="faq-stat-item">
+                            <span class="faq-stat-number">&lt; 24h</span>
+                            <span class="faq-stat-label">Czas odpowiedzi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/40.png" alt="Konsultacja prawna - FAQ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Navigation (Category Menu) -->
+    <nav class="faq-sticky-nav" id="faqStickyNav">
+        <div class="container">
+            <div class="faq-nav-scroll">
+                <a href="#wspolpraca">Współpraca</a>
+                <a href="#koszty">Koszty</a>
+                <a href="#proces">Proces</a>
+                <a href="#dokumenty">Dokumenty</a>
+                <a href="#terminy">Terminy</a>
+                <a href="#specjalizacje">Specjalizacje</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         KATEGORIA 1: WSPÓŁPRACA I PIERWSZE KROKI
+         Tło: Białe
+         ======================================== -->
+    <section class="faq-category" id="wspolpraca">
+        <div class="container">
+            <div class="faq-category-header">
+                <h2>Współpraca i pierwsze kroki</h2>
+                <p>Wszystko, co musisz wiedzieć przed pierwszą konsultacją</p>
+            </div>
+
+            <div class="faq-accordion">
+                <!-- Pytanie 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jak wygląda pierwsza konsultacja?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Pierwsza konsultacja to spotkanie, podczas którego szczegółowo poznaję Twoją sytuację prawną i oczekiwania. Trwa zwykle 60-90 minut i obejmuje:
+                        </p>
+                        <ul>
+                            <li>Analiza Twojej sytuacji i problemów prawnych</li>
+                            <li>Przegląd posiadanych dokumentów</li>
+                            <li>Omówienie możliwych strategii działania</li>
+                            <li>Wstępna ocena szans powodzenia sprawy</li>
+                            <li>Przedstawienie kosztów i formy rozliczenia</li>
+                            <li>Odpowiedzi na wszystkie Twoje pytania</li>
+                        </ul>
+                        <p>
+                            Spotkanie może odbyć się osobiście w kancelarii w Warszawie lub online (wideokonferencja). Po konsultacji otrzymasz pisemną wycenę i propozycję współpracy.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy konsultacja może odbyć się online?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Tak, oferuję pełną obsługę online – konsultacje wideo, wymianę dokumentów przez email i reprezentację zdalną. Dzięki nowoczesnym narzędziom możesz skorzystać z moich usług bez konieczności osobistej wizyty w kancelarii.
+                        </p>
+                        <p>
+                            Konsultacje online przeprowadzam za pomocą bezpiecznych platform komunikacyjnych (Zoom, Google Meet, Microsoft Teams). Przed spotkaniem wystarczy, że przygotujesz dokumenty w formie skanów/zdjęć i prześlesz je emailem.
+                        </p>
+                        <p>
+                            <strong>Obsługa online jest szczególnie wygodna dla:</strong>
+                        </p>
+                        <ul>
+                            <li>Klientów spoza Warszawy</li>
+                            <li>Osób pracujących w systemie zmianowym</li>
+                            <li>Przedsiębiorców z napiętym grafikiem</li>
+                            <li>Osób z ograniczoną mobilnością</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pytanie 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jakie dokumenty przygotować na pierwsze spotkanie?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Aby konsultacja była maksymalnie efektywna, warto przygotować wszystkie dokumenty związane ze sprawą. Nie martw się, jeśli czegoś nie masz – omówimy to wspólnie i poradzimy, jak uzupełnić brakujące materiały.
+                        </p>
+                        <p><strong>Dokumenty podstawowe (w zależności od rodzaju sprawy):</strong></p>
+                        <ul>
+                            <li><strong>Sprawy cywilne:</strong> umowy, korespondencja, wezwania do zapłaty, dowody wpłat</li>
+                            <li><strong>Sprawy rodzinne:</strong> akt małżeństwa, akty urodzenia dzieci, dokumenty dotyczące majątku</li>
+                            <li><strong>Sprawy pracownicze:</strong> umowa o pracę, wypowiedzenie, korespondencja z pracodawcą</li>
+                            <li><strong>Windykacja:</strong> faktury, umowy, dowody wysyłki, korespondencja z dłużnikiem</li>
+                            <li><strong>Sprawy gospodarcze:</strong> dokumenty rejestrowe spółki, umowy handlowe, dokumentacja księgowa</li>
+                        </ul>
+                        <p>
+                            Wystarczą <strong>kopie/skany</strong> – oryginały będą potrzebne dopiero na etapie składania pozwu do sądu.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy mogę zrezygnować ze współpracy w każdym momencie?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Tak, możesz zrezygnować ze współpracy w dowolnym momencie. Umowa o świadczenie pomocy prawnej może być rozwiązana przez każdą ze stron z zachowaniem okresu wypowiedzenia (zazwyczaj 7-14 dni) lub za porozumieniem stron – natychmiast.
+                        </p>
+                        <p>
+                            W przypadku rezygnacji rozliczamy się tylko za faktycznie wykonaną pracę:
+                        </p>
+                        <ul>
+                            <li>Przepracowane godziny (przy stawce godzinowej)</li>
+                            <li>Proporcjonalnie do zaawansowania sprawy (przy ryczałcie)</li>
+                            <li>Proporcjonalnie do wykonanej pracy (przy success fee – rozliczenie za czynności przeprowadzone do dnia rezygnacji)</li>
+                        </ul>
+                        <p>
+                            Zasady rozliczenia w przypadku rezygnacji są zawsze jasno określone w umowie zawartej przed rozpoczęciem współpracy.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jak często będę informowany o postępach w sprawie?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Regularnie informuję klientów o każdym istotnym wydarzeniu w sprawie. Komunikacja to podstawa dobrej współpracy, dlatego:
+                        </p>
+                        <ul>
+                            <li><strong>Natychmiast</strong> informuję o: wpłynięciu korespondencji z sądu, terminie rozprawy, decyzjach sądu</li>
+                            <li><strong>Raz w miesiącu</strong> wysyłam raport o stanie sprawy (jeśli nie ma bieżących wydarzeń)</li>
+                            <li><strong>Na żądanie</strong> – możesz w każdej chwili skontaktować się i zapytać o status sprawy</li>
+                        </ul>
+                        <p>
+                            <strong>Formy komunikacji:</strong> email (główna forma), telefon (w pilnych sprawach), SMS/WhatsApp (krótkie informacje). Odpowiadam na emaile zazwyczaj w ciągu 24 godzin roboczych.
+                        </p>
+                        <p>
+                            Klienci abonamentowi (firmy z stałą obsługą prawną) mają priorytetowy kontakt i możliwość konsultacji telefonicznych bez dodatkowych opłat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         KATEGORIA 2: KOSZTY I ROZLICZENIA
+         Tło: 41.png
+         ======================================== -->
+    <section class="faq-category faq-category-bg" id="koszty">
+        <div class="container">
+            <div class="faq-category-header">
+                <h2>Koszty i rozliczenia</h2>
+                <p>Przejrzyste zasady współpracy finansowej</p>
+            </div>
+
+            <div class="faq-accordion">
+                <!-- Pytanie 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Ile kosztuje pierwsza konsultacja?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Pierwsza konsultacja prawna kosztuje <strong>od 350 zł</strong> i obejmuje:
+                        </p>
+                        <ul>
+                            <li>Szczegółową analizę Twojej sytuacji prawnej (60-90 min)</li>
+                            <li>Przegląd dokumentów i ocenę szans powodzenia</li>
+                            <li>Przedstawienie możliwych strategii działania</li>
+                            <li>Wstępną wycenę kosztów prowadzenia sprawy</li>
+                            <li>Odpowiedzi na wszystkie pytania</li>
+                        </ul>
+                        <p>
+                            <strong>Ważne:</strong> Jeśli zdecydujesz się na stałą współpracę (np. prowadzenie sprawy sądowej, windykację, abonament), koszt pierwszej konsultacji jest <strong>zaliczany na poczet wynagrodzenia</strong>.
+                        </p>
+                        <p>
+                            Konsultacja online (wideokonferencja) kosztuje tyle samo co spotkanie osobiste w kancelarii.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jakie są formy rozliczeń (stawka godzinowa, ryczałt, success fee)?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Oferuję elastyczne formy rozliczeń dostosowane do charakteru sprawy i Twoich możliwości finansowych:
+                        </p>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>1. Stawka godzinowa</h4>
+                        <p><strong>Kiedy:</strong> Sprawy o nieprzewidywalnym zakresie prac (np. skomplikowane spory gospodarcze, negocjacje długoterminowe)</p>
+                        <p><strong>Stawka:</strong> 300-500 zł netto/h (w zależności od złożoności)</p>
+                        <p><strong>Zalety:</strong> Płacisz tylko za faktycznie przepracowany czas</p>
+
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>2. Wynagrodzenie ryczałtowe</h4>
+                        <p><strong>Kiedy:</strong> Sprawy o jasno określonym zakresie (np. rozwód bez sporów majątkowych, pozew o zapłatę, umowa handlowa)</p>
+                        <p><strong>Kwota:</strong> Ustalana indywidualnie (np. 3.000-8.000 zł za kompletną obsługę sprawy)</p>
+                        <p><strong>Zalety:</strong> Znasz całkowity koszt z góry, bez niespodzianek</p>
+
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>3. Success fee (wynagrodzenie od rezultatu)</h4>
+                        <p><strong>Kiedy:</strong> Windykacja należności, sprawy odszkodowawcze</p>
+                        <p><strong>Wysokość:</strong> 3-15% od odzyskanej kwoty (% maleje wraz ze wzrostem wartości należności; + ewentualna minimalna stawka podstawowa)</p>
+                        <p><strong>Zalety:</strong> Minimalne ryzyko finansowe – płacisz tylko w przypadku sukcesu</p>
+
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>4. Abonament prawny (dla firm)</h4>
+                        <p><strong>Kiedy:</strong> Stała obsługa prawna przedsiębiorstwa</p>
+                        <p><strong>Kwota:</strong> Od 800 zł netto/mc</p>
+                        <p><strong>Zalety:</strong> Priorytetowy kontakt, bieżące wsparcie prawne, przewidywalny miesięczny koszt</p>
+
+                        <p><strong>Która forma jest dla mnie najlepsza?</strong> Omówimy to podczas pierwszej konsultacji i wybierzemy najkorzystniejsze rozwiązanie.</p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy mogę uzyskać wycenę przed rozpoczęciem współpracy?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Tak, zawsze otrzymujesz szczegółową wycenę przed rozpoczęciem współpracy. Po pierwszej konsultacji przygotowuję:
+                        </p>
+                        <ul>
+                            <li><strong>Pisemną wycenę</strong> – dokładny kosztorys obejmujący wynagrodzenie adwokata, opłaty sądowe i inne koszty</li>
+                            <li><strong>Zakres usług</strong> – precyzyjny opis tego, co obejmuje wynagrodzenie</li>
+                            <li><strong>Harmonogram płatności</strong> – kiedy i ile należy wpłacić (zaliczka, raty, płatność końcowa)</li>
+                            <li><strong>Warunki współpracy</strong> – zasady rozliczenia, komunikacji i ewentualnej rezygnacji</li>
+                        </ul>
+                        <p>
+                            Wycena jest <strong>bezpłatna</strong> i nie zobowiązuje Cię do współpracy – masz czas na przemyślenie decyzji. Jeśli wycena Ci nie odpowiada, możemy ją negocjować lub zaproponować inną formę rozliczenia.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy są jakieś ukryte koszty?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Nie – wszystkie koszty są transparentne i znane z góry.</strong> Przed rozpoczęciem współpracy przedstawiam pełny kosztorys obejmujący:
+                        </p>
+                        <ul>
+                            <li><strong>Wynagrodzenie adwokata</strong> (stawka godzinowa, ryczałt lub success fee)</li>
+                            <li><strong>Opłaty sądowe</strong> (wpis od pozwu, opłata skarbowa, koszty doręczeń)</li>
+                            <li><strong>Koszty dodatkowe</strong> (opinie biegłych, tłumaczenia, wyjazdy poza Warszawę – jeśli dotyczy)</li>
+                        </ul>
+                        <p>
+                            Jeśli w trakcie sprawy pojawią się <strong>nieprzewidziane koszty</strong> (np. konieczność opinii biegłego), zawsze informuję o tym wcześniej i uzyskuję Twoją zgodę.
+                        </p>
+                        <p>
+                            <strong>Opłaty sądowe</strong> możesz sprawdzić samodzielnie na stronie sądu lub w ustawie o kosztach sądowych w sprawach cywilnych. Zawsze wyjaśniam, ile i za co płacisz.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jak wygląda rozliczenie w przypadku windykacji należności?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            W sprawach windykacyjnych oferuję najczęściej <strong>success fee</strong> – wynagrodzenie uzależnione od skuteczności windykacji. Dzięki temu minimalizujesz ryzyko finansowe.
+                        </p>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>Model success fee:</h4>
+                        <ul>
+                            <li><strong>Prowizja:</strong> 3-15% od odzyskanej kwoty (% maleje wraz ze wzrostem wartości należności i zależy od stopnia skomplikowania)</li>
+                            <li><strong>Stawka podstawowa:</strong> 500-1.000 zł za podjęcie czynności (zaliczana na poczet prowizji po odzyskaniu należności)</li>
+                            <li><strong>Płatność:</strong> Dopiero po faktycznym odzyskaniu pieniędzy (nie przy wyroku, ale przy wpłacie od dłużnika)</li>
+                        </ul>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>Przykład:</h4>
+                        <p>
+                            Należność: 50.000 zł | Prowizja: 6% | Odzyskana kwota: 50.000 zł<br>
+                            <strong>Wynagrodzenie prowizyjne:</strong> 3.000 zł<br>
+                            <strong>Otrzymujesz netto:</strong> 47.000 zł
+                        </p>
+                        <p>
+                            <strong>Model ryczałtowy:</strong> Możliwy przy mniejszych należnościach (do 10.000 zł) – ustalona kwota 1.500-3.000 zł bez względu na rezultat.
+                        </p>
+                        <p>
+                            Razem wybieramy optymalny model rozliczenia podczas pierwszej konsultacji.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 6 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy można rozłożyć płatność na raty?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Tak, w uzasadnionych przypadkach można rozłożyć płatność na raty. Rozumiem, że sprawy prawne często pojawiają się niespodziewanie i mogą stanowić obciążenie finansowe.
+                        </p>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>Możliwości rozłożenia płatności:</h4>
+                        <ul>
+                            <li><strong>Zaliczka + raty miesięczne</strong> – np. 30% z góry, reszta w 3-6 ratach miesięcznych</li>
+                            <li><strong>Raty powiązane z etapami sprawy</strong> – np. 1. rata przy złożeniu pozwu, 2. rata przy pierwszej rozprawie, 3. rata przy wyroku</li>
+                            <li><strong>Odroczona płatność</strong> – w sprawach success fee (windykacja) płacisz dopiero po odzyskaniu pieniędzy</li>
+                        </ul>
+                        <p>
+                            Warunki rat ustalamy indywidualnie i zapisujemy w umowie o świadczenie pomocy prawnej. Nie naliczam odsetek ani dodatkowych opłat za rozłożenie płatności na raty.
+                        </p>
+                        <p>
+                            <strong>Ważne:</strong> Możliwość rat nie dotyczy opłat sądowych (te muszą być wpłacone jednorazowo przy składaniu pozwu).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         KATEGORIA 3: PRZEBIEG POSTĘPOWANIA
+         Tło: Białe
+         ======================================== -->
+    <section class="faq-category" id="proces">
+        <div class="container">
+            <div class="faq-category-header">
+                <h2>Przebieg postępowania</h2>
+                <p>Jak wygląda proces prawny krok po kroku</p>
+            </div>
+
+            <div class="faq-accordion">
+                <!-- Pytanie 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jak długo trwa sprawa sądowa?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Czas trwania postępowania sądowego zależy wyłącznie od sądu – jego obciążenia, liczby rozpraw, konieczności powołania biegłych i postawy drugiej strony. Adwokat <strong>nie ma żadnego wpływu na terminy wyznaczane przez sąd</strong> i nie może ich gwarantować ani skracać.
+                        </p>
+                        <p>
+                            Mogę jedynie zadbać, aby po mojej stronie wszystkie czynności (pisma procesowe, wnioski dowodowe, odpowiedzi na pisma) były wykonane sprawnie i terminowo – to ogranicza ryzyko przewlekłości po stronie klienta, ale nie zastępuje decyzji sądu.
+                        </p>
+                        <h4>Co mogę zrobić, żeby skrócić czas trwania sprawy?</h4>
+                        <ul>
+                            <li>Zaproponować rozwiązanie polubowne / ugodę już na etapie przedsądowym</li>
+                            <li>Przygotować kompletne i spójne pismo procesowe, które ogranicza dodatkową korespondencję</li>
+                            <li>Skierować sprawę do postępowania upominawczego lub nakazowego (tam gdzie jest to możliwe) – szybciej niż tryb zwykły</li>
+                            <li>Aktywnie monitorować bieg sprawy i reagować bez zbędnej zwłoki na każde pismo sądu</li>
+                        </ul>
+                        <p>
+                            Po pierwszej konsultacji i zapoznaniu się ze sprawą powiem Ci, jakie etapy są przed nami i co jest od nas zależne – bez obietnic co do terminów sądowych, których nikt nie może zagwarantować.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy mogę liczyć na ugodę bez procesu?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Tak, <strong>zawsze staram się w pierwszej kolejności wypracować ugodę polubowną</strong>, która oszczędza czas, pieniądze i emocje. Ugoda to rozwiązanie korzystne dla obu stron – kończy spór szybciej i taniej niż proces sądowy.
+                        </p>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="20"/><path d="M8 20h8"/><line x1="3" y1="7" x2="21" y2="7"/><path d="M3 7l3 7a3 3 0 0 0 6 0L9 7"/><path d="M15 7l3 7a3 3 0 0 0 6 0L21 7"/></svg></span>Drogi do ugody:</h4>
+                        <ul>
+                            <li><strong>Negocjacje przedsądowe</strong> – rozmowy z drugą stroną przed złożeniem pozwu (wezwanie do zapłaty, propozycja ugodowa)</li>
+                            <li><strong>Mediacja</strong> – spotkanie z mediatorem, który pomaga wypracować kompromis</li>
+                            <li><strong>Ugoda sądowa</strong> – zawarcie ugody już po wniesieniu sprawy do sądu (możliwe na każdym etapie procesu)</li>
+                        </ul>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></span>Korzyści z ugody:</h4>
+                        <ul>
+                            <li>✅ <strong>Szybkość</strong> – zakończenie sprawy w 1-3 miesiącach zamiast lat</li>
+                            <li>✅ <strong>Niższe koszty</strong> – brak opłat sądowych, mniejsze wynagrodzenie adwokata</li>
+                            <li>✅ <strong>Pewność</strong> – ustalasz warunki sam, zamiast czekać na decyzję sądu</li>
+                            <li>✅ <strong>Mniejszy stres</strong> – unikasz wielomiesięcznych rozpraw</li>
+                        </ul>
+                        <p>
+                            W ok. <strong>30% moich spraw</strong> udaje się osiągnąć ugodę polubowną. Jeśli jednak druga strona nie chce współpracować – bez wahania rozpoczynam proces sądowy.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jak wygląda reprezentacja w sądzie?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Jako Twój pełnomocnik procesowy <strong>reprezentuję Cię na wszystkich rozprawach sądowych</strong> i prowadzę sprawę od początku do końca. Moja rola obejmuje:
+                        </p>
+                        <h4>Przed rozprawą:</h4>
+                        <ul>
+                            <li>Przygotowanie i złożenie pozwu (odpowiedzi na pozew)</li>
+                            <li>Analiza dokumentów i dowodów</li>
+                            <li>Przygotowanie strategii procesowej</li>
+                            <li>Zgłaszanie wniosków dowodowych</li>
+                            <li>Kontakt z Tobą – omówienie planu działania</li>
+                        </ul>
+                        <h4>Na rozprawie:</h4>
+                        <ul>
+                            <li>Reprezentacja przed sądem (składanie wniosków, zadawanie pytań świadkom)</li>
+                            <li>Prezentacja argumentów i dowodów</li>
+                            <li>Obrona Twoich interesów</li>
+                            <li>Reagowanie na działania przeciwnika</li>
+                        </ul>
+                        <h4>Po rozprawie:</h4>
+                        <ul>
+                            <li>Relacja z przebiegu rozprawy</li>
+                            <li>Omówienie dalszych kroków</li>
+                            <li>Przygotowanie do kolejnej rozprawy (jeśli będzie)</li>
+                        </ul>
+                        <p>
+                            <strong>Ważne:</strong> Nie musisz być obecny na rozprawach – jako pełnomocnik mogę reprezentować Cię bez Twojej obecności (z wyjątkiem spraw rodzinnych, gdzie obecność stron jest często wymagana).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy muszę być obecny na rozprawach?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>W większości spraw nie – reprezentuję Cię jako pełnomocnik i mogę działać bez Twojej obecności.</strong> Wyjątki:
+                        </p>
+                        <h4>Sprawy, gdzie Twoja obecność NIE jest konieczna:</h4>
+                        <ul>
+                            <li>✅ Sprawy cywilne (zapłata, umowy, windykacja) – w pełni reprezentuję Cię jako pełnomocnik</li>
+                            <li>✅ Sprawy gospodarcze – reprezentuję zarząd/spółkę</li>
+                            <li>✅ Sprawy pracownicze – mogę reprezentować bez Twojej obecności</li>
+                        </ul>
+                        <h4>Sprawy, gdzie Twoja obecność MOŻE być wymagana:</h4>
+                        <ul>
+                            <li><strong>Sprawy rodzinne</strong> (rozwód, alimenty, kontakty z dziećmi) – sąd często wzywa strony osobiście, choć nie zawsze jest to konieczne</li>
+                            <li><strong>Przesłuchanie w charakterze strony</strong> – jeśli sąd postanowi przesłuchać Cię jako świadka, musisz stawić się osobiście (ale przygotowuję Cię do tego wcześniej)</li>
+                            <li><strong>Posiedzenie pojednawcze</strong> – w sprawach rozwodowych obecność jest obowiązkowa</li>
+                        </ul>
+                        <p>
+                            <strong>Jeśli jednak chcesz</strong> uczestniczyć w rozprawie (dla własnego spokoju, ciekawości lub emocji), oczywiście możesz – zawsze jesteś mile widziany/a.
+                        </p>
+                        <p>
+                            Przed każdą rozprawą informuję Cię, czy Twoja obecność jest konieczna czy opcjonalna.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Co się dzieje po wygranym procesie?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Wygrana w sądzie to dopiero pierwszy krok – następny etap to <strong>wykonanie wyroku</strong>, czyli faktyczne odzyskanie pieniędzy lub wyegzekwowanie obowiązków od drugiej strony.
+                        </p>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></span>Krok 1: Prawomocność wyroku</h4>
+                        <p>
+                            Wyrok staje się prawomocny po upływie terminu na apelację (14 dni) lub po rozpatrzeniu apelacji przez sąd II instancji. Od tego momentu można go wykonać.
+                        </p>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></span>Krok 2: Dobrowolne wykonanie</h4>
+                        <p>
+                            Wysyłamy wezwanie do dobrowolnego wykonania wyroku (zwykle 7-14 dni). Jeśli druga strona zapłaci – sprawa jest zakończona.
+                        </p>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></span>Krok 3: Egzekucja komornicza (jeśli druga strona nie płaci)</h4>
+                        <ul>
+                            <li>Składamy wniosek do komornika sądowego</li>
+                            <li>Komornik zajmuje: wynagrodzenie, konto bankowe, nieruchomości, pojazdy, sprzęt</li>
+                            <li>Odzyskane pieniądze są przekazywane na Twoje konto</li>
+                        </ul>
+                        <h4>Koszty egzekucji:</h4>
+                        <ul>
+                            <li>Opłata za wniosek egzekucyjny: 60 zł (stała)</li>
+                            <li>Opłata komornicza: 15% od wyegzekwowanej kwoty (płaci dłużnik, potrącane z odzyskanych pieniędzy)</li>
+                        </ul>
+                        <p>
+                            <strong>Skuteczność egzekucji:</strong> W ok. 60-70% spraw udaje się odzyskać całość lub większość należności. W pozostałych przypadkach (dłużnik niewypłacalny, brak majątku) egzekucja może być bezskuteczna.
+                        </p>
+                        <p>
+                            Kompleksowo obsługuję również etap egzekucji – składam wniosek, kontaktuję się z komornikiem i monitoruję przebieg egzekucji.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         KATEGORIA 4: DOKUMENTY I FORMALNOŚCI
+         Tło: 42.png
+         ======================================== -->
+    <section class="faq-category faq-category-bg" id="dokumenty">
+        <div class="container">
+            <div class="faq-category-header">
+                <h2>Dokumenty i formalności</h2>
+                <p>Wszystko o dokumentacji prawnej i bezpieczeństwie danych</p>
+            </div>
+
+            <div class="faq-accordion">
+                <!-- Pytanie 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jakie dokumenty potrzebuję do rozpoczęcia sprawy?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Dokumenty zależą od rodzaju sprawy. Poniżej lista podstawowych dokumentów dla najczęstszych typów spraw:
+                        </p>
+                        <h4>Sprawy cywilne (zapłata, umowy, odszkodowania):</h4>
+                        <ul>
+                            <li>Umowa (jeśli dotyczy)</li>
+                            <li>Faktury, rachunki, noty obciążeniowe</li>
+                            <li>Dowody wpłat (przelewy, potwierdzenia)</li>
+                            <li>Korespondencja z drugą stroną (emaile, SMS, listy)</li>
+                            <li>Wezwanie do zapłaty (jeśli wysyłałeś)</li>
+                        </ul>
+                        <h4>Sprawy rodzinne (rozwód, alimenty):</h4>
+                        <ul>
+                            <li>Akt małżeństwa (skrócony lub pełny)</li>
+                            <li>Akty urodzenia dzieci (skrócone)</li>
+                            <li>Dokumenty dotyczące majątku (umowy kredytowe, akty własności nieruchomości, wyciągi z kont)</li>
+                            <li>Dokumenty potwierdzające dochody (zaświadczenia od pracodawcy, PIT)</li>
+                        </ul>
+                        <h4>Sprawy pracownicze:</h4>
+                        <ul>
+                            <li>Umowa o pracę</li>
+                            <li>Wypowiedzenie (jeśli dotyczy)</li>
+                            <li>Dokumentacja płacowa (paski, potwierdzenia przelewów)</li>
+                            <li>Korespondencja z pracodawcą</li>
+                            <li>Regulamin pracy (jeśli dotyczy)</li>
+                        </ul>
+                        <h4>Windykacja należności:</h4>
+                        <ul>
+                            <li>Faktury VAT / rachunki / umowy</li>
+                            <li>Dowody wysyłki towaru/wykonania usługi</li>
+                            <li>Wezwania do zapłaty</li>
+                            <li>Korespondencja z dłużnikiem</li>
+                        </ul>
+                        <p>
+                            <strong>Nie martw się, jeśli czegoś nie masz</strong> – wspólnie przeanalizujemy, jakie dokumenty są konieczne, a jakie można uzyskać w trakcie postępowania (np. od sądu, urzędów).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy muszę dostarczać oryginały dokumentów?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Nie, na początku wystarczą kopie lub skany.</strong> Oryginały będą potrzebne dopiero na późniejszym etapie – przy składaniu pozwu do sądu lub jako dowody na rozprawie.
+                        </p>
+                        <h4>Etapy dostarczania dokumentów:</h4>
+                        <p><strong>1. Pierwsza konsultacja:</strong></p>
+                        <ul>
+                            <li>✅ Kopie papierowe</li>
+                            <li>✅ Skany/zdjęcia wysłane emailem</li>
+                            <li>✅ Zrzuty ekranu (np. SMS-y, emaile)</li>
+                        </ul>
+                        <p><strong>2. Przygotowanie pozwu:</strong></p>
+                        <ul>
+                            <li>✅ Nadal kopie – przygotowuję projekt pozwu</li>
+                        </ul>
+                        <p><strong>3. Złożenie pozwu do sądu:</strong></p>
+                        <ul>
+                            <li><strong>Oryginały lub odpisy notarialne</strong> (umowy, akty, zaświadczenia)</li>
+                            <li>✅ Kserokopie potwierdzone za zgodność (faktury, korespondencja)</li>
+                        </ul>
+                        <h4>Jak potwierdzam kopie za zgodność?</h4>
+                        <p>
+                            Jako adwokat mogę potwierdzić kserokopię za zgodność z oryginałem. Wystarczy, że pokażesz mi oryginał (osobiście lub online przez kamerę), a ja podpiszę i opieczętuję kopię.
+                        </p>
+                        <p>
+                            <strong>Bezpieczeństwo:</strong> Wszystkie otrzymane dokumenty (oryginały i kopie) przechowuję w bezpiecznym archiwum zgodnie z zasadami ochrony danych osobowych (RODO) i tajemnicą adwokacką.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jak bezpiecznie przesłać dokumenty online?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Dokumenty możesz przesłać bezpiecznie na kilka sposobów:
+                        </p>
+                        <h4>1. Email (zalecane):</h4>
+                        <p>
+                            Wyślij skany/zdjęcia na: <strong>kamila.sadlowicz@kancelaria-sadlowicz.pl</strong>
+                        </p>
+                        <ul>
+                            <li>Akceptowane formaty: PDF, JPG, PNG, DOC, DOCX</li>
+                            <li>Maksymalny rozmiar załącznika: 25 MB (jeśli więcej – użyj WeTransfer lub Google Drive)</li>
+                            <li>W temacie napisz: "Dokumenty do sprawy – [Twoje nazwisko]"</li>
+                        </ul>
+                        <h4>2. Dysk w chmurze (dla dużych plików):</h4>
+                        <ul>
+                            <li><strong>Google Drive, Dropbox, OneDrive</strong> – udostępnij folder z dokumentami i wyślij mi link (ustawienia: dostęp tylko dla mnie)</li>
+                            <li><strong>WeTransfer</strong> – bezpłatne przesyłanie plików do 2 GB</li>
+                        </ul>
+                        <h4>3. Komunikatory (dla szybkich konsultacji):</h4>
+                        <ul>
+                            <li><strong>WhatsApp, Signal</strong> – szyfrowane komunikatory (wyślij zdjęcia dokumentów)</li>
+                            <li>Tylko dla wstępnych konsultacji – oficjalną dokumentację przesyłaj emailem</li>
+                        </ul>
+                        <h4>Bezpieczeństwo danych:</h4>
+                        <ul>
+                            <li>Wszystkie przesłane dokumenty są chronione <strong>tajemnicą adwokacką</strong></li>
+                            <li>Zgodność z <strong>RODO</strong> – dane przetwarzam tylko w celu obsługi sprawy</li>
+                            <li>Bezpieczne archiwizowanie – dokumenty przechowuję w szyfrowanych systemach</li>
+                        </ul>
+                        <p>
+                            <strong>Uwaga:</strong> Nigdy nie wysyłaj haseł, kodów PIN ani danych logowania do banków emailem – jeśli będą potrzebne, omówimy bezpieczny sposób przekazania.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy mogę otrzymać kopie pism procesowych?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Tak, oczywiście!</strong> Masz pełne prawo dostępu do całej dokumentacji swojej sprawy. Regularnie przesyłam Ci kopie wszystkich pism procesowych i dokumentów.
+                        </p>
+                        <h4>Co otrzymasz:</h4>
+                        <ul>
+                            <li><strong>Pozwy, odpowiedzi na pozew, apelacje</strong> – wszystkie pisma składane do sądu</li>
+                            <li><strong>Korespondencja z sądem</strong> – wezwania, zawiadomienia, postanowienia</li>
+                            <li><strong>Wyroki i postanowienia</strong> – z uzasadnieniem (jeśli zostanie sporządzone)</li>
+                            <li><strong>Korespondencja z drugą stroną</strong> – wezwania, odpowiedzi, propozycje ugodowe</li>
+                        </ul>
+                        <h4>Forma dostarczenia:</h4>
+                        <ul>
+                            <li>✅ <strong>Email (PDF)</strong> – standardowa forma, natychmiast po sporządzeniu pisma</li>
+                            <li>✅ <strong>Kopia papierowa</strong> – na życzenie (odbiór osobisty lub wysyłka pocztą)</li>
+                            <li>✅ <strong>Dostęp do akt sprawy</strong> – możesz osobiście przeglądać akta w sądzie (wskazuję termin i miejsce)</li>
+                        </ul>
+                        <p>
+                            <strong>Częstotliwość:</strong> Kopie otrzymujesz automatycznie po każdym istotnym wydarzeniu (złożenie pisma, otrzymanie korespondencji z sądu). Nie musisz prosić – to standard mojej obsługi.
+                        </p>
+                        <p>
+                            <strong>Archiwum dokumentów:</strong> Po zakończeniu sprawy otrzymujesz kompletny zestaw dokumentacji (możesz poprosić o pendrive lub link do folderu w chmurze).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jak długo przechowujesz dokumentację?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Dokumentację przechowuję zgodnie z obowiązującymi przepisami i zasadami adwokatury:
+                        </p>
+                        <h4>Okres przechowywania:</h4>
+                        <ul>
+                            <li><strong>Akta sprawy (pozwy, wyroki, umowy):</strong> minimum <strong>10 lat</strong> od zakończenia sprawy</li>
+                            <li><strong>Korespondencja i notatki:</strong> minimum <strong>10 lat</strong></li>
+                            <li><strong>Dokumenty finansowe (faktury, umowy o świadczenie pomocy prawnej):</strong> minimum <strong>5 lat</strong> (wymogi podatkowe)</li>
+                        </ul>
+                        <h4>Po upływie okresu przechowywania:</h4>
+                        <p>
+                            Dokumenty są <strong>komisyjnie niszczone</strong> (shredder, usuwanie plików elektronicznych) z zachowaniem pełnej poufności. Przed zniszczeniem otrzymujesz informację z możliwością odebrania dokumentacji (jeśli nadal jej potrzebujesz).
+                        </p>
+                        <h4>Twoje prawa:</h4>
+                        <ul>
+                            <li>✅ <strong>Prawo dostępu</strong> – możesz w dowolnym momencie poprosić o kopie dokumentów (nawet po latach)</li>
+                            <li>✅ <strong>Prawo do usunięcia</strong> – możesz zażądać wcześniejszego usunięcia danych (z wyjątkiem dokumentów, które muszę przechowywać ze względów prawnych)</li>
+                            <li>✅ <strong>Prawo do przenoszenia</strong> – możesz poprosić o przekazanie dokumentacji innemu adwokatowi</li>
+                        </ul>
+                        <p>
+                            <strong>Bezpieczeństwo:</strong> Wszystkie dokumenty (papierowe i elektroniczne) przechowuję w bezpiecznych, zabezpieczonych systemach zgodnie z RODO i tajemnicą adwokacką.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         KATEGORIA 5: TERMINY I DOSTĘPNOŚĆ
+         Tło: Białe
+         ======================================== -->
+    <section class="faq-category" id="terminy">
+        <div class="container">
+            <div class="faq-category-header">
+                <h2>Terminy i dostępność</h2>
+                <p>Jak szybko możesz liczyć na pomoc</p>
+            </div>
+
+            <div class="faq-accordion">
+                <!-- Pytanie 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jak szybko mogę umówić się na konsultację?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Staram się zapewnić maksymalną dostępność i elastyczność w wyznaczaniu terminów konsultacji:
+                        </p>
+                        <h4>Standardowy termin:</h4>
+                        <ul>
+                            <li><strong>3-7 dni roboczych</strong> od zgłoszenia (w zależności od obciążenia)</li>
+                            <li>Konsultacje odbywają się: <strong>poniedziałek-piątek, 9:00-18:00</strong></li>
+                            <li>Możliwość umówienia spotkania <strong>wieczorem (do 20:00)</strong> – w szczególnych przypadkach</li>
+                        </ul>
+                        <h4>Pilne sprawy:</h4>
+                        <ul>
+                            <li><strong>24-48 godzin</strong> – jeśli sprawa wymaga natychmiastowego działania (np. zbliżający się termin przedawnienia, pilne postępowanie sądowe)</li>
+                            <li>Konsultacja online (wideo) – często możliwa <strong>tego samego dnia</strong></li>
+                        </ul>
+                        <h4>Jak umówić się na konsultację?</h4>
+                        <ul>
+                            <li><strong>Telefon:</strong> +48 790 013 287 (najszybszy sposób)</li>
+                            <li><strong>Email:</strong> kamila.sadlowicz@kancelaria-sadlowicz.pl (odpowiadam w ciągu 24h)</li>
+                            <li><strong>Formularz kontaktowy:</strong> <a href="<?php echo home_url('/kontakt/'); ?>">formularz na stronie kontakt</a></li>
+                        </ul>
+                        <p>
+                            <strong>Uwaga:</strong> W sezonie urlopowym (lipiec-sierpień) terminy mogą się wydłużyć do 10-14 dni – zawsze informuję o dostępności.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy przyjmujesz w weekendy?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Standardowo <strong>nie przyjmuję w weekendy</strong>, ale w wyjątkowych, pilnych sytuacjach możliwe są konsultacje sobotnie (tylko online) – po wcześniejszym uzgodnieniu.
+                        </p>
+                        <h4>Godziny przyjęć:</h4>
+                        <ul>
+                            <li><strong>Poniedziałek-Piątek:</strong> 9:00-18:00 (standardowo)</li>
+                            <li><strong>Wieczory (do 20:00):</strong> Możliwe po uzgodnieniu (dla pracujących klientów)</li>
+                            <li><strong>Soboty:</strong> Tylko w pilnych sprawach, konsultacje online (po wcześniejszym umówieniu)</li>
+                            <li><strong>Niedziele i święta:</strong> Nie przyjmuję (z wyjątkiem skrajnie pilnych sytuacji)</li>
+                        </ul>
+                        <h4>Kontakt poza godzinami pracy:</h4>
+                        <ul>
+                            <li><strong>Email</strong> – możesz napisać o każdej porze (odpowiadam w najbliższy dzień roboczy)</li>
+                            <li><strong>Telefon</strong> – w pilnych sprawach (naruszenie praw, zatrzymanie przez policję) dostępny jestem pod numerem awaryjnym (udzielam go klientom w trakcie współpracy)</li>
+                        </ul>
+                        <p>
+                            <strong>Dla klientów abonamentowych (firmy):</strong> Dostępność priorytetowa – możliwość kontaktu również w weekendy (email/telefon w nagłych sprawach biznesowych).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jak skontaktować się w pilnej sprawie?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            W pilnych sytuacjach (zbliżający się termin procesowy, zatrzymanie, przeszukanie, pilna sprawa biznesowa) skontaktuj się:
+                        </p>
+                        <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>Najszybsze formy kontaktu:</h4>
+                        <ul>
+                            <li><strong>Telefon:</strong> +48 790 013 287 (od razu odbiorę lub oddzwonię w ciągu 1-2h)</li>
+                            <li><strong>SMS/WhatsApp:</strong> +48 790 013 287 (napisz "PILNE" – odpowiem priorytetowo)</li>
+                            <li><strong>Email z tematem "PILNE":</strong> kamila.sadlowicz@kancelaria-sadlowicz.pl</li>
+                        </ul>
+                        <h4>Co uznajemy za pilną sprawę?</h4>
+                        <ul>
+                            <li><strong>Zatrzymanie przez policję</strong> – natychmiastowa pomoc prawna</li>
+                            <li><strong>Przeszukanie/wizytacja</strong> – obecność adwokata przy przeszukaniu</li>
+                            <li><strong>Zbliżający się termin procesowy</strong> (np. pozostały 2 dni do upływu terminu na apelację)</li>
+                            <li><strong>Groźba zajęcia majątku</strong> – komornik, blokada konta</li>
+                            <li><strong>Pilna decyzja biznesowa</strong> (podpisanie umowy, transakcja w toku)</li>
+                        </ul>
+                        <h4>Co NIE jest pilną sprawą?</h4>
+                        <ul>
+                            <li>❌ Ogólne pytania prawne (można umówić standardową konsultację)</li>
+                            <li>❌ Sprawy toczące się od miesięcy bez nowych wydarzeń</li>
+                            <li>❌ Chęć szybszego terminu konsultacji bez obiektywnego powodu</li>
+                        </ul>
+                        <p>
+                            <strong>Dla stałych klientów:</strong> Dostęp do numeru awaryjnego (dostępny również poza godzinami pracy w sytuacjach kryzysowych).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy prowadzisz sprawy w całej Polsce?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Tak, prowadzę sprawy w całej Polsce</strong> – zarówno osobiście (reprezentacja przed sądami), jak i zdalnie (konsultacje online, przygotowanie dokumentów).
+                        </p>
+                        <h4>Reprezentacja przed sądami:</h4>
+                        <ul>
+                            <li>✅ <strong>Warszawa i okolice</strong> – pełna obsługa osobista (sądy, urzędy, spotkania)</li>
+                            <li>✅ <strong>Inne miasta w Polsce</strong> – reprezentacja przed sądami w całym kraju (wyjazdy służbowe do sądów na rozprawy)</li>
+                            <li>✅ <strong>Sprawy online</strong> – wiele postępowań można prowadzić zdalnie (pozwy elektroniczne, wideokonferencje w sądach)</li>
+                        </ul>
+                        <h4>Dodatkowe koszty wyjazdów:</h4>
+                        <p>
+                            Wyjazdy poza Warszawę wiążą się z dodatkowymi kosztami:
+                        </p>
+                        <ul>
+                            <li><strong>Dojazd:</strong> Koszt przejazdu (paliwo lub bilet) + czas dojazdu (wg stawki godzinowej)</li>
+                            <li><strong>Nocleg:</strong> Jeśli sprawa wymaga pobytu overnight (rzadko, zazwyczaj w sprawach wielodniowych)</li>
+                        </ul>
+                        <p><strong>Przykład:</strong> Rozprawa w Krakowie → koszty dojazdu: ~300-500 zł (pociąg/samochód + czas dojazdu 3h x stawka godzinowa)</p>
+                        <h4>Alternatywa – współpraca z lokalnym adwokatem:</h4>
+                        <p>
+                            W niektórych sprawach (jeśli wyjazd jest kosztowny, a sprawa prosta) mogę polecić współpracującego adwokata z Twojego miasta, który reprezentuje Cię na rozprawie (ja przygotowuję dokumenty, strategię i nadzorując całą sprawę).
+                        </p>
+                        <p>
+                            <strong>Konsultacje online:</strong> Dostępne dla klientów z całej Polski bez dodatkowych kosztów!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jaki jest czas oczekiwania na odpowiedź email/telefon?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Staram się odpowiadać jak najszybciej, ale czas reakcji zależy od formy kontaktu i pilności sprawy:
+                        </p>
+                        <h4>Telefon:</h4>
+                        <ul>
+                            <li><strong>W godzinach pracy (9-18):</strong> Odbieram od razu lub oddzwaniam w ciągu <strong>1-2 godzin</strong></li>
+                            <li><strong>Poza godzinami pracy:</strong> Oddzwaniam w najbliższy dzień roboczy (rano, 9-10)</li>
+                            <li><strong>Pilne sprawy:</strong> Maksymalnie <strong>30 minut</strong> oczekiwania (jeśli nie odbiorę, napisz SMS "PILNE")</li>
+                        </ul>
+                        <h4>E-mail:</h4>
+                        <ul>
+                            <li><strong>Standardowe zapytania:</strong> <strong>Do 24 godzin roboczych</strong></li>
+                            <li><strong>Pilne sprawy (temat "PILNE"):</strong> <strong>2-4 godziny</strong></li>
+                            <li><strong>Weekendy/święta:</strong> Odpowiadam w najbliższy dzień roboczy</li>
+                        </ul>
+                        <h4>SMS/WhatsApp:</h4>
+                        <ul>
+                            <li><strong>Krótkie pytania:</strong> Odpowiadam w ciągu <strong>2-4 godzin</strong></li>
+                            <li><strong>Pilne sprawy:</strong> <strong>30-60 minut</strong></li>
+                        </ul>
+                        <h4>Klienci abonamentowi (firmy):</h4>
+                        <ul>
+                            <li><strong>Priorytetowy kontakt</strong> – odpowiadam w ciągu <strong>1 godziny</strong> (telefon/email)</li>
+                            <li><strong>Priorytetowy kontakt telefoniczny</strong> – szybki czas odpowiedzi w godzinach pracy</li>
+                        </ul>
+                        <p>
+                            <strong>Uwaga:</strong> Jeśli jestem na rozprawie sądowej lub w trakcie ważnego spotkania, mogę nie odbierać telefonu – zawsze oddzwaniam jak najszybciej (zazwyczaj w ciągu 1-2h).
+                        </p>
+                        <p>
+                            <strong>Transparentność:</strong> Jeśli wiem, że nie będę dostępny przez dłuższy czas (np. urlop, intensywny proces sądowy), zawsze informuję klientów z wyprzedzeniem i wskazuję zastępstwo (jeśli konieczne).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         KATEGORIA 6: SPECJALIZACJE I KOMPETENCJE
+         Tło: 43.png
+         ======================================== -->
+    <section class="faq-category faq-category-bg" id="specjalizacje">
+        <div class="container">
+            <div class="faq-category-header">
+                <h2>Specjalizacje i kompetencje</h2>
+                <p>Obszary mojej praktyki i doświadczenie</p>
+            </div>
+
+            <div class="faq-accordion">
+                <!-- Pytanie 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Jakie sprawy prowadzisz najczęściej?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Moja praktyka obejmuje szeroki zakres spraw, ale największe doświadczenie mam w:
+                        </p>
+                        <h4>Główne specjalizacje (prowadzę najczęściej):</h4>
+                        <ul>
+                            <li><strong>Windykacja należności</strong> (dochodzenie roszczeń pieniężnych na etapie przedsądowym i sądowym)</li>
+                            <li><strong>Prawo rodzinne</strong> (rozwody, alimenty, kontakty z dziećmi, podział majątku)</li>
+                            <li><strong>Prawo gospodarcze i obsługa firm</strong> (umowy B2B, obsługa spółek, spory korporacyjne)</li>
+                        </ul>
+                        <h4>Pozostałe obszary praktyki:</h4>
+                        <ul>
+                            <li>✅ <strong>Prawo pracy</strong> – spory pracownicze, zwolnienia, mobbing</li>
+                            <li>✅ <strong>Prawo rodzinne</strong> – rozwody, alimenty, kontakty z dziećmi</li>
+                            <li>✅ <strong>Prawo cywilne</strong> – umowy, odszkodowania, sprawy spadkowe</li>
+                            <li>✅ <strong>Prawo ubezpieczeniowe</strong> – roszczenia z polis, wypadki komunikacyjne</li>
+                            <li>✅ <strong>Własność intelektualna</strong> – prawa autorskie, znaki towarowe</li>
+                            <li>✅ <strong>Compliance</strong> – audyty prawne, zgodność z przepisami (RODO, KSH)</li>
+                        </ul>
+                        <p>
+                            <strong>Doświadczenie liczbowe:</strong> Prowadzę około <strong>200 spraw rocznie</strong>, co daje mi bardzo szerokie doświadczenie praktyczne i biegłość w systemach sądowych.
+                        </p>
+                        <p>
+                            Więcej szczegółów o każdej specjalizacji znajdziesz na stronie: <a href="<?php echo home_url('/specjalizacje/'); ?>">Specjalizacje</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy masz doświadczenie w mojej branży?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            Obsługuję klientów z różnych branż – zarówno przedsiębiorców, jak i osoby prywatne. Moje doświadczenie branżowe obejmuje:
+                        </p>
+                        <h4>Branże, w których najczęściej pracuję:</h4>
+                        <ul>
+                            <li><strong>IT i technologie</strong> – obsługa prawna startupów, firm softwareowych, freelancerów IT</li>
+                            <li><strong>E-commerce</strong> – sklepy internetowe, marketplace'y, dropshipping</li>
+                            <li><strong>Usługi profesjonalne</strong> – agencje marketingowe, biura rachunkowe, konsultanci</li>
+                            <li><strong>Produkcja i handel</strong> – małe i średnie przedsiębiorstwa produkcyjno-handlowe</li>
+                            <li><strong>Budownictwo i nieruchomości</strong> – deweloperzy, wykonawcy, zarządcy nieruchomości</li>
+                            <li><strong>Gastronomia i HoReCa</strong> – restauracje, catering, hotele</li>
+                            <li><strong>Transport i logistyka</strong> – firmy transportowe, spedycyjne</li>
+                        </ul>
+                        <h4>Klienci indywidualni:</h4>
+                        <ul>
+                            <li>Pracownicy (spory z pracodawcami)</li>
+                            <li>Konsumenci (reklamacje, odszkodowania)</li>
+                            <li>Osoby w sprawach rodzinnych</li>
+                            <li>Kredytobiorcy (sprawy frankowe, kredyty konsumenckie)</li>
+                        </ul>
+                        <p>
+                            <strong>Jeśli Twoja branża nie jest na liście?</strong> Nie martw się – dzięki interdyscyplinarnemu wykształceniu (Prawo + Socjologia) szybko wnikam w specyfikę każdego biznesu i problemu prawnego. Przed rozpoczęciem współpracy zawsze przeprowadzam szczegółową analizę Twojej sytuacji.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy prowadzisz sprawy karne?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Tak, prowadzę sprawy karne</strong>, ale nie jest to główny obszar mojej specjalizacji. Skupiam się przede wszystkim na prawie cywilnym, gospodarczym i rodzinnym.
+                        </p>
+                        <h4>Sprawy karne, które prowadzę:</h4>
+                        <ul>
+                            <li>✅ <strong>Przestępstwa gospodarcze</strong> – oszustwa, przywłaszczenia, wyłudzenia (związane z działalnością gospodarczą)</li>
+                            <li>✅ <strong>Pomoc na etapie postępowania przygotowawczego</strong> – reprezentacja w charakterze podejrzanego/świadka</li>
+                            <li>✅ <strong>Przestępstwa drogowe</strong> – jazda pod wpływem alkoholu, spowodowanie wypadku</li>
+                            <li>✅ <strong>Zniesławienie, groźby karalne</strong> – sprawy o pomówienia, cyberprzestępstwa</li>
+                        </ul>
+                        <h4>Sprawy karne, w których polecam specjalistów:</h4>
+                        <ul>
+                            <li><strong>Ciężkie przestępstwa</strong> (rozboje, zabójstwa, ciężkie uszkodzenia ciała) – współpracuję z adwokatami specjalizującymi się w prawie karnym i mogę polecić zaufanych fachowców</li>
+                            <li><strong>Narkotyki</strong> – sprawy o posiadanie/handel substancjami psychotropowymi</li>
+                            <li><strong>Sprawy seksualne</strong> – przestępstwa przeciwko wolności seksualnej</li>
+                        </ul>
+                        <p>
+                            <strong>Dlaczego w poważnych sprawach karnych polecam specjalistę?</strong> Prawo karne to dziedzina wymagająca intensywnej i codziennej praktyki procesowej. Moja specjalizacja koncentruje się na prawie gospodarczym, cywilnym i rodzinnym – i właśnie w tych obszarach mogę zagwarantować najwyższy poziom reprezentacji. W poważnych sprawach karnych ogólnych nie kompromisuję jakości: zamiast podejmować się sprawy poniżej własnych standardów, proponuję sprawdzonego adwokata karnego z wieloletnim doświadczeniem procesowym.
+                        </p>
+                        <p>
+                            <strong>Jeśli Twoja sprawa karna jest związana z biznesem</strong> (np. oszustwo w transakcji handlowej, przywłaszczenie przez pracownika) – chętnie ją prowadzę, bo łączy prawo karne z moją specjalizacją gospodarczą.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy reprezentujesz tylko klientów z Warszawy?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Nie, obsługuję klientów z całej Polski i nie tylko!</strong> Dzięki możliwości pracy zdalnej (konsultacje online, dokumenty elektroniczne) miejsce zamieszkania nie ma znaczenia.
+                        </p>
+                        <h4>Klienci, których obsługuję:</h4>
+                        <ul>
+                            <li><strong>Cała Polska</strong> – Warszawa, Kraków, Wrocław, Gdańsk, Poznań, Katowice i wszystkie inne miasta</li>
+                            <li><strong>Polonia za granicą</strong> – Polacy mieszkający za granicą (UK, Niemcy, Irlandia, USA) z problemami prawnymi w Polsce</li>
+                            <li><strong>Firmy zagraniczne</strong> – przedsiębiorstwa zagraniczne działające w Polsce (potrzebujące obsługi prawnej w języku polskim)</li>
+                        </ul>
+                        <h4>Jak wygląda współpraca zdalna?</h4>
+                        <ul>
+                            <li><strong>Konsultacje online</strong> – Zoom, Google Meet, Microsoft Teams</li>
+                            <li><strong>Wymiana dokumentów</strong> – email, dyski w chmurze</li>
+                            <li><strong>Reprezentacja przed sądami</strong> – osobiście stawiam się na rozprawach w całej Polsce (lub organizuję współpracę z lokalnym adwokatem, jeśli to bardziej efektywne kosztowo)</li>
+                            <li><strong>Podpisy elektroniczne</strong> – umowy i pełnomocnictwa możesz podpisać zdalnie (profil zaufany, e-podpis)</li>
+                        </ul>
+                        <p>
+                            <strong>Przykład:</strong> Klient z Krakowa – konsultacja online, dokumenty wysłane emailem, pozew złożony elektronicznie do sądu w Krakowie, reprezentacja na rozprawie (wyjazd służbowy) lub współpraca z krakowskim adwokatem.
+                        </p>
+                        <p>
+                            <strong>Języki obsługi:</strong> Polski (native), angielski (B2 – możliwe konsultacje i korespondencja w języku angielskim).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pytanie 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-icon">▶</span>
+                        <span class="faq-question-text">Czy współpracujesz z innymi prawnikami w skomplikowanych sprawach?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            <strong>Tak, współpracuję z siecią specjalistów w różnych dziedzinach prawa.</strong> W skomplikowanych sprawach interdyscyplinarnych zawsze stawiam na zespołowe podejście, które zapewnia najlepszą ochronę Twoich interesów.
+                        </p>
+                        <h4>Kiedy angażuję współpracę z innymi prawnikami?</h4>
+                        <ul>
+                            <li><strong>Sprawy wymagające specjalistycznej wiedzy</strong> – np. podatki (doradca podatkowy), prawo międzynarodowe (prawnik z certyfikacją zagraniczną)</li>
+                            <li><strong>Duże postępowania sądowe</strong> – sprawy o wysokiej wartości przedmiotu sporu, gdzie potrzebny jest zespół prawników</li>
+                            <li><strong>Geograficzne rozproszenie</strong> – współpraca z adwokatami lokalnymi (jeśli sprawa toczy się w kilku miastach jednocześnie)</li>
+                            <li><strong>Sprawy karne specjalistyczne</strong> – polecam adwokatów karnych z wieloletnim doświadczeniem w tym obszarze</li>
+                        </ul>
+                        <h4>Jak wygląda współpraca?</h4>
+                        <ul>
+                            <li>✅ <strong>Ty masz jednego koordynatora</strong> – ja jestem Twoim głównym punktem kontaktowym i nadzorując sprawę</li>
+                            <li>✅ <strong>Transparentność</strong> – zawsze informuję o konieczności zaangażowania innych specjalistów i przedstawiam koszty</li>
+                            <li>✅ <strong>Zaufani partnerzy</strong> – współpracuję tylko z prawnikami, których osobiście znam i którym ufam</li>
+                            <li>✅ <strong>Kontrola jakości</strong> – nadzoruję pracę zespołu i dbam o spójność strategii prawnej</li>
+                        </ul>
+                        <h4>Sieć współpracy:</h4>
+                        <ul>
+                            <li>Adwokaci specjalizujący się w prawie karnym</li>
+                            <li>Doradcy podatkowi</li>
+                            <li>Rzecznicy patentowi (własność intelektualna)</li>
+                            <li>Notariusze</li>
+                            <li>Biegli sądowi (różne specjalizacje)</li>
+                        </ul>
+                        <p>
+                            <strong>Zasada:</strong> Jeśli sprawa wykracza poza moje kompetencje, zawsze szczerze Ci to powiem i zaproponuję współpracę z odpowiednim specjalistą – nigdy nie podejmuję się spraw, w których nie mogę zapewnić najwyższej jakości usług.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SEKCJA "NIE ZNALAZŁEŚ ODPOWIEDZI?"
+         ======================================== -->
+    <section class="faq-contact-section">
+        <div class="container">
+            <div class="faq-contact-box">
+                <h2>Nie znalazłeś odpowiedzi na swoje pytanie?</h2>
+                <p class="lead-paragraph">
+                    Skontaktuj się bezpośrednio – chętnie odpowiem na wszystkie Twoje wątpliwości podczas bezpłatnej konsultacji wstępnej.
+                </p>
+                <div class="faq-contact-methods">
+                    <div class="faq-contact-item">
+                        <span class="faq-contact-icon">📞</span>
+                        <h3>Zadzwoń</h3>
+                        <p><a href="tel:+48790013287">+48 790 013 287</a></p>
+                    </div>
+                    <div class="faq-contact-item">
+                        <span class="faq-contact-icon">✉️</span>
+                        <h3>Napisz</h3>
+                        <p><a href="mailto:kamila.sadlowicz@kancelaria-sadlowicz.pl">kamila.sadlowicz@kancelaria-sadlowicz.pl</a></p>
+                    </div>
+                    <div class="faq-contact-item">
+                        <span class="faq-contact-icon">📝</span>
+                        <h3>Formularz</h3>
+                        <p><a href="<?php echo home_url('/kontakt/'); ?>">Wypełnij formularz kontaktowy</a></p>
+                    </div>
+                </div>
+                <div class="faq-contact-cta">
+                    <a href="<?php echo home_url('/kontakt/'); ?>" class="btn btn-primary btn-large">Umów bezpłatną konsultację</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-inner reveal">
+            <div class="cta-text">
+                <h2>Potrzebujesz pomocy<br><em>prawnej?</em></h2>
+                <p>Skontaktuj się ze mną już dziś – wspólnie rozwiążemy Twój problem.</p>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start; flex-shrink:0;">
+                <a href="<?php echo home_url('/kontakt/'); ?>" class="btn-gold" style="white-space:nowrap;">
+                    Umów konsultację
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="tel:+48790013287" class="btn-ghost" style="white-space:nowrap;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+                    +48 790 013 287
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php get_footer(); ?>
