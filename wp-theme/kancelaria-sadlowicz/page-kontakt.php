@@ -23,6 +23,10 @@
     </div>
 </section>
 
+<?php if (get_post_meta(get_the_ID(), '_elementor_edit_mode', true) === 'builder'): ?>
+    <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
+<?php else: ?>
+
     <!-- Contact Split Section -->
     <section class="contact-split has-background">
         <div class="container">
@@ -595,5 +599,6 @@
         });
     
 </script>
+<?php endif; ?>
 
 <?php get_footer(); ?>

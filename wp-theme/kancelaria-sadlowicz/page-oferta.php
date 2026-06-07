@@ -23,6 +23,9 @@
     </div>
 </section>
 
+<?php if (get_post_meta(get_the_ID(), '_elementor_edit_mode', true) === 'builder'): ?>
+    <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
+<?php else: ?>
     <main>
         <!-- Intro -->
         <section class="content-section" style="padding-bottom: 0;">
@@ -970,6 +973,11 @@
     </main>
 
 <!-- ===== CTA ===== -->
+<?php endif; // end fallback ?>
+
+<!-- ===== CTA (shown only in non-Elementor mode) ===== -->
+<?php if (!get_post_meta(get_the_ID(), '_elementor_edit_mode', true)): ?>
+<!-- real CTA start -->
 <section class="cta-section">
     <div class="container">
         <div class="cta-inner reveal">
@@ -990,5 +998,6 @@
         </div>
     </div>
 </section>
+<?php endif; // end non-Elementor CTA ?>
 
 <?php get_footer(); ?>

@@ -44,15 +44,20 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 /* ------------------------------------------------------------------ */
-/*  Dequeue Elementor CSS to prevent layout conflicts                   */
+/*  Elementor CSS: allow on Elementor-built pages, block elsewhere      */
 /* ------------------------------------------------------------------ */
 add_action('wp_enqueue_scripts', function () {
-    wp_dequeue_style('elementor-frontend');
-    wp_dequeue_style('e-theme-ui-light');
-    wp_dequeue_style('elementor-common');
-    wp_deregister_style('elementor-frontend');
-    wp_deregister_style('e-theme-ui-light');
-    wp_deregister_style('elementor-common');
+    $post_id = get_queried_object_id();
+    $is_elementor = $post_id && get_post_meta($post_id, '_elementor_edit_mode', true) === 'builder';
+
+    if (!$is_elementor) {
+        wp_dequeue_style('elementor-frontend');
+        wp_dequeue_style('e-theme-ui-light');
+        wp_dequeue_style('elementor-common');
+        wp_deregister_style('elementor-frontend');
+        wp_deregister_style('e-theme-ui-light');
+        wp_deregister_style('elementor-common');
+    }
 }, 100);
 
 /* ------------------------------------------------------------------ */

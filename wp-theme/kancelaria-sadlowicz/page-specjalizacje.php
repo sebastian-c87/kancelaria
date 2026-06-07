@@ -20,6 +20,10 @@
     </div>
 </section>
 
+<?php if (get_post_meta(get_the_ID(), '_elementor_edit_mode', true) === 'builder'): ?>
+    <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
+<?php else: ?>
+
     <!-- Sticky Navigation (Anchor Menu) -->
     <nav class="spec-sticky-nav" id="specStickyNav">
         <div class="container">
@@ -478,5 +482,6 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <?php get_footer(); ?>
