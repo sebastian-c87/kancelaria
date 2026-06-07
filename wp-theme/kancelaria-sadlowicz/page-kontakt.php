@@ -481,15 +481,17 @@
 
         // Predefined responses (FAQ-based)
         const botResponses = {
-            'ile kosztuje rozwód': 'Koszt rozwodu zależy od tego, czy jest to rozwód za porozumieniem stron czy z orzekaniem o winie. **Rozwód za porozumieniem**: od 2500 zł netto. **Rozwód z orzekaniem o winie**: od 3500 zł netto. Dokładny cennik znajdziesz [tutaj](<?php echo home_url('/oferta/'); ?>). Czy chcesz umówić bezpłatną konsultację?',
-            
-            'jak długo trwa sprawa sądowa': 'Czas trwania sprawy sądowej zależy od jej rodzaju:\n\n• **Rozwód bez dzieci**: 6-10 miesięcy\n• **Rozwód ze sporami**: 18-30 miesięcy\n• **Sprawy cywilne**: 12-18 miesięcy\n• **Windykacja (nakaz zapłaty)**: 2-4 miesiące\n\nWięcej informacji w moim [artykule na blogu](<?php echo home_url('/blog/'); ?>). Chcesz zapytać o konkretną sprawę?',
-            
-            'jakie dokumenty potrzebuję': 'Dokumenty zależą od rodzaju sprawy:\n\n**Rozwód**: akt małżeństwa, akty urodzenia dzieci, dokumenty majątkowe\n**Windykacja**: umowy, faktury, korespondencja mailowa\n**Spadki**: akt zgonu, testament (jeśli jest)\n\nWypełnij formularz kontaktowy, a podpowiem dokładnie co przyda się w Twojej sprawie!',
-            
-            'jak umówić konsultację': 'Możesz umówić konsultację na 3 sposoby:\n\n1. **Wypełnij formularz** po lewej stronie\n2. **Zadzwoń**: +48 790 013 287 (Pon-Pt 9-17)\n3. **Napisz email**: kamila.sadlowicz@kancelaria-sadlowicz.pl\n\n**Pierwsza konsultacja telefoniczna (do 15 min) jest bezpłatna!** 😊',
-            
-            'default': 'Dziękuję za pytanie! To wykracza poza moją bazę wiedzy jako AI asystenta. **Wypełnij formularz kontaktowy**, a Kamila szczegółowo odpowie na Twoje pytanie w ciągu 24 godzin. Możesz również znaleźć odpowiedzi w [FAQ](<?php echo home_url('/faq/'); ?>) lub na [blogu](<?php echo home_url('/blog/'); ?>).'
+            'ile kosztuje rozwód': 'Orientacyjny koszt reprezentacji w sprawie o rozwód:\n\n• **Rozwód za porozumieniem stron**: 3.000–3.500 zł\n• **Rozwód z orzekaniem o winie**: 8.000–15.000 zł (zależy od liczby rozpraw)\n• **Sporządzenie samego pozwu**: 1.000–1.500 zł\n• **Opłata sądowa od pozwu** (stała): 600 zł\n\nPełny cennik: [Oferta i cennik](<?php echo home_url('/oferta/'); ?>). Mogę umówić Cię na bezpłatną konsultację – wypełnij formularz po lewej.',
+
+            'jak długo trwa sprawa sądowa': 'Czas trwania sprawy zależy od jej rodzaju:\n\n• **Rozwód bez dzieci**: 6–10 miesięcy\n• **Rozwód ze sporami**: 18–30 miesięcy\n• **Sprawy cywilne**: 12–18 miesięcy\n• **Windykacja – nakaz zapłaty**: 3 tygodnie\n• **Windykacja – sprzeciw dłużnika**: 6–12 miesięcy\n\nDokładny szacunek zależy od okoliczności – napisz do mnie przez formularz.',
+
+            'jakie dokumenty potrzebuję': 'Dokumenty zależą od rodzaju sprawy:\n\n**Rozwód**: akt małżeństwa, akty urodzenia dzieci, dokumenty majątkowe\n**Windykacja**: umowy, faktury, korespondencja, potwierdzenia płatności\n**Spadki**: akt zgonu, testament (jeśli jest), dokumenty majątku\n**Prawo pracy**: umowa o pracę, wypowiedzenie, regulamin pracy\n\nNajlepiej opisz sprawę w formularzu – podpowiem, co przygotować.',
+
+            'jak umówić konsultację': 'Możesz umówić konsultację na 3 sposoby:\n\n1. **Wypełnij formularz** po lewej stronie\n2. **Zadzwoń**: +48 790 013 287 (Pon–Pt 9:00–17:00)\n3. **Napisz email**: kamila.sadlowicz@kancelaria-sadlowicz.pl\n\nKoszt konsultacji: **350–500 zł** (60 min, osobiście lub online). Pierwsza konsultacja jest wliczana w koszty reprezentacji, jeśli zdecydujesz się na współpracę.',
+
+            'specjalizacje': 'Kancelaria obsługuje sprawy z zakresu:\n\n• **Prawo gospodarcze i korporacyjne** – obsługa spółek, umowy, due diligence\n• **Prawo cywilne** – odszkodowania, spory sąsiedzkie, umowy\n• **Windykacja należności** – nakazy zapłaty, egzekucja, ~80% skuteczności\n• **Prawo pracy** – wypowiedzenia, mobbing, wynagrodzenia\n• **Prawo karne** – obrona i reprezentacja pokrzywdzonych\n• **Restrukturyzacja** – sanacja, uproszczona restrukturyzacja\n\nWięcej: [Specjalizacje](<?php echo home_url('/specjalizacje/'); ?>)',
+
+            'default': 'Dziękuję za pytanie! To wykracza poza mój zakres. **Wypełnij formularz kontaktowy** – Kamila odpowie w ciągu 24 godzin w dni robocze. Więcej odpowiedzi znajdziesz w [FAQ](<?php echo home_url('/faq/'); ?>).'
         };
 
         // Add message to chat
