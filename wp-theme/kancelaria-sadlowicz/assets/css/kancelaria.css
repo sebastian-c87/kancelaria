@@ -1,11 +1,4 @@
-﻿#header .container,
-.wrapper,
-section {
-  max-width: 1000px !important;
-  width: 90% !important;
-}
-
-/* ========== ZMIENNE ========== */
+﻿/* ========== ZMIENNE ========== */
 :root {
   --primary: #1a3a52;
   --secondary: #c9a961;

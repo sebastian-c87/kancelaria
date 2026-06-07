@@ -21,7 +21,7 @@ add_action('after_setup_theme', function () {
 /* ------------------------------------------------------------------ */
 add_action('wp_enqueue_scripts', function () {
     $uri = get_template_directory_uri();
-    $v   = '1.0.0';
+    $v   = '1.0.1';
 
     wp_enqueue_style('ks-google-fonts',
         'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap',
@@ -51,6 +51,18 @@ add_action('wp_enqueue_scripts', function () {
         ]);
     }
 });
+
+/* ------------------------------------------------------------------ */
+/*  Dequeue Elementor CSS to prevent layout conflicts                   */
+/* ------------------------------------------------------------------ */
+add_action('wp_enqueue_scripts', function () {
+    wp_dequeue_style('elementor-frontend');
+    wp_dequeue_style('e-theme-ui-light');
+    wp_dequeue_style('elementor-common');
+    wp_deregister_style('elementor-frontend');
+    wp_deregister_style('e-theme-ui-light');
+    wp_deregister_style('elementor-common');
+}, 100);
 
 /* ------------------------------------------------------------------ */
 /*  Remove WordPress <link> bloat from <head>                           */
