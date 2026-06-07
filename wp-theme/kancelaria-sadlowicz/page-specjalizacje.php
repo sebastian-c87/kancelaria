@@ -30,7 +30,6 @@
                 <a href="#prawo-cywilne">Prawo Cywilne</a>
                 <a href="#wlasnosc-intelektualna">Własność Intelektualna</a>
                 <a href="#prawo-ubezpieczeniowe">Prawo Ubezpieczeniowe</a>
-                <a href="#compliance">Compliance</a>
             </div>
         </div>
     </nav>
@@ -57,10 +56,12 @@
         <div class="container">
             <div class="spec-layout">
                 <div class="spec-content">
-                    <div class="spec-icon-large">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/11.png" alt="Prawo Gospodarcze">
+                    <div class="spec-heading">
+                        <div class="spec-icon-large">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/11.png" alt="Prawo Gospodarcze">
+                        </div>
+                        <h2>Prawo Gospodarcze</h2>
                     </div>
-                    <h2>Prawo Gospodarcze</h2>
                     <p class="spec-lead">
                         Prawo gospodarcze to kompleksowa obsługa prawna przedsiębiorców na każdym etapie prowadzenia działalności – od rejestracji spółki, przez bieżące doradztwo, aż po reprezentację w sporach korporacyjnych.
                     </p>
@@ -115,10 +116,12 @@
         <div class="container">
             <div class="spec-layout">
                 <div class="spec-content">
-                    <div class="spec-icon-large">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/13.png" alt="Prawo Pracy">
+                    <div class="spec-heading">
+                        <div class="spec-icon-large">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/13.png" alt="Prawo Pracy">
+                        </div>
+                        <h2>Prawo Pracy</h2>
                     </div>
-                    <h2>Prawo Pracy</h2>
                     <p class="spec-lead">
                         Prawo pracy to złożona dziedzina regulująca relacje pracownik-pracodawca. Reprezentuję zarówno pracowników dochodzących swoich praw, jak i pracodawców potrzebujących wsparcia w sporach pracowniczych i tworzeniu regulaminów wewnętrznych.
                     </p>
@@ -175,10 +178,12 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/28.png" alt="Windykacja Należności - Kancelaria Adwokacka">
                 </div>
                 <div class="spec-content">
-                    <div class="spec-icon-large">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/14.png" alt="Windykacja Należności">
+                    <div class="spec-heading">
+                        <div class="spec-icon-large">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/14.png" alt="Windykacja Należności">
+                        </div>
+                        <h2>Windykacja Należności</h2>
                     </div>
-                    <h2>Windykacja Należności</h2>
                     <p class="spec-lead">
                         Windykacja należności to moja specjalizacja, w której osiągam około 80% skuteczności. Skutecznie odzyskuję należności dla przedsiębiorców, małych firm oraz osób prywatnych – zarówno drogą polubowną, jak i sądową.
                     </p>
@@ -228,10 +233,12 @@
         <div class="container">
             <div class="spec-layout">
                 <div class="spec-content">
-                    <div class="spec-icon-large">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/15.png" alt="Prawo Cywilne i Rodzinne">
+                    <div class="spec-heading">
+                        <div class="spec-icon-large">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/15.png" alt="Prawo Cywilne i Rodzinne">
+                        </div>
+                        <h2>Prawo Cywilne i Rodzinne</h2>
                     </div>
-                    <h2>Prawo Cywilne i Rodzinne</h2>
                     <p class="spec-lead">
                         Prawo cywilne i rodzinne to obszar, w którym łączę wiedzę prawniczą z empatią i zrozumieniem dla trudnych sytuacji życiowych klientów. Reprezentuję w sprawach rozwodowych, alimentacyjnych, spadkowych oraz odszkodowawczych.
                     </p>
@@ -288,10 +295,12 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/30.png" alt="Prawo Własności Intelektualnej - Kancelaria Adwokacka">
                 </div>
                 <div class="spec-content">
-                    <div class="spec-icon-large">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/16.png" alt="Prawo Własności Intelektualnej">
+                    <div class="spec-heading">
+                        <div class="spec-icon-large">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/16.png" alt="Prawo Własności Intelektualnej">
+                        </div>
+                        <h2>Prawo Własności Intelektualnej</h2>
                     </div>
-                    <h2>Prawo Własności Intelektualnej</h2>
                     <p class="spec-lead">
                         Prawo własności intelektualnej to dynamicznie rozwijająca się dziedzina, szczególnie w kontekście nowych technologii i sztucznej inteligencji. Oferuję kompleksowe doradztwo w zakresie ochrony praw autorskich, znaków towarowych oraz wykorzystania AI w biznesie.
                     </p>
@@ -341,10 +350,12 @@
         <div class="container">
             <div class="spec-layout">
                 <div class="spec-content">
-                    <div class="spec-icon-large">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/17.png" alt="Prawo Ubezpieczeniowe">
+                    <div class="spec-heading">
+                        <div class="spec-icon-large">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/17.png" alt="Prawo Ubezpieczeniowe">
+                        </div>
+                        <h2>Prawo Ubezpieczeniowe</h2>
                     </div>
-                    <h2>Prawo Ubezpieczeniowe</h2>
                     <p class="spec-lead">
                         Prawo ubezpieczeniowe to obszar, w którym reprezentuję osoby poszkodowane w dochodzeniu roszczeń z ubezpieczeń komunikacyjnych (OC, AC), ubezpieczeń majątkowych, życiowych oraz zdrowotnych.
                     </p>
@@ -400,10 +411,12 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/32.png" alt="Compliance i Audyt Prawny - Kancelaria Adwokacka">
                 </div>
                 <div class="spec-content">
-                    <div class="spec-icon-large">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/18.png" alt="Compliance i Audyt Prawny">
+                    <div class="spec-heading">
+                        <div class="spec-icon-large">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/18.png" alt="Compliance i Audyt Prawny">
+                        </div>
+                        <h2>Compliance i Audyt Prawny</h2>
                     </div>
-                    <h2>Compliance i Audyt Prawny</h2>
                     <p class="spec-lead">
                         Compliance i audyt prawny to kluczowe obszary zarządzania ryzykiem prawnym w przedsiębiorstwach. Oferuję kompleksowe doradztwo w zakresie zgodności z przepisami prawa, tworzenia regulaminów wewnętrznych oraz audytu prawnego spółek.
                     </p>

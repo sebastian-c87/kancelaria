@@ -782,11 +782,21 @@
 .spec-detail-alt .spec-layout {
     grid-template-columns: 440px 1fr;
 }
+.spec-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
 .spec-icon-large {
     width: 56px;
     height: 56px;
     color: var(--gold);
-    margin-bottom: 20px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+.spec-heading h2 {
+    margin-bottom: 0;
 }
 .spec-detail-bg .spec-icon-large { color: var(--gold); }
 .spec-content h2 {
