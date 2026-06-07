@@ -21,7 +21,7 @@ add_action('after_setup_theme', function () {
 /* ------------------------------------------------------------------ */
 add_action('wp_enqueue_scripts', function () {
     $uri = get_template_directory_uri();
-    $v   = '1.0.1';
+    $v   = '1.0.2';
 
     wp_enqueue_style('ks-google-fonts',
         'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap',
@@ -31,15 +31,6 @@ add_action('wp_enqueue_scripts', function () {
 
     if (!is_front_page()) {
         wp_enqueue_style('ks-subpages', $uri . '/assets/css/subpages.css', ['ks-redesign'], $v);
-    }
-
-    wp_enqueue_style('ks-kancelaria', $uri . '/assets/css/kancelaria.css', ['ks-redesign'], $v);
-
-    if (file_exists(get_template_directory() . '/assets/css/custom.css')) {
-        wp_enqueue_style('ks-custom', $uri . '/assets/css/custom.css', ['ks-redesign'], $v);
-    }
-    if (file_exists(get_template_directory() . '/assets/css/custom2.css')) {
-        wp_enqueue_style('ks-custom2', $uri . '/assets/css/custom2.css', ['ks-redesign'], $v);
     }
 
     wp_enqueue_script('ks-custom', $uri . '/assets/js/custom.js', [], $v, true);
