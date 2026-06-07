@@ -44,11 +44,28 @@ add_action('wp_enqueue_scripts', function () {
 });
 
 /* ------------------------------------------------------------------ */
+/*  Helper: czy strona ma REALNĄ treść zbudowaną w Elementorze?         */
+/*  Zwraca true tylko gdy Elementor jest włączony I coś w nim jest.     */
+/*  Dzięki temu pusty Elementor NIE chowa oryginalnej treści szablonu.  */
+/* ------------------------------------------------------------------ */
+function ks_use_elementor_content($post_id = null): bool
+{
+    $post_id = $post_id ?: get_the_ID();
+    if (!$post_id) {
+        return false;
+    }
+    if (get_post_meta($post_id, '_elementor_edit_mode', true) !== 'builder') {
+        return false;
+    }
+    $data = get_post_meta($post_id, '_elementor_data', true);
+    return !empty($data) && trim($data) !== '' && trim($data) !== '[]';
+}
+
+/* ------------------------------------------------------------------ */
 /*  Elementor CSS: allow on Elementor-built pages, block elsewhere      */
 /* ------------------------------------------------------------------ */
 add_action('wp_enqueue_scripts', function () {
-    $post_id = get_queried_object_id();
-    $is_elementor = $post_id && get_post_meta($post_id, '_elementor_edit_mode', true) === 'builder';
+    $is_elementor = ks_use_elementor_content(get_queried_object_id());
 
     if (!$is_elementor) {
         wp_dequeue_style('elementor-frontend');
