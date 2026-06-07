@@ -10,6 +10,9 @@
 </section>
 
 <!-- ===== CONTENT ===== -->
+<?php if (ks_use_elementor_content()): ?>
+    <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
+<?php else: ?>
 <main>
 <div class="container">
 <div class="pp-content">
@@ -194,5 +197,6 @@
 </div>
 </div>
 </main>
+<?php endif; ?>
 
 <?php get_footer(); ?>

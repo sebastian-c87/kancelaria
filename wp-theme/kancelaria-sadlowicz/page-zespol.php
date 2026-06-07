@@ -20,6 +20,10 @@
     </div>
 </section>
 
+<?php if (ks_use_elementor_content()): ?>
+    <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
+<?php else: ?>
+
 <!-- ===== FILOZOFIA KANCELARII ===== -->
 <section style="padding: 64px 0; background: var(--ivory); border-bottom: 1px solid rgba(13,36,56,.07);">
     <div class="container">
@@ -287,5 +291,6 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <?php get_footer(); ?>

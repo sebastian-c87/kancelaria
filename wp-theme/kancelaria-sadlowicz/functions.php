@@ -54,6 +54,22 @@ function ks_use_elementor_content($post_id = null): bool
     if (!$post_id) {
         return false;
     }
+
+    // W edytorze/podglądzie Elementora ZAWSZE udostępnij the_content(),
+    // żeby Elementor wykrył obszar treści i pozwolił budować na pustej stronie.
+    if (class_exists('\Elementor\Plugin')) {
+        $el = \Elementor\Plugin::instance();
+        if (isset($el->preview) && method_exists($el->preview, 'is_preview_mode')
+            && $el->preview->is_preview_mode($post_id)) {
+            return true;
+        }
+        if (isset($el->editor) && method_exists($el->editor, 'is_edit_mode')
+            && $el->editor->is_edit_mode($post_id)) {
+            return true;
+        }
+    }
+
+    // Na żywej stronie: Elementor przejmuje tylko gdy faktycznie ma zbudowaną treść.
     if (get_post_meta($post_id, '_elementor_edit_mode', true) !== 'builder') {
         return false;
     }
