@@ -172,7 +172,7 @@ function ks_handle_contact_form(): void
     $body .= "----------------\n";
     $body .= $message . "\n\n";
     $body .= "----------------\n";
-    $body .= "Data: " . date('d.m.Y H:i') . "  |  IP: " . ($_SERVER['REMOTE_ADDR'] ?? '-') . "\n";
+    $body .= "Data: " . wp_date('d.m.Y H:i') . "  |  IP: " . ($_SERVER['REMOTE_ADDR'] ?? '-') . "\n";
 
     $result = ks_smtp_send($smtp_host, $smtp_port, $smtp_user, $smtp_pass,
         $smtp_user, $mail_to, $email, $subject, $body);
@@ -237,7 +237,7 @@ function ks_smtp_send(string $host, int $port, string $user, string $pass,
     if (substr($r, 0, 3) !== '354') { fclose($socket); return ['ok' => false, 'error' => "DATA: {$r}"]; }
 
     $enc_subject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
-    $msg  = "Date: " . date('r') . "\r\n";
+    $msg  = "Date: " . wp_date('r') . "\r\n";
     $msg .= "From: \"Formularz kancelaria\" <{$from}>\r\n";
     $msg .= "To: <{$to}>\r\n";
     $msg .= "Reply-To: <{$reply_to}>\r\n";

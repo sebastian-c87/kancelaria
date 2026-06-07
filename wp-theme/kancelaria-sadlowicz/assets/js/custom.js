@@ -110,34 +110,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     })();
 
-    // --- FORM VALIDATION (for future contact form) ---
-    const contactForm = document.querySelector('#contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = this.querySelector('[name="name"]').value;
-            const email = this.querySelector('[name="email"]').value;
-            const message = this.querySelector('[name="message"]').value;
+    // --- FAQ ACCORDION ---
+    // Rozwijanie odpowiedzi po kliknięciu w pytanie (tylko jedno otwarte naraz).
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const isOpen = faqItem.classList.contains('active');
 
-            if (!name || !email || !message) {
-                alert('Proszę wypełnić wszystkie pola formularza.');
-                return;
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                const q = item.querySelector('.faq-question');
+                if (q) q.setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                faqItem.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
             }
-
-            if (!validateEmail(email)) {
-                alert('Proszę podać prawidłowy adres email.');
-                return;
-            }
-
-            // Form submission logic here
-            console.log('Form submitted:', { name, email, message });
         });
-    }
+    });
 
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
+    // Otwórz pozycję FAQ wskazaną w adresie (#kotwica) po wejściu na stronę
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        const faqItem = target ? target.closest('.faq-item') : null;
+        if (faqItem) {
+            faqItem.classList.add('active');
+            const q = faqItem.querySelector('.faq-question');
+            if (q) q.setAttribute('aria-expanded', 'true');
+        }
     }
 
 });
