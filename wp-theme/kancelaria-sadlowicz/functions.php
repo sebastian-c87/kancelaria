@@ -203,6 +203,10 @@ function ks_field(string $name, string $default = ''): string
 add_action('acf/init', function () {
     if (!function_exists('acf_add_local_field_group')) return;
 
+    // Dynamiczne ID strony "O mnie" po slugu – działa na staging i produkcji.
+    $omnie    = get_page_by_path('o-mnie');
+    $omnie_id = $omnie ? $omnie->ID : 0;
+
     acf_add_local_field_group([
         'key'   => 'group_ks_omnie',
         'title' => 'Strona „O mnie" – treści',
@@ -285,7 +289,7 @@ add_action('acf/init', function () {
             ['key' => 'field_ks_omnie_mem3_txt', 'label' => 'Pole 3 – tekst', 'name' => 'mem_3_text',  'type' => 'textarea', 'rows' => 2,
                 'default_value' => 'Certyfikat AML – obowiązki instytucji obowiązanych (GIIF) · Ochrona Zarządu przed egzekucją (PTPiGR)'],
         ],
-        'location'        => [[['param' => 'page_slug', 'operator' => '==', 'value' => 'o-mnie']]],
+        'location'        => [[['param' => 'page', 'operator' => '==', 'value' => (string) $omnie_id]]],
         'position'        => 'normal',
         'label_placement' => 'top',
     ]);
