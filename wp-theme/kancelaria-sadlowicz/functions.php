@@ -297,6 +297,273 @@ add_action('acf/init', function () {
 
 /* ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------ */
+/*  ACF helpers dla tabel i list (format: jeden wiersz = jedna pozycja) */
+/* ------------------------------------------------------------------ */
+
+/** Surowa wartość pola ACF (bez escapowania – escapujemy per-komórka). */
+function ks_raw(string $name): string
+{
+    if (!function_exists('get_field')) return '';
+    $v = get_field($name);
+    return is_string($v) ? $v : '';
+}
+
+/**
+ * Buduje wiersze <tr> z pola tekstowego.
+ * Każda linia = wiersz; kolumny oddzielone znakiem "|".
+ * $bold = indeks kolumny owijanej w <strong> (-1 = brak).
+ */
+function ks_table_rows(string $name, int $cols, int $bold = 1): string
+{
+    $raw = ks_raw($name);
+    if ($raw === '') return '';
+    $out = '';
+    foreach (preg_split('/\r\n|\r|\n/', $raw) as $line) {
+        $line = trim($line);
+        if ($line === '') continue;
+        $cells = array_map('trim', explode('|', $line));
+        $out .= '<tr>';
+        for ($i = 0; $i < $cols; $i++) {
+            $val = esc_html($cells[$i] ?? '');
+            $out .= '<td>' . ($i === $bold ? "<strong>{$val}</strong>" : $val) . '</td>';
+        }
+        $out .= '</tr>';
+    }
+    return $out;
+}
+
+/** Buduje pozycje <li> z pola tekstowego (jedna linia = jeden punkt). */
+function ks_list_items(string $name, bool $check = false): string
+{
+    $raw = ks_raw($name);
+    if ($raw === '') return '';
+    $out = '';
+    foreach (preg_split('/\r\n|\r|\n/', $raw) as $line) {
+        $line = trim($line);
+        if ($line === '') continue;
+        $out .= '<li>' . ($check ? '✅ ' : '') . esc_html($line) . '</li>';
+    }
+    return $out;
+}
+
+/* ------------------------------------------------------------------ */
+/*  ACF: Definicja pól dla strony "Oferta i Cennik"                    */
+/* ------------------------------------------------------------------ */
+add_action('acf/init', function () {
+    if (!function_exists('acf_add_local_field_group')) return;
+
+    $oferta    = get_page_by_path('oferta');
+    $oferta_id = $oferta ? $oferta->ID : 0;
+
+    $tbl_hint  = 'Jeden wiersz = jedna pozycja w tabeli. Kolumny oddziel znakiem | (pionowa kreska).';
+    $list_hint = 'Jeden wiersz = jeden punkt listy.';
+
+    acf_add_local_field_group([
+        'key'   => 'group_ks_oferta',
+        'title' => 'Strona „Oferta i Cennik" – treści',
+        'fields' => [
+
+            // ── Tab: Wstęp ────────────────────────────────────────
+            ['key' => 'field_ks_of_tab_intro', 'label' => 'Wstęp', 'type' => 'tab'],
+            ['key' => 'field_ks_of_lead', 'label' => 'Akapit wyróżniony', 'name' => 'oferta_intro_lead', 'type' => 'textarea', 'rows' => 3,
+                'default_value' => 'Oferuję kompleksową obsługę prawną dostosowaną do potrzeb klientów indywidualnych i firm. Każda sprawa jest inna, dlatego po wstępnej konsultacji przedstawiam szczegółową wycenę dopasowaną do skali i złożoności problemu.'],
+            ['key' => 'field_ks_of_text', 'label' => 'Akapit drugi', 'name' => 'oferta_intro_text', 'type' => 'textarea', 'rows' => 3,
+                'default_value' => 'Poniższy cennik oparty jest na Rozporządzeniu Ministra Sprawiedliwości oraz praktyce rynkowej w Warszawie (stan na 2026 rok). Wszystkie kwoty podane są netto + VAT 23%.'],
+
+            // ── Tab: Konsultacje ──────────────────────────────────
+            ['key' => 'field_ks_of_tab_kons', 'label' => 'Konsultacje', 'type' => 'tab'],
+            ['key' => 'field_ks_of_kons', 'label' => 'Tabela konsultacji (Usługa | Stawka | Uwagi)', 'name' => 'oferta_konsultacje', 'type' => 'textarea', 'rows' => 6, 'instructions' => $tbl_hint,
+                'default_value' => implode("\n", [
+                    'Porada prawna (60 min.) – osobiście | 350-500 zł | Analiza sprawy, ocena szans, plan działania',
+                    'Porada online/telefoniczna (60 min.) | 350 zł | Wideo/telefon, materiały wysyłane mailowo',
+                    'Porada ekspresowa (30 min.) | 200-300 zł | Krótka konsultacja, szybka odpowiedź',
+                    'Opinia prawna pisemna (do 5 stron A4) | 1.000-1.500 zł | Szczegółowa analiza + pisemne rekomendacje',
+                    'Analiza dokumentacji (za godzinę) | 300-400 zł | Przegląd umów, pism, akt sprawy',
+                ])],
+            ['key' => 'field_ks_of_kons_info', 'label' => 'Dodatkowe informacje (lista)', 'name' => 'oferta_konsultacje_info', 'type' => 'textarea', 'rows' => 3, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Pierwsza konsultacja zaliczana na poczet dalszej współpracy (jeśli zdecydujesz się na reprezentację)',
+                    'Przygotowanie dokumentów przez klienta = maksymalne wykorzystanie czasu',
+                    'Możliwość konsultacji w weekend (dodatkowa opłata +30%)',
+                ])],
+
+            // ── Tab: Pakiet START ─────────────────────────────────
+            ['key' => 'field_ks_of_tab_start', 'label' => 'Pakiet START', 'type' => 'tab'],
+            ['key' => 'field_ks_pkg_start_name', 'label' => 'Nazwa',  'name' => 'pkg_start_name',  'type' => 'text', 'default_value' => 'PAKIET START'],
+            ['key' => 'field_ks_pkg_start_price','label' => 'Cena',   'name' => 'pkg_start_price', 'type' => 'text', 'default_value' => '800 zł/mc'],
+            ['key' => 'field_ks_pkg_start_dla',  'label' => 'Dla kogo','name' => 'pkg_start_dla',   'type' => 'text', 'default_value' => 'Mikrofirmy, freelancerzy, start-upy (1-5 pracowników)'],
+            ['key' => 'field_ks_pkg_start_obj',  'label' => 'Co obejmuje (lista)', 'name' => 'pkg_start_obejmuje', 'type' => 'textarea', 'rows' => 6, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Konsultacje telefoniczne i mailowe – do 2 godzin miesięcznie',
+                    'Przegląd i opiniowanie do 3 umów miesięcznie (standardowych, do 5 stron)',
+                    'Pomoc w sporządzaniu prostych pism (odpowiedzi na reklamacje)',
+                    'Do 2 wezwań do zapłaty miesięcznie (prosta windykacja)',
+                    '1 konsultacja z zakresu prawa pracy (umowy zlecenia, B2B)',
+                    'Czas odpowiedzi: do 24h (dni robocze)',
+                ])],
+            ['key' => 'field_ks_pkg_start_nie',  'label' => 'NIE obejmuje (lista)', 'name' => 'pkg_start_nieobejmuje', 'type' => 'textarea', 'rows' => 3, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Reprezentacji sądowej (rozliczana osobno)',
+                    'Sporządzania umów (tylko przegląd!)',
+                    'Obsługi postępowań administracyjnych i KRS',
+                ])],
+            ['key' => 'field_ks_pkg_start_godz', 'label' => 'Dodatkowe godziny', 'name' => 'pkg_start_godziny', 'type' => 'text', 'default_value' => '300 zł/h'],
+
+            // ── Tab: Pakiet BIZNES ────────────────────────────────
+            ['key' => 'field_ks_of_tab_biznes', 'label' => 'Pakiet BIZNES', 'type' => 'tab'],
+            ['key' => 'field_ks_pkg_biz_name', 'label' => 'Nazwa',  'name' => 'pkg_biznes_name',  'type' => 'text', 'default_value' => 'PAKIET BIZNES'],
+            ['key' => 'field_ks_pkg_biz_price','label' => 'Cena',   'name' => 'pkg_biznes_price', 'type' => 'text', 'default_value' => '1.800 zł/mc'],
+            ['key' => 'field_ks_pkg_biz_dla',  'label' => 'Dla kogo','name' => 'pkg_biznes_dla',   'type' => 'text', 'default_value' => 'Małe i średnie firmy (5-25 pracowników)'],
+            ['key' => 'field_ks_pkg_biz_obj',  'label' => 'Co obejmuje (lista)', 'name' => 'pkg_biznes_obejmuje', 'type' => 'textarea', 'rows' => 11, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Konsultacje telefoniczne i mailowe – do 4 godzin miesięcznie (odpowiedź do 12h w dni robocze)',
+                    'Przegląd i opiniowanie do 8 umów (do 10 stron każda)',
+                    'Sporządzanie do 3 umów standardowych (B2B, NDA, zlecenia, umowy o pracę)',
+                    'Do 5 wezwań do zapłaty miesięcznie (windykacja należności)',
+                    'Kompleksowe doradztwo z zakresu prawa pracy (umowy, regulaminy, zwolnienia)',
+                    'Reprezentacja w negocjacjach (do 2 spotkań/mc)',
+                    'Przegląd korespondencji prawnej (odpowiedzi na wezwania, reklamacje)',
+                    'Audyt prawny 1x na pół roku (compliance, RODO, umowy)',
+                    'Czas odpowiedzi: do 12h (dni robocze)',
+                    'Priorytetowy kontakt (dedykowany numer telefonu)',
+                    'Rabat 15% na sprawy sądowe',
+                ])],
+            ['key' => 'field_ks_pkg_biz_nie',  'label' => 'NIE obejmuje (lista)', 'name' => 'pkg_biznes_nieobejmuje', 'type' => 'textarea', 'rows' => 2, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Reprezentacji sądowej (rozliczana osobno z rabatem 15%)',
+                    'Obsługi spraw KRS (płatne osobno z rabatem 15%)',
+                ])],
+            ['key' => 'field_ks_pkg_biz_godz', 'label' => 'Dodatkowe godziny', 'name' => 'pkg_biznes_godziny', 'type' => 'text', 'default_value' => '280 zł/h'],
+
+            // ── Tab: Pakiet PROFESJONALNY ─────────────────────────
+            ['key' => 'field_ks_of_tab_prof', 'label' => 'Pakiet PROFESJONALNY', 'type' => 'tab'],
+            ['key' => 'field_ks_pkg_prof_name', 'label' => 'Nazwa',  'name' => 'pkg_prof_name',  'type' => 'text', 'default_value' => 'PAKIET PROFESJONALNY'],
+            ['key' => 'field_ks_pkg_prof_price','label' => 'Cena',   'name' => 'pkg_prof_price', 'type' => 'text', 'default_value' => '4.200 zł/mc'],
+            ['key' => 'field_ks_pkg_prof_dla',  'label' => 'Dla kogo','name' => 'pkg_prof_dla',   'type' => 'text', 'default_value' => 'Średnie i duże firmy (25-100 pracowników), spółki z zarządem'],
+            ['key' => 'field_ks_pkg_prof_obj',  'label' => 'Co obejmuje (lista)', 'name' => 'pkg_prof_obejmuje', 'type' => 'textarea', 'rows' => 13, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Konsultacje telefoniczne, mailowe i wideo – do 10 godzin miesięcznie (odpowiedź do 6h w dni robocze)',
+                    'Przegląd i opiniowanie do 15 umów (niezależnie od objętości)',
+                    'Sporządzanie do 5 złożonych umów (inwestycyjne, joint-venture, licencje, franchising)',
+                    'Do 10 wezwań do zapłaty miesięcznie (kompleksowa windykacja)',
+                    'Kompleksowe doradztwo z zakresu prawa pracy (zwolnienia grupowe, kontrole PIP, spory)',
+                    'Pełna obsługa KRS i zmian korporacyjnych (uchwały, zmiany umów spółek, raporty)',
+                    'Reprezentacja w negocjacjach biznesowych (do 4 spotkań/mc)',
+                    'Audyt prawny 2x/rok (RODO, compliance, umowy, regulaminy)',
+                    'Wsparcie w postępowaniach administracyjnych (UOKiK, UODO, ZUS, US)',
+                    'Comiesięczne raporty (podsumowanie obsługi, statystyki, rekomendacje)',
+                    'Czas odpowiedzi: do 6h (dni robocze)',
+                    'Dedykowany opiekun prawny (stały kontakt, znajomość specyfiki firmy)',
+                    'Rabat 20% na sprawy sądowe',
+                ])],
+            ['key' => 'field_ks_pkg_prof_nie',  'label' => 'NIE obejmuje (lista)', 'name' => 'pkg_prof_nieobejmuje', 'type' => 'textarea', 'rows' => 2, 'instructions' => $list_hint,
+                'default_value' => 'Reprezentacji sądowej w sporach o wartości powyżej 50.000 zł (rozliczana osobno z rabatem 20%)'],
+            ['key' => 'field_ks_pkg_prof_godz', 'label' => 'Dodatkowe godziny', 'name' => 'pkg_prof_godziny', 'type' => 'text', 'default_value' => '250 zł/h'],
+
+            // ── Tab: Pakiet PREMIUM ───────────────────────────────
+            ['key' => 'field_ks_of_tab_prem', 'label' => 'Pakiet PREMIUM', 'type' => 'tab'],
+            ['key' => 'field_ks_pkg_prem_name', 'label' => 'Nazwa',  'name' => 'pkg_premium_name',  'type' => 'text', 'default_value' => 'PAKIET PREMIUM'],
+            ['key' => 'field_ks_pkg_prem_price','label' => 'Cena',   'name' => 'pkg_premium_price', 'type' => 'text', 'default_value' => 'od 8.000 zł/mc'],
+            ['key' => 'field_ks_pkg_prem_dla',  'label' => 'Dla kogo','name' => 'pkg_premium_dla',   'type' => 'text', 'default_value' => 'Duże korporacje, spółki giełdowe, grupy kapitałowe (100+ pracowników)'],
+            ['key' => 'field_ks_pkg_prem_obj',  'label' => 'Co obejmuje (lista)', 'name' => 'pkg_premium_obejmuje', 'type' => 'textarea', 'rows' => 10, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Pełna obsługa prawna in-house (prawnik dedykowany wyłącznie dla klienta)',
+                    'Konsultacje telefoniczne, mailowe, wideo i stacjonarne – zakres ustalany indywidualnie; możliwość kontaktu w pilnych sytuacjach poza godzinami pracy',
+                    'Konsultacje strategiczne z zarządem (uczestnictwo w posiedzeniach zarządu)',
+                    'Kompleksowa obsługa korporacyjna (zmiany struktury spółek, przekształcenia, uchwały)',
+                    'Reprezentacja w postępowaniach sądowych (do 3 spraw jednocześnie w ramach pakietu)',
+                    'Kompleksowa windykacja należności w ramach pakietu (wezwania, pozwy, egzekucje)',
+                    'Zarządzanie ryzykiem prawnym (audyty kwartalne, compliance)',
+                    'Comiesięczne spotkania strategiczne (prezentacja stanu spraw, analiza ryzyka)',
+                    'Szkolenia wewnętrzne dla pracowników (RODO, prawo pracy, compliance – 2x/rok)',
+                    'Rabat 30% na wszystkie sprawy poza pakietem',
+                ])],
+            ['key' => 'field_ks_pkg_prem_godz', 'label' => 'Dodatkowe godziny', 'name' => 'pkg_premium_godziny', 'type' => 'text', 'default_value' => '220 zł/h'],
+            ['key' => 'field_ks_pkg_prem_note', 'label' => 'Notatka (Zakres negocjowalny)', 'name' => 'pkg_premium_note', 'type' => 'text',
+                'default_value' => 'Możliwość stworzenia pakietu na miarę (np. tylko obsługa korporacyjna bez spraw pracowniczych)'],
+
+            // ── Tab: Sprawy Rodzinne ──────────────────────────────
+            ['key' => 'field_ks_of_tab_rodz', 'label' => 'Sprawy Rodzinne', 'type' => 'tab'],
+            ['key' => 'field_ks_of_rodz', 'label' => 'Tabela (Element | Stawka | Uwagi)', 'name' => 'oferta_rodzinne', 'type' => 'textarea', 'rows' => 13, 'instructions' => $tbl_hint,
+                'default_value' => implode("\n", [
+                    'Opłata sądowa od pozwu rozwodowego | 600 zł | Stała w całej Polsce, obowiązkowa',
+                    'Opłata skarbowa za pełnomocnictwo | 17 zł | Przy reprezentacji sądowej',
+                    'Sporządzenie pozwu rozwodowego | 1.000-1.500 zł | Zależnie od skomplikowania',
+                    'Rozwód za porozumieniem stron (cała sprawa) | 3.000-3.500 zł | Szybsze i tańsze, bez sporu',
+                    'Rozwód z orzekaniem o winie (cała sprawa) | 8.000–15.000 zł | Dłuższe postępowanie, wielokrotne rozprawy, świadkowie; cena zależy od liczby posiedzeń',
+                    'Podział majątku wspólnego (pozew) | 2.000-4.000 zł | Zależnie od wartości majątku',
+                    'Ustalenie alimentów (pozew + reprezentacja) | 1.500-2.000 zł | Prostsza sprawa',
+                    'Zmiana wysokości alimentów | 1.000-1.500 zł | Przy zmianie sytuacji życiowej',
+                    'Egzekucja alimentów (komornik + reprezentacja) | 1.000-1.500 zł | Windykacja zaległych alimentów',
+                    'Kontakty z dzieckiem (pozew) | 2.000-2.500 zł | Ustalenie harmonogramu kontaktów',
+                    'Władza rodzicielska (ograniczenie/pozbawienie) | 2.500-4.000 zł | Wymaga dowodów, często opinie psychologiczne',
+                    'Separacja (pozew + reprezentacja) | 2.500-3.500 zł | Podobnie jak rozwód',
+                    'Reprezentacja na 1 rozprawie (bez pozwu) | 1.000-1.200 zł | Jednorazowe zlecenie',
+                ])],
+
+            // ── Tab: Windykacja ───────────────────────────────────
+            ['key' => 'field_ks_of_tab_wind', 'label' => 'Windykacja', 'type' => 'tab'],
+            ['key' => 'field_ks_of_wind', 'label' => 'Tabela (Etap/wartość | Honorarium | Uwagi)', 'name' => 'oferta_windykacja', 'type' => 'textarea', 'rows' => 6, 'instructions' => $tbl_hint,
+                'default_value' => implode("\n", [
+                    'Wezwanie do zapłaty (pozasądowe) | 300–700 zł | Wezwanie, negocjacje, prosta windykacja (przeważnie do 3.000 zł wartości)',
+                    'Postępowanie sądowe (do 5.000 zł) | 1.500–2.500 zł | Postępowanie uproszczone lub EPU (nakaz zapłaty)',
+                    'Postępowanie sądowe (5.000–20.000 zł) | 2.500–5.000 zł | Postępowanie zwykłe (I instancja)',
+                    'Postępowanie sądowe (20.000–100.000 zł) | 5.000–10.000 zł | Złożone sprawy; dłuższy czas postępowania',
+                    'Postępowanie sądowe (100.000–500.000 zł) | 10.000–18.000 zł | Biznesowe sprawy windykacyjne; szczegółowa wycena po analizie akt',
+                    'Powyżej 500.000 zł | wycena indywidualna | Wstępna ocena na konsultacji',
+                ])],
+
+            // ── Tab: Sprawy Karne ─────────────────────────────────
+            ['key' => 'field_ks_of_tab_karne', 'label' => 'Sprawy Karne', 'type' => 'tab'],
+            ['key' => 'field_ks_of_karne', 'label' => 'Tabela (Postępowanie | Stawka | Min. stawka | Uwagi)', 'name' => 'oferta_karne', 'type' => 'textarea', 'rows' => 8, 'instructions' => $tbl_hint,
+                'default_value' => implode("\n", [
+                    'Przed sądem rejonowym (I instancja) | 2.000-3.000 zł | 600 zł | Zależnie od stopnia skomplikowania',
+                    'Przed sądem okręgowym (I instancja) | 3.500-5.000 zł | 840 zł | Poważniejsze przestępstwa',
+                    'Postępowanie apelacyjne | 4.000-6.000 zł | 960 zł | Odwołanie od wyroku',
+                    'Postępowanie przygotowawcze (prokuratura) | 2.000-2.500 zł | 600 zł | Obecność na przesłuchaniach, analiza akt',
+                    'Udział w jednej rozprawie (bez pozwu) | 1.000-1.200 zł | - | Jednorazowe zlecenie',
+                    'Sporządzenie apelacji (bez reprezentacji) | 2.000-2.500 zł | - | Sam dokument, bez udziału w rozprawie',
+                    'Obrona w sprawach o wykroczenia | 1.000 zł | - | Mandaty karne, drobne sprawy',
+                    'Obrona w sprawach gospodarczych (I instancja) | 5.000-10.000 zł | 1.200 zł | Przestępstwa skarbowe, wyłudzenia VAT',
+                ])],
+
+            // ── Tab: Prawo Gospodarcze ────────────────────────────
+            ['key' => 'field_ks_of_tab_gosp', 'label' => 'Prawo Gospodarcze', 'type' => 'tab'],
+            ['key' => 'field_ks_of_gosp', 'label' => 'Tabela (Usługa | Stawka | Uwagi)', 'name' => 'oferta_gospodarcze', 'type' => 'textarea', 'rows' => 10, 'instructions' => $tbl_hint,
+                'default_value' => implode("\n", [
+                    'Sporządzenie umowy (standardowa, do 5 stron) | 800-1.200 zł | B2B, zlecenia, NDA, umowy o pracę',
+                    'Sporządzenie umowy (złożona, 5-15 stron) | 2.000-3.500 zł | Inwestycyjne, licencje, joint-venture, franchising',
+                    'Przegląd i opiniowanie umowy | 600-1.000 zł | Sprawdzenie, uwagi prawne, rekomendacje zmian',
+                    'Negocjacje umowne (za godzinę) | 400 zł | Reprezentacja w negocjacjach biznesowych',
+                    'Opinia prawna (do 5 stron A4) | 1.000-1.500 zł | Analiza prawna + pisemne rekomendacje',
+                    'Regulamin pracy/RODO/OZE | 1.500-2.500 zł | Dostosowanie do aktualnych przepisów',
+                    'Obsługa zmian w KRS | 800-1.200 zł | Uchwały, zmiany umów spółek, nowi wspólnicy',
+                    'Sporządzenie uchwał zarządu/wspólników | 500-700 zł | Standardowe dokumenty korporacyjne',
+                    'Reprezentacja na Zgromadzeniu Wspólników | 1.500-2.500 zł | Obecność prawnika, wsparcie zarządu',
+                    'Compliance i audyt RODO | 3.000-8.000 zł | Przegląd zgodności z przepisami + raport',
+                ])],
+
+            // ── Tab: Reprezentacja Sądowa ─────────────────────────
+            ['key' => 'field_ks_of_tab_repr', 'label' => 'Reprezentacja Sądowa', 'type' => 'tab'],
+            ['key' => 'field_ks_of_repr', 'label' => 'Tabela (Wartość sporu | Stawka | Min. stawka | Zakres)', 'name' => 'oferta_reprezentacja', 'type' => 'textarea', 'rows' => 6, 'instructions' => $tbl_hint,
+                'default_value' => implode("\n", [
+                    'do 2.000 zł | 1.500 zł | 180 zł | Cała sprawa (I instancja)',
+                    '2.000-5.000 zł | 2.000-2.500 zł | 300 zł | Cała sprawa',
+                    '5.000-10.000 zł | 3.000-3.500 zł | 600 zł | Cała sprawa',
+                    '10.000-50.000 zł | 5.000-7.000 zł | 1.200 zł | Cała sprawa',
+                    '50.000-200.000 zł | 10.000-12.000 zł | 3.600 zł | Cała sprawa',
+                    'powyżej 200.000 zł | indywidualnie | 10.800 zł | Negocjacje z klientem',
+                ])],
+        ],
+        'location'        => [[['param' => 'page', 'operator' => '==', 'value' => (string) $oferta_id]]],
+        'position'        => 'normal',
+        'label_placement' => 'top',
+    ]);
+});
+
+/* ------------------------------------------------------------------ */
+
 function ks_smtp_send(string $host, int $port, string $user, string $pass,
                       string $from, string $to, string $reply_to,
                       string $subject, string $body): array

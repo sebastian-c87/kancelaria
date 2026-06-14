@@ -31,15 +31,8 @@
         <section class="content-section" style="padding-bottom: 0;">
             <div class="container">
                 <div class="intro-box">
-                    <p class="lead-text">
-                        Oferuję kompleksową obsługę prawną dostosowaną do potrzeb klientów indywidualnych i firm. 
-                        <strong>Każda sprawa jest inna</strong>, dlatego po wstępnej konsultacji przedstawiam 
-                        <strong>szczegółową wycenę</strong> dopasowaną do skali i złożoności problemu.
-                    </p>
-                    <p>
-                        Poniższy cennik oparty jest na <strong>Rozporządzeniu Ministra Sprawiedliwości</strong> 
-                        oraz <strong>praktyce rynkowej w Warszawie</strong> (stan na 2026 rok). Wszystkie kwoty podane są <strong>netto + VAT 23%</strong>.
-                    </p>
+                    <p class="lead-text"><?php echo ks_field('oferta_intro_lead', 'Oferuję kompleksową obsługę prawną dostosowaną do potrzeb klientów indywidualnych i firm.'); ?></p>
+                    <p><?php echo ks_field('oferta_intro_text', 'Poniższy cennik oparty jest na Rozporządzeniu Ministra Sprawiedliwości oraz praktyce rynkowej w Warszawie (stan na 2026 rok). Wszystkie kwoty podane są netto + VAT 23%.'); ?></p>
                 </div>
             </div>
         </section>
@@ -59,31 +52,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Porada prawna (60 min.) – osobiście</td>
-                                <td><strong>350-500 zł</strong></td>
-                                <td>Analiza sprawy, ocena szans, plan działania</td>
-                            </tr>
-                            <tr>
-                                <td>Porada online/telefoniczna (60 min.)</td>
-                                <td><strong>350 zł</strong></td>
-                                <td>Wideo/telefon, materiały wysyłane mailowo</td>
-                            </tr>
-                            <tr>
-                                <td>Porada ekspresowa (30 min.)</td>
-                                <td><strong>200-300 zł</strong></td>
-                                <td>Krótka konsultacja, szybka odpowiedź</td>
-                            </tr>
-                            <tr>
-                                <td>Opinia prawna pisemna (do 5 stron A4)</td>
-                                <td><strong>1.000-1.500 zł</strong></td>
-                                <td>Szczegółowa analiza + pisemne rekomendacje</td>
-                            </tr>
-                            <tr>
-                                <td>Analiza dokumentacji (za godzinę)</td>
-                                <td><strong>300-400 zł</strong></td>
-                                <td>Przegląd umów, pism, akt sprawy</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_konsultacje', 3); ?>
                         </tbody>
                     </table>
                 </div>
@@ -91,9 +60,7 @@
                 <div class="info-box">
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>Dodatkowe informacje:</h4>
                     <ul>
-                        <li>Pierwsza konsultacja zaliczana na poczet dalszej współpracy (jeśli zdecydujesz się na reprezentację)</li>
-                        <li>Przygotowanie dokumentów przez klienta = maksymalne wykorzystanie czasu</li>
-                        <li>Możliwość konsultacji w weekend (dodatkowa opłata +30%)</li>
+                        <?php echo ks_list_items('oferta_konsultacje_info'); ?>
                     </ul>
                 </div>
             </div>
@@ -108,29 +75,24 @@
                 <!-- Pakiet START -->
                 <div class="package-card">
                     <div class="package-header">
-                        <h3>PAKIET START</h3>
-                        <div class="package-price">800 zł/mc</div>
+                        <h3><?php echo ks_field('pkg_start_name', 'PAKIET START'); ?></h3>
+                        <div class="package-price"><?php echo ks_field('pkg_start_price', '800 zł/mc'); ?></div>
                     </div>
                     <div class="package-meta">
-                        <span><strong>Dla kogo:</strong> Mikrofirmy, freelancerzy, start-upy (1-5 pracowników)</span>
+                        <span><strong>Dla kogo:</strong> <?php echo ks_field('pkg_start_dla'); ?></span>
                     </div>
                     <div class="package-content">
                         <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></span>Co obejmuje pakiet:</h4>
                         <ul>
-                            <li>✅ <strong>Konsultacje telefoniczne i mailowe</strong> – do 2 godzin miesięcznie</li>
-                            <li>✅ <strong>Przegląd i opiniowanie do 3 umów miesięcznie</strong> (standardowych, do 5 stron)</li>
-                            <li>✅ <strong>Pomoc w sporządzaniu prostych pism</strong> (odpowiedzi na reklamacje)</li>
-                            <li>✅ <strong>Do 2 wezwań do zapłaty miesięcznie</strong> (prosta windykacja)</li>
-                            <li>✅ <strong>1 konsultacja z zakresu prawa pracy</strong> (umowy zlecenia, B2B)</li>
-                            <li>✅ <strong>Czas odpowiedzi: do 24h</strong> (dni robocze)</li>
+                            <?php echo ks_list_items('pkg_start_obejmuje', true); ?>
                         </ul>
+                        <?php if (ks_raw('pkg_start_nieobejmuje') !== ''): ?>
                         <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>Pakiet NIE obejmuje:</h4>
                         <ul>
-                            <li>Reprezentacji sądowej (rozliczana osobno)</li>
-                            <li>Sporządzania umów (tylko przegląd!)</li>
-                            <li>Obsługi postępowań administracyjnych i KRS</li>
+                            <?php echo ks_list_items('pkg_start_nieobejmuje'); ?>
                         </ul>
-                        <p class="package-extra"><strong>Dodatkowe godziny:</strong> 300 zł/h</p>
+                        <?php endif; ?>
+                        <p class="package-extra"><strong>Dodatkowe godziny:</strong> <?php echo ks_field('pkg_start_godziny', '300 zł/h'); ?></p>
                     </div>
                 </div>
 
@@ -138,95 +100,69 @@
                 <div class="package-card package-recommended">
                     <div class="package-badge">★ POLECANY</div>
                     <div class="package-header">
-                        <h3>PAKIET BIZNES</h3>
-                        <div class="package-price">1.800 zł/mc</div>
+                        <h3><?php echo ks_field('pkg_biznes_name', 'PAKIET BIZNES'); ?></h3>
+                        <div class="package-price"><?php echo ks_field('pkg_biznes_price', '1.800 zł/mc'); ?></div>
                     </div>
                     <div class="package-meta">
-                        <span><strong>Dla kogo:</strong> Małe i średnie firmy (5-25 pracowników)</span>
+                        <span><strong>Dla kogo:</strong> <?php echo ks_field('pkg_biznes_dla'); ?></span>
                     </div>
                     <div class="package-content">
                         <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></span>Co obejmuje pakiet:</h4>
                         <ul>
-                            <li>✅ <strong>Konsultacje telefoniczne i mailowe</strong> – do 4 godzin miesięcznie (odpowiedź do 12h w dni robocze)</li>
-                            <li>✅ <strong>Przegląd i opiniowanie do 8 umów</strong> (do 10 stron każda)</li>
-                            <li>✅ <strong>Sporządzanie do 3 umów standardowych</strong> (B2B, NDA, zlecenia, umowy o pracę)</li>
-                            <li>✅ <strong>Do 5 wezwań do zapłaty miesięcznie</strong> (windykacja należności)</li>
-                            <li>✅ <strong>Kompleksowe doradztwo z zakresu prawa pracy</strong> (umowy, regulaminy, zwolnienia)</li>
-                            <li>✅ <strong>Reprezentacja w negocjacjach</strong> (do 2 spotkań/mc)</li>
-                            <li>✅ <strong>Przegląd korespondencji prawnej</strong> (odpowiedzi na wezwania, reklamacje)</li>
-                            <li>✅ <strong>Audyt prawny 1x na pół roku</strong> (compliance, RODO, umowy)</li>
-                            <li>✅ <strong>Czas odpowiedzi: do 12h</strong> (dni robocze)</li>
-                            <li>✅ <strong>Priorytetowy kontakt</strong> (dedykowany numer telefonu)</li>
-                            <li>✅ <strong>Rabat 15% na sprawy sądowe</strong></li>
+                            <?php echo ks_list_items('pkg_biznes_obejmuje', true); ?>
                         </ul>
+                        <?php if (ks_raw('pkg_biznes_nieobejmuje') !== ''): ?>
                         <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>Pakiet NIE obejmuje:</h4>
                         <ul>
-                            <li>Reprezentacji sądowej (rozliczana osobno z rabatem 15%)</li>
-                            <li>Obsługi spraw KRS (płatne osobno z rabatem 15%)</li>
+                            <?php echo ks_list_items('pkg_biznes_nieobejmuje'); ?>
                         </ul>
-                        <p class="package-extra"><strong>Dodatkowe godziny:</strong> 280 zł/h</p>
+                        <?php endif; ?>
+                        <p class="package-extra"><strong>Dodatkowe godziny:</strong> <?php echo ks_field('pkg_biznes_godziny', '280 zł/h'); ?></p>
                     </div>
                 </div>
 
                 <!-- Pakiet PROFESJONALNY -->
                 <div class="package-card">
                     <div class="package-header">
-                        <h3>PAKIET PROFESJONALNY</h3>
-                        <div class="package-price">4.200 zł/mc</div>
+                        <h3><?php echo ks_field('pkg_prof_name', 'PAKIET PROFESJONALNY'); ?></h3>
+                        <div class="package-price"><?php echo ks_field('pkg_prof_price', '4.200 zł/mc'); ?></div>
                     </div>
                     <div class="package-meta">
-                        <span><strong>Dla kogo:</strong> Średnie i duże firmy (25-100 pracowników), spółki z zarządem</span>
+                        <span><strong>Dla kogo:</strong> <?php echo ks_field('pkg_prof_dla'); ?></span>
                     </div>
                     <div class="package-content">
                         <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></span>Co obejmuje pakiet:</h4>
                         <ul>
-                            <li>✅ <strong>Konsultacje telefoniczne, mailowe i wideo</strong> – do 10 godzin miesięcznie (odpowiedź do 6h w dni robocze)</li>
-                            <li>✅ <strong>Przegląd i opiniowanie do 15 umów</strong> (niezależnie od objętości)</li>
-                            <li>✅ <strong>Sporządzanie do 5 złożonych umów</strong> (inwestycyjne, joint-venture, licencje, franchising)</li>
-                            <li>✅ <strong>Do 10 wezwań do zapłaty miesięcznie</strong> (kompleksowa windykacja)</li>
-                            <li>✅ <strong>Kompleksowe doradztwo z zakresu prawa pracy</strong> (zwolnienia grupowe, kontrole PIP, spory)</li>
-                            <li>✅ <strong>Pełna obsługa KRS i zmian korporacyjnych</strong> (uchwały, zmiany umów spółek, raporty)</li>
-                            <li>✅ <strong>Reprezentacja w negocjacjach biznesowych</strong> (do 4 spotkań/mc)</li>
-                            <li>✅ <strong>Audyt prawny 2x/rok</strong> (RODO, compliance, umowy, regulaminy)</li>
-                            <li>✅ <strong>Wsparcie w postępowaniach administracyjnych</strong> (UOKiK, UODO, ZUS, US)</li>
-                            <li>✅ <strong>Comiesięczne raporty</strong> (podsumowanie obsługi, statystyki, rekomendacje)</li>
-                            <li>✅ <strong>Czas odpowiedzi: do 6h</strong> (dni robocze)</li>
-                            <li>✅ <strong>Dedykowany opiekun prawny</strong> (stały kontakt, znajomość specyfiki firmy)</li>
-                            <li>✅ <strong>Rabat 20% na sprawy sądowe</strong></li>
+                            <?php echo ks_list_items('pkg_prof_obejmuje', true); ?>
                         </ul>
+                        <?php if (ks_raw('pkg_prof_nieobejmuje') !== ''): ?>
                         <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>Pakiet NIE obejmuje:</h4>
                         <ul>
-                            <li>Reprezentacji sądowej w sporach o wartości powyżej 50.000 zł (rozliczana osobno z rabatem 20%)</li>
+                            <?php echo ks_list_items('pkg_prof_nieobejmuje'); ?>
                         </ul>
-                        <p class="package-extra"><strong>Dodatkowe godziny:</strong> 250 zł/h</p>
+                        <?php endif; ?>
+                        <p class="package-extra"><strong>Dodatkowe godziny:</strong> <?php echo ks_field('pkg_prof_godziny', '250 zł/h'); ?></p>
                     </div>
                 </div>
 
                 <!-- Pakiet PREMIUM -->
                 <div class="package-card">
                     <div class="package-header">
-                        <h3>PAKIET PREMIUM</h3>
-                        <div class="package-price">od 8.000 zł/mc</div>
+                        <h3><?php echo ks_field('pkg_premium_name', 'PAKIET PREMIUM'); ?></h3>
+                        <div class="package-price"><?php echo ks_field('pkg_premium_price', 'od 8.000 zł/mc'); ?></div>
                     </div>
                     <div class="package-meta">
-                        <span><strong>Dla kogo:</strong> Duże korporacje, spółki giełdowe, grupy kapitałowe (100+ pracowników)</span>
+                        <span><strong>Dla kogo:</strong> <?php echo ks_field('pkg_premium_dla'); ?></span>
                     </div>
                     <div class="package-content">
                         <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg></span>Co obejmuje pakiet:</h4>
                         <ul>
-                            <li>✅ <strong>Pełna obsługa prawna in-house</strong> (prawnik dedykowany wyłącznie dla klienta)</li>
-                            <li>✅ <strong>Konsultacje telefoniczne, mailowe, wideo i stacjonarne</strong> – zakres ustalany indywidualnie; możliwość kontaktu w pilnych sytuacjach poza godzinami pracy</li>
-                            <li>✅ <strong>Konsultacje strategiczne z zarządem</strong> (uczestnictwo w posiedzeniach zarządu)</li>
-                            <li>✅ <strong>Kompleksowa obsługa korporacyjna</strong> (zmiany struktury spółek, przekształcenia, uchwały)</li>
-                            <li>✅ <strong>Reprezentacja w postępowaniach sądowych</strong> (do 3 spraw jednocześnie w ramach pakietu)</li>
-                            <li>✅ <strong>Kompleksowa windykacja należności</strong> w ramach pakietu (wezwania, pozwy, egzekucje)</li>
-                            <li>✅ <strong>Zarządzanie ryzykiem prawnym</strong> (audyty kwartalne, compliance)</li>
-                            <li>✅ <strong>Comiesięczne spotkania strategiczne</strong> (prezentacja stanu spraw, analiza ryzyka)</li>
-                            <li>✅ <strong>Szkolenia wewnętrzne dla pracowników</strong> (RODO, prawo pracy, compliance – 2x/rok)</li>
-                            <li>✅ <strong>Rabat 30% na wszystkie sprawy poza pakietem</strong></li>
+                            <?php echo ks_list_items('pkg_premium_obejmuje', true); ?>
                         </ul>
-                        <p class="package-extra"><strong>Dodatkowe godziny:</strong> 220 zł/h</p>
-                        <p class="package-note"><strong>Zakres negocjowalny:</strong> Możliwość stworzenia pakietu na miarę (np. tylko obsługa korporacyjna bez spraw pracowniczych)</p>
+                        <p class="package-extra"><strong>Dodatkowe godziny:</strong> <?php echo ks_field('pkg_premium_godziny', '220 zł/h'); ?></p>
+                        <?php if (ks_raw('pkg_premium_note') !== ''): ?>
+                        <p class="package-note"><strong>Zakres negocjowalny:</strong> <?php echo ks_field('pkg_premium_note'); ?></p>
+                        <?php endif; ?>
                     </div>
                 </div>
 
@@ -359,71 +295,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="highlight-row">
-                                <td><strong>Opłata sądowa od pozwu rozwodowego</strong></td>
-                                <td><strong>600 zł</strong></td>
-                                <td>Stała w całej Polsce, obowiązkowa</td>
-                            </tr>
-                            <tr class="highlight-row">
-                                <td><strong>Opłata skarbowa za pełnomocnictwo</strong></td>
-                                <td><strong>17 zł</strong></td>
-                                <td>Przy reprezentacji sądowej</td>
-                            </tr>
-                            <tr>
-                                <td>Sporządzenie pozwu rozwodowego</td>
-                                <td><strong>1.000-1.500 zł</strong></td>
-                                <td>Zależnie od skomplikowania</td>
-                            </tr>
-                            <tr>
-                                <td>Rozwód za porozumieniem stron (cała sprawa)</td>
-                                <td><strong>3.000-3.500 zł</strong></td>
-                                <td>Szybsze i tańsze, bez sporu</td>
-                            </tr>
-                            <tr>
-                                <td>Rozwód z orzekaniem o winie (cała sprawa)</td>
-                                <td><strong>8.000–15.000 zł</strong></td>
-                                <td>Dłuższe postępowanie, wielokrotne rozprawy, świadkowie; cena zależy od liczby posiedzeń</td>
-                            </tr>
-                            <tr>
-                                <td>Podział majątku wspólnego (pozew)</td>
-                                <td><strong>2.000-4.000 zł</strong></td>
-                                <td>Zależnie od wartości majątku</td>
-                            </tr>
-                            <tr>
-                                <td>Ustalenie alimentów (pozew + reprezentacja)</td>
-                                <td><strong>1.500-2.000 zł</strong></td>
-                                <td>Prostsza sprawa</td>
-                            </tr>
-                            <tr>
-                                <td>Zmiana wysokości alimentów</td>
-                                <td><strong>1.000-1.500 zł</strong></td>
-                                <td>Przy zmianie sytuacji życiowej</td>
-                            </tr>
-                            <tr>
-                                <td>Egzekucja alimentów (komornik + reprezentacja)</td>
-                                <td><strong>1.000-1.500 zł</strong></td>
-                                <td>Windykacja zaległych alimentów</td>
-                            </tr>
-                            <tr>
-                                <td>Kontakty z dzieckiem (pozew)</td>
-                                <td><strong>2.000-2.500 zł</strong></td>
-                                <td>Ustalenie harmonogramu kontaktów</td>
-                            </tr>
-                            <tr>
-                                <td>Władza rodzicielska (ograniczenie/pozbawienie)</td>
-                                <td><strong>2.500-4.000 zł</strong></td>
-                                <td>Wymaga dowodów, często opinie psychologiczne</td>
-                            </tr>
-                            <tr>
-                                <td>Separacja (pozew + reprezentacja)</td>
-                                <td><strong>2.500-3.500 zł</strong></td>
-                                <td>Podobnie jak rozwód</td>
-                            </tr>
-                            <tr>
-                                <td>Reprezentacja na 1 rozprawie (bez pozwu)</td>
-                                <td><strong>1.000-1.200 zł</strong></td>
-                                <td>Jednorazowe zlecenie</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_rodzinne', 3); ?>
                         </tbody>
                     </table>
                 </div>
@@ -462,36 +334,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Wezwanie do zapłaty (pozasądowe)</td>
-                                <td><strong>300–700 zł</strong></td>
-                                <td>Wezwanie, negocjacje, prosta windykacja (przeważnie do 3.000 zł wartości)</td>
-                            </tr>
-                            <tr>
-                                <td>Postępowanie sądowe (do 5.000 zł)</td>
-                                <td><strong>1.500–2.500 zł</strong></td>
-                                <td>Postępowanie uproszczone lub EPU (nakaz zapłaty)</td>
-                            </tr>
-                            <tr>
-                                <td>Postępowanie sądowe (5.000–20.000 zł)</td>
-                                <td><strong>2.500–5.000 zł</strong></td>
-                                <td>Postępowanie zwykłe (I instancja)</td>
-                            </tr>
-                            <tr>
-                                <td>Postępowanie sądowe (20.000–100.000 zł)</td>
-                                <td><strong>5.000–10.000 zł</strong></td>
-                                <td>Złożone sprawy; dłuższy czas postępowania</td>
-                            </tr>
-                            <tr>
-                                <td>Postępowanie sądowe (100.000–500.000 zł)</td>
-                                <td><strong>10.000–18.000 zł</strong></td>
-                                <td>Biznesowe sprawy windykacyjne; szczegółowa wycena po analizie akt</td>
-                            </tr>
-                            <tr>
-                                <td>Powyżej 500.000 zł</td>
-                                <td><strong>wycena indywidualna</strong></td>
-                                <td>Wstępna ocena na konsultacji</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_windykacja', 3); ?>
                         </tbody>
                     </table>
                 </div>
@@ -558,54 +401,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Przed sądem rejonowym (I instancja)</td>
-                                <td><strong>2.000-3.000 zł</strong></td>
-                                <td>600 zł</td>
-                                <td>Zależnie od stopnia skomplikowania</td>
-                            </tr>
-                            <tr>
-                                <td>Przed sądem okręgowym (I instancja)</td>
-                                <td><strong>3.500-5.000 zł</strong></td>
-                                <td>840 zł</td>
-                                <td>Poważniejsze przestępstwa</td>
-                            </tr>
-                            <tr>
-                                <td>Postępowanie apelacyjne</td>
-                                <td><strong>4.000-6.000 zł</strong></td>
-                                <td>960 zł</td>
-                                <td>Odwołanie od wyroku</td>
-                            </tr>
-                            <tr>
-                                <td>Postępowanie przygotowawcze (prokuratura)</td>
-                                <td><strong>2.000-2.500 zł</strong></td>
-                                <td>600 zł</td>
-                                <td>Obecność na przesłuchaniach, analiza akt</td>
-                            </tr>
-                            <tr>
-                                <td>Udział w jednej rozprawie (bez pozwu)</td>
-                                <td><strong>1.000-1.200 zł</strong></td>
-                                <td>-</td>
-                                <td>Jednorazowe zlecenie</td>
-                            </tr>
-                            <tr>
-                                <td>Sporządzenie apelacji (bez reprezentacji)</td>
-                                <td><strong>2.000-2.500 zł</strong></td>
-                                <td>-</td>
-                                <td>Sam dokument, bez udziału w rozprawie</td>
-                            </tr>
-                            <tr>
-                                <td>Obrona w sprawach o wykroczenia</td>
-                                <td><strong>1.000 zł</strong></td>
-                                <td>-</td>
-                                <td>Mandaty karne, drobne sprawy</td>
-                            </tr>
-                            <tr>
-                                <td>Obrona w sprawach gospodarczych (I instancja)</td>
-                                <td><strong>5.000-10.000 zł</strong></td>
-                                <td>1.200 zł</td>
-                                <td>Przestępstwa skarbowe, wyłudzenia VAT</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_karne', 4); ?>
                         </tbody>
                     </table>
                 </div>
@@ -634,56 +430,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Sporządzenie umowy (standardowa, do 5 stron)</td>
-                                <td><strong>800-1.200 zł</strong></td>
-                                <td>B2B, zlecenia, NDA, umowy o pracę</td>
-                            </tr>
-                            <tr>
-                                <td>Sporządzenie umowy (złożona, 5-15 stron)</td>
-                                <td><strong>2.000-3.500 zł</strong></td>
-                                <td>Inwestycyjne, licencje, joint-venture, franchising</td>
-                            </tr>
-                            <tr>
-                                <td>Przegląd i opiniowanie umowy</td>
-                                <td><strong>600-1.000 zł</strong></td>
-                                <td>Sprawdzenie, uwagi prawne, rekomendacje zmian</td>
-                            </tr>
-                            <tr>
-                                <td>Negocjacje umowne (za godzinę)</td>
-                                <td><strong>400 zł</strong></td>
-                                <td>Reprezentacja w negocjacjach biznesowych</td>
-                            </tr>
-                            <tr>
-                                <td>Opinia prawna (do 5 stron A4)</td>
-                                <td><strong>1.000-1.500 zł</strong></td>
-                                <td>Analiza prawna + pisemne rekomendacje</td>
-                            </tr>
-                            <tr>
-                                <td>Regulamin pracy/RODO/OZE</td>
-                                <td><strong>1.500-2.500 zł</strong></td>
-                                <td>Dostosowanie do aktualnych przepisów</td>
-                            </tr>
-                            <tr>
-                                <td>Obsługa zmian w KRS</td>
-                                <td><strong>800-1.200 zł</strong></td>
-                                <td>Uchwały, zmiany umów spółek, nowi wspólnicy</td>
-                            </tr>
-                            <tr>
-                                <td>Sporządzenie uchwał zarządu/wspólników</td>
-                                <td><strong>500-700 zł</strong></td>
-                                <td>Standardowe dokumenty korporacyjne</td>
-                            </tr>
-                            <tr>
-                                <td>Reprezentacja na Zgromadzeniu Wspólników</td>
-                                <td><strong>1.500-2.500 zł</strong></td>
-                                <td>Obecność prawnika, wsparcie zarządu</td>
-                            </tr>
-                            <tr>
-                                <td>Compliance i audyt RODO</td>
-                                <td><strong>3.000-8.000 zł</strong></td>
-                                <td>Przegląd zgodności z przepisami + raport</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_gospodarcze', 3); ?>
                         </tbody>
                     </table>
                 </div>
@@ -713,42 +460,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>do 2.000 zł</td>
-                                <td><strong>1.500 zł</strong></td>
-                                <td>180 zł</td>
-                                <td>Cała sprawa (I instancja)</td>
-                            </tr>
-                            <tr>
-                                <td>2.000-5.000 zł</td>
-                                <td><strong>2.000-2.500 zł</strong></td>
-                                <td>300 zł</td>
-                                <td>Cała sprawa</td>
-                            </tr>
-                            <tr>
-                                <td>5.000-10.000 zł</td>
-                                <td><strong>3.000-3.500 zł</strong></td>
-                                <td>600 zł</td>
-                                <td>Cała sprawa</td>
-                            </tr>
-                            <tr>
-                                <td>10.000-50.000 zł</td>
-                                <td><strong>5.000-7.000 zł</strong></td>
-                                <td>1.200 zł</td>
-                                <td>Cała sprawa</td>
-                            </tr>
-                            <tr>
-                                <td>50.000-200.000 zł</td>
-                                <td><strong>10.000-12.000 zł</strong></td>
-                                <td>3.600 zł</td>
-                                <td>Cała sprawa</td>
-                            </tr>
-                            <tr>
-                                <td>powyżej 200.000 zł</td>
-                                <td><strong>indywidualnie</strong></td>
-                                <td>10.800 zł</td>
-                                <td>Negocjacje z klientem</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_reprezentacja', 4); ?>
                         </tbody>
                     </table>
                 </div>
