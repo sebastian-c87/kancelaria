@@ -285,7 +285,7 @@ add_action('acf/init', function () {
             ['key' => 'field_ks_omnie_mem3_txt', 'label' => 'Pole 3 – tekst', 'name' => 'mem_3_text',  'type' => 'textarea', 'rows' => 2,
                 'default_value' => 'Certyfikat AML – obowiązki instytucji obowiązanych (GIIF) · Ochrona Zarządu przed egzekucją (PTPiGR)'],
         ],
-        'location'        => [[['param' => 'page_template', 'operator' => '==', 'value' => 'page-o-mnie.php']]],
+        'location'        => [[['param' => 'page_slug', 'operator' => '==', 'value' => 'o-mnie']]],
         'position'        => 'normal',
         'label_placement' => 'top',
     ]);
