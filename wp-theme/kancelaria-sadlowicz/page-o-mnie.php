@@ -20,39 +20,19 @@
     </div>
 </section>
 
-<?php if (ks_use_elementor_content()): ?>
-    <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
-<?php else: ?>
-
 <!-- ===== INTRO: ZDJĘCIE + BIO ===== -->
 <section class="content-section">
     <div class="container">
         <div class="about-intro">
 
-            <!-- TEKST BIO -->
             <div class="about-text reveal">
-                <p class="lead-paragraph">
-                    Prawo to nie tylko zawód – to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.
-                </p>
+                <p class="lead-paragraph"><?php echo ks_field('lead_paragraph', 'Prawo to nie tylko zawód – to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.'); ?></p>
 
-                <p>
-                    Wybór prawa był dla mnie decyzją przemyślaną – ale dopiero socjologia, którą studiowałam równolegle na SGGW, nauczyła mnie naprawdę słuchać. Rozumieć nie tylko przepis, ale człowieka stojącego za sprawą. Interdyscyplinarne wykształcenie (Prawo na Uniwersytecie SWPS i Socjologia na SGGW) pozwala mi łączyć precyzję prawniczą z komunikacją, która daje klientowi poczucie, że jest rozumiany – nie tylko reprezentowany.
-                </p>
+                <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
 
-                <p>
-                    Przez ponad 12 lat pracy na styku prawa i biznesu – od asystenta prawnego, przez aplikację adwokacką w kancelarii Jerschina-Fus, Radtke-Cichocka w Warszawie, po własną praktykę – zbudowałam doświadczenie, którego nie zastąpi żaden kurs. Prowadzę aktywny referat 150–200 spraw rocznie, reprezentując spółki, przedsiębiorców i klientów indywidualnych przed sądami wszystkich instancji. W windykacji należności osiągam ok. 80% skuteczności – zarówno w sprawach indywidualnych, jak i masowych.
-                </p>
-
-                <p>
-                    Cenię przejrzystość. Klient powinien rozumieć swoją sytuację prawną – nie tylko jej skutki, ale też strategię działania i realne szanse. Dlatego zanim wyślę pierwsze pismo, tłumaczę. Zamiast prawniczego żargonu – konkretne opcje i uczciwa ocena ryzyka. To podejście wypracowałam przez lata doradztwa Zarządom spółek, gdzie nie ma miejsca na niedomówienia i gdzie stawką jest zawsze więcej niż jedna sprawa.
-                </p>
-
-                <div class="signature">
-                    Kamila Sadłowicz, adwokat
-                </div>
+                <div class="signature">Kamila Sadłowicz, adwokat</div>
             </div>
 
-            <!-- ZDJĘCIE -->
             <div class="about-photo-block reveal">
                 <div class="about-photo-frame">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/7.jpg" alt="Adwokat Kamila Sadłowicz">
@@ -74,20 +54,20 @@
     <div class="container">
         <div class="about-stats-grid">
             <div class="about-stat">
-                <span class="about-stat-number">12+</span>
-                <span class="about-stat-label">lat doświadczenia</span>
+                <span class="about-stat-number"><?php echo ks_field('stat_1_number', '12+'); ?></span>
+                <span class="about-stat-label"><?php echo ks_field('stat_1_label', 'lat doświadczenia'); ?></span>
             </div>
             <div class="about-stat">
-                <span class="about-stat-number">200</span>
-                <span class="about-stat-label">spraw rocznie</span>
+                <span class="about-stat-number"><?php echo ks_field('stat_2_number', '200'); ?></span>
+                <span class="about-stat-label"><?php echo ks_field('stat_2_label', 'spraw rocznie'); ?></span>
             </div>
             <div class="about-stat">
-                <span class="about-stat-number">~80%</span>
-                <span class="about-stat-label">skuteczności w windykacji</span>
+                <span class="about-stat-number"><?php echo ks_field('stat_3_number', '~80%'); ?></span>
+                <span class="about-stat-label"><?php echo ks_field('stat_3_label', 'skuteczności w windykacji'); ?></span>
             </div>
             <div class="about-stat">
-                <span class="about-stat-number">500+</span>
-                <span class="about-stat-label">klientów obsłużonych</span>
+                <span class="about-stat-number"><?php echo ks_field('stat_4_number', '500+'); ?></span>
+                <span class="about-stat-label"><?php echo ks_field('stat_4_label', 'klientów obsłużonych'); ?></span>
             </div>
         </div>
     </div>
@@ -109,20 +89,16 @@
                 <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
-                <h3>Rzetelność</h3>
-                <p>
-                    Każda sprawa wymaga pełnego zaangażowania i dokładnej analizy. Daję Ci rzetelną ocenę sytuacji – nawet jeśli nie jest to to, co chciałbyś usłyszeć.
-                </p>
+                <h3><?php echo ks_field('value_1_title', 'Rzetelność'); ?></h3>
+                <p><?php echo ks_field('value_1_text', 'Każda sprawa wymaga pełnego zaangażowania i dokładnej analizy. Daję Ci rzetelną ocenę sytuacji – nawet jeśli nie jest to to, co chciałbyś usłyszeć.'); ?></p>
             </div>
             <div class="value-card reveal">
                 <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"/>
                     <polyline points="12 6 12 12 16 14"/>
                 </svg>
-                <h3>Dostępność</h3>
-                <p>
-                    Odpowiadam na maile w ciągu 24 godzin roboczych. Wiem, że w sprawach prawnych czas często ma kluczowe znaczenie – dlatego nie zostawiam klientów bez odpowiedzi.
-                </p>
+                <h3><?php echo ks_field('value_2_title', 'Dostępność'); ?></h3>
+                <p><?php echo ks_field('value_2_text', 'Odpowiadam na maile w ciągu 24 godzin roboczych. Wiem, że w sprawach prawnych czas często ma kluczowe znaczenie – dlatego nie zostawiam klientów bez odpowiedzi.'); ?></p>
             </div>
             <div class="value-card reveal">
                 <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -130,10 +106,8 @@
                     <circle cx="9" cy="7" r="4"/>
                     <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
                 </svg>
-                <h3>Indywidualne podejście</h3>
-                <p>
-                    Każdy klient i każda sprawa jest inna. Nie stosuję szablonowych rozwiązań – słucham, analizuję i dobieram strategię dopasowaną do Twojej konkretnej sytuacji.
-                </p>
+                <h3><?php echo ks_field('value_3_title', 'Indywidualne podejście'); ?></h3>
+                <p><?php echo ks_field('value_3_text', 'Każdy klient i każda sprawa jest inna. Nie stosuję szablonowych rozwiązań – słucham, analizuję i dobieram strategię dopasowaną do Twojej konkretnej sytuacji.'); ?></p>
             </div>
         </div>
     </div>
@@ -144,63 +118,57 @@
     <div class="container">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
 
-            <!-- WYKSZTAŁCENIE -->
             <div class="reveal">
                 <div class="page-hero-eyebrow" style="margin-bottom: 8px;">
                     <div class="page-hero-eyebrow-line"></div>
                     <span class="page-hero-eyebrow-text">Edukacja</span>
                 </div>
-                <h2 style="font-family: var(--ff-display); font-size: clamp(1.5rem,2.5vw,2rem); color: var(--navy); font-weight: 400; margin-bottom: 0;">
-                    Wykształcenie
-                </h2>
+                <h2 style="font-family: var(--ff-display); font-size: clamp(1.5rem,2.5vw,2rem); color: var(--navy); font-weight: 400; margin-bottom: 0;">Wykształcenie</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <span class="timeline-year">2020</span>
-                        <h4>Egzamin adwokacki – wynik pozytywny</h4>
-                        <p>Okręgowa Rada Adwokacka w Warszawie · wpis nr WAW/ADW/9453</p>
+                        <span class="timeline-year"><?php echo ks_field('edu_1_year', '2020'); ?></span>
+                        <h4><?php echo ks_field('edu_1_title', 'Egzamin adwokacki – wynik pozytywny'); ?></h4>
+                        <p><?php echo ks_field('edu_1_desc', 'Okręgowa Rada Adwokacka w Warszawie · wpis nr WAW/ADW/9453'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year">2017 – 2019</span>
-                        <h4>Aplikacja adwokacka</h4>
-                        <p>ORA w Warszawie · starosta grupy aplikacyjnej · Samorząd Aplikantów Adwokackich</p>
+                        <span class="timeline-year"><?php echo ks_field('edu_2_year', '2017 – 2019'); ?></span>
+                        <h4><?php echo ks_field('edu_2_title', 'Aplikacja adwokacka'); ?></h4>
+                        <p><?php echo ks_field('edu_2_desc', 'ORA w Warszawie · starosta grupy aplikacyjnej · Samorząd Aplikantów Adwokackich'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year">2011 – 2014</span>
-                        <h4>Magister prawa</h4>
-                        <p>Uniwersytet SWPS, Warszawa</p>
+                        <span class="timeline-year"><?php echo ks_field('edu_3_year', '2011 – 2014'); ?></span>
+                        <h4><?php echo ks_field('edu_3_title', 'Magister prawa'); ?></h4>
+                        <p><?php echo ks_field('edu_3_desc', 'Uniwersytet SWPS, Warszawa'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year">2008 – 2010</span>
-                        <h4>Magister socjologii</h4>
-                        <p>SGGW, Warszawa · spec. Komunikowanie społeczne i doradztwo</p>
+                        <span class="timeline-year"><?php echo ks_field('edu_4_year', '2008 – 2010'); ?></span>
+                        <h4><?php echo ks_field('edu_4_title', 'Magister socjologii'); ?></h4>
+                        <p><?php echo ks_field('edu_4_desc', 'SGGW, Warszawa · spec. Komunikowanie społeczne i doradztwo'); ?></p>
                     </div>
                 </div>
             </div>
 
-            <!-- DOŚWIADCZENIE -->
             <div class="reveal">
                 <div class="page-hero-eyebrow" style="margin-bottom: 8px;">
                     <div class="page-hero-eyebrow-line"></div>
                     <span class="page-hero-eyebrow-text">Kariera</span>
                 </div>
-                <h2 style="font-family: var(--ff-display); font-size: clamp(1.5rem,2.5vw,2rem); color: var(--navy); font-weight: 400; margin-bottom: 0;">
-                    Doświadczenie
-                </h2>
+                <h2 style="font-family: var(--ff-display); font-size: clamp(1.5rem,2.5vw,2rem); color: var(--navy); font-weight: 400; margin-bottom: 0;">Doświadczenie</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <span class="timeline-year">2020 – dziś</span>
-                        <h4>Kancelaria Adwokacka Kamila Sadłowicz</h4>
-                        <p>Samodzielna praktyka · 150–200 spraw rocznie · prawo gospodarcze, cywilne, pracy, windykacja, restrukturyzacja · sądy wszystkich instancji</p>
+                        <span class="timeline-year"><?php echo ks_field('exp_1_year', '2020 – dziś'); ?></span>
+                        <h4><?php echo ks_field('exp_1_title', 'Kancelaria Adwokacka Kamila Sadłowicz'); ?></h4>
+                        <p><?php echo ks_field('exp_1_desc', 'Samodzielna praktyka · 150–200 spraw rocznie · prawo gospodarcze, cywilne, pracy, windykacja, restrukturyzacja · sądy wszystkich instancji'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year">2017 – 2020</span>
-                        <h4>Aplikant adwokacki – Jerschina-Fus, Radtke-Cichocka Sp. J.</h4>
-                        <p>Warszawa · obsługa branży ochrony i automotive · pisma procesowe, zastępstwa sądowe, koncesje MSWiA i ABW</p>
+                        <span class="timeline-year"><?php echo ks_field('exp_2_year', '2017 – 2020'); ?></span>
+                        <h4><?php echo ks_field('exp_2_title', 'Aplikant adwokacki – Jerschina-Fus, Radtke-Cichocka Sp. J.'); ?></h4>
+                        <p><?php echo ks_field('exp_2_desc', 'Warszawa · obsługa branży ochrony i automotive · pisma procesowe, zastępstwa sądowe, koncesje MSWiA i ABW'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year">2011 – 2013</span>
-                        <h4>Asystent prawny – PROFESSIO Kancelaria Prawnicza / Saturn TFI S.A.</h4>
-                        <p>Warszawa · pisma procesowe w sprawach cywilnych i pracowniczych · zarządzanie sekretariatem kancelarii</p>
+                        <span class="timeline-year"><?php echo ks_field('exp_3_year', '2011 – 2013'); ?></span>
+                        <h4><?php echo ks_field('exp_3_title', 'Asystent prawny – PROFESSIO Kancelaria Prawnicza / Saturn TFI S.A.'); ?></h4>
+                        <p><?php echo ks_field('exp_3_desc', 'Warszawa · pisma procesowe w sprawach cywilnych i pracowniczych · zarządzanie sekretariatem kancelarii'); ?></p>
                     </div>
                 </div>
             </div>
@@ -221,17 +189,17 @@
         </h2>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
             <div class="info-box" style="margin: 0;">
-                <h4>Okręgowa Rada Adwokacka w Warszawie</h4>
-                <p>Adwokat wpisana na listę adwokatów ORA w Warszawie od 2020 r.</p>
+                <h4><?php echo ks_field('mem_1_title', 'Okręgowa Rada Adwokacka w Warszawie'); ?></h4>
+                <p><?php echo ks_field('mem_1_text', 'Adwokat wpisana na listę adwokatów ORA w Warszawie od 2020 r.'); ?></p>
                 <p style="margin-top: 8px; font-size: .875rem; color: var(--text-muted);">Nr wpisu: WAW/ADW/9453 · <a href="https://www.rejestradwokatow.pl/adwokat/sadowicz-kamila-32972" target="_blank" rel="noopener" style="color: var(--navy);">Weryfikacja w rejestrze →</a></p>
             </div>
             <div class="info-box" style="margin: 0;">
-                <h4>Samorząd Aplikantów Adwokackich</h4>
-                <p>Członek Samorządu Aplikantów Adwokackich ORA Warszawa przez cały okres aplikacji (2017–2019) · starosta grupy aplikacyjnej</p>
+                <h4><?php echo ks_field('mem_2_title', 'Samorząd Aplikantów Adwokackich'); ?></h4>
+                <p><?php echo ks_field('mem_2_text', 'Członek Samorządu Aplikantów Adwokackich ORA Warszawa przez cały okres aplikacji (2017–2019) · starosta grupy aplikacyjnej'); ?></p>
             </div>
             <div class="info-box" style="margin: 0;">
-                <h4>Certyfikaty i szkolenia</h4>
-                <p>Certyfikat AML – obowiązki instytucji obowiązanych (GIIF) · Ochrona Zarządu przed egzekucją (PTPiGR)</p>
+                <h4><?php echo ks_field('mem_3_title', 'Certyfikaty i szkolenia'); ?></h4>
+                <p><?php echo ks_field('mem_3_text', 'Certyfikat AML – obowiązki instytucji obowiązanych (GIIF) · Ochrona Zarządu przed egzekucją (PTPiGR)'); ?></p>
             </div>
         </div>
     </div>
@@ -258,6 +226,5 @@
         </div>
     </div>
 </section>
-<?php endif; ?>
 
 <?php get_footer(); ?>
