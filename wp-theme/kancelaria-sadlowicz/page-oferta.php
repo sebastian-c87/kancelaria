@@ -181,90 +181,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Cena/mc</strong></td>
-                                <td>800 zł</td>
-                                <td><strong>1.800 zł</strong></td>
-                                <td>4.200 zł</td>
-                                <td>od 8.000 zł</td>
-                            </tr>
-                            <tr>
-                                <td>Konsultacje telefoniczne/mailowe</td>
-                                <td>Do 2 godz./mc</td>
-                                <td>Do 4 godz./mc</td>
-                                <td>Do 10 godz./mc</td>
-                                <td>Ustalane indywidualnie</td>
-                            </tr>
-                            <tr>
-                                <td>Przegląd umów/mc</td>
-                                <td>3 umowy</td>
-                                <td>8 umów</td>
-                                <td>15 umów</td>
-                                <td>Wg potrzeb (ustalane z klientem)</td>
-                            </tr>
-                            <tr>
-                                <td>Sporządzanie umów</td>
-                                <td>–</td>
-                                <td>Do 3/mc</td>
-                                <td>Do 5/mc</td>
-                                <td>Wg potrzeb (ustalane z klientem)</td>
-                            </tr>
-                            <tr>
-                                <td>Wezwania do zapłaty</td>
-                                <td>Do 2/mc</td>
-                                <td>Do 5/mc</td>
-                                <td>Do 10/mc</td>
-                                <td>Wg potrzeb (ustalane z klientem)</td>
-                            </tr>
-                            <tr>
-                                <td>Prawo pracy</td>
-                                <td>1 konsultacja/mc</td>
-                                <td>Doradztwo w bieżących sprawach pracowniczych</td>
-                                <td>Kompleksowa obsługa</td>
-                                <td>Pełna obsługa + szkolenia</td>
-                            </tr>
-                            <tr>
-                                <td>Reprezentacja w negocjacjach</td>
-                                <td>–</td>
-                                <td>Do 2 spotkań/mc</td>
-                                <td>Do 4 spotkań/mc</td>
-                                <td>Wg potrzeb (ustalane z klientem)</td>
-                            </tr>
-                            <tr>
-                                <td>Obsługa KRS</td>
-                                <td>–</td>
-                                <td>Płatne z rabatem 15%</td>
-                                <td>✅ Zmiany, uchwały</td>
-                                <td>✅ Pełna obsługa</td>
-                            </tr>
-                            <tr>
-                                <td>Audyt prawny</td>
-                                <td>–</td>
-                                <td>1x/pół roku</td>
-                                <td>2x/rok</td>
-                                <td>4x/rok</td>
-                            </tr>
-                            <tr>
-                                <td>Czas odpowiedzi</td>
-                                <td>Do 24h</td>
-                                <td>Do 12h</td>
-                                <td>Do 6h</td>
-                                <td>Do 2h (pilne natychmiast)</td>
-                            </tr>
-                            <tr>
-                                <td>Rabat na sprawy sądowe</td>
-                                <td>-</td>
-                                <td>15%</td>
-                                <td>20%</td>
-                                <td>30%</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Dodatkowa godzina</strong></td>
-                                <td>300 zł</td>
-                                <td>280 zł</td>
-                                <td>250 zł</td>
-                                <td>220 zł</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_porownanie', 5, 0); ?>
                         </tbody>
                     </table>
                 </div>
@@ -272,9 +189,7 @@
                 <div class="info-box" style="margin-top: 2rem;">
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>Dodatkowe informacje o abonamentach:</h4>
                     <ul>
-                        <li>Abonament na czas nieokreślony z <strong>1-miesięcznym okresem wypowiedzenia</strong></li>
-                        <li>Możliwość abonamentu na czas określony (6 lub 12 miesięcy) z <strong>rabatem 10-15%</strong></li>
-                        <li>Możliwość upgrade'u pakietu w każdej chwili (różnica ceny za bieżący miesiąc)</li>
+                        <?php echo ks_list_items('oferta_abon_info'); ?>
                     </ul>
                 </div>
             </div>
@@ -303,16 +218,11 @@
                 <div class="info-box">
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>Minimalna stawka wg Rozporządzenia Ministra Sprawiedliwości:</h4>
                     <ul>
-                        <li>Sprawy o rozwód: <strong>720 zł</strong></li>
-                        <li>Sprawy o alimenty: <strong>240 zł</strong></li>
-                        <li>Sprawy o podział majątku: <strong>50% stawki wg wartości udziału</strong></li>
+                        <?php echo ks_list_items('oferta_rodzinne_stawki'); ?>
                     </ul>
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>Dodatkowe usługi:</h4>
                     <ul>
-                        <li>Mediacje rozwodowe – <strong>500-1.500 zł</strong> (opcjonalnie przed procesem, często skuteczniejsze)</li>
-                        <li>Pomoc w sprawie alimentów za granicą (UE) – wycena indywidualna</li>
-                        <li>Reprezentacja w postępowaniu apelacyjnym – <strong>+50% stawki z I instancji</strong></li>
-                        <li>Koszty opinii biegłego (rodzinna/psychologiczna) – pokrywa strona na zlecenie sądu; wynagrodzenie biegłego ustala sąd</li>
+                        <?php echo ks_list_items('oferta_rodzinne_dodatkowe'); ?>
                     </ul>
                 </div>
             </div>
@@ -341,12 +251,11 @@
 
                 <div class="info-box">
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>Honorarium stałe i prowizja windykacyjna</h4>
-                    <p>Wynagrodzenie w sprawach windykacyjnych może składać się z dwóch elementów:</p>
+                    <p><?php echo wp_kses(ks_raw('oferta_wind_honor_p1'), ['strong' => [], 'em' => []]); ?></p>
                     <ul>
-                        <li><strong>Honorarium stałe</strong> – wymagane zawsze, niezależnie od wyniku sprawy; obejmuje wszystkie czynności prawnika na każdym etapie; płatne zgodnie z harmonogramem ustalonym w umowie</li>
-                        <li><strong>Prowizja windykacyjna (success fee)</strong> – opcjonalny element dodatkowy, uzgadniany indywidualnie; stanowi % od faktycznie odzyskanej kwoty; płatna wyłącznie po wpływie środków na konto klienta; wynosi orientacyjnie 5–15% (maleje wraz ze wzrostem wartości należności)</li>
+                        <?php echo ks_list_items('oferta_wind_honor_lista'); ?>
                     </ul>
-                    <p><strong>Prowizja windykacyjna jest zawsze uzupełnieniem honorarium stałego</strong> – nigdy jego zamiennikiem. Wynika to z zasad etyki adwokackiej. Szczegółowy model wynagrodzenia ustalany jest przed podpisaniem umowy.</p>
+                    <p><?php echo wp_kses(ks_raw('oferta_wind_honor_p2'), ['strong' => [], 'em' => []]); ?></p>
 
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span>Etapy windykacji:</h4>
                     <table class="mini-table">
@@ -358,29 +267,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Wezwanie do zapłaty (pozasądowe)</td>
-                                <td><strong>300–700 zł</strong></td>
-                                <td>3–7 dni</td>
-                            </tr>
-                            <tr>
-                                <td>Pozew + reprezentacja w sądzie (I instancja)</td>
-                                <td>Wg tabeli powyżej</td>
-                                <td>kilka – kilkanaście miesięcy</td>
-                            </tr>
-                            <tr>
-                                <td>Postępowanie egzekucyjne (komornik)</td>
-                                <td><strong>800–2.000 zł</strong> (honorarium za obsługę egzekucji); opłata komornicza ok. 15% wyegzekwowanej kwoty – płaci dłużnik</td>
-                                <td>kilka – kilkanaście miesięcy</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_wind_etapy', 3, -1); ?>
                         </tbody>
                     </table>
 
                     <p style="margin-top: 1rem;"><strong>W ramach abonamentu:</strong></p>
                     <ul>
-                        <li>BIZNES: do 5 wezwań do zapłaty miesięcznie w cenie pakietu</li>
-                        <li>PROFESJONALNY: do 10 wezwań do zapłaty miesięcznie w cenie pakietu</li>
-                        <li>PREMIUM: obsługa windykacyjna wg zakresu uzgodnionego indywidualnie</li>
+                        <?php echo ks_list_items('oferta_wind_abon'); ?>
                     </ul>
                 </div>
             </div>
@@ -409,7 +302,7 @@
                 <div class="info-box">
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>Dodatkowe informacje:</h4>
                     <ul>
-                        <li>Koszty opinii biegłych (psychiatryczne, grafologiczne i inne) – pokrywa strona na zlecenie sądu; wynagrodzenie biegłego ustala sąd</li>
+                        <?php echo ks_list_items('oferta_karne_info'); ?>
                     </ul>
                 </div>
             </div>
@@ -438,7 +331,7 @@
                 <div class="info-box">
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>Dodatkowe informacje:</h4>
                     <ul>
-                        <li>W ramach abonamentu BIZNES/PROFESJONALNY: część usług w cenie pakietu</li>
+                        <?php echo ks_list_items('oferta_gosp_info'); ?>
                     </ul>
                 </div>
             </div>
@@ -468,21 +361,15 @@
                 <div class="info-box">
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>Zakres "cała sprawa" (I instancja):</h4>
                     <ul>
-                        <li>Sporządzenie pozwu lub odpowiedzi na pozew</li>
-                        <li>Udział we <strong>wszystkich</strong> rozprawach (także posiedzeniach przygotowawczych)</li>
-                        <li>Sporządzanie pism procesowych (wnioski dowodowe, repliki, dupliki)</li>
-                        <li>Kontakt z klientem przez cały czas trwania sprawy (mailowy/telefoniczny)</li>
-                        <li>Analiza dokumentacji i przygotowanie strategii procesowej</li>
+                        <?php echo ks_list_items('oferta_repr_zakres'); ?>
                     </ul>
 
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg></span>Reprezentacja w II instancji (apelacja):</h4>
-                    <p><strong>+50% stawki z I instancji</strong></p>
+                    <p><strong><?php echo esc_html(ks_raw('oferta_repr_apelacja') ?: '+50% stawki z I instancji'); ?></strong></p>
 
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>Dodatkowe informacje:</h4>
                     <ul>
-                        <li>Udział w jednej rozprawie (bez kompleksowej obsługi): <strong>1.000-1.200 zł</strong></li>
-                        <li>W przypadku ugody sądowej: rabat 20% (sprawa kończy się szybciej)</li>
-                        <li>Klienci abonamentowi: rabaty 15-30% (zależnie od pakietu)</li>
+                        <?php echo ks_list_items('oferta_repr_info'); ?>
                     </ul>
                 </div>
             </div>
@@ -508,46 +395,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Pozew rozwodowy</td>
-                                <td><strong>600 zł</strong> (opłata stała, art. 26 uksc)</td>
-                            </tr>
-                            <tr>
-                                <td>Pozew o alimenty (strona dochodząca)</td>
-                                <td><strong>zwolniona z opłaty</strong> (art. 96 ust. 1 pkt 2 uksc)</td>
-                            </tr>
-                            <tr>
-                                <td>Sprawy cywilne – do 500 zł</td>
-                                <td><strong>30 zł</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Sprawy cywilne – 500–1.500 zł</td>
-                                <td><strong>100 zł</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Sprawy cywilne – 1.500–4.000 zł</td>
-                                <td><strong>200 zł</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Sprawy cywilne – 4.000–7.500 zł</td>
-                                <td><strong>400 zł</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Sprawy cywilne – 7.500–10.000 zł</td>
-                                <td><strong>500 zł</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Sprawy cywilne – 10.000–15.000 zł</td>
-                                <td><strong>750 zł</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Sprawy cywilne – 15.000–20.000 zł</td>
-                                <td><strong>1.000 zł</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Sprawy cywilne – powyżej 20.000 zł</td>
-                                <td><strong>5% wartości sporu</strong> (max 100.000 zł)</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_oplaty_sadowe', 2, 1); ?>
                         </tbody>
                     </table>
                 </div>
@@ -563,31 +411,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Opłata skarbowa za pełnomocnictwo</td>
-                                <td><strong>17 zł</strong></td>
-                                <td>Obowiązkowa przy reprezentacji</td>
-                            </tr>
-                            <tr>
-                                <td>Opinia biegłego sądowego</td>
-                                <td><strong>kwotę ustala sąd</strong></td>
-                                <td>Zlecana przez sąd, pokrywa strona; wysokość zależy od specjalności biegłego i zakresu opinii</td>
-                            </tr>
-                            <tr>
-                                <td>Tłumaczenia przysięgłe</td>
-                                <td><strong>wycena indywidualna</strong></td>
-                                <td>Zależnie od języka, objętości i tłumacza przysięgłego; najlepiej zapytać tłumacza bezpośrednio</td>
-                            </tr>
-                            <tr>
-                                <td>Koszty doręczeń</td>
-                                <td><strong>20-50 zł/pismo</strong></td>
-                                <td>Doręczenia komornicze</td>
-                            </tr>
-                            <tr>
-                                <td>Mediacje</td>
-                                <td><strong>500-1.500 zł</strong></td>
-                                <td>Opcjonalnie przed procesem</td>
-                            </tr>
+                            <?php echo ks_table_rows('oferta_inne_koszty', 3, 1); ?>
                         </tbody>
                     </table>
                 </div>
@@ -595,9 +419,7 @@
                 <div class="warning-box">
                     <h4><span class="h4-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>Ważne:</h4>
                     <ul>
-                        <li>Jeśli <strong>wygrasz sprawę</strong> – sąd może zasądzić zwrot kosztów od przeciwnika (w tym Twoje wynagrodzenie prawnika)</li>
-                        <li>Jeśli <strong>przegrasz</strong> – możesz ponieść koszty przeciwnika (jego prawnik + opłaty sądowe)</li>
-                        <li>Przed rozpoczęciem sprawy <strong>zawsze</strong> informuję o potencjalnych kosztach i ryzyku</li>
+                        <?php echo ks_list_items('oferta_warning'); ?>
                     </ul>
                 </div>
             </div>
@@ -609,75 +431,18 @@
                 <h2>Najczęściej Zadawane Pytania o Ceny</h2>
 
                 <div class="faq-grid">
+                    <?php
+                    $faq_allowed = ['strong' => [], 'em' => [], 'a' => ['href' => [], 'target' => []]];
+                    for ($i = 1; $i <= 10; $i++):
+                        $faq_q = trim(ks_raw("faq_{$i}_q"));
+                        $faq_a = trim(ks_raw("faq_{$i}_a"));
+                        if ($faq_q === '' || $faq_a === '') continue;
+                    ?>
                     <div class="faq-item">
-                        <h4>Dlaczego ceny są podawane w przedziałach?</h4>
-                        <p>
-                            Każda sprawa jest inna – wycena zależy od skomplikowania, wartości sporu, ilości dokumentów 
-                            i przewidywanego czasu pracy. Po wstępnej konsultacji przedstawiam <strong>szczegółową wycenę</strong> 
-                            z rozbiciem na poszczególne etapy.
-                        </p>
+                        <h4><?php echo esc_html($faq_q); ?></h4>
+                        <p><?php echo wp_kses($faq_a, $faq_allowed); ?></p>
                     </div>
-
-                    <div class="faq-item">
-                        <h4>Czy można negocjować ceny?</h4>
-                        <p>
-                            Tak! W przypadku <strong>długotrwałej współpracy</strong>, <strong>większej liczby spraw</strong> 
-                            lub <strong>poleceń od obecnych klientów</strong> oferuję rabaty do 20%. Klienci abonamentowi 
-                            mają gwarantowane rabaty 15-30%.
-                        </p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h4>Czy mogę rozłożyć płatność na raty?</h4>
-                        <p>
-                            Tak, w przypadku spraw długotrwałych (rozwody, duże windykacje) możliwa płatność ratalna: 
-                            <strong>zaliczka 30-50%</strong> + raty miesięczne przez czas trwania sprawy.
-                        </p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h4>Co się stanie jeśli przegram sprawę?</h4>
-                        <p>
-                            Wynagrodzenie za reprezentację <strong>nie zależy</strong> od wyniku sprawy (chyba że ustaliliśmy 
-                            model success fee w windykacji). Jeśli przegrasz, sąd może zasądzić <strong>zwrot kosztów przeciwnika</strong> 
-                            (jego prawnik + opłaty sądowe). O tym ryzyku informuję <strong>przed</strong> rozpoczęciem sprawy 
-                            i oceniam szanse powodzenia.
-                        </p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h4>Czy konsultacja jest płatna?</h4>
-                        <p>
-                            Pierwsza konsultacja (60 min) – <strong>350-500 zł</strong>. Jeśli zdecydujesz się na dalszą współpracę
-                            (reprezentację w sprawie), <strong>zaliczam ją na poczet wynagrodzenia</strong>. Oferuję również
-                            <strong>krótką bezpłatną rozmowę wstępną</strong> (ok. 10–15 min, telefon/online) – żeby sprawdzić, czy mogę Ci pomóc, zanim zdecydujesz się na płatną konsultację.
-                        </p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h4>Czy abonament można rozwiązać w każdej chwili?</h4>
-                        <p>
-                            Tak! Abonament na czas nieokreślony z <strong>1-miesięcznym okresem wypowiedzenia</strong>. 
-                            Możesz też wybrać abonament na czas określony (6 lub 12 miesięcy) z <strong>rabatem 10-15%</strong>.
-                        </p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h4>Co jeśli wykorzystam wszystkie godziny w pakiecie abonamentowym?</h4>
-                        <p>
-                            Możesz dokupić dodatkowe godziny w preferencyjnej stawce (zależnie od pakietu: 220-300 zł/h). 
-                            Alternatywnie – niewykorzystane godziny <strong>przechodzą na następny miesiąc</strong> (max. 2 miesiące wstecz).
-                        </p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h4>Czy wynagrodzenie obejmuje koszty sądowe?</h4>
-                        <p>
-                            <strong>NIE.</strong> Moje wynagrodzenie to koszt obsługi prawnej. Dodatkowo musisz pokryć: 
-                            opłaty sądowe (600 zł za rozwód, 5% wartości sporu w sprawach cywilnych itd.), opinie biegłych, tłumaczenia. 
-                            Zawsze informuję o <strong>pełnych kosztach</strong> przed rozpoczęciem sprawy.
-                        </p>
-                    </div>
+                    <?php endfor; ?>
                 </div>
             </div>
         </section>

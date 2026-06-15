@@ -313,11 +313,13 @@ function ks_raw(string $name): string
  * Buduje wiersze <tr> z pola tekstowego.
  * Każda linia = wiersz; kolumny oddzielone znakiem "|".
  * $bold = indeks kolumny owijanej w <strong> (-1 = brak).
+ * Dozwolone tagi HTML w komórkach: <strong>, <em>.
  */
 function ks_table_rows(string $name, int $cols, int $bold = 1): string
 {
     $raw = ks_raw($name);
     if ($raw === '') return '';
+    $allowed = ['strong' => [], 'em' => []];
     $out = '';
     foreach (preg_split('/\r\n|\r|\n/', $raw) as $line) {
         $line = trim($line);
@@ -325,7 +327,7 @@ function ks_table_rows(string $name, int $cols, int $bold = 1): string
         $cells = array_map('trim', explode('|', $line));
         $out .= '<tr>';
         for ($i = 0; $i < $cols; $i++) {
-            $val = esc_html($cells[$i] ?? '');
+            $val = wp_kses($cells[$i] ?? '', $allowed);
             $out .= '<td>' . ($i === $bold ? "<strong>{$val}</strong>" : $val) . '</td>';
         }
         $out .= '</tr>';
@@ -333,16 +335,20 @@ function ks_table_rows(string $name, int $cols, int $bold = 1): string
     return $out;
 }
 
-/** Buduje pozycje <li> z pola tekstowego (jedna linia = jeden punkt). */
+/**
+ * Buduje pozycje <li> z pola tekstowego (jedna linia = jeden punkt).
+ * Dozwolone tagi HTML w pozycjach: <strong>, <em>, <a>.
+ */
 function ks_list_items(string $name, bool $check = false): string
 {
     $raw = ks_raw($name);
     if ($raw === '') return '';
+    $allowed = ['strong' => [], 'em' => [], 'a' => ['href' => [], 'target' => []]];
     $out = '';
     foreach (preg_split('/\r\n|\r|\n/', $raw) as $line) {
         $line = trim($line);
         if ($line === '') continue;
-        $out .= '<li>' . ($check ? '✅ ' : '') . esc_html($line) . '</li>';
+        $out .= '<li>' . ($check ? '✅ ' : '') . wp_kses($line, $allowed) . '</li>';
     }
     return $out;
 }
@@ -501,6 +507,19 @@ add_action('acf/init', function () {
                     'Separacja (pozew + reprezentacja) | 2.500-3.500 zł | Podobnie jak rozwód',
                     'Reprezentacja na 1 rozprawie (bez pozwu) | 1.000-1.200 zł | Jednorazowe zlecenie',
                 ])],
+            ['key' => 'field_ks_of_rodz_stawki', 'label' => 'Info-box: Stawki minimalne (lista)', 'name' => 'oferta_rodzinne_stawki', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Sprawy o rozwód: <strong>720 zł</strong>',
+                    'Sprawy o alimenty: <strong>240 zł</strong>',
+                    'Sprawy o podział majątku: <strong>50% stawki wg wartości udziału</strong>',
+                ])],
+            ['key' => 'field_ks_of_rodz_dod', 'label' => 'Info-box: Dodatkowe usługi (lista)', 'name' => 'oferta_rodzinne_dodatkowe', 'type' => 'textarea', 'rows' => 5, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Mediacje rozwodowe – <strong>500-1.500 zł</strong> (opcjonalnie przed procesem, często skuteczniejsze)',
+                    'Pomoc w sprawie alimentów za granicą (UE) – wycena indywidualna',
+                    'Reprezentacja w postępowaniu apelacyjnym – <strong>+50% stawki z I instancji</strong>',
+                    'Koszty opinii biegłego (rodzinna/psychologiczna) – pokrywa strona na zlecenie sądu; wynagrodzenie biegłego ustala sąd',
+                ])],
 
             // ── Tab: Windykacja ───────────────────────────────────
             ['key' => 'field_ks_of_tab_wind', 'label' => 'Windykacja', 'type' => 'tab'],
@@ -512,6 +531,27 @@ add_action('acf/init', function () {
                     'Postępowanie sądowe (20.000–100.000 zł) | 5.000–10.000 zł | Złożone sprawy; dłuższy czas postępowania',
                     'Postępowanie sądowe (100.000–500.000 zł) | 10.000–18.000 zł | Biznesowe sprawy windykacyjne; szczegółowa wycena po analizie akt',
                     'Powyżej 500.000 zł | wycena indywidualna | Wstępna ocena na konsultacji',
+                ])],
+            ['key' => 'field_ks_of_wind_p1', 'label' => 'Info-box: Opis honorarium (akapit)', 'name' => 'oferta_wind_honor_p1', 'type' => 'textarea', 'rows' => 2,
+                'default_value' => 'Wynagrodzenie w sprawach windykacyjnych może składać się z dwóch elementów:'],
+            ['key' => 'field_ks_of_wind_lista', 'label' => 'Info-box: Elementy honorarium (lista)', 'name' => 'oferta_wind_honor_lista', 'type' => 'textarea', 'rows' => 5, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    '<strong>Honorarium stałe</strong> – wymagane zawsze, niezależnie od wyniku sprawy; obejmuje wszystkie czynności prawnika na każdym etapie; płatne zgodnie z harmonogramem ustalonym w umowie',
+                    '<strong>Prowizja windykacyjna (success fee)</strong> – opcjonalny element dodatkowy, uzgadniany indywidualnie; stanowi % od faktycznie odzyskanej kwoty; płatna wyłącznie po wpływie środków na konto klienta; wynosi orientacyjnie 5–15% (maleje wraz ze wzrostem wartości należności)',
+                ])],
+            ['key' => 'field_ks_of_wind_p2', 'label' => 'Info-box: Uwaga o prowizji (akapit)', 'name' => 'oferta_wind_honor_p2', 'type' => 'textarea', 'rows' => 3,
+                'default_value' => '<strong>Prowizja windykacyjna jest zawsze uzupełnieniem honorarium stałego</strong> – nigdy jego zamiennikiem. Wynika to z zasad etyki adwokackiej. Szczegółowy model wynagrodzenia ustalany jest przed podpisaniem umowy.'],
+            ['key' => 'field_ks_of_wind_etapy', 'label' => 'Info-box: Tabela etapów (Etap | Honorarium | Orientacyjny czas)', 'name' => 'oferta_wind_etapy', 'type' => 'textarea', 'rows' => 4, 'instructions' => $tbl_hint,
+                'default_value' => implode("\n", [
+                    'Wezwanie do zapłaty (pozasądowe) | <strong>300–700 zł</strong> | 3–7 dni',
+                    'Pozew + reprezentacja w sądzie (I instancja) | Wg tabeli powyżej | kilka – kilkanaście miesięcy',
+                    'Postępowanie egzekucyjne (komornik) | <strong>800–2.000 zł</strong> (honorarium za obsługę egzekucji); opłata komornicza ok. 15% wyegzekwowanej kwoty – płaci dłużnik | kilka – kilkanaście miesięcy',
+                ])],
+            ['key' => 'field_ks_of_wind_abon', 'label' => 'Info-box: W ramach abonamentu (lista)', 'name' => 'oferta_wind_abon', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'BIZNES: do 5 wezwań do zapłaty miesięcznie w cenie pakietu',
+                    'PROFESJONALNY: do 10 wezwań do zapłaty miesięcznie w cenie pakietu',
+                    'PREMIUM: obsługa windykacyjna wg zakresu uzgodnionego indywidualnie',
                 ])],
 
             // ── Tab: Sprawy Karne ─────────────────────────────────
@@ -527,6 +567,8 @@ add_action('acf/init', function () {
                     'Obrona w sprawach o wykroczenia | 1.000 zł | - | Mandaty karne, drobne sprawy',
                     'Obrona w sprawach gospodarczych (I instancja) | 5.000-10.000 zł | 1.200 zł | Przestępstwa skarbowe, wyłudzenia VAT',
                 ])],
+            ['key' => 'field_ks_of_karne_info', 'label' => 'Info-box: Dodatkowe informacje (lista)', 'name' => 'oferta_karne_info', 'type' => 'textarea', 'rows' => 3, 'instructions' => $list_hint,
+                'default_value' => 'Koszty opinii biegłych (psychiatryczne, grafologiczne i inne) – pokrywa strona na zlecenie sądu; wynagrodzenie biegłego ustala sąd'],
 
             // ── Tab: Prawo Gospodarcze ────────────────────────────
             ['key' => 'field_ks_of_tab_gosp', 'label' => 'Prawo Gospodarcze', 'type' => 'tab'],
@@ -543,6 +585,8 @@ add_action('acf/init', function () {
                     'Reprezentacja na Zgromadzeniu Wspólników | 1.500-2.500 zł | Obecność prawnika, wsparcie zarządu',
                     'Compliance i audyt RODO | 3.000-8.000 zł | Przegląd zgodności z przepisami + raport',
                 ])],
+            ['key' => 'field_ks_of_gosp_info', 'label' => 'Info-box: Dodatkowe informacje (lista)', 'name' => 'oferta_gosp_info', 'type' => 'textarea', 'rows' => 3, 'instructions' => $list_hint,
+                'default_value' => 'W ramach abonamentu BIZNES/PROFESJONALNY: część usług w cenie pakietu'],
 
             // ── Tab: Reprezentacja Sądowa ─────────────────────────
             ['key' => 'field_ks_of_tab_repr', 'label' => 'Reprezentacja Sądowa', 'type' => 'tab'],
@@ -555,6 +599,119 @@ add_action('acf/init', function () {
                     '50.000-200.000 zł | 10.000-12.000 zł | 3.600 zł | Cała sprawa',
                     'powyżej 200.000 zł | indywidualnie | 10.800 zł | Negocjacje z klientem',
                 ])],
+            ['key' => 'field_ks_of_repr_zakres', 'label' => 'Info-box: Zakres "cała sprawa" (lista)', 'name' => 'oferta_repr_zakres', 'type' => 'textarea', 'rows' => 6, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Sporządzenie pozwu lub odpowiedzi na pozew',
+                    'Udział we <strong>wszystkich</strong> rozprawach (także posiedzeniach przygotowawczych)',
+                    'Sporządzanie pism procesowych (wnioski dowodowe, repliki, dupliki)',
+                    'Kontakt z klientem przez cały czas trwania sprawy (mailowy/telefoniczny)',
+                    'Analiza dokumentacji i przygotowanie strategii procesowej',
+                ])],
+            ['key' => 'field_ks_of_repr_apel', 'label' => 'Info-box: Apelacja – stawka', 'name' => 'oferta_repr_apelacja', 'type' => 'text',
+                'default_value' => '+50% stawki z I instancji'],
+            ['key' => 'field_ks_of_repr_info', 'label' => 'Info-box: Dodatkowe informacje (lista)', 'name' => 'oferta_repr_info', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Udział w jednej rozprawie (bez kompleksowej obsługi): <strong>1.000-1.200 zł</strong>',
+                    'W przypadku ugody sądowej: rabat 20% (sprawa kończy się szybciej)',
+                    'Klienci abonamentowi: rabaty 15-30% (zależnie od pakietu)',
+                ])],
+
+            // ── Tab: Tabela porównawcza ───────────────────────────
+            ['key' => 'field_ks_of_tab_porown', 'label' => 'Tabela porównawcza', 'type' => 'tab'],
+            ['key' => 'field_ks_of_porown', 'label' => 'Tabela (Element | START | BIZNES | PROFESJONALNY | PREMIUM)', 'name' => 'oferta_porownanie',
+                'type' => 'textarea', 'rows' => 14,
+                'instructions' => 'Jeden wiersz = jeden wiersz tabeli. 5 kolumn oddzielone | (pionowa kreska). Pierwsza kolumna (Element) jest automatycznie pogrubiona.',
+                'default_value' => implode("\n", [
+                    'Cena/mc | 800 zł | 1.800 zł | 4.200 zł | od 8.000 zł',
+                    'Konsultacje tel./mailowe | Do 2 godz./mc | Do 4 godz./mc | Do 10 godz./mc | Ustalane indywidualnie',
+                    'Przegląd umów/mc | 3 umowy | 8 umów | 15 umów | Wg potrzeb (ustalane z klientem)',
+                    'Sporządzanie umów | – | Do 3/mc | Do 5/mc | Wg potrzeb (ustalane z klientem)',
+                    'Wezwania do zapłaty | Do 2/mc | Do 5/mc | Do 10/mc | Wg potrzeb (ustalane z klientem)',
+                    'Prawo pracy | 1 konsultacja/mc | Doradztwo w bieżących sprawach pracowniczych | Kompleksowa obsługa | Pełna obsługa + szkolenia',
+                    'Reprezentacja w negocjacjach | – | Do 2 spotkań/mc | Do 4 spotkań/mc | Wg potrzeb (ustalane z klientem)',
+                    'Obsługa KRS | – | Płatne z rabatem 15% | Zmiany, uchwały | Pełna obsługa',
+                    'Audyt prawny | – | 1x/pół roku | 2x/rok | 4x/rok',
+                    'Czas odpowiedzi | Do 24h | Do 12h | Do 6h | Do 2h (pilne natychmiast)',
+                    'Rabat na sprawy sądowe | – | 15% | 20% | 30%',
+                    'Dodatkowa godzina | 300 zł | 280 zł | 250 zł | 220 zł',
+                ])],
+            ['key' => 'field_ks_of_abon_info', 'label' => 'Info-box pod tabelą (lista)', 'name' => 'oferta_abon_info', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Abonament na czas nieokreślony z <strong>1-miesięcznym okresem wypowiedzenia</strong>',
+                    'Możliwość abonamentu na czas określony (6 lub 12 miesięcy) z <strong>rabatem 10-15%</strong>',
+                    "Możliwość upgrade'u pakietu w każdej chwili (różnica ceny za bieżący miesiąc)",
+                ])],
+
+            // ── Tab: Opłaty Sądowe ────────────────────────────────
+            ['key' => 'field_ks_of_tab_oplaty', 'label' => 'Opłaty Sądowe', 'type' => 'tab'],
+            ['key' => 'field_ks_of_oplsad', 'label' => 'Tabela opłat sądowych (Rodzaj | Opłata)', 'name' => 'oferta_oplaty_sadowe', 'type' => 'textarea', 'rows' => 12,
+                'instructions' => 'Jeden wiersz = jeden wiersz. Format: Rodzaj sprawy | Opłata sądowa. Kolumna "Opłata" jest automatycznie pogrubiona.',
+                'default_value' => implode("\n", [
+                    'Pozew rozwodowy | 600 zł (opłata stała, art. 26 uksc)',
+                    'Pozew o alimenty (strona dochodząca) | zwolniona z opłaty (art. 96 ust. 1 pkt 2 uksc)',
+                    'Sprawy cywilne – do 500 zł | 30 zł',
+                    'Sprawy cywilne – 500–1.500 zł | 100 zł',
+                    'Sprawy cywilne – 1.500–4.000 zł | 200 zł',
+                    'Sprawy cywilne – 4.000–7.500 zł | 400 zł',
+                    'Sprawy cywilne – 7.500–10.000 zł | 500 zł',
+                    'Sprawy cywilne – 10.000–15.000 zł | 750 zł',
+                    'Sprawy cywilne – 15.000–20.000 zł | 1.000 zł',
+                    'Sprawy cywilne – powyżej 20.000 zł | 5% wartości sporu (max 100.000 zł)',
+                ])],
+            ['key' => 'field_ks_of_innekoszt', 'label' => 'Inne koszty (Element | Koszt | Uwagi)', 'name' => 'oferta_inne_koszty', 'type' => 'textarea', 'rows' => 7, 'instructions' => $tbl_hint,
+                'default_value' => implode("\n", [
+                    'Opłata skarbowa za pełnomocnictwo | 17 zł | Obowiązkowa przy reprezentacji',
+                    'Opinia biegłego sądowego | kwotę ustala sąd | Zlecana przez sąd, pokrywa strona; wysokość zależy od specjalności biegłego i zakresu opinii',
+                    'Tłumaczenia przysięgłe | wycena indywidualna | Zależnie od języka, objętości i tłumacza przysięgłego',
+                    'Koszty doręczeń | 20-50 zł/pismo | Doręczenia komornicze',
+                    'Mediacje | 500-1.500 zł | Opcjonalnie przed procesem',
+                ])],
+            ['key' => 'field_ks_of_warning', 'label' => 'Ważne – lista (box ostrzeżeń)', 'name' => 'oferta_warning', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
+                'default_value' => implode("\n", [
+                    'Jeśli <strong>wygrasz sprawę</strong> – sąd może zasądzić zwrot kosztów od przeciwnika (w tym Twoje wynagrodzenie prawnika)',
+                    'Jeśli <strong>przegrasz</strong> – możesz ponieść koszty przeciwnika (jego prawnik + opłaty sądowe)',
+                    'Przed rozpoczęciem sprawy <strong>zawsze</strong> informuję o potencjalnych kosztach i ryzyku',
+                ])],
+
+            // ── Tab: FAQ ──────────────────────────────────────────
+            ['key' => 'field_ks_of_tab_faq', 'label' => 'FAQ', 'type' => 'tab',
+                'instructions' => 'Aby usunąć pytanie: wyczyść oba pola (Pytanie i Odpowiedź) – puste pary są pomijane. Aby dodać nowe: wypełnij kolejne puste pola (do 10 par).'],
+            ['key' => 'field_ks_faq1_q', 'label' => 'Pytanie 1', 'name' => 'faq_1_q', 'type' => 'text',
+                'default_value' => 'Dlaczego ceny są podawane w przedziałach?'],
+            ['key' => 'field_ks_faq1_a', 'label' => 'Odpowiedź 1', 'name' => 'faq_1_a', 'type' => 'textarea', 'rows' => 4,
+                'default_value' => 'Każda sprawa jest inna – wycena zależy od skomplikowania, wartości sporu, ilości dokumentów i przewidywanego czasu pracy. Po wstępnej konsultacji przedstawiam <strong>szczegółową wycenę</strong> z rozbiciem na poszczególne etapy.'],
+            ['key' => 'field_ks_faq2_q', 'label' => 'Pytanie 2', 'name' => 'faq_2_q', 'type' => 'text',
+                'default_value' => 'Czy można negocjować ceny?'],
+            ['key' => 'field_ks_faq2_a', 'label' => 'Odpowiedź 2', 'name' => 'faq_2_a', 'type' => 'textarea', 'rows' => 4,
+                'default_value' => 'Tak! W przypadku <strong>długotrwałej współpracy</strong>, <strong>większej liczby spraw</strong> lub <strong>poleceń od obecnych klientów</strong> oferuję rabaty do 20%. Klienci abonamentowi mają gwarantowane rabaty 15-30%.'],
+            ['key' => 'field_ks_faq3_q', 'label' => 'Pytanie 3', 'name' => 'faq_3_q', 'type' => 'text',
+                'default_value' => 'Czy mogę rozłożyć płatność na raty?'],
+            ['key' => 'field_ks_faq3_a', 'label' => 'Odpowiedź 3', 'name' => 'faq_3_a', 'type' => 'textarea', 'rows' => 4,
+                'default_value' => 'Tak, w przypadku spraw długotrwałych (rozwody, duże windykacje) możliwa płatność ratalna: <strong>zaliczka 30-50%</strong> + raty miesięczne przez czas trwania sprawy.'],
+            ['key' => 'field_ks_faq4_q', 'label' => 'Pytanie 4', 'name' => 'faq_4_q', 'type' => 'text',
+                'default_value' => 'Co się stanie jeśli przegram sprawę?'],
+            ['key' => 'field_ks_faq4_a', 'label' => 'Odpowiedź 4', 'name' => 'faq_4_a', 'type' => 'textarea', 'rows' => 4,
+                'default_value' => 'Wynagrodzenie za reprezentację <strong>nie zależy</strong> od wyniku sprawy (chyba że ustaliliśmy model success fee w windykacji). Jeśli przegrasz, sąd może zasądzić <strong>zwrot kosztów przeciwnika</strong> (jego prawnik + opłaty sądowe). O tym ryzyku informuję <strong>przed</strong> rozpoczęciem sprawy i oceniam szanse powodzenia.'],
+            ['key' => 'field_ks_faq5_q', 'label' => 'Pytanie 5', 'name' => 'faq_5_q', 'type' => 'text',
+                'default_value' => 'Czy konsultacja jest płatna?'],
+            ['key' => 'field_ks_faq5_a', 'label' => 'Odpowiedź 5', 'name' => 'faq_5_a', 'type' => 'textarea', 'rows' => 4,
+                'default_value' => 'Pierwsza konsultacja (60 min) – <strong>350-500 zł</strong>. Jeśli zdecydujesz się na dalszą współpracę (reprezentację w sprawie), <strong>zaliczam ją na poczet wynagrodzenia</strong>. Oferuję również <strong>krótką bezpłatną rozmowę wstępną</strong> (ok. 10–15 min, telefon/online) – żeby sprawdzić, czy mogę Ci pomóc, zanim zdecydujesz się na płatną konsultację.'],
+            ['key' => 'field_ks_faq6_q', 'label' => 'Pytanie 6', 'name' => 'faq_6_q', 'type' => 'text',
+                'default_value' => 'Czy abonament można rozwiązać w każdej chwili?'],
+            ['key' => 'field_ks_faq6_a', 'label' => 'Odpowiedź 6', 'name' => 'faq_6_a', 'type' => 'textarea', 'rows' => 4,
+                'default_value' => 'Tak! Abonament na czas nieokreślony z <strong>1-miesięcznym okresem wypowiedzenia</strong>. Możesz też wybrać abonament na czas określony (6 lub 12 miesięcy) z <strong>rabatem 10-15%</strong>.'],
+            ['key' => 'field_ks_faq7_q', 'label' => 'Pytanie 7', 'name' => 'faq_7_q', 'type' => 'text',
+                'default_value' => 'Co jeśli wykorzystam wszystkie godziny w pakiecie abonamentowym?'],
+            ['key' => 'field_ks_faq7_a', 'label' => 'Odpowiedź 7', 'name' => 'faq_7_a', 'type' => 'textarea', 'rows' => 4,
+                'default_value' => 'Możesz dokupić dodatkowe godziny w preferencyjnej stawce (zależnie od pakietu: 220-300 zł/h). Alternatywnie – niewykorzystane godziny <strong>przechodzą na następny miesiąc</strong> (max. 2 miesiące wstecz).'],
+            ['key' => 'field_ks_faq8_q', 'label' => 'Pytanie 8', 'name' => 'faq_8_q', 'type' => 'text',
+                'default_value' => 'Czy wynagrodzenie obejmuje koszty sądowe?'],
+            ['key' => 'field_ks_faq8_a', 'label' => 'Odpowiedź 8', 'name' => 'faq_8_a', 'type' => 'textarea', 'rows' => 4,
+                'default_value' => '<strong>NIE.</strong> Moje wynagrodzenie to koszt obsługi prawnej. Dodatkowo musisz pokryć: opłaty sądowe (600 zł za rozwód, 5% wartości sporu w sprawach cywilnych itd.), opinie biegłych, tłumaczenia. Zawsze informuję o <strong>pełnych kosztach</strong> przed rozpoczęciem sprawy.'],
+            ['key' => 'field_ks_faq9_q', 'label' => 'Pytanie 9 (opcjonalne)', 'name' => 'faq_9_q', 'type' => 'text', 'default_value' => ''],
+            ['key' => 'field_ks_faq9_a', 'label' => 'Odpowiedź 9 (opcjonalna)', 'name' => 'faq_9_a', 'type' => 'textarea', 'rows' => 4, 'default_value' => ''],
+            ['key' => 'field_ks_faq10_q', 'label' => 'Pytanie 10 (opcjonalne)', 'name' => 'faq_10_q', 'type' => 'text', 'default_value' => ''],
+            ['key' => 'field_ks_faq10_a', 'label' => 'Odpowiedź 10 (opcjonalna)', 'name' => 'faq_10_a', 'type' => 'textarea', 'rows' => 4, 'default_value' => ''],
         ],
         'location'        => [[['param' => 'page', 'operator' => '==', 'value' => (string) $oferta_id]]],
         'position'        => 'normal',
