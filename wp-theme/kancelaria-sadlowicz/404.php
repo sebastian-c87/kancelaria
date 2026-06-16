@@ -8,7 +8,7 @@
             <span class="page-hero-eyebrow-text">Błąd 404</span>
         </div>
         <h1 class="page-hero-title">Strona nie <em>istnieje</em></h1>
-        <p class="page-hero-desc">Przepraszamy – szukana strona nie została znaleziona.</p>
+        <p class="page-hero-desc">Przepraszamy - szukana strona nie została znaleziona.</p>
         <div class="page-hero-actions">
             <a href="<?php echo home_url('/'); ?>" class="btn-gold">
                 Strona główna

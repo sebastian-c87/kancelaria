@@ -33,16 +33,16 @@
                 <span class="page-hero-eyebrow-text">Nasza filozofia</span>
             </div>
             <p class="reveal" style="font-family: var(--ff-display); font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 300; line-height: 1.75; color: var(--charcoal); font-style: italic; margin-bottom: 18px;">
-                Wierzymy, że skuteczna pomoc prawna wymaga nie tylko wiedzy – lecz przede wszystkim zaufania, czasu poświęconego klientowi i głębokiego zrozumienia jego sytuacji.
+                Wierzymy, że skuteczna pomoc prawna wymaga nie tylko wiedzy - lecz przede wszystkim zaufania, czasu poświęconego klientowi i głębokiego zrozumienia jego sytuacji.
             </p>
             <p class="reveal" style="font-family: var(--ff-body); font-size: 1rem; line-height: 1.85; color: var(--text);">
-                Kancelaria skupia doświadczonych adwokatów, którzy łączą rzetelne przygotowanie merytoryczne z osobistym zaangażowaniem. Każdy klient traktowany jest indywidualnie – bez szablonowych odpowiedzi i bez zbędnej biurokracji.
+                Kancelaria skupia doświadczonych adwokatów, którzy łączą rzetelne przygotowanie merytoryczne z osobistym zaangażowaniem. Każdy klient traktowany jest indywidualnie - bez szablonowych odpowiedzi i bez zbędnej biurokracji.
             </p>
         </div>
     </div>
 </section>
 
-<!-- ===== KAMILA – FEATURED PROFILE ===== -->
+<!-- ===== KAMILA - FEATURED PROFILE ===== -->
 <section class="team-featured" id="kamila">
     <div class="container">
 
@@ -59,17 +59,17 @@
                 <span class="team-role-tag">Adwokat · Założycielka Kancelarii</span>
 
                 <p class="team-lead">
-                    Prawo to nie tylko zawód – to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.
+                    Prawo to nie tylko zawód - to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.
                 </p>
 
                 <p>
-                    Wybór prawa był dla mnie decyzją przemyślaną – ale dopiero socjologia, którą studiowałam równolegle na SGGW, nauczyła mnie naprawdę słuchać. Rozumieć nie tylko przepis, ale człowieka stojącego za sprawą. Interdyscyplinarne wykształcenie (Prawo na Uniwersytecie SWPS i Socjologia na SGGW) pozwala mi łączyć precyzję prawniczą z komunikacją, która daje klientowi poczucie, że jest rozumiany – nie tylko reprezentowany.
+                    Wybór prawa był dla mnie decyzją przemyślaną - ale dopiero socjologia, którą studiowałam równolegle na SGGW, nauczyła mnie naprawdę słuchać. Rozumieć nie tylko przepis, ale człowieka stojącego za sprawą. Interdyscyplinarne wykształcenie (Prawo na Uniwersytecie SWPS i Socjologia na SGGW) pozwala mi łączyć precyzję prawniczą z komunikacją, która daje klientowi poczucie, że jest rozumiany - nie tylko reprezentowany.
                 </p>
                 <p>
-                    Przez ponad 12 lat pracy na styku prawa i biznesu – od asystenta prawnego, przez aplikację adwokacką w kancelarii Jerschina-Fus, Radtke-Cichocka w Warszawie, po własną praktykę – zbudowałam doświadczenie, którego nie zastąpi żaden kurs. Prowadzę aktywny referat 150–200 spraw rocznie, reprezentując spółki, przedsiębiorców i klientów indywidualnych przed sądami wszystkich instancji. W windykacji należności osiągam ok. 80% skuteczności.
+                    Przez ponad 12 lat pracy na styku prawa i biznesu - od asystenta prawnego, przez aplikację adwokacką w kancelarii Jerschina-Fus, Radtke-Cichocka w Warszawie, po własną praktykę - zbudowałam doświadczenie, którego nie zastąpi żaden kurs. Prowadzę aktywny referat 150-200 spraw rocznie, reprezentując spółki, przedsiębiorców i klientów indywidualnych przed sądami wszystkich instancji. W windykacji należności osiągam ok. 80% skuteczności.
                 </p>
                 <p>
-                    Cenię przejrzystość. Klient powinien rozumieć swoją sytuację prawną – nie tylko jej skutki, ale też strategię działania i realne szanse. Dlatego zamiast prawniczego żargonu daję konkretne opcje i uczciwą ocenę ryzyka. To podejście wypracowałam przez lata doradztwa Zarządom spółek, gdzie nie ma miejsca na niedomówienia.
+                    Cenię przejrzystość. Klient powinien rozumieć swoją sytuację prawną - nie tylko jej skutki, ale też strategię działania i realne szanse. Dlatego zamiast prawniczego żargonu daję konkretne opcje i uczciwą ocenę ryzyka. To podejście wypracowałam przez lata doradztwa Zarządom spółek, gdzie nie ma miejsca na niedomówienia.
                 </p>
 
                 <div class="team-spec-tags">
@@ -110,7 +110,7 @@
             <!-- ZDJĘCIE -->
             <div class="team-featured-photo reveal">
                 <div class="team-photo-frame">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/7.jpg" alt="Adwokat Kamila Sadłowicz – Założycielka Kancelarii">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/7.jpg" alt="Adwokat Kamila Sadłowicz - Założycielka Kancelarii">
                     <div class="team-photo-accent"></div>
                 </div>
                 <div class="team-badge">
@@ -165,7 +165,7 @@
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
                 <h3>Rzetelność</h3>
-                <p>Każda sprawa wymaga pełnego zaangażowania i dokładnej analizy. Dajemy klientowi rzetelną ocenę sytuacji – nawet jeśli nie jest to to, co chciałby usłyszeć.</p>
+                <p>Każda sprawa wymaga pełnego zaangażowania i dokładnej analizy. Dajemy klientowi rzetelną ocenę sytuacji - nawet jeśli nie jest to to, co chciałby usłyszeć.</p>
             </div>
             <div class="value-card reveal">
                 <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -173,7 +173,7 @@
                     <polyline points="12 6 12 12 16 14"/>
                 </svg>
                 <h3>Dostępność</h3>
-                <p>Odpowiadamy na maile w ciągu 24 godzin roboczych. W sprawach prawnych czas ma kluczowe znaczenie – dlatego nie zostawiamy klientów bez odpowiedzi.</p>
+                <p>Odpowiadamy na maile w ciągu 24 godzin roboczych. W sprawach prawnych czas ma kluczowe znaczenie - dlatego nie zostawiamy klientów bez odpowiedzi.</p>
             </div>
             <div class="value-card reveal">
                 <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -182,7 +182,7 @@
                     <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
                 </svg>
                 <h3>Indywidualne podejście</h3>
-                <p>Każdy klient i każda sprawa jest inna. Nie stosujemy szablonowych rozwiązań – słuchamy, analizujemy i dobieramy strategię dopasowaną do konkretnej sytuacji.</p>
+                <p>Każdy klient i każda sprawa jest inna. Nie stosujemy szablonowych rozwiązań - słuchamy, analizujemy i dobieramy strategię dopasowaną do konkretnej sytuacji.</p>
             </div>
         </div>
     </div>
@@ -215,11 +215,11 @@
                 <span class="member-of-counsel-tag">Of Counsel</span>
                 <h3 class="member-card-name">adw. Marcin <span style="color: var(--text-muted); font-size: 1rem; font-weight: 300;">[Nazwisko]</span></h3>
                 <p class="member-card-title">Adwokat · Of Counsel</p>
-                <p class="member-card-bio placeholder-text">[TU WSTAW: Krótki opis Marcina – doświadczenie, podejście do pracy, specjalizacja. 2–3 zdania.]</p>
+                <p class="member-card-bio placeholder-text">[TU WSTAW: Krótki opis Marcina - doświadczenie, podejście do pracy, specjalizacja. 2-3 zdania.]</p>
                 <ul class="member-card-specs">
-                    <li class="placeholder-text">[Specjalizacja 1 – np. Prawo cywilne]</li>
-                    <li class="placeholder-text">[Specjalizacja 2 – np. Prawo nieruchomości]</li>
-                    <li class="placeholder-text">[Specjalizacja 3 – np. Prawo gospodarcze]</li>
+                    <li class="placeholder-text">[Specjalizacja 1 - np. Prawo cywilne]</li>
+                    <li class="placeholder-text">[Specjalizacja 2 - np. Prawo nieruchomości]</li>
+                    <li class="placeholder-text">[Specjalizacja 3 - np. Prawo gospodarcze]</li>
                 </ul>
                 <div class="member-card-footer">
                     <a href="mailto:[email]@kancelaria-sadlowicz.pl" class="member-card-email">
@@ -250,13 +250,13 @@
                 Szerzej niż <em style="font-style:italic;">tylko kancelaria</em>
             </h2>
             <p class="reveal">
-                Kancelaria regularnie współpracuje z siecią sprawdzonych specjalistów z pokrewnych dziedzin. Dzięki temu możemy zaoferować klientom wsparcie kompleksowe – prawne, podatkowe, finansowe czy techniczne – zawsze w ramach jednej relacji opartej na zaufaniu. Dobieramy współpracowników z taką samą starannością, jaką przykładamy do doboru własnego zespołu.
+                Kancelaria regularnie współpracuje z siecią sprawdzonych specjalistów z pokrewnych dziedzin. Dzięki temu możemy zaoferować klientom wsparcie kompleksowe - prawne, podatkowe, finansowe czy techniczne - zawsze w ramach jednej relacji opartej na zaufaniu. Dobieramy współpracowników z taką samą starannością, jaką przykładamy do doboru własnego zespołu.
             </p>
         </div>
         <div class="collab-areas">
             <div class="collab-area-card reveal">
                 <h4>Doradztwo podatkowe</h4>
-                <p>Współpracujemy z doradcami podatkowymi przy sprawach wymagających połączenia kompetencji prawnych i podatkowych – restrukturyzacje, transakcje M&amp;A, umowy B2B, due diligence.</p>
+                <p>Współpracujemy z doradcami podatkowymi przy sprawach wymagających połączenia kompetencji prawnych i podatkowych - restrukturyzacje, transakcje M&amp;A, umowy B2B, due diligence.</p>
             </div>
             <div class="collab-area-card reveal">
                 <h4>Biegli i eksperci</h4>

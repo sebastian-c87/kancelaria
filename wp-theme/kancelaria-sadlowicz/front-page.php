@@ -98,13 +98,13 @@
                 <h2 class="section-title">Adwokat z pasją<br>do <em>skuteczności</em></h2>
                 <div class="gold-rule"></div>
                 <p>
-                    Jestem adwokatem z interdyscyplinarnym wykształceniem – Socjologia i Prawo – oraz wieloletnią praktyką w obsłudze podmiotów gospodarczych i klientów indywidualnych. To połączenie pozwala mi rozumieć sprawy nie tylko od strony prawnej, ale też ludzkiej.
+                    Jestem adwokatem z interdyscyplinarnym wykształceniem - Socjologia i Prawo - oraz wieloletnią praktyką w obsłudze podmiotów gospodarczych i klientów indywidualnych. To połączenie pozwala mi rozumieć sprawy nie tylko od strony prawnej, ale też ludzkiej.
                 </p>
                 <p>
                     Specjalizuję się w prawie cywilnym, gospodarczym i prawie pracy. Łączę wiedzę procesową z biegłością w narzędziach IT, co pozwala mi <strong>efektywnie zarządzać ok. 200 sprawami rocznie</strong>. Skutecznie prowadzę windykację (ok. <strong>80% skuteczności</strong>) i doradzam Zarządom w zakresie corporate governance.
                 </p>
                 <p>
-                    Moje podejście opiera się na <strong>indywidualnym traktowaniu każdego klienta</strong> i głębokiej analizie dokumentacji – wierzę, że sukces wymaga pełnego zrozumienia sytuacji klienta, zarówno faktycznej, jak i emocjonalnej.
+                    Moje podejście opiera się na <strong>indywidualnym traktowaniu każdego klienta</strong> i głębokiej analizie dokumentacji - wierzę, że sukces wymaga pełnego zrozumienia sytuacji klienta, zarówno faktycznej, jak i emocjonalnej.
                 </p>
                 <a href="<?php echo home_url('/o-mnie/'); ?>" class="btn-navy mt-8" style="display:inline-flex;">
                     Poznaj mnie bliżej
@@ -129,7 +129,7 @@
             </div>
             <h2 class="section-title">Jakim jestem <em>adwokatem</em></h2>
             <p class="section-intro" style="margin: 0 auto;">
-                Rzetelność, komunikacja i skuteczność – to fundamenty mojej pracy. Każdą sprawę traktuję indywidualnie, dbając o to, by klient rozumiał każdy etap postępowania.
+                Rzetelność, komunikacja i skuteczność - to fundamenty mojej pracy. Każdą sprawę traktuję indywidualnie, dbając o to, by klient rozumiał każdy etap postępowania.
             </p>
         </div>
 
@@ -138,37 +138,37 @@
                 <div class="pillar-number">01</div>
                 <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                 <h3 class="pillar-title">Wnikliwa analiza dokumentacji</h3>
-                <p class="pillar-text">Dokładnie badam każdy dokument, umowę, dowód – nie pomijam żadnych szczegółów. Często pozornie drobne elementy okazują się kluczowe dla sukcesu sprawy.</p>
+                <p class="pillar-text">Dokładnie badam każdy dokument, umowę, dowód - nie pomijam żadnych szczegółów. Często pozornie drobne elementy okazują się kluczowe dla sukcesu sprawy.</p>
             </div>
             <div class="pillar-card reveal" style="transition-delay:.08s">
                 <div class="pillar-number">02</div>
                 <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                 <h3 class="pillar-title">Poszukiwanie wszystkich rozwiązań</h3>
-                <p class="pillar-text">Analizuję pełne spektrum dostępnych ścieżek – od negocjacji i mediacji, przez postępowanie polubowne, aż po drogę sądową. Wybieramy najkorzystniejszą strategię razem.</p>
+                <p class="pillar-text">Analizuję pełne spektrum dostępnych ścieżek - od negocjacji i mediacji, przez postępowanie polubowne, aż po drogę sądową. Wybieramy najkorzystniejszą strategię razem.</p>
             </div>
             <div class="pillar-card reveal" style="transition-delay:.16s">
                 <div class="pillar-number">03</div>
                 <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
                 <h3 class="pillar-title">Transparentność i jasna komunikacja</h3>
-                <p class="pillar-text">Unikam prawniczego żargonu – tłumaczę sprawy jasnym, zrozumiałym językiem. Regularnie informuję o postępach, wyjaśniam możliwe scenariusze i ich konsekwencje.</p>
+                <p class="pillar-text">Unikam prawniczego żargonu - tłumaczę sprawy jasnym, zrozumiałym językiem. Regularnie informuję o postępach, wyjaśniam możliwe scenariusze i ich konsekwencje.</p>
             </div>
             <div class="pillar-card reveal" style="transition-delay:.24s">
                 <div class="pillar-number">04</div>
                 <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
                 <h3 class="pillar-title">Empatia i zrozumienie</h3>
-                <p class="pillar-text">Wykształcenie socjologiczne pomaga mi rozumieć nie tylko fakty, ale i emocje klientów. Sprawy prawne wiążą się ze stresem – staram się być nie tylko prawnikiem, ale i wsparciem.</p>
+                <p class="pillar-text">Wykształcenie socjologiczne pomaga mi rozumieć nie tylko fakty, ale i emocje klientów. Sprawy prawne wiążą się ze stresem - staram się być nie tylko prawnikiem, ale i wsparciem.</p>
             </div>
             <div class="pillar-card reveal" style="transition-delay:.32s">
                 <div class="pillar-number">05</div>
                 <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
                 <h3 class="pillar-title">Zaangażowanie i dbałość o szczegóły</h3>
-                <p class="pillar-text">Każdej sprawie poświęcam pełną uwagę – niezależnie od wartości czy złożoności. Terminowość i skrupulatność to dla mnie standardy, nie wyjątki.</p>
+                <p class="pillar-text">Każdej sprawie poświęcam pełną uwagę - niezależnie od wartości czy złożoności. Terminowość i skrupulatność to dla mnie standardy, nie wyjątki.</p>
             </div>
             <div class="pillar-card reveal" style="transition-delay:.4s">
                 <div class="pillar-number">06</div>
                 <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                 <h3 class="pillar-title">Nowoczesne technologie i AI</h3>
-                <p class="pillar-text">Wykorzystuję zaawansowane narzędzia cyfrowe i sztuczną inteligencję do analizy dokumentacji i researchu prawnego – oferuję usługi najwyższej jakości przy konkurencyjnych stawkach.</p>
+                <p class="pillar-text">Wykorzystuję zaawansowane narzędzia cyfrowe i sztuczną inteligencję do analizy dokumentacji i researchu prawnego - oferuję usługi najwyższej jakości przy konkurencyjnych stawkach.</p>
             </div>
         </div>
     </div>
@@ -183,7 +183,7 @@
                 <span class="section-label-text">Obszary praktyki</span>
             </div>
             <h2 class="section-title">Specjalizacje</h2>
-            <p class="section-intro">Kompleksowa pomoc prawna w kluczowych obszarach prawa – dla firm i klientów indywidualnych.</p>
+            <p class="section-intro">Kompleksowa pomoc prawna w kluczowych obszarach prawa - dla firm i klientów indywidualnych.</p>
         </div>
 
         <div class="spec-grid">
@@ -350,7 +350,7 @@
                     </div>
                     <div class="benefit-row">
                         <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span class="benefit-text">Kompleksowa obsługa – od analizy do finalizacji sprawy</span>
+                        <span class="benefit-text">Kompleksowa obsługa - od analizy do finalizacji sprawy</span>
                     </div>
                     <div class="benefit-row">
                         <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -370,7 +370,7 @@
                     </div>
                     <div class="benefit-row">
                         <svg class="benefit-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        <span class="benefit-text">Edukacja prawna klientów – uczę, jak unikać problemów w przyszłości</span>
+                        <span class="benefit-text">Edukacja prawna klientów - uczę, jak unikać problemów w przyszłości</span>
                     </div>
                 </div>
             </div>
@@ -439,7 +439,7 @@
                     <span class="blog-date">22.01.2026</span>
                     <span class="blog-cat">Rodzinne</span>
                 </div>
-                <h3 class="blog-title"><a href="<?php echo home_url('/blog/'); ?>">Rozwód krok po kroku – praktyczny przewodnik</a></h3>
+                <h3 class="blog-title"><a href="<?php echo home_url('/blog/'); ?>">Rozwód krok po kroku - praktyczny przewodnik</a></h3>
                 <p class="blog-excerpt">Procedura rozwodowa może być skomplikowana. Przedstawiam kolejne etapy postępowania rozwodowego w Polsce...</p>
                 <a href="<?php echo home_url('/blog/'); ?>" class="blog-link">Czytaj więcej</a>
             </article>
@@ -448,7 +448,7 @@
                     <span class="blog-date">29.01.2026</span>
                     <span class="blog-cat">Windykacja</span>
                 </div>
-                <h3 class="blog-title"><a href="<?php echo home_url('/blog/'); ?>">Windykacja należności – kiedy i jak skutecznie działać?</a></h3>
+                <h3 class="blog-title"><a href="<?php echo home_url('/blog/'); ?>">Windykacja należności - kiedy i jak skutecznie działać?</a></h3>
                 <p class="blog-excerpt">Niesolidny kontrahent nie płaci? Poznaj skuteczne metody windykacji polubownej i sądowej...</p>
                 <a href="<?php echo home_url('/blog/'); ?>" class="blog-link">Czytaj więcej</a>
             </article>
@@ -463,7 +463,7 @@
         <div class="cta-inner reveal">
             <div class="cta-text">
                 <h2>Potrzebujesz pomocy<br><em>prawnej?</em></h2>
-                <p>Umów się na konsultację – omówimy Twoją sprawę szczegółowo i znajdziemy najlepsze rozwiązanie.</p>
+                <p>Umów się na konsultację - omówimy Twoją sprawę szczegółowo i znajdziemy najlepsze rozwiązanie.</p>
             </div>
             <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start; flex-shrink:0;">
                 <a href="<?php echo home_url('/kontakt/'); ?>" class="btn-gold" style="white-space:nowrap;">

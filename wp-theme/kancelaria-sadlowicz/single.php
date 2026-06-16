@@ -54,7 +54,7 @@
         <div class="cta-inner">
             <div class="cta-text">
                 <h2>Masz pytanie prawne?<br><em>Skontaktuj się</em></h2>
-                <p>Umów konsultację – omówimy Twoją sprawę indywidualnie.</p>
+                <p>Umów konsultację - omówimy Twoją sprawę indywidualnie.</p>
             </div>
             <a href="<?php echo home_url('/kontakt/'); ?>" class="btn-gold">
                 Umów konsultację

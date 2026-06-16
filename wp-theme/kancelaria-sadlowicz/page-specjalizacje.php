@@ -67,7 +67,7 @@
                         <h2>Prawo Gospodarcze</h2>
                     </div>
                     <p class="spec-lead">
-                        Prawo gospodarcze to kompleksowa obsługa prawna przedsiębiorców na każdym etapie prowadzenia działalności – od rejestracji spółki, przez bieżące doradztwo, aż po reprezentację w sporach korporacyjnych.
+                        Prawo gospodarcze to kompleksowa obsługa prawna przedsiębiorców na każdym etapie prowadzenia działalności - od rejestracji spółki, przez bieżące doradztwo, aż po reprezentację w sporach korporacyjnych.
                     </p>
                     <p>
                         Jako adwokat specjalizujący się w prawie gospodarczym oferuję pełne wsparcie dla spółek, zarządów i przedsiębiorców indywidualnych. Moje wieloletnie doświadczenie w obsłudze podmiotów gospodarczych pozwala mi skutecznie doradzać w najtrudniejszych sprawach biznesowych.
@@ -145,7 +145,7 @@
                         <li>Dochodzenie odszkodowań za niezgodne z prawem zwolnienie</li>
                         <li>Sprawy o mobbing i dyskryminację w miejscu pracy</li>
                         <li>Windykacja wynagrodzeń i innych należności pracowniczych</li>
-                        <li>Doradztwo dla pracodawców – regulaminy, umowy, zwolnienia</li>
+                        <li>Doradztwo dla pracodawców - regulaminy, umowy, zwolnienia</li>
                         <li>Reprezentacja przed Państwową Inspekcją Pracy</li>
                         <li>Mediacje i negocjacje ugodowe w sporach pracowniczych</li>
                     </ul>
@@ -189,13 +189,13 @@
                         <h2>Windykacja Należności</h2>
                     </div>
                     <p class="spec-lead">
-                        Windykacja należności to moja specjalizacja, w której osiągam około 80% skuteczności. Skutecznie odzyskuję należności dla przedsiębiorców, małych firm oraz osób prywatnych – zarówno drogą polubowną, jak i sądową.
+                        Windykacja należności to moja specjalizacja, w której osiągam około 80% skuteczności. Skutecznie odzyskuję należności dla przedsiębiorców, małych firm oraz osób prywatnych - zarówno drogą polubowną, jak i sądową.
                     </p>
                     <p>
-                        Prowadzę kompleksowe procesy windykacyjne – od wezwań do zapłaty, przez postępowanie upominawcze i procesy sądowe, aż po egzekucję komorniczą. Dzięki biegłości w systemach sądowych oraz efektywnemu zarządzaniu referatem ok. 200 spraw rocznie, zapewniam szybkie i skuteczne odzyskiwanie należności.
+                        Prowadzę kompleksowe procesy windykacyjne - od wezwań do zapłaty, przez postępowanie upominawcze i procesy sądowe, aż po egzekucję komorniczą. Dzięki biegłości w systemach sądowych oraz efektywnemu zarządzaniu referatem ok. 200 spraw rocznie, zapewniam szybkie i skuteczne odzyskiwanie należności.
                     </p>
                     <p>
-                        Oferuję elastyczne modele rozliczeń – zarówno stawkę stałą, jak i success fee (wynagrodzenie uzależnione od skuteczności windykacji), co pozwala dopasować współpracę do możliwości finansowych klienta.
+                        Oferuję elastyczne modele rozliczeń - zarówno stawkę stałą, jak i success fee (wynagrodzenie uzależnione od skuteczności windykacji), co pozwala dopasować współpracę do możliwości finansowych klienta.
                     </p>
                     <p>
                         Specjalizuję się w windykacji należności B2B (między przedsiębiorcami), należności konsumenckich oraz należności z tytułu umów cywilnoprawnych. Prowadzę również sprawy o zapłatę w postępowaniach gospodarczych przed sądami okręgowymi.
@@ -203,7 +203,7 @@
 
                     <h3>Co obejmuje usługa:</h3>
                     <ul class="spec-list">
-                        <li>Windykacja polubowna – wezwania do zapłaty, negocjacje ugodowe</li>
+                        <li>Windykacja polubowna - wezwania do zapłaty, negocjacje ugodowe</li>
                         <li>Postępowanie upominawcze (szybkie uzyskanie nakazu zapłaty)</li>
                         <li>Procesy sądowe o zapłatę (sprawy cywilne i gospodarcze)</li>
                         <li>Egzekucja komornicza należności</li>
@@ -247,13 +247,13 @@
                         Prawo cywilne i rodzinne to obszar, w którym łączę wiedzę prawniczą z empatią i zrozumieniem dla trudnych sytuacji życiowych klientów. Reprezentuję w sprawach rozwodowych, alimentacyjnych, spadkowych oraz odszkodowawczych.
                     </p>
                     <p>
-                        Sprawy rodzinne to często najtrudniejsze emocjonalnie momenty w życiu – rozwody, separacje, walka o kontakty z dziećmi, alimenty. Moje interdyscyplinarne wykształcenie (Prawo + Socjologia) pozwala mi nie tylko skutecznie bronić Twoich interesów, ale również wspierać Cię emocjonalnie w tym trudnym czasie.
+                        Sprawy rodzinne to często najtrudniejsze emocjonalnie momenty w życiu - rozwody, separacje, walka o kontakty z dziećmi, alimenty. Moje interdyscyplinarne wykształcenie (Prawo + Socjologia) pozwala mi nie tylko skutecznie bronić Twoich interesów, ale również wspierać Cię emocjonalnie w tym trudnym czasie.
                     </p>
                     <p>
                         W sprawach cywilnych reprezentuję klientów w procesach odszkodowawczych (wypadki komunikacyjne, błędy medyczne, szkody na osobie), sprawach spadkowych (stwierdzenie nabycia spadku, działów spadku, testamenty), oraz w sprawach dotyczących nieruchomości (roszczenia windykacyjne, zniesienie współwłasności).
                     </p>
                     <p>
-                        Zawsze staram się w pierwszej kolejności wypracować rozwiązania polubowne (ugody, mediacje), które oszczędzają czas, pieniądze i emocje. Jeśli jednak sprawa wymaga procesu sądowego – reprezentuję z pełnym zaangażowaniem.
+                        Zawsze staram się w pierwszej kolejności wypracować rozwiązania polubowne (ugody, mediacje), które oszczędzają czas, pieniądze i emocje. Jeśli jednak sprawa wymaga procesu sądowego - reprezentuję z pełnym zaangażowaniem.
                     </p>
 
                     <h3>Co obejmuje usługa:</h3>
@@ -262,7 +262,7 @@
                         <li>Alimenty na dzieci i małżonka (ustalanie, podwyższanie, egzekucja)</li>
                         <li>Kontakty z dziećmi, władza rodzicielska, miejsce zamieszkania dziecka</li>
                         <li>Podział majątku wspólnego małżonków</li>
-                        <li>Sprawy spadkowe – stwierdzenie nabycia spadku, działy spadku, testamenty</li>
+                        <li>Sprawy spadkowe - stwierdzenie nabycia spadku, działy spadku, testamenty</li>
                         <li>Odszkodowania za szkody osobowe i majątkowe (wypadki, błędy medyczne)</li>
                         <li>Sprawy dotyczące nieruchomości (zniesienie współwłasności, roszczenia)</li>
                     </ul>
@@ -273,7 +273,7 @@
                         <li>Wywalczenie rozszerzonych kontaktów ojca z dzieckiem</li>
                         <li>Podział majątku wspólnego wartości 1,5 mln zł</li>
                         <li>Odszkodowanie 200 tys. zł za wypadek komunikacyjny</li>
-                        <li>Dział spadku z nieruchomościami – ugoda polubowna</li>
+                        <li>Dział spadku z nieruchomościami - ugoda polubowna</li>
                     </ul>
 
                     <div class="spec-cta">
@@ -312,7 +312,7 @@
                         W erze cyfryzacji i sztucznej inteligencji ochrona własności intelektualnej staje się kluczowa dla każdego przedsiębiorcy, twórcy czy startupu technologicznego. Doradzam w zakresie rejestracji znaków towarowych, patentów, ochrony praw autorskich do utworów (teksty, grafiki, muzyka, kod źródłowy), oraz w sprawach naruszeń IP.
                     </p>
                     <p>
-                        Specjalizuję się również w nowej, rozwijającej się dziedzinie – prawnych aspektach wykorzystania sztucznej inteligencji. Doradzam, jak legalnie wykorzystywać narzędzia AI w biznesie (ChatGPT, Midjourney, generatory treści), jakie są prawa autorskie do treści generowanych przez AI, oraz jak chronić własne utwory przed nieuprawnionym wykorzystaniem przez AI.
+                        Specjalizuję się również w nowej, rozwijającej się dziedzinie - prawnych aspektach wykorzystania sztucznej inteligencji. Doradzam, jak legalnie wykorzystywać narzędzia AI w biznesie (ChatGPT, Midjourney, generatory treści), jakie są prawa autorskie do treści generowanych przez AI, oraz jak chronić własne utwory przed nieuprawnionym wykorzystaniem przez AI.
                     </p>
                     <p>
                         Reprezentuję również w sporach o naruszenie praw autorskich, znaków towarowych oraz w sprawach dotyczących umów licencyjnych i cesji praw autorskich.
@@ -364,7 +364,7 @@
                         Prawo ubezpieczeniowe to obszar, w którym reprezentuję osoby poszkodowane w dochodzeniu roszczeń z ubezpieczeń komunikacyjnych (OC, AC), ubezpieczeń majątkowych, życiowych oraz zdrowotnych.
                     </p>
                     <p>
-                        Towarzystwa ubezpieczeniowe często odmawiają wypłaty odszkodowań lub oferują zaniżone kwoty, licząc na brak wiedzy prawnej poszkodowanych. Skutecznie reprezentuję klientów w sporach z ubezpieczycielami – zarówno w postępowaniach przedsądowych (negocjacje, wezwania do zapłaty), jak i w procesach sądowych.
+                        Towarzystwa ubezpieczeniowe często odmawiają wypłaty odszkodowań lub oferują zaniżone kwoty, licząc na brak wiedzy prawnej poszkodowanych. Skutecznie reprezentuję klientów w sporach z ubezpieczycielami - zarówno w postępowaniach przedsądowych (negocjacje, wezwania do zapłaty), jak i w procesach sądowych.
                     </p>
                     <p>
                         Specjalizuję się w sprawach o odszkodowania z ubezpieczeń OC/AC po wypadkach komunikacyjnych, zadośćuczynienia za uszczerbek na zdrowiu, odszkodowań za szkody w nieruchomościach (zalania, pożary), oraz w sprawach dotyczących umów ubezpieczenia na życie.
@@ -386,9 +386,9 @@
 
                     <h3>Przykłady spraw:</h3>
                     <ul class="spec-examples">
-                        <li>Wywalczone odszkodowanie 120 tys. zł za kolizję – ubezpieczyciel oferował 40 tys. zł</li>
+                        <li>Wywalczone odszkodowanie 120 tys. zł za kolizję - ubezpieczyciel oferował 40 tys. zł</li>
                         <li>Zadośćuczynienie 80 tys. zł za trwały uszczerbek na zdrowiu po wypadku</li>
-                        <li>Odszkodowanie za zalanie mieszkania – spór z administracją budynku</li>
+                        <li>Odszkodowanie za zalanie mieszkania - spór z administracją budynku</li>
                         <li>Reprezentacja w sprawie o wypłatę z ubezpieczenia na życie (odmowa płatności)</li>
                     </ul>
 
@@ -440,7 +440,7 @@
                         <li>Tworzenie regulaminów pracy, wynagrodzeń, ZFŚS</li>
                         <li>Przygotowanie polityk RODO i wdrożenie zgodności z ochroną danych</li>
                         <li>Procedury antykorupcyjne i kodeksy etyki</li>
-                        <li>Ochrona sygnalistów (whistleblowing) – procedury wewnętrzne</li>
+                        <li>Ochrona sygnalistów (whistleblowing) - procedury wewnętrzne</li>
                         <li>Compliance w zakresie prawa konkurencji i zamówień publicznych</li>
                         <li>Szkolenia dla pracowników z zakresu compliance i RODO</li>
                     </ul>
@@ -467,7 +467,7 @@
         <div class="cta-inner reveal">
             <div class="cta-text">
                 <h2>Nie znalazłeś<br><em>swojej sprawy?</em></h2>
-                <p>Każda sprawa jest inna i wymaga indywidualnego podejścia. Skontaktuj się – pomogę Ci znaleźć najlepsze rozwiązanie.</p>
+                <p>Każda sprawa jest inna i wymaga indywidualnego podejścia. Skontaktuj się - pomogę Ci znaleźć najlepsze rozwiązanie.</p>
             </div>
             <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start; flex-shrink:0;">
                 <a href="<?php echo home_url('/kontakt/'); ?>" class="btn-gold" style="white-space:nowrap;">

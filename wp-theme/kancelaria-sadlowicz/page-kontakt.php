@@ -132,7 +132,7 @@
                             </label>
                         </div>
 
-                        <!-- Honeypot – schowane przed ludźmi, widoczne dla botów -->
+                        <!-- Honeypot - schowane przed ludźmi, widoczne dla botów -->
                         <div class="form-hp" aria-hidden="true">
                             <label for="website">Adres strony www</label>
                             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -294,7 +294,7 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         <h2 id="modalTitle">Wiadomość wysłana!</h2>
-        <p>Dziękuję za kontakt. Odpiszę w ciągu 24 godzin w&nbsp;dni robocze.<br>Jeśli sprawa jest pilna – zadzwoń na <a href="tel:+48790013287">+48 790 013 287</a>.</p>
+        <p>Dziękuję za kontakt. Odpiszę w ciągu 24 godzin w&nbsp;dni robocze.<br>Jeśli sprawa jest pilna - zadzwoń na <a href="tel:+48790013287">+48 790 013 287</a>.</p>
         <button class="btn-gold" id="modalClose">Zamknij</button>
         <div class="modal-progress"><div class="modal-progress-bar"></div></div>
     </div>
@@ -305,7 +305,7 @@
     <div class="container">
         <div class="cta-inner reveal">
             <div class="cta-text">
-                <h2>Nie zwlekaj –<br><em>działaj już dziś</em></h2>
+                <h2>Nie zwlekaj -<br><em>działaj już dziś</em></h2>
                 <p>Im szybciej zaczniesz działać, tym lepsze efekty. Jestem tu, by Ci pomóc.</p>
             </div>
             <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start; flex-shrink:0;">
@@ -481,17 +481,17 @@
 
         // Predefined responses (FAQ-based)
         const botResponses = {
-            'ile kosztuje rozwód': 'Orientacyjny koszt reprezentacji w sprawie o rozwód:\n\n• **Rozwód za porozumieniem stron**: 3.000–3.500 zł\n• **Rozwód z orzekaniem o winie**: 8.000–15.000 zł (zależy od liczby rozpraw)\n• **Sporządzenie samego pozwu**: 1.000–1.500 zł\n• **Opłata sądowa od pozwu** (stała): 600 zł\n\nPełny cennik: [Oferta i cennik](<?php echo home_url('/oferta/'); ?>). Mogę umówić Cię na bezpłatną konsultację – wypełnij formularz po lewej.',
+            'ile kosztuje rozwód': 'Orientacyjny koszt reprezentacji w sprawie o rozwód:\n\n• **Rozwód za porozumieniem stron**: 3.000-3.500 zł\n• **Rozwód z orzekaniem o winie**: 8.000-15.000 zł (zależy od liczby rozpraw)\n• **Sporządzenie samego pozwu**: 1.000-1.500 zł\n• **Opłata sądowa od pozwu** (stała): 600 zł\n\nPełny cennik: [Oferta i cennik](<?php echo home_url('/oferta/'); ?>). Mogę umówić Cię na bezpłatną konsultację - wypełnij formularz po lewej.',
 
-            'jak długo trwa sprawa sądowa': 'Czas trwania sprawy zależy od jej rodzaju:\n\n• **Rozwód bez dzieci**: 6–10 miesięcy\n• **Rozwód ze sporami**: 18–30 miesięcy\n• **Sprawy cywilne**: 12–18 miesięcy\n• **Windykacja – nakaz zapłaty**: 3 tygodnie\n• **Windykacja – sprzeciw dłużnika**: 6–12 miesięcy\n\nDokładny szacunek zależy od okoliczności – napisz do mnie przez formularz.',
+            'jak długo trwa sprawa sądowa': 'Czas trwania sprawy zależy od jej rodzaju:\n\n• **Rozwód bez dzieci**: 6-10 miesięcy\n• **Rozwód ze sporami**: 18-30 miesięcy\n• **Sprawy cywilne**: 12-18 miesięcy\n• **Windykacja - nakaz zapłaty**: 3 tygodnie\n• **Windykacja - sprzeciw dłużnika**: 6-12 miesięcy\n\nDokładny szacunek zależy od okoliczności - napisz do mnie przez formularz.',
 
-            'jakie dokumenty potrzebuję': 'Dokumenty zależą od rodzaju sprawy:\n\n**Rozwód**: akt małżeństwa, akty urodzenia dzieci, dokumenty majątkowe\n**Windykacja**: umowy, faktury, korespondencja, potwierdzenia płatności\n**Spadki**: akt zgonu, testament (jeśli jest), dokumenty majątku\n**Prawo pracy**: umowa o pracę, wypowiedzenie, regulamin pracy\n\nNajlepiej opisz sprawę w formularzu – podpowiem, co przygotować.',
+            'jakie dokumenty potrzebuję': 'Dokumenty zależą od rodzaju sprawy:\n\n**Rozwód**: akt małżeństwa, akty urodzenia dzieci, dokumenty majątkowe\n**Windykacja**: umowy, faktury, korespondencja, potwierdzenia płatności\n**Spadki**: akt zgonu, testament (jeśli jest), dokumenty majątku\n**Prawo pracy**: umowa o pracę, wypowiedzenie, regulamin pracy\n\nNajlepiej opisz sprawę w formularzu - podpowiem, co przygotować.',
 
-            'jak umówić konsultację': 'Możesz umówić konsultację na 3 sposoby:\n\n1. **Wypełnij formularz** po lewej stronie\n2. **Zadzwoń**: +48 790 013 287 (Pon–Pt 9:00–17:00)\n3. **Napisz email**: kamila.sadlowicz@kancelaria-sadlowicz.pl\n\nKoszt konsultacji: **350–500 zł** (60 min, osobiście lub online). Pierwsza konsultacja jest wliczana w koszty reprezentacji, jeśli zdecydujesz się na współpracę.',
+            'jak umówić konsultację': 'Możesz umówić konsultację na 3 sposoby:\n\n1. **Wypełnij formularz** po lewej stronie\n2. **Zadzwoń**: +48 790 013 287 (Pon-Pt 9:00-17:00)\n3. **Napisz email**: kamila.sadlowicz@kancelaria-sadlowicz.pl\n\nKoszt konsultacji: **350-500 zł** (60 min, osobiście lub online). Pierwsza konsultacja jest wliczana w koszty reprezentacji, jeśli zdecydujesz się na współpracę.',
 
-            'specjalizacje': 'Kancelaria obsługuje sprawy z zakresu:\n\n• **Prawo gospodarcze i korporacyjne** – obsługa spółek, umowy, due diligence\n• **Prawo cywilne** – odszkodowania, spory sąsiedzkie, umowy\n• **Windykacja należności** – nakazy zapłaty, egzekucja, ~80% skuteczności\n• **Prawo pracy** – wypowiedzenia, mobbing, wynagrodzenia\n• **Prawo karne** – obrona i reprezentacja pokrzywdzonych\n• **Restrukturyzacja** – sanacja, uproszczona restrukturyzacja\n\nWięcej: [Specjalizacje](<?php echo home_url('/specjalizacje/'); ?>)',
+            'specjalizacje': 'Kancelaria obsługuje sprawy z zakresu:\n\n• **Prawo gospodarcze i korporacyjne** - obsługa spółek, umowy, due diligence\n• **Prawo cywilne** - odszkodowania, spory sąsiedzkie, umowy\n• **Windykacja należności** - nakazy zapłaty, egzekucja, ~80% skuteczności\n• **Prawo pracy** - wypowiedzenia, mobbing, wynagrodzenia\n• **Prawo karne** - obrona i reprezentacja pokrzywdzonych\n• **Restrukturyzacja** - sanacja, uproszczona restrukturyzacja\n\nWięcej: [Specjalizacje](<?php echo home_url('/specjalizacje/'); ?>)',
 
-            'default': 'Dziękuję za pytanie! To wykracza poza mój zakres. **Wypełnij formularz kontaktowy** – Kamila odpowie w ciągu 24 godzin w dni robocze. Więcej odpowiedzi znajdziesz w [FAQ](<?php echo home_url('/faq/'); ?>).'
+            'default': 'Dziękuję za pytanie! To wykracza poza mój zakres. **Wypełnij formularz kontaktowy** - Kamila odpowie w ciągu 24 godzin w dni robocze. Więcej odpowiedzi znajdziesz w [FAQ](<?php echo home_url('/faq/'); ?>).'
         };
 
         // Add message to chat

@@ -9,7 +9,7 @@
             <span class="page-hero-eyebrow-text">Adwokat · Kancelaria Adwokacka · Warszawa</span>
         </div>
         <h1 class="page-hero-title">O <em>mnie</em></h1>
-        <p class="page-hero-desc">Adwokat z pasją do prawa i zaangażowaniem w każdą sprawę. Poznaj mnie bliżej – moje doświadczenie, wartości i podejście do klienta.</p>
+        <p class="page-hero-desc">Adwokat z pasją do prawa i zaangażowaniem w każdą sprawę. Poznaj mnie bliżej - moje doświadczenie, wartości i podejście do klienta.</p>
         <div class="page-hero-actions">
             <a href="<?php echo home_url('/kontakt/'); ?>" class="btn-gold">
                 Umów konsultację
@@ -26,7 +26,7 @@
         <div class="about-intro">
 
             <div class="about-text reveal">
-                <p class="lead-paragraph"><?php echo ks_field('lead_paragraph', 'Prawo to nie tylko zawód – to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.'); ?></p>
+                <p class="lead-paragraph"><?php echo ks_field('lead_paragraph', 'Prawo to nie tylko zawód - to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.'); ?></p>
 
                 <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
 
@@ -90,7 +90,7 @@
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
                 <h3><?php echo ks_field('value_1_title', 'Rzetelność'); ?></h3>
-                <p><?php echo ks_field('value_1_text', 'Każda sprawa wymaga pełnego zaangażowania i dokładnej analizy. Daję Ci rzetelną ocenę sytuacji – nawet jeśli nie jest to to, co chciałbyś usłyszeć.'); ?></p>
+                <p><?php echo ks_field('value_1_text', 'Każda sprawa wymaga pełnego zaangażowania i dokładnej analizy. Daję Ci rzetelną ocenę sytuacji - nawet jeśli nie jest to to, co chciałbyś usłyszeć.'); ?></p>
             </div>
             <div class="value-card reveal">
                 <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -98,7 +98,7 @@
                     <polyline points="12 6 12 12 16 14"/>
                 </svg>
                 <h3><?php echo ks_field('value_2_title', 'Dostępność'); ?></h3>
-                <p><?php echo ks_field('value_2_text', 'Odpowiadam na maile w ciągu 24 godzin roboczych. Wiem, że w sprawach prawnych czas często ma kluczowe znaczenie – dlatego nie zostawiam klientów bez odpowiedzi.'); ?></p>
+                <p><?php echo ks_field('value_2_text', 'Odpowiadam na maile w ciągu 24 godzin roboczych. Wiem, że w sprawach prawnych czas często ma kluczowe znaczenie - dlatego nie zostawiam klientów bez odpowiedzi.'); ?></p>
             </div>
             <div class="value-card reveal">
                 <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -107,7 +107,7 @@
                     <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
                 </svg>
                 <h3><?php echo ks_field('value_3_title', 'Indywidualne podejście'); ?></h3>
-                <p><?php echo ks_field('value_3_text', 'Każdy klient i każda sprawa jest inna. Nie stosuję szablonowych rozwiązań – słucham, analizuję i dobieram strategię dopasowaną do Twojej konkretnej sytuacji.'); ?></p>
+                <p><?php echo ks_field('value_3_text', 'Każdy klient i każda sprawa jest inna. Nie stosuję szablonowych rozwiązań - słucham, analizuję i dobieram strategię dopasowaną do Twojej konkretnej sytuacji.'); ?></p>
             </div>
         </div>
     </div>
@@ -127,21 +127,21 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <span class="timeline-year"><?php echo ks_field('edu_1_year', '2020'); ?></span>
-                        <h4><?php echo ks_field('edu_1_title', 'Egzamin adwokacki – wynik pozytywny'); ?></h4>
+                        <h4><?php echo ks_field('edu_1_title', 'Egzamin adwokacki - wynik pozytywny'); ?></h4>
                         <p><?php echo ks_field('edu_1_desc', 'Okręgowa Rada Adwokacka w Warszawie · wpis nr WAW/ADW/9453'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year"><?php echo ks_field('edu_2_year', '2017 – 2019'); ?></span>
+                        <span class="timeline-year"><?php echo ks_field('edu_2_year', '2017 - 2019'); ?></span>
                         <h4><?php echo ks_field('edu_2_title', 'Aplikacja adwokacka'); ?></h4>
                         <p><?php echo ks_field('edu_2_desc', 'ORA w Warszawie · starosta grupy aplikacyjnej · Samorząd Aplikantów Adwokackich'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year"><?php echo ks_field('edu_3_year', '2011 – 2014'); ?></span>
+                        <span class="timeline-year"><?php echo ks_field('edu_3_year', '2011 - 2014'); ?></span>
                         <h4><?php echo ks_field('edu_3_title', 'Magister prawa'); ?></h4>
                         <p><?php echo ks_field('edu_3_desc', 'Uniwersytet SWPS, Warszawa'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year"><?php echo ks_field('edu_4_year', '2008 – 2010'); ?></span>
+                        <span class="timeline-year"><?php echo ks_field('edu_4_year', '2008 - 2010'); ?></span>
                         <h4><?php echo ks_field('edu_4_title', 'Magister socjologii'); ?></h4>
                         <p><?php echo ks_field('edu_4_desc', 'SGGW, Warszawa · spec. Komunikowanie społeczne i doradztwo'); ?></p>
                     </div>
@@ -156,18 +156,18 @@
                 <h2 style="font-family: var(--ff-display); font-size: clamp(1.5rem,2.5vw,2rem); color: var(--navy); font-weight: 400; margin-bottom: 0;">Doświadczenie</h2>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <span class="timeline-year"><?php echo ks_field('exp_1_year', '2020 – dziś'); ?></span>
+                        <span class="timeline-year"><?php echo ks_field('exp_1_year', '2020 - dziś'); ?></span>
                         <h4><?php echo ks_field('exp_1_title', 'Kancelaria Adwokacka Kamila Sadłowicz'); ?></h4>
-                        <p><?php echo ks_field('exp_1_desc', 'Samodzielna praktyka · 150–200 spraw rocznie · prawo gospodarcze, cywilne, pracy, windykacja, restrukturyzacja · sądy wszystkich instancji'); ?></p>
+                        <p><?php echo ks_field('exp_1_desc', 'Samodzielna praktyka · 150-200 spraw rocznie · prawo gospodarcze, cywilne, pracy, windykacja, restrukturyzacja · sądy wszystkich instancji'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year"><?php echo ks_field('exp_2_year', '2017 – 2020'); ?></span>
-                        <h4><?php echo ks_field('exp_2_title', 'Aplikant adwokacki – Jerschina-Fus, Radtke-Cichocka Sp. J.'); ?></h4>
+                        <span class="timeline-year"><?php echo ks_field('exp_2_year', '2017 - 2020'); ?></span>
+                        <h4><?php echo ks_field('exp_2_title', 'Aplikant adwokacki - Jerschina-Fus, Radtke-Cichocka Sp. J.'); ?></h4>
                         <p><?php echo ks_field('exp_2_desc', 'Warszawa · obsługa branży ochrony i automotive · pisma procesowe, zastępstwa sądowe, koncesje MSWiA i ABW'); ?></p>
                     </div>
                     <div class="timeline-item">
-                        <span class="timeline-year"><?php echo ks_field('exp_3_year', '2011 – 2013'); ?></span>
-                        <h4><?php echo ks_field('exp_3_title', 'Asystent prawny – PROFESSIO Kancelaria Prawnicza / Saturn TFI S.A.'); ?></h4>
+                        <span class="timeline-year"><?php echo ks_field('exp_3_year', '2011 - 2013'); ?></span>
+                        <h4><?php echo ks_field('exp_3_title', 'Asystent prawny - PROFESSIO Kancelaria Prawnicza / Saturn TFI S.A.'); ?></h4>
                         <p><?php echo ks_field('exp_3_desc', 'Warszawa · pisma procesowe w sprawach cywilnych i pracowniczych · zarządzanie sekretariatem kancelarii'); ?></p>
                     </div>
                 </div>
@@ -195,11 +195,11 @@
             </div>
             <div class="info-box" style="margin: 0;">
                 <h4><?php echo ks_field('mem_2_title', 'Samorząd Aplikantów Adwokackich'); ?></h4>
-                <p><?php echo ks_field('mem_2_text', 'Członek Samorządu Aplikantów Adwokackich ORA Warszawa przez cały okres aplikacji (2017–2019) · starosta grupy aplikacyjnej'); ?></p>
+                <p><?php echo ks_field('mem_2_text', 'Członek Samorządu Aplikantów Adwokackich ORA Warszawa przez cały okres aplikacji (2017-2019) · starosta grupy aplikacyjnej'); ?></p>
             </div>
             <div class="info-box" style="margin: 0;">
                 <h4><?php echo ks_field('mem_3_title', 'Certyfikaty i szkolenia'); ?></h4>
-                <p><?php echo ks_field('mem_3_text', 'Certyfikat AML – obowiązki instytucji obowiązanych (GIIF) · Ochrona Zarządu przed egzekucją (PTPiGR)'); ?></p>
+                <p><?php echo ks_field('mem_3_text', 'Certyfikat AML - obowiązki instytucji obowiązanych (GIIF) · Ochrona Zarządu przed egzekucją (PTPiGR)'); ?></p>
             </div>
         </div>
     </div>

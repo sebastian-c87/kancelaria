@@ -32,7 +32,7 @@
         <li>Telefon: <a href="tel:+48790013287">+48 790 013 287</a></li>
         <li>Strona internetowa: <a href="https://kancelaria-sadlowicz.pl">kancelaria-sadlowicz.pl</a></li>
     </ul>
-    <p>Działalność gospodarcza wpisana do Centralnej Ewidencji i Informacji o Działalności Gospodarczej (CEIDG), PKD 69.10.Z – Działalność prawnicza. W sprawach dotyczących ochrony danych osobowych możesz się kontaktować pod adresem e-mail lub korespondencyjnie na adres Kancelarii.</p>
+    <p>Działalność gospodarcza wpisana do Centralnej Ewidencji i Informacji o Działalności Gospodarczej (CEIDG), PKD 69.10.Z - Działalność prawnicza. W sprawach dotyczących ochrony danych osobowych możesz się kontaktować pod adresem e-mail lub korespondencyjnie na adres Kancelarii.</p>
 
     <h2>§ 2. Cele i podstawy prawne przetwarzania danych</h2>
     <p>Twoje dane osobowe przetwarzamy wyłącznie w konkretnych, wyraźnych i prawnie uzasadnionych celach. Poniższa tabela przedstawia szczegółowe informacje o każdym z nich:</p>
@@ -48,27 +48,27 @@
         <tbody>
             <tr>
                 <td>Odpowiedź na zapytanie złożone przez formularz kontaktowy lub e-mail</td>
-                <td>Art. 6 ust. 1 lit. f RODO – prawnie uzasadniony interes administratora (obsługa korespondencji)</td>
+                <td>Art. 6 ust. 1 lit. f RODO - prawnie uzasadniony interes administratora (obsługa korespondencji)</td>
                 <td>Do czasu zakończenia korespondencji, nie dłużej niż 3 lata od ostatniego kontaktu</td>
             </tr>
             <tr>
                 <td>Zawarcie i wykonanie umowy o świadczenie pomocy prawnej</td>
-                <td>Art. 6 ust. 1 lit. b RODO – wykonanie umowy lub podjęcie działań przed jej zawarciem; art. 9 ust. 2 lit. f RODO – ustalenie, dochodzenie lub obrona roszczeń</td>
+                <td>Art. 6 ust. 1 lit. b RODO - wykonanie umowy lub podjęcie działań przed jej zawarciem; art. 9 ust. 2 lit. f RODO - ustalenie, dochodzenie lub obrona roszczeń</td>
                 <td>Przez czas trwania umowy i do 10 lat po jej zakończeniu (terminy przedawnienia roszczeń)</td>
             </tr>
             <tr>
                 <td>Wykonywanie obowiązków wynikających z przepisów prawa (rachunkowość, podatki)</td>
-                <td>Art. 6 ust. 1 lit. c RODO – wypełnienie obowiązku prawnego; ustawa o rachunkowości, ordynacja podatkowa</td>
+                <td>Art. 6 ust. 1 lit. c RODO - wypełnienie obowiązku prawnego; ustawa o rachunkowości, ordynacja podatkowa</td>
                 <td>5 lat od końca roku podatkowego, w którym wystawiono dokument</td>
             </tr>
             <tr>
                 <td>Dochodzenie lub obrona przed roszczeniami</td>
-                <td>Art. 6 ust. 1 lit. f RODO – prawnie uzasadniony interes administratora</td>
+                <td>Art. 6 ust. 1 lit. f RODO - prawnie uzasadniony interes administratora</td>
                 <td>Do czasu przedawnienia roszczeń (co do zasady do 6 lat)</td>
             </tr>
             <tr>
                 <td>Analiza statystyczna ruchu na stronie (Google Analytics)</td>
-                <td>Art. 6 ust. 1 lit. a RODO – zgoda użytkownika wyrażona przez akceptację plików cookie</td>
+                <td>Art. 6 ust. 1 lit. a RODO - zgoda użytkownika wyrażona przez akceptację plików cookie</td>
                 <td>Do czasu wycofania zgody lub usunięcia plików cookie; dane w Google Analytics: 26 miesięcy</td>
             </tr>
         </tbody>
@@ -89,7 +89,7 @@
     <ul>
         <li>Dane identyfikacyjne (imię, nazwisko, PESEL, numer dowodu)</li>
         <li>Dane kontaktowe (adres, telefon, e-mail)</li>
-        <li>Dane dotyczące sprawy, w tym – w zależności od rodzaju sprawy – dane szczególnych kategorii (art. 9 RODO), takie jak informacje o stanie zdrowia, dane o wyrokach skazujących lub czynach zabronionych</li>
+        <li>Dane dotyczące sprawy, w tym - w zależności od rodzaju sprawy - dane szczególnych kategorii (art. 9 RODO), takie jak informacje o stanie zdrowia, dane o wyrokach skazujących lub czynach zabronionych</li>
         <li>Dane finansowe niezbędne do rozliczeń</li>
     </ul>
 
@@ -99,40 +99,40 @@
         <li>Typ i wersja przeglądarki</li>
         <li>System operacyjny</li>
         <li>Czas odwiedzin i przeglądane podstrony</li>
-        <li>Pliki cookie – szczegóły w § 7</li>
+        <li>Pliki cookie - szczegóły w § 7</li>
     </ul>
 
     <p><strong>Zasada minimalizacji danych:</strong> gromadzimy wyłącznie dane niezbędne do realizacji wskazanego celu. Nie profilujemy użytkowników ani nie podejmujemy zautomatyzowanych decyzji wywołujących skutki prawne.</p>
 
     <h2>§ 4. Tajemnica adwokacka</h2>
-    <p>Dane osobowe klientów Kancelarii, uzyskane w związku ze świadczeniem pomocy prawnej, objęte są tajemnicą adwokacką w rozumieniu art. 6 ustawy z dnia 26 maja 1982 r. – Prawo o adwokaturze. Obowiązek zachowania tajemnicy adwokackiej jest nieograniczony w czasie i nie może zostać uchylony przez adwokata (z wyjątkiem sytuacji przewidzianych przepisami prawa). Przetwarzanie tych danych odbywa się wyłącznie w zakresie niezbędnym do udzielenia pomocy prawnej oraz wypełnienia obowiązków ustawowych.</p>
+    <p>Dane osobowe klientów Kancelarii, uzyskane w związku ze świadczeniem pomocy prawnej, objęte są tajemnicą adwokacką w rozumieniu art. 6 ustawy z dnia 26 maja 1982 r. - Prawo o adwokaturze. Obowiązek zachowania tajemnicy adwokackiej jest nieograniczony w czasie i nie może zostać uchylony przez adwokata (z wyjątkiem sytuacji przewidzianych przepisami prawa). Przetwarzanie tych danych odbywa się wyłącznie w zakresie niezbędnym do udzielenia pomocy prawnej oraz wypełnienia obowiązków ustawowych.</p>
 
     <h2>§ 5. Odbiorcy danych osobowych</h2>
     <p>Twoje dane osobowe mogą być przekazywane wyłącznie podmiotom, które są do tego uprawnione lub w sytuacjach wymaganych przepisami prawa:</p>
     <ul>
-        <li><strong>Dostawcy usług IT</strong> – obsługa poczty elektronicznej (home.pl S.A., ul. Zbożowa 4, 70-653 Szczecin), hosting strony internetowej (home.pl S.A.); podmioty te przetwarzają dane na podstawie umów powierzenia przetwarzania danych zgodnie z art. 28 RODO</li>
-        <li><strong>Google LLC</strong> – dostawca Google Analytics i Google Fonts (dane anonimizowane lub pseudonimizowane; Google LLC jest certyfikowany w ramach programu Data Privacy Framework dla transferów do USA)</li>
-        <li><strong>Organy publiczne</strong> – sądy, organy administracji, organy ścigania, organy skarbowe – wyłącznie gdy obowiązek udostępnienia wynika z przepisów prawa</li>
-        <li><strong>Inne kancelarie i biegli</strong> – w ramach prowadzonej sprawy, wyłącznie za Twoją wiedzą lub na podstawie umocowania</li>
+        <li><strong>Dostawcy usług IT</strong> - obsługa poczty elektronicznej (home.pl S.A., ul. Zbożowa 4, 70-653 Szczecin), hosting strony internetowej (home.pl S.A.); podmioty te przetwarzają dane na podstawie umów powierzenia przetwarzania danych zgodnie z art. 28 RODO</li>
+        <li><strong>Google LLC</strong> - dostawca Google Analytics i Google Fonts (dane anonimizowane lub pseudonimizowane; Google LLC jest certyfikowany w ramach programu Data Privacy Framework dla transferów do USA)</li>
+        <li><strong>Organy publiczne</strong> - sądy, organy administracji, organy ścigania, organy skarbowe - wyłącznie gdy obowiązek udostępnienia wynika z przepisów prawa</li>
+        <li><strong>Inne kancelarie i biegli</strong> - w ramach prowadzonej sprawy, wyłącznie za Twoją wiedzą lub na podstawie umocowania</li>
     </ul>
     <p>Dane osobowe nie są sprzedawane ani udostępniane podmiotom trzecim w celach marketingowych.</p>
 
     <h2>§ 6. Prawa osoby, której dane dotyczą</h2>
     <p>Przysługują Ci następujące prawa w zakresie ochrony danych osobowych:</p>
     <ul>
-        <li><strong>Prawo dostępu do danych (art. 15 RODO)</strong> – możesz żądać potwierdzenia, czy przetwarzamy Twoje dane, oraz uzyskania ich kopii</li>
-        <li><strong>Prawo do sprostowania (art. 16 RODO)</strong> – możesz żądać poprawienia nieprawidłowych lub uzupełnienia niekompletnych danych</li>
-        <li><strong>Prawo do usunięcia danych (art. 17 RODO)</strong> – możesz żądać usunięcia danych, gdy nie są już niezbędne do celu, dla którego zostały zebrane, lub gdy cofniesz zgodę (prawo nie obejmuje danych przetwarzanych na podstawie obowiązku prawnego lub prawnie uzasadnionego interesu)</li>
-        <li><strong>Prawo do ograniczenia przetwarzania (art. 18 RODO)</strong> – możesz żądać ograniczenia przetwarzania w przypadkach wskazanych w RODO (np. gdy kwestionujesz prawidłowość danych)</li>
-        <li><strong>Prawo do przenoszenia danych (art. 20 RODO)</strong> – w zakresie danych przetwarzanych na podstawie zgody lub umowy, w sposób zautomatyzowany, masz prawo otrzymać je w ustrukturyzowanym formacie</li>
-        <li><strong>Prawo do sprzeciwu (art. 21 RODO)</strong> – możesz w każdej chwili wnieść sprzeciw wobec przetwarzania danych na podstawie prawnie uzasadnionego interesu administratora; po wniesieniu sprzeciwu zaprzestaniemy przetwarzania, chyba że istnieją ważne prawnie uzasadnione podstawy nadrzędne wobec Twoich interesów</li>
-        <li><strong>Prawo do cofnięcia zgody (art. 7 ust. 3 RODO)</strong> – jeśli przetwarzanie odbywa się na podstawie zgody, możesz ją cofnąć w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania przed jej cofnięciem</li>
-        <li><strong>Prawo do wniesienia skargi do organu nadzorczego</strong> – masz prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO), ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl">uodo.gov.pl</a>, jeśli uważasz, że przetwarzanie Twoich danych narusza RODO</li>
+        <li><strong>Prawo dostępu do danych (art. 15 RODO)</strong> - możesz żądać potwierdzenia, czy przetwarzamy Twoje dane, oraz uzyskania ich kopii</li>
+        <li><strong>Prawo do sprostowania (art. 16 RODO)</strong> - możesz żądać poprawienia nieprawidłowych lub uzupełnienia niekompletnych danych</li>
+        <li><strong>Prawo do usunięcia danych (art. 17 RODO)</strong> - możesz żądać usunięcia danych, gdy nie są już niezbędne do celu, dla którego zostały zebrane, lub gdy cofniesz zgodę (prawo nie obejmuje danych przetwarzanych na podstawie obowiązku prawnego lub prawnie uzasadnionego interesu)</li>
+        <li><strong>Prawo do ograniczenia przetwarzania (art. 18 RODO)</strong> - możesz żądać ograniczenia przetwarzania w przypadkach wskazanych w RODO (np. gdy kwestionujesz prawidłowość danych)</li>
+        <li><strong>Prawo do przenoszenia danych (art. 20 RODO)</strong> - w zakresie danych przetwarzanych na podstawie zgody lub umowy, w sposób zautomatyzowany, masz prawo otrzymać je w ustrukturyzowanym formacie</li>
+        <li><strong>Prawo do sprzeciwu (art. 21 RODO)</strong> - możesz w każdej chwili wnieść sprzeciw wobec przetwarzania danych na podstawie prawnie uzasadnionego interesu administratora; po wniesieniu sprzeciwu zaprzestaniemy przetwarzania, chyba że istnieją ważne prawnie uzasadnione podstawy nadrzędne wobec Twoich interesów</li>
+        <li><strong>Prawo do cofnięcia zgody (art. 7 ust. 3 RODO)</strong> - jeśli przetwarzanie odbywa się na podstawie zgody, możesz ją cofnąć w dowolnym momencie bez wpływu na zgodność z prawem przetwarzania przed jej cofnięciem</li>
+        <li><strong>Prawo do wniesienia skargi do organu nadzorczego</strong> - masz prawo złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO), ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl">uodo.gov.pl</a>, jeśli uważasz, że przetwarzanie Twoich danych narusza RODO</li>
     </ul>
     <p>Aby skorzystać z przysługujących praw, skontaktuj się z nami na adres e-mail: <a href="mailto:kamila.sadlowicz@kancelaria-sadlowicz.pl">kamila.sadlowicz@kancelaria-sadlowicz.pl</a>. Odpowiemy bez zbędnej zwłoki, nie później niż w terminie miesiąca od otrzymania żądania (termin może zostać przedłużony o kolejne 2 miesiące w przypadku skomplikowanych lub licznych żądań).</p>
 
     <h2>§ 7. Pliki cookie</h2>
-    <p>Serwis internetowy kancelaria-sadlowicz.pl wykorzystuje pliki cookie (ciasteczka) – małe pliki tekstowe zapisywane na urządzeniu użytkownika przez przeglądarkę internetową.</p>
+    <p>Serwis internetowy kancelaria-sadlowicz.pl wykorzystuje pliki cookie (ciasteczka) - małe pliki tekstowe zapisywane na urządzeniu użytkownika przez przeglądarkę internetową.</p>
 
     <h3>Rodzaje stosowanych plików cookie</h3>
     <table class="pp-table">
@@ -154,7 +154,7 @@
             <tr>
                 <td>Analityczne</td>
                 <td>Google Analytics (_ga, _ga_*)</td>
-                <td>Analiza ruchu – liczba wizyt, źródła, zachowanie użytkowników</td>
+                <td>Analiza ruchu - liczba wizyt, źródła, zachowanie użytkowników</td>
                 <td>Do 2 lat</td>
             </tr>
             <tr>
@@ -165,7 +165,7 @@
             </tr>
         </tbody>
     </table>
-    <p>Możesz zarządzać plikami cookie za pomocą ustawień przeglądarki – zablokować ich zapisywanie lub usunąć już zapisane. Wyłączenie niektórych plików cookie może wpłynąć na funkcjonalność strony. Instrukcje dla popularnych przeglądarek: <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Chrome</a>, <a href="https://support.mozilla.org/pl/kb/wzmocniona-ochrona-przed-sledzeniem-w-firefoksie-na" target="_blank" rel="noopener">Firefox</a>, <a href="https://support.microsoft.com/pl-pl/windows/usuń-pliki-cookie-i-zarządzaj-nimi-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener">Edge</a>.</p>
+    <p>Możesz zarządzać plikami cookie za pomocą ustawień przeglądarki - zablokować ich zapisywanie lub usunąć już zapisane. Wyłączenie niektórych plików cookie może wpłynąć na funkcjonalność strony. Instrukcje dla popularnych przeglądarek: <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Chrome</a>, <a href="https://support.mozilla.org/pl/kb/wzmocniona-ochrona-przed-sledzeniem-w-firefoksie-na" target="_blank" rel="noopener">Firefox</a>, <a href="https://support.microsoft.com/pl-pl/windows/usuń-pliki-cookie-i-zarządzaj-nimi-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener">Edge</a>.</p>
 
     <h2>§ 8. Przekazywanie danych poza Europejski Obszar Gospodarczy</h2>
     <p>Kancelaria co do zasady przetwarza dane osobowe w obrębie Europejskiego Obszaru Gospodarczego (EOG). W związku z korzystaniem z usług Google LLC (Analytics, Fonts) dane mogą być przekazywane do Stanów Zjednoczonych. Przekazanie odbywa się na podstawie decyzji Komisji Europejskiej o adekwatności ochrony w ramach programu <em>EU-U.S. Data Privacy Framework</em> (decyzja z dnia 10 lipca 2023 r.). Możesz uzyskać kopię zastosowanych zabezpieczeń, kontaktując się z nami.</p>
@@ -177,7 +177,7 @@
         <li>Ograniczenie dostępu do danych wyłącznie do osób upoważnionych, zobowiązanych do zachowania poufności</li>
         <li>Regularne aktualizacje oprogramowania i systemów bezpieczeństwa</li>
         <li>Stosowanie silnych haseł i uwierzytelniania wieloskładnikowego</li>
-        <li>Procedury postępowania w przypadku naruszenia ochrony danych, zgodne z art. 33–34 RODO</li>
+        <li>Procedury postępowania w przypadku naruszenia ochrony danych, zgodne z art. 33-34 RODO</li>
     </ul>
     <p>W przypadku stwierdzenia naruszenia ochrony danych skutkującego wysokim ryzykiem dla praw lub wolności osób fizycznych, zostaniesz powiadomiony bez zbędnej zwłoki.</p>
 

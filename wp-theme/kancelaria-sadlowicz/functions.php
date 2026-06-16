@@ -112,7 +112,7 @@ function ks_handle_contact_form(): void
     header('Content-Type: application/json; charset=utf-8');
 
     if (!check_ajax_referer('ks_contact_form', 'nonce', false)) {
-        wp_send_json(['ok' => false, 'error' => 'Błąd bezpieczeństwa – odśwież stronę.'], 403);
+        wp_send_json(['ok' => false, 'error' => 'Błąd bezpieczeństwa - odśwież stronę.'], 403);
     }
 
     // Honeypot
@@ -188,7 +188,7 @@ function ks_handle_contact_form(): void
 }
 
 /* ------------------------------------------------------------------ */
-/*  ACF helper – pobierz pole z fallbackiem, zawsze escaped             */
+/*  ACF helper - pobierz pole z fallbackiem, zawsze escaped             */
 /* ------------------------------------------------------------------ */
 function ks_field(string $name, string $default = ''): string
 {
@@ -203,13 +203,13 @@ function ks_field(string $name, string $default = ''): string
 add_action('acf/init', function () {
     if (!function_exists('acf_add_local_field_group')) return;
 
-    // Dynamiczne ID strony "O mnie" po slugu – działa na staging i produkcji.
+    // Dynamiczne ID strony "O mnie" po slugu - działa na staging i produkcji.
     $omnie    = get_page_by_path('o-mnie');
     $omnie_id = $omnie ? $omnie->ID : 0;
 
     acf_add_local_field_group([
         'key'   => 'group_ks_omnie',
-        'title' => 'Strona „O mnie" – treści',
+        'title' => 'Strona „O mnie" - treści',
         'fields' => [
 
             // ── Tab: Bio ──────────────────────────────────────────
@@ -221,7 +221,7 @@ add_action('acf/init', function () {
                 'type'          => 'textarea',
                 'rows'          => 2,
                 'instructions'  => 'Pierwsza kursywa / wyróżniony akapit pod zdjęciem.',
-                'default_value' => 'Prawo to nie tylko zawód – to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.',
+                'default_value' => 'Prawo to nie tylko zawód - to moje powołanie. Od początku kariery kieruję się zasadą, że każdy klient zasługuje na rzetelną, indywidualną pomoc prawną.',
             ],
 
             // ── Tab: Statystyki ───────────────────────────────────
@@ -237,57 +237,57 @@ add_action('acf/init', function () {
 
             // ── Tab: Wartości ─────────────────────────────────────
             ['key' => 'field_ks_omnie_tab_vals', 'label' => 'Wartości', 'type' => 'tab'],
-            ['key' => 'field_ks_omnie_val1_ttl', 'label' => 'Wartość 1 – tytuł', 'name' => 'value_1_title', 'type' => 'text',     'default_value' => 'Rzetelność'],
-            ['key' => 'field_ks_omnie_val1_txt', 'label' => 'Wartość 1 – tekst', 'name' => 'value_1_text',  'type' => 'textarea', 'rows' => 2,
-                'default_value' => 'Każda sprawa wymaga pełnego zaangażowania i dokładnej analizy. Daję Ci rzetelną ocenę sytuacji – nawet jeśli nie jest to to, co chciałbyś usłyszeć.'],
-            ['key' => 'field_ks_omnie_val2_ttl', 'label' => 'Wartość 2 – tytuł', 'name' => 'value_2_title', 'type' => 'text',     'default_value' => 'Dostępność'],
-            ['key' => 'field_ks_omnie_val2_txt', 'label' => 'Wartość 2 – tekst', 'name' => 'value_2_text',  'type' => 'textarea', 'rows' => 2,
-                'default_value' => 'Odpowiadam na maile w ciągu 24 godzin roboczych. Wiem, że w sprawach prawnych czas często ma kluczowe znaczenie – dlatego nie zostawiam klientów bez odpowiedzi.'],
-            ['key' => 'field_ks_omnie_val3_ttl', 'label' => 'Wartość 3 – tytuł', 'name' => 'value_3_title', 'type' => 'text',     'default_value' => 'Indywidualne podejście'],
-            ['key' => 'field_ks_omnie_val3_txt', 'label' => 'Wartość 3 – tekst', 'name' => 'value_3_text',  'type' => 'textarea', 'rows' => 2,
-                'default_value' => 'Każdy klient i każda sprawa jest inna. Nie stosuję szablonowych rozwiązań – słucham, analizuję i dobieram strategię dopasowaną do Twojej konkretnej sytuacji.'],
+            ['key' => 'field_ks_omnie_val1_ttl', 'label' => 'Wartość 1 - tytuł', 'name' => 'value_1_title', 'type' => 'text',     'default_value' => 'Rzetelność'],
+            ['key' => 'field_ks_omnie_val1_txt', 'label' => 'Wartość 1 - tekst', 'name' => 'value_1_text',  'type' => 'textarea', 'rows' => 2,
+                'default_value' => 'Każda sprawa wymaga pełnego zaangażowania i dokładnej analizy. Daję Ci rzetelną ocenę sytuacji - nawet jeśli nie jest to to, co chciałbyś usłyszeć.'],
+            ['key' => 'field_ks_omnie_val2_ttl', 'label' => 'Wartość 2 - tytuł', 'name' => 'value_2_title', 'type' => 'text',     'default_value' => 'Dostępność'],
+            ['key' => 'field_ks_omnie_val2_txt', 'label' => 'Wartość 2 - tekst', 'name' => 'value_2_text',  'type' => 'textarea', 'rows' => 2,
+                'default_value' => 'Odpowiadam na maile w ciągu 24 godzin roboczych. Wiem, że w sprawach prawnych czas często ma kluczowe znaczenie - dlatego nie zostawiam klientów bez odpowiedzi.'],
+            ['key' => 'field_ks_omnie_val3_ttl', 'label' => 'Wartość 3 - tytuł', 'name' => 'value_3_title', 'type' => 'text',     'default_value' => 'Indywidualne podejście'],
+            ['key' => 'field_ks_omnie_val3_txt', 'label' => 'Wartość 3 - tekst', 'name' => 'value_3_text',  'type' => 'textarea', 'rows' => 2,
+                'default_value' => 'Każdy klient i każda sprawa jest inna. Nie stosuję szablonowych rozwiązań - słucham, analizuję i dobieram strategię dopasowaną do Twojej konkretnej sytuacji.'],
 
             // ── Tab: Wykształcenie ────────────────────────────────
             ['key' => 'field_ks_omnie_tab_edu', 'label' => 'Wykształcenie', 'type' => 'tab'],
-            ['key' => 'field_ks_omnie_edu1_yr',  'label' => 'Poz. 1 – rok',   'name' => 'edu_1_year',  'type' => 'text', 'default_value' => '2020'],
-            ['key' => 'field_ks_omnie_edu1_ttl', 'label' => 'Poz. 1 – tytuł', 'name' => 'edu_1_title', 'type' => 'text', 'default_value' => 'Egzamin adwokacki – wynik pozytywny'],
-            ['key' => 'field_ks_omnie_edu1_dsc', 'label' => 'Poz. 1 – opis',  'name' => 'edu_1_desc',  'type' => 'text', 'default_value' => 'Okręgowa Rada Adwokacka w Warszawie · wpis nr WAW/ADW/9453'],
-            ['key' => 'field_ks_omnie_edu2_yr',  'label' => 'Poz. 2 – rok',   'name' => 'edu_2_year',  'type' => 'text', 'default_value' => '2017 – 2019'],
-            ['key' => 'field_ks_omnie_edu2_ttl', 'label' => 'Poz. 2 – tytuł', 'name' => 'edu_2_title', 'type' => 'text', 'default_value' => 'Aplikacja adwokacka'],
-            ['key' => 'field_ks_omnie_edu2_dsc', 'label' => 'Poz. 2 – opis',  'name' => 'edu_2_desc',  'type' => 'text', 'default_value' => 'ORA w Warszawie · starosta grupy aplikacyjnej · Samorząd Aplikantów Adwokackich'],
-            ['key' => 'field_ks_omnie_edu3_yr',  'label' => 'Poz. 3 – rok',   'name' => 'edu_3_year',  'type' => 'text', 'default_value' => '2011 – 2014'],
-            ['key' => 'field_ks_omnie_edu3_ttl', 'label' => 'Poz. 3 – tytuł', 'name' => 'edu_3_title', 'type' => 'text', 'default_value' => 'Magister prawa'],
-            ['key' => 'field_ks_omnie_edu3_dsc', 'label' => 'Poz. 3 – opis',  'name' => 'edu_3_desc',  'type' => 'text', 'default_value' => 'Uniwersytet SWPS, Warszawa'],
-            ['key' => 'field_ks_omnie_edu4_yr',  'label' => 'Poz. 4 – rok',   'name' => 'edu_4_year',  'type' => 'text', 'default_value' => '2008 – 2010'],
-            ['key' => 'field_ks_omnie_edu4_ttl', 'label' => 'Poz. 4 – tytuł', 'name' => 'edu_4_title', 'type' => 'text', 'default_value' => 'Magister socjologii'],
-            ['key' => 'field_ks_omnie_edu4_dsc', 'label' => 'Poz. 4 – opis',  'name' => 'edu_4_desc',  'type' => 'text', 'default_value' => 'SGGW, Warszawa · spec. Komunikowanie społeczne i doradztwo'],
+            ['key' => 'field_ks_omnie_edu1_yr',  'label' => 'Poz. 1 - rok',   'name' => 'edu_1_year',  'type' => 'text', 'default_value' => '2020'],
+            ['key' => 'field_ks_omnie_edu1_ttl', 'label' => 'Poz. 1 - tytuł', 'name' => 'edu_1_title', 'type' => 'text', 'default_value' => 'Egzamin adwokacki - wynik pozytywny'],
+            ['key' => 'field_ks_omnie_edu1_dsc', 'label' => 'Poz. 1 - opis',  'name' => 'edu_1_desc',  'type' => 'text', 'default_value' => 'Okręgowa Rada Adwokacka w Warszawie · wpis nr WAW/ADW/9453'],
+            ['key' => 'field_ks_omnie_edu2_yr',  'label' => 'Poz. 2 - rok',   'name' => 'edu_2_year',  'type' => 'text', 'default_value' => '2017 - 2019'],
+            ['key' => 'field_ks_omnie_edu2_ttl', 'label' => 'Poz. 2 - tytuł', 'name' => 'edu_2_title', 'type' => 'text', 'default_value' => 'Aplikacja adwokacka'],
+            ['key' => 'field_ks_omnie_edu2_dsc', 'label' => 'Poz. 2 - opis',  'name' => 'edu_2_desc',  'type' => 'text', 'default_value' => 'ORA w Warszawie · starosta grupy aplikacyjnej · Samorząd Aplikantów Adwokackich'],
+            ['key' => 'field_ks_omnie_edu3_yr',  'label' => 'Poz. 3 - rok',   'name' => 'edu_3_year',  'type' => 'text', 'default_value' => '2011 - 2014'],
+            ['key' => 'field_ks_omnie_edu3_ttl', 'label' => 'Poz. 3 - tytuł', 'name' => 'edu_3_title', 'type' => 'text', 'default_value' => 'Magister prawa'],
+            ['key' => 'field_ks_omnie_edu3_dsc', 'label' => 'Poz. 3 - opis',  'name' => 'edu_3_desc',  'type' => 'text', 'default_value' => 'Uniwersytet SWPS, Warszawa'],
+            ['key' => 'field_ks_omnie_edu4_yr',  'label' => 'Poz. 4 - rok',   'name' => 'edu_4_year',  'type' => 'text', 'default_value' => '2008 - 2010'],
+            ['key' => 'field_ks_omnie_edu4_ttl', 'label' => 'Poz. 4 - tytuł', 'name' => 'edu_4_title', 'type' => 'text', 'default_value' => 'Magister socjologii'],
+            ['key' => 'field_ks_omnie_edu4_dsc', 'label' => 'Poz. 4 - opis',  'name' => 'edu_4_desc',  'type' => 'text', 'default_value' => 'SGGW, Warszawa · spec. Komunikowanie społeczne i doradztwo'],
 
             // ── Tab: Doświadczenie ────────────────────────────────
             ['key' => 'field_ks_omnie_tab_exp', 'label' => 'Doświadczenie', 'type' => 'tab'],
-            ['key' => 'field_ks_omnie_exp1_yr',  'label' => 'Poz. 1 – rok',   'name' => 'exp_1_year',  'type' => 'text', 'default_value' => '2020 – dziś'],
-            ['key' => 'field_ks_omnie_exp1_ttl', 'label' => 'Poz. 1 – tytuł', 'name' => 'exp_1_title', 'type' => 'text', 'default_value' => 'Kancelaria Adwokacka Kamila Sadłowicz'],
-            ['key' => 'field_ks_omnie_exp1_dsc', 'label' => 'Poz. 1 – opis',  'name' => 'exp_1_desc',  'type' => 'textarea', 'rows' => 2,
-                'default_value' => 'Samodzielna praktyka · 150–200 spraw rocznie · prawo gospodarcze, cywilne, pracy, windykacja, restrukturyzacja · sądy wszystkich instancji'],
-            ['key' => 'field_ks_omnie_exp2_yr',  'label' => 'Poz. 2 – rok',   'name' => 'exp_2_year',  'type' => 'text', 'default_value' => '2017 – 2020'],
-            ['key' => 'field_ks_omnie_exp2_ttl', 'label' => 'Poz. 2 – tytuł', 'name' => 'exp_2_title', 'type' => 'text', 'default_value' => 'Aplikant adwokacki – Jerschina-Fus, Radtke-Cichocka Sp. J.'],
-            ['key' => 'field_ks_omnie_exp2_dsc', 'label' => 'Poz. 2 – opis',  'name' => 'exp_2_desc',  'type' => 'textarea', 'rows' => 2,
+            ['key' => 'field_ks_omnie_exp1_yr',  'label' => 'Poz. 1 - rok',   'name' => 'exp_1_year',  'type' => 'text', 'default_value' => '2020 - dziś'],
+            ['key' => 'field_ks_omnie_exp1_ttl', 'label' => 'Poz. 1 - tytuł', 'name' => 'exp_1_title', 'type' => 'text', 'default_value' => 'Kancelaria Adwokacka Kamila Sadłowicz'],
+            ['key' => 'field_ks_omnie_exp1_dsc', 'label' => 'Poz. 1 - opis',  'name' => 'exp_1_desc',  'type' => 'textarea', 'rows' => 2,
+                'default_value' => 'Samodzielna praktyka · 150-200 spraw rocznie · prawo gospodarcze, cywilne, pracy, windykacja, restrukturyzacja · sądy wszystkich instancji'],
+            ['key' => 'field_ks_omnie_exp2_yr',  'label' => 'Poz. 2 - rok',   'name' => 'exp_2_year',  'type' => 'text', 'default_value' => '2017 - 2020'],
+            ['key' => 'field_ks_omnie_exp2_ttl', 'label' => 'Poz. 2 - tytuł', 'name' => 'exp_2_title', 'type' => 'text', 'default_value' => 'Aplikant adwokacki - Jerschina-Fus, Radtke-Cichocka Sp. J.'],
+            ['key' => 'field_ks_omnie_exp2_dsc', 'label' => 'Poz. 2 - opis',  'name' => 'exp_2_desc',  'type' => 'textarea', 'rows' => 2,
                 'default_value' => 'Warszawa · obsługa branży ochrony i automotive · pisma procesowe, zastępstwa sądowe, koncesje MSWiA i ABW'],
-            ['key' => 'field_ks_omnie_exp3_yr',  'label' => 'Poz. 3 – rok',   'name' => 'exp_3_year',  'type' => 'text', 'default_value' => '2011 – 2013'],
-            ['key' => 'field_ks_omnie_exp3_ttl', 'label' => 'Poz. 3 – tytuł', 'name' => 'exp_3_title', 'type' => 'text', 'default_value' => 'Asystent prawny – PROFESSIO Kancelaria Prawnicza / Saturn TFI S.A.'],
-            ['key' => 'field_ks_omnie_exp3_dsc', 'label' => 'Poz. 3 – opis',  'name' => 'exp_3_desc',  'type' => 'textarea', 'rows' => 2,
+            ['key' => 'field_ks_omnie_exp3_yr',  'label' => 'Poz. 3 - rok',   'name' => 'exp_3_year',  'type' => 'text', 'default_value' => '2011 - 2013'],
+            ['key' => 'field_ks_omnie_exp3_ttl', 'label' => 'Poz. 3 - tytuł', 'name' => 'exp_3_title', 'type' => 'text', 'default_value' => 'Asystent prawny - PROFESSIO Kancelaria Prawnicza / Saturn TFI S.A.'],
+            ['key' => 'field_ks_omnie_exp3_dsc', 'label' => 'Poz. 3 - opis',  'name' => 'exp_3_desc',  'type' => 'textarea', 'rows' => 2,
                 'default_value' => 'Warszawa · pisma procesowe w sprawach cywilnych i pracowniczych · zarządzanie sekretariatem kancelarii'],
 
             // ── Tab: Członkostwa ──────────────────────────────────
             ['key' => 'field_ks_omnie_tab_mem', 'label' => 'Członkostwa', 'type' => 'tab'],
-            ['key' => 'field_ks_omnie_mem1_ttl', 'label' => 'Pole 1 – tytuł', 'name' => 'mem_1_title', 'type' => 'text', 'default_value' => 'Okręgowa Rada Adwokacka w Warszawie'],
-            ['key' => 'field_ks_omnie_mem1_txt', 'label' => 'Pole 1 – tekst', 'name' => 'mem_1_text',  'type' => 'textarea', 'rows' => 2,
+            ['key' => 'field_ks_omnie_mem1_ttl', 'label' => 'Pole 1 - tytuł', 'name' => 'mem_1_title', 'type' => 'text', 'default_value' => 'Okręgowa Rada Adwokacka w Warszawie'],
+            ['key' => 'field_ks_omnie_mem1_txt', 'label' => 'Pole 1 - tekst', 'name' => 'mem_1_text',  'type' => 'textarea', 'rows' => 2,
                 'default_value' => 'Adwokat wpisana na listę adwokatów ORA w Warszawie od 2020 r.'],
-            ['key' => 'field_ks_omnie_mem2_ttl', 'label' => 'Pole 2 – tytuł', 'name' => 'mem_2_title', 'type' => 'text', 'default_value' => 'Samorząd Aplikantów Adwokackich'],
-            ['key' => 'field_ks_omnie_mem2_txt', 'label' => 'Pole 2 – tekst', 'name' => 'mem_2_text',  'type' => 'textarea', 'rows' => 2,
-                'default_value' => 'Członek Samorządu Aplikantów Adwokackich ORA Warszawa przez cały okres aplikacji (2017–2019) · starosta grupy aplikacyjnej'],
-            ['key' => 'field_ks_omnie_mem3_ttl', 'label' => 'Pole 3 – tytuł', 'name' => 'mem_3_title', 'type' => 'text', 'default_value' => 'Certyfikaty i szkolenia'],
-            ['key' => 'field_ks_omnie_mem3_txt', 'label' => 'Pole 3 – tekst', 'name' => 'mem_3_text',  'type' => 'textarea', 'rows' => 2,
-                'default_value' => 'Certyfikat AML – obowiązki instytucji obowiązanych (GIIF) · Ochrona Zarządu przed egzekucją (PTPiGR)'],
+            ['key' => 'field_ks_omnie_mem2_ttl', 'label' => 'Pole 2 - tytuł', 'name' => 'mem_2_title', 'type' => 'text', 'default_value' => 'Samorząd Aplikantów Adwokackich'],
+            ['key' => 'field_ks_omnie_mem2_txt', 'label' => 'Pole 2 - tekst', 'name' => 'mem_2_text',  'type' => 'textarea', 'rows' => 2,
+                'default_value' => 'Członek Samorządu Aplikantów Adwokackich ORA Warszawa przez cały okres aplikacji (2017-2019) · starosta grupy aplikacyjnej'],
+            ['key' => 'field_ks_omnie_mem3_ttl', 'label' => 'Pole 3 - tytuł', 'name' => 'mem_3_title', 'type' => 'text', 'default_value' => 'Certyfikaty i szkolenia'],
+            ['key' => 'field_ks_omnie_mem3_txt', 'label' => 'Pole 3 - tekst', 'name' => 'mem_3_text',  'type' => 'textarea', 'rows' => 2,
+                'default_value' => 'Certyfikat AML - obowiązki instytucji obowiązanych (GIIF) · Ochrona Zarządu przed egzekucją (PTPiGR)'],
         ],
         'location'        => [[['param' => 'page', 'operator' => '==', 'value' => (string) $omnie_id]]],
         'position'        => 'normal',
@@ -301,7 +301,7 @@ add_action('acf/init', function () {
 /*  ACF helpers dla tabel i list (format: jeden wiersz = jedna pozycja) */
 /* ------------------------------------------------------------------ */
 
-/** Surowa wartość pola ACF (bez escapowania – escapujemy per-komórka). */
+/** Surowa wartość pola ACF (bez escapowania - escapujemy per-komórka). */
 function ks_raw(string $name): string
 {
     if (!function_exists('get_field')) return '';
@@ -367,7 +367,7 @@ add_action('acf/init', function () {
 
     acf_add_local_field_group([
         'key'   => 'group_ks_oferta',
-        'title' => 'Strona „Oferta i Cennik" – treści',
+        'title' => 'Strona „Oferta i Cennik" - treści',
         'fields' => [
 
             // ── Tab: Wstęp ────────────────────────────────────────
@@ -381,7 +381,7 @@ add_action('acf/init', function () {
             ['key' => 'field_ks_of_tab_kons', 'label' => 'Konsultacje', 'type' => 'tab'],
             ['key' => 'field_ks_of_kons', 'label' => 'Tabela konsultacji (Usługa | Stawka | Uwagi)', 'name' => 'oferta_konsultacje', 'type' => 'textarea', 'rows' => 6, 'instructions' => $tbl_hint,
                 'default_value' => implode("\n", [
-                    'Porada prawna (60 min.) – osobiście | 350-500 zł | Analiza sprawy, ocena szans, plan działania',
+                    'Porada prawna (60 min.) - osobiście | 350-500 zł | Analiza sprawy, ocena szans, plan działania',
                     'Porada online/telefoniczna (60 min.) | 350 zł | Wideo/telefon, materiały wysyłane mailowo',
                     'Porada ekspresowa (30 min.) | 200-300 zł | Krótka konsultacja, szybka odpowiedź',
                     'Opinia prawna pisemna (do 5 stron A4) | 1.000-1.500 zł | Szczegółowa analiza + pisemne rekomendacje',
@@ -401,7 +401,7 @@ add_action('acf/init', function () {
             ['key' => 'field_ks_pkg_start_dla',  'label' => 'Dla kogo','name' => 'pkg_start_dla',   'type' => 'text', 'default_value' => 'Mikrofirmy, freelancerzy, start-upy (1-5 pracowników)'],
             ['key' => 'field_ks_pkg_start_obj',  'label' => 'Co obejmuje (lista)', 'name' => 'pkg_start_obejmuje', 'type' => 'textarea', 'rows' => 6, 'instructions' => $list_hint,
                 'default_value' => implode("\n", [
-                    'Konsultacje telefoniczne i mailowe – do 2 godzin miesięcznie',
+                    'Konsultacje telefoniczne i mailowe - do 2 godzin miesięcznie',
                     'Przegląd i opiniowanie do 3 umów miesięcznie (standardowych, do 5 stron)',
                     'Pomoc w sporządzaniu prostych pism (odpowiedzi na reklamacje)',
                     'Do 2 wezwań do zapłaty miesięcznie (prosta windykacja)',
@@ -423,7 +423,7 @@ add_action('acf/init', function () {
             ['key' => 'field_ks_pkg_biz_dla',  'label' => 'Dla kogo','name' => 'pkg_biznes_dla',   'type' => 'text', 'default_value' => 'Małe i średnie firmy (5-25 pracowników)'],
             ['key' => 'field_ks_pkg_biz_obj',  'label' => 'Co obejmuje (lista)', 'name' => 'pkg_biznes_obejmuje', 'type' => 'textarea', 'rows' => 11, 'instructions' => $list_hint,
                 'default_value' => implode("\n", [
-                    'Konsultacje telefoniczne i mailowe – do 4 godzin miesięcznie (odpowiedź do 12h w dni robocze)',
+                    'Konsultacje telefoniczne i mailowe - do 4 godzin miesięcznie (odpowiedź do 12h w dni robocze)',
                     'Przegląd i opiniowanie do 8 umów (do 10 stron każda)',
                     'Sporządzanie do 3 umów standardowych (B2B, NDA, zlecenia, umowy o pracę)',
                     'Do 5 wezwań do zapłaty miesięcznie (windykacja należności)',
@@ -449,7 +449,7 @@ add_action('acf/init', function () {
             ['key' => 'field_ks_pkg_prof_dla',  'label' => 'Dla kogo','name' => 'pkg_prof_dla',   'type' => 'text', 'default_value' => 'Średnie i duże firmy (25-100 pracowników), spółki z zarządem'],
             ['key' => 'field_ks_pkg_prof_obj',  'label' => 'Co obejmuje (lista)', 'name' => 'pkg_prof_obejmuje', 'type' => 'textarea', 'rows' => 13, 'instructions' => $list_hint,
                 'default_value' => implode("\n", [
-                    'Konsultacje telefoniczne, mailowe i wideo – do 10 godzin miesięcznie (odpowiedź do 6h w dni robocze)',
+                    'Konsultacje telefoniczne, mailowe i wideo - do 10 godzin miesięcznie (odpowiedź do 6h w dni robocze)',
                     'Przegląd i opiniowanie do 15 umów (niezależnie od objętości)',
                     'Sporządzanie do 5 złożonych umów (inwestycyjne, joint-venture, licencje, franchising)',
                     'Do 10 wezwań do zapłaty miesięcznie (kompleksowa windykacja)',
@@ -475,14 +475,14 @@ add_action('acf/init', function () {
             ['key' => 'field_ks_pkg_prem_obj',  'label' => 'Co obejmuje (lista)', 'name' => 'pkg_premium_obejmuje', 'type' => 'textarea', 'rows' => 10, 'instructions' => $list_hint,
                 'default_value' => implode("\n", [
                     'Pełna obsługa prawna in-house (prawnik dedykowany wyłącznie dla klienta)',
-                    'Konsultacje telefoniczne, mailowe, wideo i stacjonarne – zakres ustalany indywidualnie; możliwość kontaktu w pilnych sytuacjach poza godzinami pracy',
+                    'Konsultacje telefoniczne, mailowe, wideo i stacjonarne - zakres ustalany indywidualnie; możliwość kontaktu w pilnych sytuacjach poza godzinami pracy',
                     'Konsultacje strategiczne z zarządem (uczestnictwo w posiedzeniach zarządu)',
                     'Kompleksowa obsługa korporacyjna (zmiany struktury spółek, przekształcenia, uchwały)',
                     'Reprezentacja w postępowaniach sądowych (do 3 spraw jednocześnie w ramach pakietu)',
                     'Kompleksowa windykacja należności w ramach pakietu (wezwania, pozwy, egzekucje)',
                     'Zarządzanie ryzykiem prawnym (audyty kwartalne, compliance)',
                     'Comiesięczne spotkania strategiczne (prezentacja stanu spraw, analiza ryzyka)',
-                    'Szkolenia wewnętrzne dla pracowników (RODO, prawo pracy, compliance – 2x/rok)',
+                    'Szkolenia wewnętrzne dla pracowników (RODO, prawo pracy, compliance - 2x/rok)',
                     'Rabat 30% na wszystkie sprawy poza pakietem',
                 ])],
             ['key' => 'field_ks_pkg_prem_godz', 'label' => 'Dodatkowe godziny', 'name' => 'pkg_premium_godziny', 'type' => 'text', 'default_value' => '220 zł/h'],
@@ -497,7 +497,7 @@ add_action('acf/init', function () {
                     'Opłata skarbowa za pełnomocnictwo | 17 zł | Przy reprezentacji sądowej',
                     'Sporządzenie pozwu rozwodowego | 1.000-1.500 zł | Zależnie od skomplikowania',
                     'Rozwód za porozumieniem stron (cała sprawa) | 3.000-3.500 zł | Szybsze i tańsze, bez sporu',
-                    'Rozwód z orzekaniem o winie (cała sprawa) | 8.000–15.000 zł | Dłuższe postępowanie, wielokrotne rozprawy, świadkowie; cena zależy od liczby posiedzeń',
+                    'Rozwód z orzekaniem o winie (cała sprawa) | 8.000-15.000 zł | Dłuższe postępowanie, wielokrotne rozprawy, świadkowie; cena zależy od liczby posiedzeń',
                     'Podział majątku wspólnego (pozew) | 2.000-4.000 zł | Zależnie od wartości majątku',
                     'Ustalenie alimentów (pozew + reprezentacja) | 1.500-2.000 zł | Prostsza sprawa',
                     'Zmiana wysokości alimentów | 1.000-1.500 zł | Przy zmianie sytuacji życiowej',
@@ -515,37 +515,37 @@ add_action('acf/init', function () {
                 ])],
             ['key' => 'field_ks_of_rodz_dod', 'label' => 'Info-box: Dodatkowe usługi (lista)', 'name' => 'oferta_rodzinne_dodatkowe', 'type' => 'textarea', 'rows' => 5, 'instructions' => $list_hint,
                 'default_value' => implode("\n", [
-                    'Mediacje rozwodowe – <strong>500-1.500 zł</strong> (opcjonalnie przed procesem, często skuteczniejsze)',
-                    'Pomoc w sprawie alimentów za granicą (UE) – wycena indywidualna',
-                    'Reprezentacja w postępowaniu apelacyjnym – <strong>+50% stawki z I instancji</strong>',
-                    'Koszty opinii biegłego (rodzinna/psychologiczna) – pokrywa strona na zlecenie sądu; wynagrodzenie biegłego ustala sąd',
+                    'Mediacje rozwodowe - <strong>500-1.500 zł</strong> (opcjonalnie przed procesem, często skuteczniejsze)',
+                    'Pomoc w sprawie alimentów za granicą (UE) - wycena indywidualna',
+                    'Reprezentacja w postępowaniu apelacyjnym - <strong>+50% stawki z I instancji</strong>',
+                    'Koszty opinii biegłego (rodzinna/psychologiczna) - pokrywa strona na zlecenie sądu; wynagrodzenie biegłego ustala sąd',
                 ])],
 
             // ── Tab: Windykacja ───────────────────────────────────
             ['key' => 'field_ks_of_tab_wind', 'label' => 'Windykacja', 'type' => 'tab'],
             ['key' => 'field_ks_of_wind', 'label' => 'Tabela (Etap/wartość | Honorarium | Uwagi)', 'name' => 'oferta_windykacja', 'type' => 'textarea', 'rows' => 6, 'instructions' => $tbl_hint,
                 'default_value' => implode("\n", [
-                    'Wezwanie do zapłaty (pozasądowe) | 300–700 zł | Wezwanie, negocjacje, prosta windykacja (przeważnie do 3.000 zł wartości)',
-                    'Postępowanie sądowe (do 5.000 zł) | 1.500–2.500 zł | Postępowanie uproszczone lub EPU (nakaz zapłaty)',
-                    'Postępowanie sądowe (5.000–20.000 zł) | 2.500–5.000 zł | Postępowanie zwykłe (I instancja)',
-                    'Postępowanie sądowe (20.000–100.000 zł) | 5.000–10.000 zł | Złożone sprawy; dłuższy czas postępowania',
-                    'Postępowanie sądowe (100.000–500.000 zł) | 10.000–18.000 zł | Biznesowe sprawy windykacyjne; szczegółowa wycena po analizie akt',
+                    'Wezwanie do zapłaty (pozasądowe) | 300-700 zł | Wezwanie, negocjacje, prosta windykacja (przeważnie do 3.000 zł wartości)',
+                    'Postępowanie sądowe (do 5.000 zł) | 1.500-2.500 zł | Postępowanie uproszczone lub EPU (nakaz zapłaty)',
+                    'Postępowanie sądowe (5.000-20.000 zł) | 2.500-5.000 zł | Postępowanie zwykłe (I instancja)',
+                    'Postępowanie sądowe (20.000-100.000 zł) | 5.000-10.000 zł | Złożone sprawy; dłuższy czas postępowania',
+                    'Postępowanie sądowe (100.000-500.000 zł) | 10.000-18.000 zł | Biznesowe sprawy windykacyjne; szczegółowa wycena po analizie akt',
                     'Powyżej 500.000 zł | wycena indywidualna | Wstępna ocena na konsultacji',
                 ])],
             ['key' => 'field_ks_of_wind_p1', 'label' => 'Info-box: Opis honorarium (akapit)', 'name' => 'oferta_wind_honor_p1', 'type' => 'textarea', 'rows' => 2,
                 'default_value' => 'Wynagrodzenie w sprawach windykacyjnych może składać się z dwóch elementów:'],
             ['key' => 'field_ks_of_wind_lista', 'label' => 'Info-box: Elementy honorarium (lista)', 'name' => 'oferta_wind_honor_lista', 'type' => 'textarea', 'rows' => 5, 'instructions' => $list_hint,
                 'default_value' => implode("\n", [
-                    '<strong>Honorarium stałe</strong> – wymagane zawsze, niezależnie od wyniku sprawy; obejmuje wszystkie czynności prawnika na każdym etapie; płatne zgodnie z harmonogramem ustalonym w umowie',
-                    '<strong>Prowizja windykacyjna (success fee)</strong> – opcjonalny element dodatkowy, uzgadniany indywidualnie; stanowi % od faktycznie odzyskanej kwoty; płatna wyłącznie po wpływie środków na konto klienta; wynosi orientacyjnie 5–15% (maleje wraz ze wzrostem wartości należności)',
+                    '<strong>Honorarium stałe</strong> - wymagane zawsze, niezależnie od wyniku sprawy; obejmuje wszystkie czynności prawnika na każdym etapie; płatne zgodnie z harmonogramem ustalonym w umowie',
+                    '<strong>Prowizja windykacyjna (success fee)</strong> - opcjonalny element dodatkowy, uzgadniany indywidualnie; stanowi % od faktycznie odzyskanej kwoty; płatna wyłącznie po wpływie środków na konto klienta; wynosi orientacyjnie 5-15% (maleje wraz ze wzrostem wartości należności)',
                 ])],
             ['key' => 'field_ks_of_wind_p2', 'label' => 'Info-box: Uwaga o prowizji (akapit)', 'name' => 'oferta_wind_honor_p2', 'type' => 'textarea', 'rows' => 3,
-                'default_value' => '<strong>Prowizja windykacyjna jest zawsze uzupełnieniem honorarium stałego</strong> – nigdy jego zamiennikiem. Wynika to z zasad etyki adwokackiej. Szczegółowy model wynagrodzenia ustalany jest przed podpisaniem umowy.'],
+                'default_value' => '<strong>Prowizja windykacyjna jest zawsze uzupełnieniem honorarium stałego</strong> - nigdy jego zamiennikiem. Wynika to z zasad etyki adwokackiej. Szczegółowy model wynagrodzenia ustalany jest przed podpisaniem umowy.'],
             ['key' => 'field_ks_of_wind_etapy', 'label' => 'Info-box: Tabela etapów (Etap | Honorarium | Orientacyjny czas)', 'name' => 'oferta_wind_etapy', 'type' => 'textarea', 'rows' => 4, 'instructions' => $tbl_hint,
                 'default_value' => implode("\n", [
-                    'Wezwanie do zapłaty (pozasądowe) | <strong>300–700 zł</strong> | 3–7 dni',
-                    'Pozew + reprezentacja w sądzie (I instancja) | Wg tabeli powyżej | kilka – kilkanaście miesięcy',
-                    'Postępowanie egzekucyjne (komornik) | <strong>800–2.000 zł</strong> (honorarium za obsługę egzekucji); opłata komornicza ok. 15% wyegzekwowanej kwoty – płaci dłużnik | kilka – kilkanaście miesięcy',
+                    'Wezwanie do zapłaty (pozasądowe) | <strong>300-700 zł</strong> | 3-7 dni',
+                    'Pozew + reprezentacja w sądzie (I instancja) | Wg tabeli powyżej | kilka - kilkanaście miesięcy',
+                    'Postępowanie egzekucyjne (komornik) | <strong>800-2.000 zł</strong> (honorarium za obsługę egzekucji); opłata komornicza ok. 15% wyegzekwowanej kwoty - płaci dłużnik | kilka - kilkanaście miesięcy',
                 ])],
             ['key' => 'field_ks_of_wind_abon', 'label' => 'Info-box: W ramach abonamentu (lista)', 'name' => 'oferta_wind_abon', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
                 'default_value' => implode("\n", [
@@ -568,7 +568,7 @@ add_action('acf/init', function () {
                     'Obrona w sprawach gospodarczych (I instancja) | 5.000-10.000 zł | 1.200 zł | Przestępstwa skarbowe, wyłudzenia VAT',
                 ])],
             ['key' => 'field_ks_of_karne_info', 'label' => 'Info-box: Dodatkowe informacje (lista)', 'name' => 'oferta_karne_info', 'type' => 'textarea', 'rows' => 3, 'instructions' => $list_hint,
-                'default_value' => 'Koszty opinii biegłych (psychiatryczne, grafologiczne i inne) – pokrywa strona na zlecenie sądu; wynagrodzenie biegłego ustala sąd'],
+                'default_value' => 'Koszty opinii biegłych (psychiatryczne, grafologiczne i inne) - pokrywa strona na zlecenie sądu; wynagrodzenie biegłego ustala sąd'],
 
             // ── Tab: Prawo Gospodarcze ────────────────────────────
             ['key' => 'field_ks_of_tab_gosp', 'label' => 'Prawo Gospodarcze', 'type' => 'tab'],
@@ -607,7 +607,7 @@ add_action('acf/init', function () {
                     'Kontakt z klientem przez cały czas trwania sprawy (mailowy/telefoniczny)',
                     'Analiza dokumentacji i przygotowanie strategii procesowej',
                 ])],
-            ['key' => 'field_ks_of_repr_apel', 'label' => 'Info-box: Apelacja – stawka', 'name' => 'oferta_repr_apelacja', 'type' => 'text',
+            ['key' => 'field_ks_of_repr_apel', 'label' => 'Info-box: Apelacja - stawka', 'name' => 'oferta_repr_apelacja', 'type' => 'text',
                 'default_value' => '+50% stawki z I instancji'],
             ['key' => 'field_ks_of_repr_info', 'label' => 'Info-box: Dodatkowe informacje (lista)', 'name' => 'oferta_repr_info', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
                 'default_value' => implode("\n", [
@@ -625,14 +625,14 @@ add_action('acf/init', function () {
                     'Cena/mc | 800 zł | 1.800 zł | 4.200 zł | od 8.000 zł',
                     'Konsultacje tel./mailowe | Do 2 godz./mc | Do 4 godz./mc | Do 10 godz./mc | Ustalane indywidualnie',
                     'Przegląd umów/mc | 3 umowy | 8 umów | 15 umów | Wg potrzeb (ustalane z klientem)',
-                    'Sporządzanie umów | – | Do 3/mc | Do 5/mc | Wg potrzeb (ustalane z klientem)',
+                    'Sporządzanie umów | - | Do 3/mc | Do 5/mc | Wg potrzeb (ustalane z klientem)',
                     'Wezwania do zapłaty | Do 2/mc | Do 5/mc | Do 10/mc | Wg potrzeb (ustalane z klientem)',
                     'Prawo pracy | 1 konsultacja/mc | Doradztwo w bieżących sprawach pracowniczych | Kompleksowa obsługa | Pełna obsługa + szkolenia',
-                    'Reprezentacja w negocjacjach | – | Do 2 spotkań/mc | Do 4 spotkań/mc | Wg potrzeb (ustalane z klientem)',
-                    'Obsługa KRS | – | Płatne z rabatem 15% | Zmiany, uchwały | Pełna obsługa',
-                    'Audyt prawny | – | 1x/pół roku | 2x/rok | 4x/rok',
+                    'Reprezentacja w negocjacjach | - | Do 2 spotkań/mc | Do 4 spotkań/mc | Wg potrzeb (ustalane z klientem)',
+                    'Obsługa KRS | - | Płatne z rabatem 15% | Zmiany, uchwały | Pełna obsługa',
+                    'Audyt prawny | - | 1x/pół roku | 2x/rok | 4x/rok',
                     'Czas odpowiedzi | Do 24h | Do 12h | Do 6h | Do 2h (pilne natychmiast)',
-                    'Rabat na sprawy sądowe | – | 15% | 20% | 30%',
+                    'Rabat na sprawy sądowe | - | 15% | 20% | 30%',
                     'Dodatkowa godzina | 300 zł | 280 zł | 250 zł | 220 zł',
                 ])],
             ['key' => 'field_ks_of_abon_info', 'label' => 'Info-box pod tabelą (lista)', 'name' => 'oferta_abon_info', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
@@ -649,14 +649,14 @@ add_action('acf/init', function () {
                 'default_value' => implode("\n", [
                     'Pozew rozwodowy | 600 zł (opłata stała, art. 26 uksc)',
                     'Pozew o alimenty (strona dochodząca) | zwolniona z opłaty (art. 96 ust. 1 pkt 2 uksc)',
-                    'Sprawy cywilne – do 500 zł | 30 zł',
-                    'Sprawy cywilne – 500–1.500 zł | 100 zł',
-                    'Sprawy cywilne – 1.500–4.000 zł | 200 zł',
-                    'Sprawy cywilne – 4.000–7.500 zł | 400 zł',
-                    'Sprawy cywilne – 7.500–10.000 zł | 500 zł',
-                    'Sprawy cywilne – 10.000–15.000 zł | 750 zł',
-                    'Sprawy cywilne – 15.000–20.000 zł | 1.000 zł',
-                    'Sprawy cywilne – powyżej 20.000 zł | 5% wartości sporu (max 100.000 zł)',
+                    'Sprawy cywilne - do 500 zł | 30 zł',
+                    'Sprawy cywilne - 500-1.500 zł | 100 zł',
+                    'Sprawy cywilne - 1.500-4.000 zł | 200 zł',
+                    'Sprawy cywilne - 4.000-7.500 zł | 400 zł',
+                    'Sprawy cywilne - 7.500-10.000 zł | 500 zł',
+                    'Sprawy cywilne - 10.000-15.000 zł | 750 zł',
+                    'Sprawy cywilne - 15.000-20.000 zł | 1.000 zł',
+                    'Sprawy cywilne - powyżej 20.000 zł | 5% wartości sporu (max 100.000 zł)',
                 ])],
             ['key' => 'field_ks_of_innekoszt', 'label' => 'Inne koszty (Element | Koszt | Uwagi)', 'name' => 'oferta_inne_koszty', 'type' => 'textarea', 'rows' => 7, 'instructions' => $tbl_hint,
                 'default_value' => implode("\n", [
@@ -666,20 +666,20 @@ add_action('acf/init', function () {
                     'Koszty doręczeń | 20-50 zł/pismo | Doręczenia komornicze',
                     'Mediacje | 500-1.500 zł | Opcjonalnie przed procesem',
                 ])],
-            ['key' => 'field_ks_of_warning', 'label' => 'Ważne – lista (box ostrzeżeń)', 'name' => 'oferta_warning', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
+            ['key' => 'field_ks_of_warning', 'label' => 'Ważne - lista (box ostrzeżeń)', 'name' => 'oferta_warning', 'type' => 'textarea', 'rows' => 4, 'instructions' => $list_hint,
                 'default_value' => implode("\n", [
-                    'Jeśli <strong>wygrasz sprawę</strong> – sąd może zasądzić zwrot kosztów od przeciwnika (w tym Twoje wynagrodzenie prawnika)',
-                    'Jeśli <strong>przegrasz</strong> – możesz ponieść koszty przeciwnika (jego prawnik + opłaty sądowe)',
+                    'Jeśli <strong>wygrasz sprawę</strong> - sąd może zasądzić zwrot kosztów od przeciwnika (w tym Twoje wynagrodzenie prawnika)',
+                    'Jeśli <strong>przegrasz</strong> - możesz ponieść koszty przeciwnika (jego prawnik + opłaty sądowe)',
                     'Przed rozpoczęciem sprawy <strong>zawsze</strong> informuję o potencjalnych kosztach i ryzyku',
                 ])],
 
             // ── Tab: FAQ ──────────────────────────────────────────
             ['key' => 'field_ks_of_tab_faq', 'label' => 'FAQ', 'type' => 'tab',
-                'instructions' => 'Aby usunąć pytanie: wyczyść oba pola (Pytanie i Odpowiedź) – puste pary są pomijane. Aby dodać nowe: wypełnij kolejne puste pola (do 10 par).'],
+                'instructions' => 'Aby usunąć pytanie: wyczyść oba pola (Pytanie i Odpowiedź) - puste pary są pomijane. Aby dodać nowe: wypełnij kolejne puste pola (do 10 par).'],
             ['key' => 'field_ks_faq1_q', 'label' => 'Pytanie 1', 'name' => 'faq_1_q', 'type' => 'text',
                 'default_value' => 'Dlaczego ceny są podawane w przedziałach?'],
             ['key' => 'field_ks_faq1_a', 'label' => 'Odpowiedź 1', 'name' => 'faq_1_a', 'type' => 'textarea', 'rows' => 4,
-                'default_value' => 'Każda sprawa jest inna – wycena zależy od skomplikowania, wartości sporu, ilości dokumentów i przewidywanego czasu pracy. Po wstępnej konsultacji przedstawiam <strong>szczegółową wycenę</strong> z rozbiciem na poszczególne etapy.'],
+                'default_value' => 'Każda sprawa jest inna - wycena zależy od skomplikowania, wartości sporu, ilości dokumentów i przewidywanego czasu pracy. Po wstępnej konsultacji przedstawiam <strong>szczegółową wycenę</strong> z rozbiciem na poszczególne etapy.'],
             ['key' => 'field_ks_faq2_q', 'label' => 'Pytanie 2', 'name' => 'faq_2_q', 'type' => 'text',
                 'default_value' => 'Czy można negocjować ceny?'],
             ['key' => 'field_ks_faq2_a', 'label' => 'Odpowiedź 2', 'name' => 'faq_2_a', 'type' => 'textarea', 'rows' => 4,
@@ -695,7 +695,7 @@ add_action('acf/init', function () {
             ['key' => 'field_ks_faq5_q', 'label' => 'Pytanie 5', 'name' => 'faq_5_q', 'type' => 'text',
                 'default_value' => 'Czy konsultacja jest płatna?'],
             ['key' => 'field_ks_faq5_a', 'label' => 'Odpowiedź 5', 'name' => 'faq_5_a', 'type' => 'textarea', 'rows' => 4,
-                'default_value' => 'Pierwsza konsultacja (60 min) – <strong>350-500 zł</strong>. Jeśli zdecydujesz się na dalszą współpracę (reprezentację w sprawie), <strong>zaliczam ją na poczet wynagrodzenia</strong>. Oferuję również <strong>krótką bezpłatną rozmowę wstępną</strong> (ok. 10–15 min, telefon/online) – żeby sprawdzić, czy mogę Ci pomóc, zanim zdecydujesz się na płatną konsultację.'],
+                'default_value' => 'Pierwsza konsultacja (60 min) - <strong>350-500 zł</strong>. Jeśli zdecydujesz się na dalszą współpracę (reprezentację w sprawie), <strong>zaliczam ją na poczet wynagrodzenia</strong>. Oferuję również <strong>krótką bezpłatną rozmowę wstępną</strong> (ok. 10-15 min, telefon/online) - żeby sprawdzić, czy mogę Ci pomóc, zanim zdecydujesz się na płatną konsultację.'],
             ['key' => 'field_ks_faq6_q', 'label' => 'Pytanie 6', 'name' => 'faq_6_q', 'type' => 'text',
                 'default_value' => 'Czy abonament można rozwiązać w każdej chwili?'],
             ['key' => 'field_ks_faq6_a', 'label' => 'Odpowiedź 6', 'name' => 'faq_6_a', 'type' => 'textarea', 'rows' => 4,
@@ -703,7 +703,7 @@ add_action('acf/init', function () {
             ['key' => 'field_ks_faq7_q', 'label' => 'Pytanie 7', 'name' => 'faq_7_q', 'type' => 'text',
                 'default_value' => 'Co jeśli wykorzystam wszystkie godziny w pakiecie abonamentowym?'],
             ['key' => 'field_ks_faq7_a', 'label' => 'Odpowiedź 7', 'name' => 'faq_7_a', 'type' => 'textarea', 'rows' => 4,
-                'default_value' => 'Możesz dokupić dodatkowe godziny w preferencyjnej stawce (zależnie od pakietu: 220-300 zł/h). Alternatywnie – niewykorzystane godziny <strong>przechodzą na następny miesiąc</strong> (max. 2 miesiące wstecz).'],
+                'default_value' => 'Możesz dokupić dodatkowe godziny w preferencyjnej stawce (zależnie od pakietu: 220-300 zł/h). Alternatywnie - niewykorzystane godziny <strong>przechodzą na następny miesiąc</strong> (max. 2 miesiące wstecz).'],
             ['key' => 'field_ks_faq8_q', 'label' => 'Pytanie 8', 'name' => 'faq_8_q', 'type' => 'text',
                 'default_value' => 'Czy wynagrodzenie obejmuje koszty sądowe?'],
             ['key' => 'field_ks_faq8_a', 'label' => 'Odpowiedź 8', 'name' => 'faq_8_a', 'type' => 'textarea', 'rows' => 4,

@@ -9,7 +9,7 @@
             <span class="page-hero-eyebrow-text">Kancelaria Adwokacka · Warszawa</span>
         </div>
         <h1 class="page-hero-title">Oferta i <em>Cennik</em></h1>
-        <p class="page-hero-desc">Transparentne ceny i indywidualne podejście do każdego klienta. Każda sprawa jest inna – po wstępnej konsultacji otrzymujesz szczegółową wycenę.</p>
+        <p class="page-hero-desc">Transparentne ceny i indywidualne podejście do każdego klienta. Każda sprawa jest inna - po wstępnej konsultacji otrzymujesz szczegółową wycenę.</p>
         <div class="page-hero-actions">
             <a href="<?php echo home_url('/kontakt/'); ?>" class="btn-gold">
                 Umów konsultację
@@ -70,7 +70,7 @@
         <section class="content-section bg-light">
             <div class="container">
                 <h2>Abonament Prawny dla Firm</h2>
-                <p class="section-intro">Stała obsługa prawna dla Twojej firmy – doradztwo w bieżących sprawach, rabat na postępowania sądowe i priorytetowy czas odpowiedzi.</p>
+                <p class="section-intro">Stała obsługa prawna dla Twojej firmy - doradztwo w bieżących sprawach, rabat na postępowania sądowe i priorytetowy czas odpowiedzi.</p>
 
                 <!-- Pakiet START -->
                 <div class="package-card">
@@ -232,7 +232,7 @@
         <section class="content-section bg-light">
             <div class="container">
                 <h2>Windykacja Należności</h2>
-                <p class="section-intro">Dochodzenie należności pieniężnych – od wezwania do zapłaty, przez postępowanie sądowe, po obsługę egzekucji komorniczej.</p>
+                <p class="section-intro">Dochodzenie należności pieniężnych - od wezwania do zapłaty, przez postępowanie sądowe, po obsługę egzekucji komorniczej.</p>
 
                 <div class="table-wrapper">
                     <table class="pricing-table">
@@ -281,7 +281,7 @@
         <!-- 5. Sprawy Karne -->
         <section class="content-section">
             <div class="container">
-                <h2>Sprawy Karne – Obrona</h2>
+                <h2>Sprawy Karne - Obrona</h2>
                 
                 <div class="table-wrapper">
                     <table class="pricing-table">
@@ -455,7 +455,7 @@
         <div class="cta-inner reveal">
             <div class="cta-text">
                 <h2>Potrzebujesz wyceny<br>dla <em>swojej sprawy?</em></h2>
-                <p>Umów konsultację – omówimy Twoją sprawę i przedstawię szczegółową wycenę bez ukrytych kosztów.</p>
+                <p>Umów konsultację - omówimy Twoją sprawę i przedstawię szczegółową wycenę bez ukrytych kosztów.</p>
             </div>
             <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start; flex-shrink:0;">
                 <a href="<?php echo home_url('/kontakt/'); ?>" class="btn-gold" style="white-space:nowrap;">
