@@ -23,8 +23,26 @@
     </div>
 </section>
 
-<?php if (ks_use_elementor_content()): ?>
-    <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
+<?php
+// Treść strony Oferta.
+// Jeśli strona ma realną treść w edytorze (bloki Gutenberga) lub w Elementorze
+// -> renderuj ją. Wtedy treść siedzi w post_content: jest widoczna dla Google
+// i Yoast, edytowalna normalnie, z dodawaniem/usuwaniem/przestawianiem bloków.
+// Jeśli treści brak -> pokaż dotychczasowy układ (pola ACF) jako zapas,
+// żeby strona NIGDY nie zniknęla, dopóki treść nie zostanie wklejona.
+$ks_has_content = ks_use_elementor_content()
+    || trim((string) get_post_field('post_content', get_the_ID())) !== '';
+?>
+<?php if ($ks_has_content): ?>
+    <main>
+        <section class="content-section">
+            <div class="container">
+                <div class="oferta-content entry-content">
+                    <?php while (have_posts()): the_post(); the_content(); endwhile; ?>
+                </div>
+            </div>
+        </section>
+    </main>
 <?php else: ?>
     <main>
         <!-- Intro -->
@@ -448,6 +466,7 @@
         </section>
 
     </main>
+<?php endif; ?>
 
 <!-- ===== CTA ===== -->
 <section class="cta-section">
@@ -470,6 +489,5 @@
         </div>
     </div>
 </section>
-<?php endif; ?>
 
 <?php get_footer(); ?>

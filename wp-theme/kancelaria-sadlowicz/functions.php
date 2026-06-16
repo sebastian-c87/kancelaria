@@ -13,6 +13,11 @@ add_action('after_setup_theme', function () {
         'primary' => 'Menu główne',
     ]);
 
+    // Podglad stylow motywu w edytorze blokow (Gutenberg) - tresc wyglada
+    // w edytorze podobnie jak na zywej stronie.
+    add_theme_support('editor-styles');
+    add_editor_style('assets/css/subpages.css');
+
     load_theme_textdomain('kancelaria-sadlowicz', get_template_directory() . '/languages');
 });
 
@@ -100,6 +105,96 @@ remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'wp_shortlink_wp_head');
+
+/* ------------------------------------------------------------------ */
+/*  Bloki Gutenberga: style + gotowe wzorce sekcji dla stron motywu    */
+/*  Dzieki temu tresc siedzi w post_content (SEO/Yoast), a bloki maja  */
+/*  wyglad zgodny z motywem. Mozna je dodawac/usuwac/przestawiac.      */
+/* ------------------------------------------------------------------ */
+add_action('init', function () {
+    if (!function_exists('register_block_style')) return;
+
+    // --- Style blokow (widoczne w panelu "Styl" danego bloku) ---
+    register_block_style('core/paragraph', ['name' => 'ks-lead',     'label' => 'Wyrozniony (kursywa)']);
+    register_block_style('core/group',     ['name' => 'ks-introbox', 'label' => 'Ramka wstepu (zlota kreska)']);
+    register_block_style('core/group',     ['name' => 'ks-infobox',  'label' => 'Info-box (szara ramka)']);
+    register_block_style('core/group',     ['name' => 'ks-warning',  'label' => 'Ramka ostrzezenia']);
+    register_block_style('core/group',     ['name' => 'ks-package',  'label' => 'Karta pakietu']);
+
+    // --- Kategoria wzorcow ---
+    if (function_exists('register_block_pattern_category')) {
+        register_block_pattern_category('kancelaria', ['label' => 'Kancelaria - sekcje']);
+    }
+    if (!function_exists('register_block_pattern')) return;
+
+    // 1. Naglowek + tabela cennika
+    register_block_pattern('kancelaria/tabela-cennika', [
+        'title'       => 'Sekcja: naglowek + tabela cennika',
+        'description' => 'Naglowek sekcji i tabela z cenami (3 kolumny).',
+        'categories'  => ['kancelaria'],
+        'content'     =>
+            "<!-- wp:heading --><h2 class=\"wp-block-heading\">Nazwa sekcji</h2><!-- /wp:heading -->\n"
+            . "<!-- wp:table --><figure class=\"wp-block-table\"><table><thead><tr><th>Usluga</th><th>Stawka</th><th>Uwagi</th></tr></thead><tbody>"
+            . "<tr><td>Pozycja pierwsza</td><td><strong>od 000 zl</strong></td><td>Opis</td></tr>"
+            . "<tr><td>Pozycja druga</td><td><strong>od 000 zl</strong></td><td>Opis</td></tr>"
+            . "</tbody></table></figure><!-- /wp:table -->",
+    ]);
+
+    // 2. Info-box (szara ramka z lista)
+    register_block_pattern('kancelaria/info-box', [
+        'title'       => 'Sekcja: info-box (szara ramka)',
+        'description' => 'Szara ramka z naglowkiem i lista punktow.',
+        'categories'  => ['kancelaria'],
+        'content'     =>
+            "<!-- wp:group {\"className\":\"is-style-ks-infobox\"} --><div class=\"wp-block-group is-style-ks-infobox\">"
+            . "<!-- wp:heading {\"level\":4} --><h4 class=\"wp-block-heading\">Dodatkowe informacje:</h4><!-- /wp:heading -->"
+            . "<!-- wp:list --><ul class=\"wp-block-list\">"
+            . "<!-- wp:list-item --><li>Pierwszy punkt</li><!-- /wp:list-item -->"
+            . "<!-- wp:list-item --><li>Drugi punkt</li><!-- /wp:list-item -->"
+            . "</ul><!-- /wp:list --></div><!-- /wp:group -->",
+    ]);
+
+    // 3. Ramka ostrzezenia
+    register_block_pattern('kancelaria/ostrzezenie', [
+        'title'       => 'Sekcja: ramka ostrzezenia',
+        'description' => 'Ramka z naglowkiem "Wazne" i lista.',
+        'categories'  => ['kancelaria'],
+        'content'     =>
+            "<!-- wp:group {\"className\":\"is-style-ks-warning\"} --><div class=\"wp-block-group is-style-ks-warning\">"
+            . "<!-- wp:heading {\"level\":4} --><h4 class=\"wp-block-heading\">Wazne:</h4><!-- /wp:heading -->"
+            . "<!-- wp:list --><ul class=\"wp-block-list\">"
+            . "<!-- wp:list-item --><li>Pierwsza uwaga</li><!-- /wp:list-item -->"
+            . "</ul><!-- /wp:list --></div><!-- /wp:group -->",
+    ]);
+
+    // 4. Karta pakietu
+    register_block_pattern('kancelaria/karta-pakietu', [
+        'title'       => 'Sekcja: karta pakietu',
+        'description' => 'Karta abonamentu: nazwa, cena, dla kogo, zakres.',
+        'categories'  => ['kancelaria'],
+        'content'     =>
+            "<!-- wp:group {\"className\":\"is-style-ks-package\"} --><div class=\"wp-block-group is-style-ks-package\">"
+            . "<!-- wp:heading {\"level\":3} --><h3 class=\"wp-block-heading\">PAKIET START - 800 zl/mc</h3><!-- /wp:heading -->"
+            . "<!-- wp:paragraph --><p><strong>Dla kogo:</strong> Mikrofirmy i freelancerzy</p><!-- /wp:paragraph -->"
+            . "<!-- wp:heading {\"level\":4} --><h4 class=\"wp-block-heading\">Co obejmuje:</h4><!-- /wp:heading -->"
+            . "<!-- wp:list --><ul class=\"wp-block-list\">"
+            . "<!-- wp:list-item --><li>Pierwszy element pakietu</li><!-- /wp:list-item -->"
+            . "</ul><!-- /wp:list -->"
+            . "<!-- wp:paragraph --><p><strong>Dodatkowe godziny:</strong> 300 zl/h</p><!-- /wp:paragraph -->"
+            . "</div><!-- /wp:group -->",
+    ]);
+
+    // 5. FAQ - rozwijane pytanie
+    register_block_pattern('kancelaria/faq', [
+        'title'       => 'Sekcja: FAQ (rozwijane pytanie)',
+        'description' => 'Pytanie rozwijane po kliknieciu (natywny blok Szczegoly).',
+        'categories'  => ['kancelaria'],
+        'content'     =>
+            "<!-- wp:details --><details class=\"wp-block-details\"><summary>Tutaj wpisz pytanie?</summary>"
+            . "<!-- wp:paragraph --><p>Tutaj wpisz odpowiedz.</p><!-- /wp:paragraph -->"
+            . "</details><!-- /wp:details -->",
+    ]);
+});
 
 /* ------------------------------------------------------------------ */
 /*  Contact form AJAX handler (logged-out & logged-in)                  */
