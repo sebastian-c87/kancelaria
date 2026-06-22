@@ -777,70 +777,40 @@
             });
         }
 
-        // ===== AI CHATBOT (SIMULATED - NO OPENAI YET) =====
+        // ===== AI CHATBOT (OPENAI) =====
         const chatbotMessages = document.getElementById('chatbotMessages');
         const chatInput = document.getElementById('chatInput');
         const chatSendBtn = document.getElementById('chatSendBtn');
         const quickReplies = document.getElementById('quickReplies');
 
-        // Predefined responses (FAQ-based)
-        const botResponses = {
-            'ile kosztuje rozwód': 'Koszt rozwodu zależy od tego, czy jest to rozwód za porozumieniem stron czy z orzekaniem o winie. **Rozwód za porozumieniem**: od 2500 zł netto. **Rozwód z orzekaniem o winie**: od 3500 zł netto. Dokładny cennik znajdziesz [tutaj](oferta.html). Czy chcesz umówić bezpłatną konsultację?',
-            
-            'jak długo trwa sprawa sądowa': 'Czas trwania sprawy sądowej zależy od jej rodzaju:\n\n• **Rozwód bez dzieci**: 6-10 miesięcy\n• **Rozwód ze sporami**: 18-30 miesięcy\n• **Sprawy cywilne**: 12-18 miesięcy\n• **Windykacja (nakaz zapłaty)**: 2-4 miesiące\n\nWięcej informacji w moim [artykule na blogu](blog.html#article-3). Chcesz zapytać o konkretną sprawę?',
-            
-            'jakie dokumenty potrzebuję': 'Dokumenty zależą od rodzaju sprawy:\n\n**Rozwód**: akt małżeństwa, akty urodzenia dzieci, dokumenty majątkowe\n**Windykacja**: umowy, faktury, korespondencja mailowa\n**Spadki**: akt zgonu, testament (jeśli jest)\n\nWypełnij formularz kontaktowy, a podpowiem dokładnie co przyda się w Twojej sprawie!',
-            
-            'jak umówić konsultację': 'Możesz umówić konsultację na 3 sposoby:\n\n1. **Wypełnij formularz** po lewej stronie\n2. **Zadzwoń**: +48 790 013 287 (Pon-Pt 9-17)\n3. **Napisz email**: kamila.sadlowicz@kancelaria-sadlowicz.pl\n\n**Pierwsza konsultacja telefoniczna (do 15 min) jest bezpłatna!** 😊',
-            
-            'default': 'Dziękuję za pytanie! To wykracza poza moją bazę wiedzy jako AI asystenta. **Wypełnij formularz kontaktowy**, a Kamila szczegółowo odpowie na Twoje pytanie w ciągu 24 godzin. Możesz również znaleźć odpowiedzi w [FAQ](faq.html) lub na [blogu](blog.html).'
-        };
+        let conversationHistory = [];
 
-        // Add message to chat
+        // Dodaj wiadomosc do okna czatu
         function addMessage(text, isUser = false) {
             const messageDiv = document.createElement('div');
             messageDiv.className = isUser ? 'message user-message' : 'message bot-message';
-            
+
             const content = document.createElement('div');
             content.className = 'message-content';
-            
+
             if (!isUser) {
                 const avatar = document.createElement('div');
                 avatar.className = 'message-avatar';
                 avatar.textContent = '🤖';
                 messageDiv.appendChild(avatar);
             }
-            
-            // Convert markdown-like syntax to HTML
-            const formattedText = text
+
+            content.innerHTML = text
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
                 .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>')
                 .replace(/\n/g, '<br>');
-            
-            content.innerHTML = formattedText;
+
             messageDiv.appendChild(content);
-            
             chatbotMessages.appendChild(messageDiv);
-            
-            // Scroll to bottom
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
 
-        // Get bot response
-        function getBotResponse(userMessage) {
-            const lowercaseMessage = userMessage.toLowerCase();
-            
-            // Check for keyword matches
-            for (const [keyword, response] of Object.entries(botResponses)) {
-                if (keyword !== 'default' && lowercaseMessage.includes(keyword)) {
-                    return response;
-                }
-            }
-            
-            return botResponses.default;
-        }
-
-        // Typing indicator
+        // Wskaznik "pisze..."
         function showTypingIndicator() {
             const typingDiv = document.createElement('div');
             typingDiv.className = 'message bot-message typing-indicator';
@@ -855,49 +825,56 @@
             if (indicator) indicator.remove();
         }
 
-        // Send message
-        function sendMessage() {
+        // Wyslij wiadomosc do OpenAI przez serwer proxy
+        async function sendMessage() {
             const userMessage = chatInput.value.trim();
             if (!userMessage) return;
-            
-            // Add user message
+
             addMessage(userMessage, true);
+            conversationHistory.push({ role: 'user', content: userMessage });
             chatInput.value = '';
-            
-            // Hide quick replies after first interaction
-            if (quickReplies) {
-                quickReplies.style.display = 'none';
-            }
-            
-            // Show typing indicator
+            chatSendBtn.disabled = true;
+
+            if (quickReplies) quickReplies.style.display = 'none';
+
             showTypingIndicator();
-            
-            // Simulate bot thinking (1-2 seconds)
-            setTimeout(() => {
+
+            try {
+                const response = await fetch('/chatbot.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversationHistory.slice(-10) })
+                });
+
+                const data = await response.json();
                 hideTypingIndicator();
-                const botResponse = getBotResponse(userMessage);
-                addMessage(botResponse, false);
-            }, 1500);
+
+                if (data.reply) {
+                    addMessage(data.reply, false);
+                    conversationHistory.push({ role: 'assistant', content: data.reply });
+                } else {
+                    addMessage('Przepraszam, wystapil problem. Zadzwon bezposrednio: <a href="tel:+48790013287">+48 790 013 287</a>', false);
+                }
+            } catch {
+                hideTypingIndicator();
+                addMessage('Brak polaczenia z asystentem. Zadzwon: <a href="tel:+48790013287">+48 790 013 287</a>', false);
+            } finally {
+                chatSendBtn.disabled = false;
+            }
         }
 
-        // Event listeners
-        if (chatSendBtn) {
-            chatSendBtn.addEventListener('click', sendMessage);
-        }
-
+        // Obsluga zdarzen
+        if (chatSendBtn) chatSendBtn.addEventListener('click', sendMessage);
         if (chatInput) {
             chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    sendMessage();
-                }
+                if (e.key === 'Enter') sendMessage();
             });
         }
 
-        // Quick reply buttons
+        // Przyciski szybkich odpowiedzi
         document.querySelectorAll('.quick-reply-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                const question = this.getAttribute('data-question');
-                chatInput.value = question;
+                chatInput.value = this.getAttribute('data-question');
                 sendMessage();
             });
         });
