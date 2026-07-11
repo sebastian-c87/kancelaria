@@ -1,0 +1,25 @@
+/* Poprawki wygladu wewnatrz edytora blokowego - zeby Kamila widziala strone
+   w edytorze tak, jak wyglada na zywo. */
+
+.editor-styles-wrapper {
+    font-family: var(--ff-body, 'Jost', sans-serif);
+    color: #2a2a2a;
+    background: #fff;
+}
+
+/* Sekcje na pelna szerokosc edytora */
+.editor-styles-wrapper .page-hero,
+.editor-styles-wrapper .section,
+.editor-styles-wrapper .section-alt,
+.editor-styles-wrapper .cta-section,
+.editor-styles-wrapper .contact-split {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Tytul strony nad trescia - przygaszony, zeby nie mylil sie z hero */
+.editor-styles-wrapper .editor-post-title__input {
+    font-family: var(--ff-body, 'Jost', sans-serif);
+    font-size: 15px;
+    color: #9aa5af;
+}

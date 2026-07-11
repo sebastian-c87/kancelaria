@@ -1,19 +1,13 @@
 /*
-Theme Name:  Kancelaria Sadłowicz
-Theme URI:   https://kancelaria-sadlowicz.pl
-Description: Autorski motyw WordPress Kancelarii Adwokackiej Kamila Sadłowicz – wiernie odwzorowujący projekt HTML/CSS.
-Author:      Kancelaria Sadłowicz
-Author URI:  https://kancelaria-sadlowicz.pl
-Version:     1.0.0
-License:     Proprietary
+Theme Name: Kancelaria Sadlowicz
+Theme URI: https://kancelaria-sadlowicz.pl
+Author: Sebastian Ciborowski
+Description: Motyw kancelarii adwokackiej Kamili Sadlowicz. Cala tresc stron edytowalna w edytorze blokowym (Gutenberg) - klikasz w tekst i piszesz, przeciagasz sekcje. Gotowe wzorce sekcji w kategorii "Kancelaria".
+Version: 1.0.0
+Requires at least: 6.3
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
 Text Domain: kancelaria-sadlowicz
-Tags:        law, legal, professional, custom-theme
 */
 
-/*
- * Uwaga: Style wizualne są w plikach:
- *   assets/css/redesign.css   – główne style
- *   assets/css/subpages.css   – style podstron
- *   assets/css/kancelaria.css – dodatkowe style
- * Plik style.css jest wymagany przez WordPress wyłącznie jako nagłówek motywu.
- */
+/* Style wlasciwe sa w assets/css/main.css i assets/css/blocks.css (enqueue w functions.php). */

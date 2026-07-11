@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "1180px",
+      "wideSize": "1380px"
+    },
+    "color": {
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "palette": [
+        { "slug": "navy",       "color": "#0d2438", "name": "Granatowy" },
+        { "slug": "navy-mid",   "color": "#1a3a52", "name": "Granatowy jasniejszy" },
+        { "slug": "gold",       "color": "#c8a56a", "name": "Zloty" },
+        { "slug": "gold-light", "color": "#dfc08e", "name": "Zloty jasny" },
+        { "slug": "ivory",      "color": "#f7f3ed", "name": "Kosc sloniowa" },
+        { "slug": "cream",      "color": "#ede8df", "name": "Kremowy" },
+        { "slug": "charcoal",   "color": "#1c1c1c", "name": "Grafitowy" },
+        { "slug": "slate",      "color": "#4a6478", "name": "Stalowy" },
+        { "slug": "text",       "color": "#2a2a2a", "name": "Tekst" },
+        { "slug": "text-muted", "color": "#6b7c8d", "name": "Tekst przygaszony" },
+        { "slug": "white",      "color": "#ffffff", "name": "Bialy" }
+      ]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "fontFamilies": [
+        {
+          "slug": "display",
+          "name": "Cormorant Garamond (naglowki)",
+          "fontFamily": "'Cormorant Garamond', Georgia, serif"
+        },
+        {
+          "slug": "body",
+          "name": "Jost (tekst)",
+          "fontFamily": "'Jost', system-ui, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "small",   "size": "14px",  "name": "Maly" },
+        { "slug": "medium",  "size": "17px",  "name": "Sredni" },
+        { "slug": "large",   "size": "22px",  "name": "Duzy" },
+        { "slug": "x-large", "size": "34px",  "name": "Bardzo duzy" },
+        { "slug": "xx-large","size": "52px",  "name": "Ogromny" }
+      ]
+    },
+    "spacing": {
+      "units": ["px", "rem", "%", "vh"]
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--body)",
+      "fontSize": "17px",
+      "lineHeight": "1.7"
+    },
+    "color": {
+      "text": "#2a2a2a",
+      "background": "#ffffff"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--display)",
+          "fontWeight": "600"
+        },
+        "color": { "text": "#0d2438" }
+      },
+      "link": {
+        "color": { "text": "#0d2438" }
+      }
+    }
+  }
+}
