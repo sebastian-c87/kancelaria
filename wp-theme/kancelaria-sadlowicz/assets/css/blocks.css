@@ -494,3 +494,49 @@ p.benefit-row::before {
 }
 .scroll-to-top.visible { opacity: 1; pointer-events: all; transform: translateY(0); }
 .scroll-to-top:hover { background: var(--gold-light); }
+
+/* ---------- Uzupelnienia ---------- */
+/* Etykieta sekcji ze zlota kreska (samodzielny akapit) */
+p.section-label-text {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: var(--ff-body); font-size: 12px;
+    letter-spacing: .28em; text-transform: uppercase;
+    color: var(--gold); margin: 0 0 14px;
+}
+p.section-label-text::before { content: ''; width: 56px; height: 1px; background: var(--gold); }
+
+/* Lista "pakiet NIE obejmuje" - krzyzyki zamiast ptaszkow */
+.ks-package .ks-not li::before,
+ul.ks-not li::before {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b91c1c' stroke-width='3' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+.ks-package-not-title { margin-top: 14px; }
+.ks-package .offer-badge {
+    align-self: flex-start;
+    background: var(--gold); color: var(--navy);
+    font-family: var(--ff-body); font-size: 11px; font-weight: 600;
+    letter-spacing: .14em; text-transform: uppercase;
+    padding: 5px 12px; margin: 0 0 10px;
+}
+
+/* Najnowsze wpisy (blok core/latest-posts) */
+.wp-block-latest-posts.ks-latest {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 26px; padding: 0; margin: 24px 0 0; list-style: none;
+}
+.wp-block-latest-posts.ks-latest > li {
+    background: #fff; border: 1px solid var(--cream); border-top: 3px solid var(--gold);
+    padding: 26px 24px; margin: 0;
+}
+.wp-block-latest-posts.ks-latest a {
+    font-family: var(--ff-display); font-size: 21px; font-weight: 600;
+    color: var(--navy); text-decoration: none; line-height: 1.3; display: block;
+}
+.wp-block-latest-posts.ks-latest a:hover { color: var(--gold); }
+.wp-block-latest-posts.ks-latest .wp-block-latest-posts__post-date {
+    display: block; font-family: var(--ff-body); font-size: 12.5px;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); margin: 8px 0;
+}
+.wp-block-latest-posts.ks-latest .wp-block-latest-posts__post-excerpt {
+    font-family: var(--ff-body); font-size: 14.5px; color: var(--text); line-height: 1.7; margin: 8px 0 0;
+}
