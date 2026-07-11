@@ -54,6 +54,7 @@
 </nav>
 <?php
 // Awaryjne menu, gdyby lokalizacja nie miala przypisanego menu.
+if ( ! function_exists( 'ks_nav_fallback' ) ) :
 function ks_nav_fallback() {
 	$items = array(
 		'Start'           => home_url( '/' ),
@@ -70,4 +71,5 @@ function ks_nav_fallback() {
 	}
 	echo '</ul>';
 }
+endif;
 ?>
