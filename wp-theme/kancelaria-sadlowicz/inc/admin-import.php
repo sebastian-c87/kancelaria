@@ -27,12 +27,12 @@ add_action( 'admin_menu', function () {
 
 function ks_content_tool_pages() {
 	return array(
-		'start'         => 'strona-start',
-		'oferta'        => 'strona-oferta',
-		'specjalizacje' => 'strona-specjalizacje',
-		'o-mnie'        => 'strona-o-mnie',
-		'faq'           => 'strona-faq',
-		'kontakt'       => 'strona-kontakt',
+		'start'         => array( 'strona-start', 'Start' ),
+		'oferta'        => array( 'strona-oferta', 'Oferta i Cennik' ),
+		'specjalizacje' => array( 'strona-specjalizacje', 'Specjalizacje' ),
+		'o-mnie'        => array( 'strona-o-mnie', 'O mnie' ),
+		'faq'           => array( 'strona-faq', 'FAQ' ),
+		'kontakt'       => array( 'strona-kontakt', 'Kontakt' ),
 	);
 }
 
@@ -65,15 +65,21 @@ function ks_content_tool_page() {
 					$notice = '<div class="notice notice-error"><p>Brak pliku wp-content/ks-import/' . esc_html( $slug ) . '.html - wgraj go najpierw przez Menedzer plikow.</p></div>';
 				}
 			} elseif ( 'pattern' === $action ) {
-				$content = ks_get_pattern_content( $pages[ $slug ] );
+				$content = ks_get_pattern_content( $pages[ $slug ][0] );
 				$source  = 'wzorca motywu (' . size_format( strlen( $content ) ) . ')';
 			}
 
 			if ( $content ) {
-				$result = wp_update_post( array(
+				$update = array(
 					'ID'           => $page->ID,
 					'post_content' => wp_slash( $content ),
-				), true );
+				);
+				// Przywroc domyslny tytul, jesli strona go stracila.
+				if ( '' === trim( $page->post_title ) ) {
+					$update['post_title'] = $pages[ $slug ][1];
+					$update['post_name']  = $slug;
+				}
+				$result = wp_update_post( $update, true );
 
 				if ( is_wp_error( $result ) ) {
 					$notice = '<div class="notice notice-error"><p>Blad zapisu: ' . esc_html( $result->get_error_message() ) . '</p></div>';
@@ -98,7 +104,7 @@ function ks_content_tool_page() {
 
 	echo '<table class="widefat striped" style="max-width:900px"><thead><tr><th>Strona</th><th>Rozmiar w bazie</th><th>Plik w ks-import</th><th>Akcje</th></tr></thead><tbody>';
 
-	foreach ( $pages as $slug => $pattern ) {
+	foreach ( $pages as $slug => $def ) {
 		$page = get_page_by_path( $slug, OBJECT, 'page' );
 		$file = $import_dir . '/' . $slug . '.html';
 		echo '<tr><td><strong>' . ( $page ? esc_html( $page->post_title ) : esc_html( $slug ) ) . '</strong><br><code>/' . esc_html( $slug ) . '/</code></td>';
