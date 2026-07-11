@@ -90,3 +90,6 @@ function ks_get_pattern_content( $slug ) {
 /* -------------------------------------------------- Auto-setup przy aktywacji */
 require_once get_theme_file_path( 'inc/setup-content.php' );
 add_action( 'after_switch_theme', 'ks_setup_site_content' );
+
+/* -------------------------------------------------- Narzedzie tresci (wp-admin -> Narzedzia) */
+require_once get_theme_file_path( 'inc/admin-import.php' );
