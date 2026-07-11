@@ -56,8 +56,9 @@ Limit max_input_vars home.pl przestaje miec znaczenie.
 
 ## KROK 5: Formularz kontaktowy
 
-Formularz wysyla na `/wyslij.php` (istniejacy plik na serwerze). Jesli go nie ma
-w katalogu glownym WordPressa - daj znac, przygotuje go.
+Formularz wysyla na `/wyslij.php`. Plik `wyslij.php` jest w repo (obsluga SMTP
+z honeypotem) - jesli nie ma go jeszcze w katalogu glownym WordPressa na serwerze,
+wgraj go tak samo jak chatbot.php.
 
 ## KROK 6: Porzadki (opcjonalnie, ale warto)
 

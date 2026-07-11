@@ -3,6 +3,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="<?php echo esc_url( get_theme_file_uri( 'favicon.svg' ) ); ?>">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
