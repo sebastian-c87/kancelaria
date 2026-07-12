@@ -93,3 +93,30 @@ add_action( 'after_switch_theme', 'ks_setup_site_content' );
 
 /* -------------------------------------------------- Narzedzie tresci (wp-admin -> Narzedzia) */
 require_once get_theme_file_path( 'inc/admin-import.php' );
+
+/* -------------------------------------------------- Zapis w paczkach (obejscie filtra WAF home.pl)
+ * Endpoint ks/v1/chunk-save + skrypt edytora, ktory tnie duze zapisy na
+ * kawalki po ok. 6 KB. Dzieki temu edytor blokowy normalnie zapisuje
+ * takze duze strony (Oferta, FAQ), mimo ze filtr hostingu ucina duze POST-y.
+ */
+// DOMYSLNIE WYLACZONE - 12.07.2026 home.pl naprawil bufor duzych zadan
+// (folder tmp przy instalacji) i edytor zapisuje normalnie. Wlacz tylko
+// awaryjnie, dodajac w wp-config.php: define( 'KS_CHUNKED_SAVE', true );
+if ( defined( 'KS_CHUNKED_SAVE' ) && KS_CHUNKED_SAVE ) {
+	require_once get_theme_file_path( 'inc/rest-chunk-save.php' );
+
+	add_action( 'enqueue_block_editor_assets', function () {
+		wp_enqueue_script(
+			'ks-chunked-save',
+			get_theme_file_uri( 'assets/js/editor-chunked-save.js' ),
+			array( 'wp-api-fetch' ),
+			KS_THEME_VERSION,
+			true
+		);
+	} );
+
+	add_filter( 'block_editor_settings_all', function ( $settings ) {
+		$settings['autosaveInterval'] = 3600;
+		return $settings;
+	} );
+}
